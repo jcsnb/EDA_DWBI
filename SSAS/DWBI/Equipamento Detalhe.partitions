@@ -1,0 +1,45 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a0fb4b0b-3978-487b-a94f-e6062ea1f60e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Equipamento Detalhe</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>v Fct Subestacao Info Nivel Tensao</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="5974999c-8760-49a5-a7bf-899ed7cdb610">
+          <ID>v Fct Subestacao Info Nivel Tensao</ID>
+          <Name>v Fct Subestacao Info Nivel Tensao</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="a0e2660b-1413-4749-b7cc-c49134531aed">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_v_fct_subestacao_info_nivel_tensao</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>v Fct Subestacao Info Relacao Transformacao</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="12271d2c-d89d-4cc6-9913-73c233dd5a77">
+          <ID>v Fct Subestacao Info Relacao Transformacao</ID>
+          <Name>v Fct Subestacao Info Relacao Transformacao</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="cf3aa136-3d02-43e0-9304-2bb64dd08e5f">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_v_fct_subestacao_info_relacao_transformacao</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

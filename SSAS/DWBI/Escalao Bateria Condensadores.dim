@@ -1,0 +1,281 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="4c4dced8-eacd-4e49-b7ef-acab905096bd" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Escalao Bateria Condensadores</ID>
+  <Name>Escalao Bateria Condensadores</Name>
+  <CreatedTimestamp>0001-01-01T01:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T01:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-99" scrolltop="-2752" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8229" y="12594" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dim_escalao_bateria_condensadores" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="6138" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000fa17000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dim_escalao_bateria_condensadores" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-99</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-2752</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T01:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="7a36db0d-da53-4233-b8a1-ff9dc1c2c5a8">
+    <DataSourceViewID>DWH</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="41e23312-6840-4e6c-8d4e-ed0bc82590b7">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="5a9f1a81-9bac-4722-b467-cdfea5c49364">
+      <ID>Sk Escalao Bateria Condensadores</ID>
+      <Name>Código EDA</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f2b47250-ba42-4bd8-9d45-9bf26de614ad">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="be7e85bd-dd33-4fb8-a8a4-13ba43a18833">
+            <TableID>dbo_dim_escalao_bateria_condensadores</TableID>
+            <ColumnID>sk_escalao_bateria_condensadores</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="1c4d2741-84a4-4bf2-a8ef-7067c1478236">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="874d7c02-b23a-47d0-a159-a843d4ef2e72">
+          <TableID>dbo_dim_escalao_bateria_condensadores</TableID>
+          <ColumnID>codigo_eda</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="029930bc-e330-47e1-98bb-dc53bf935666">
+          <AttributeID>Nome Escalao Bateria Condensadores</AttributeID>
+          <Name>Nome Escalao Bateria Condensadores</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="73449440-d9ab-4968-8a7f-19911322e861">
+          <AttributeID>Data Entrada Exploracao</AttributeID>
+          <Name>Data Entrada Exploracao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1f4fe2ab-824a-4a6d-9e65-ab8b61a8b95c">
+          <AttributeID>Codigo Freguesia</AttributeID>
+          <Name>Codigo Freguesia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a0bd1710-6c4a-4bb2-954a-16639223aba8">
+          <AttributeID>Situacao</AttributeID>
+          <Name>Situacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="86c0882f-7f81-40cb-ad86-c97fc7e1a0a4">
+          <AttributeID>Potencia Estipulada</AttributeID>
+          <Name>Potencia Estipulada</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="05df5ed3-a95f-4a1c-8c78-9f2f4f97646a">
+          <AttributeID>Potencia Elementos Ligados Escalao</AttributeID>
+          <Name>Potencia Elementos Ligados Escalao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9069cf27-1e9a-4fb2-987b-9149390ce1fd">
+          <AttributeID>Atual</AttributeID>
+          <Name>Atual</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ea48ca9e-d830-4b37-b56d-cc60f8584cec">
+          <AttributeID>Codigo Eda</AttributeID>
+          <Name>Codigo referencia</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="744afa83-9fb5-435d-897a-8d9fd4a0c274">
+      <ID>Nome Escalao Bateria Condensadores</ID>
+      <Name>Nome Escalao Bateria Condensadores</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ccb51563-9e56-4283-89ed-15224556c965">
+          <DataType>WChar</DataType>
+          <DataSize>150</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="72b5e2dc-2ffe-4de5-b98c-b5975ff7ca8a">
+            <TableID>dbo_dim_escalao_bateria_condensadores</TableID>
+            <ColumnID>nome_escalao_bateria_condensadores</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e5632f7a-d6f7-41d1-b979-7623bd6c4292">
+      <ID>Data Entrada Exploracao</ID>
+      <Name>Data Entrada Exploracao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="15536e08-1578-4190-b499-75f6d34e8de5">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="37014952-d000-48c2-80c7-e23abf3fa44f">
+            <TableID>dbo_dim_escalao_bateria_condensadores</TableID>
+            <ColumnID>data_entrada_exploracao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7752dfc8-15a1-42c1-9335-8d47654238fc">
+      <ID>Codigo Freguesia</ID>
+      <Name>Codigo Freguesia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0ba96a80-9bb8-4ff1-a4c9-b1cd8a2b4c9b">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9f045c96-f49c-4212-b372-0bc4d2128af6">
+            <TableID>dbo_dim_escalao_bateria_condensadores</TableID>
+            <ColumnID>codigo_freguesia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="14c6f509-9b0a-4e1f-8b31-ea9218c10aa8">
+      <ID>Situacao</ID>
+      <Name>Situacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4135f0d9-34d2-47ee-ac36-817cb77cdc94">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="277ffd01-8577-4e75-b54e-bb323d350777">
+            <TableID>dbo_dim_escalao_bateria_condensadores</TableID>
+            <ColumnID>situacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0c42fb75-cd55-4798-a673-676e35ee9d29">
+      <ID>Potencia Estipulada</ID>
+      <Name>Potencia Estipulada</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="513b3135-cd3a-4c4c-9347-c1f90bb5b2d8">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2c2b2c16-1036-4c43-a3d5-63b988ab93b0">
+            <TableID>dbo_dim_escalao_bateria_condensadores</TableID>
+            <ColumnID>potencia_estipulada</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="fbf1cf82-118e-40f9-aca4-2274e253cfd6">
+      <ID>Potencia Elementos Ligados Escalao</ID>
+      <Name>Potencia Elementos Ligados Escalao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2eb3391d-e8b9-47f3-80d6-956327adc8fd">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f684b00e-008b-4804-8eaf-409d3a4e552d">
+            <TableID>dbo_dim_escalao_bateria_condensadores</TableID>
+            <ColumnID>potencia_elementos_ligados_escalao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1a78ba41-a535-402a-9cc3-56f2c73b36d4">
+      <ID>Atual</ID>
+      <Name>Atual</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0d941f6a-b5b2-46c2-9426-3e39b9f7d5cf">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="939d486f-0ddf-4589-9ad9-ae784665cd0e">
+            <TableID>dbo_dim_escalao_bateria_condensadores</TableID>
+            <ColumnID>atual</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="eec0db30-94ab-48d5-8910-178ee1c1030f">
+      <ID>Codigo Eda</ID>
+      <Name>Codigo referencia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9870932b-d33f-49d4-ac8f-b7694c066c8f">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3c834429-dd43-4fc5-96ba-7ddb20fe837e">
+            <TableID>dbo_dim_escalao_bateria_condensadores</TableID>
+            <ColumnID>codigo_eda</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

@@ -1,0 +1,261 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a82b1cb0-1a9c-4e14-8a6f-1478ac2dc19a" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Equipamento</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fct Painel</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="ba2f0421-0c4c-4da2-9518-43bc229da14b">
+          <ID>Fct Painel</ID>
+          <Name>Fct Painel</Name>
+          <CreatedTimestamp>2017-10-30T04:27:08.753333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2017-10-30T04:27:08.753333Z</LastSchemaUpdate>
+          <LastProcessed>2017-10-30T04:27:10.52Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="b4c78d1e-f373-42dd-9fa7-ee339e9437bf">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_fct_painel</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="03f80847-d72d-4631-a533-bd07e9498472">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f586ffc7-b648-45c3-b3cd-60db89eb30f5" />
+          </ProactiveCaching>
+          <EstimatedSize>1630</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fct Subestacao</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="bc59448c-b31c-47c9-b1e6-8cd0ba512882">
+          <ID>Fct Subestacao</ID>
+          <Name>Fct Subestacao</Name>
+          <CreatedTimestamp>2017-10-30T04:27:08.77Z</CreatedTimestamp>
+          <LastSchemaUpdate>2017-10-30T04:27:08.77Z</LastSchemaUpdate>
+          <LastProcessed>2017-10-30T04:27:10.52Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="1cc3b3e8-1fcf-4b17-bd9a-826bbc7eef28">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_fct_subestacao</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="047e2782-7cda-416c-b561-46aaae064792">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="f3fc8bea-cc3f-418a-9972-bbfb8d97cd2e" />
+          </ProactiveCaching>
+          <EstimatedSize>309</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fct Barramento</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="6cc7f04a-2602-4959-a002-b337f6a0e0f4">
+          <ID>Fct Barramento</ID>
+          <Name>Fct Barramento</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="37eb8316-154b-4e53-9963-975378edda33">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_fct_barramento</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fct Escalao Bateria Condensadores</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="cff40a4a-97fb-4759-b675-e2a192807a20">
+          <ID>Fct Escalao Bateria Condensadores</ID>
+          <Name>Fct Escalao Bateria Condensadores</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="a31e6ea5-a947-4929-ba4b-e0c72e7b64d6">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_fct_escalao_bateria_condensadores</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fct Transformador</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="56578145-3058-4193-bcb0-62833be0985f">
+          <ID>Fct Transformador</ID>
+          <Name>Fct Transformador</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="4e578325-b7ec-43a0-9adc-ceeb1a9c3986">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_fct_transformador</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fct Linha</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="8806a945-bae3-410d-9dd8-3ae4338dfa65">
+          <ID>Fct Linha</ID>
+          <Name>Fct Linha</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="d6f18052-fefd-47ef-ad84-50de19355f08">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_fct_linha</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fct Troco</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="f29f73a0-9d28-49ef-a2b0-a680169e3fb9">
+          <ID>Fct Troco</ID>
+          <Name>Fct Troco</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="628e222f-f8b2-4ec4-8de8-4eca95d4b73c">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_fct_troco</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fct Cela</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="5aa8b6cd-8cc1-410a-916a-468c3fa35d8e">
+          <ID>Fct Cela</ID>
+          <Name>Fct Cela</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="bf1694f5-861d-43a1-95c3-d22aac665486">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_fct_cela</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fct Transformador Pt</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="8fc43b77-036c-4675-890a-eb74f58c4e6d">
+          <ID>Fct Transformador Pt</ID>
+          <Name>Fct Transformador Pt</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="574e576e-c203-494b-8826-e1d5090befc0">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_fct_transformador_pt</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fct Posto Seccionamento</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="a4509a70-ce22-4910-871f-0ff776cde646">
+          <ID>Fct Posto Seccionamento</ID>
+          <Name>Fct Posto Seccionamento</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="68b9113d-2ec8-4656-b474-a75d65eaa068">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_fct_posto_seccionamento</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fct Posto Transformacao</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="6d2f4bb0-087d-4893-b514-cb5c88f4123a">
+          <ID>Fct Posto Transformacao</ID>
+          <Name>Fct Posto Transformacao</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="eec2655d-61dd-4be9-ba14-12da50f89841">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_fct_posto_transformacao</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fct Troco Bt</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="88d778f6-0dba-492e-bba3-69235836857d">
+          <ID>Fct Troco Bt</ID>
+          <Name>Fct Troco Bt</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="fccfda8c-eea4-4812-90b1-c0a738b45e55">
+            <DataSourceViewID>DWH</DataSourceViewID>
+            <TableID>dbo_fct_troco_bt</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

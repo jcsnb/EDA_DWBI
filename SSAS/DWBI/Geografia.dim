@@ -1,0 +1,321 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a5b90804-cbac-4566-917a-75551ee0d854" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Geografia</ID>
+  <Name>Geografia</Name>
+  <CreatedTimestamp>2017-10-30T04:27:08.676667Z</CreatedTimestamp>
+  <LastSchemaUpdate>2017-10-30T04:27:08.676667Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1859" scrolltop="-5000" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8837" y="16536" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dim_geografia" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3757" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000ad0e0000ea120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dim_geografia" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1859</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5000</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>2017-10-30T04:27:09.943333Z</LastProcessed>
+  <State>Processed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="4bc2ea0c-4d11-4711-a6c4-f5107c4a2dc1">
+    <DataSourceViewID>DWH</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="3ead3142-3165-4bf1-a487-19ce0813286e">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Language>1033</Language>
+  <Collation>Latin1_General_CI_AS</Collation>
+  <UnknownMemberName>Unknown</UnknownMemberName>
+  <Attributes>
+    <Attribute dwd:design-time-name="acf432be-6472-4de8-a215-843967f051d4">
+      <ID>Sk Geografia</ID>
+      <Name>Freguesia</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d6303dbd-f89f-4583-83a6-607431952a90">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="02ced34f-05b9-461f-9b0f-8ac5130121ba">
+            <TableID>dbo_dim_geografia</TableID>
+            <ColumnID>sk_geografia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="4f8fc81b-f3b8-4cb0-b904-019b83d9f044">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3d071592-5f88-42c7-9cc9-fe6fdb73dc88">
+          <TableID>dbo_dim_geografia</TableID>
+          <ColumnID>descricao_completa_freguesia</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="1c5cfd4a-da9b-4305-ab7a-c0eccf6298d6">
+          <AttributeID>Area Freguesia</AttributeID>
+          <Name>Area Freguesia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e967a798-a2e7-4755-a2e5-3df422ca389b">
+          <AttributeID>Codigo Concelho</AttributeID>
+          <Name>Codigo Concelho</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a374c7f6-27fa-4f4a-9e11-1409391d2c2b">
+          <AttributeID>Codigo Ilha</AttributeID>
+          <Name>Codigo Ilha</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3755b826-3388-4145-b012-309e02184f93">
+          <AttributeID>Codigo Concelho 1</AttributeID>
+          <Name>Codigo Concelho 1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="16ddee7a-1cd5-40ed-be51-e183658a0763">
+          <AttributeID>Descricao Concelho</AttributeID>
+          <Name>Descrição de Concelho</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a1c0debd-2203-4cdb-b450-7eb7172ee840">
+          <AttributeID>Codigo Freguesia</AttributeID>
+          <Name>Código de Freguesia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b98e6b09-1a94-4639-9755-69de00954d13">
+          <AttributeID>Descricao Freguesia</AttributeID>
+          <Name>Descrição de Freguesia</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a73b5064-0244-467f-92d3-f76fd862083f">
+      <ID>Area Freguesia</ID>
+      <Name>Área de Freguesia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="557cf5ff-beb0-47f2-ad31-e9fd7ccb0ed0">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cba1cee7-d1b1-4e01-aaac-03a095738a38">
+            <TableID>dbo_dim_geografia</TableID>
+            <ColumnID>area_freguesia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="1b4a70f2-da1b-47b7-8a03-b1e1cb284fae">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="4c36bdbb-ea99-4ef1-ac6a-bc8fff70f1bf">
+          <TableID>dbo_dim_geografia</TableID>
+          <ColumnID>area_freguesia</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3fa06daf-86c7-4ad4-9f2c-5a2d5a2fefe9">
+      <ID>Codigo Concelho</ID>
+      <Name>Concelho</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2881b47f-47cf-45df-aa20-b7218103976b">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5e09da50-059e-4114-b959-753e5c1d6666">
+            <TableID>dbo_dim_geografia</TableID>
+            <ColumnID>codigo_concelho</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="09b56df4-ce5b-42e3-acb0-1cdf13e66c28">
+        <DataType>WChar</DataType>
+        <DataSize>109</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="03885bb3-aeb3-4b09-8187-e2a9d4f45292">
+          <TableID>dbo_dim_geografia</TableID>
+          <ColumnID>descricao_completa_concelho</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="284ae516-492e-4e62-87d9-6677c3d2b0c6">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3801c4b8-8665-4009-8c84-d1f8877b7436">
+          <TableID>dbo_dim_geografia</TableID>
+          <ColumnID>descricao_completa_concelho</ColumnID>
+        </Source>
+      </ValueColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ab5868e1-3a7b-495d-90f2-e9a9202c36f3">
+      <ID>Codigo Ilha</ID>
+      <Name>Ilha</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="acb53ae0-71fd-481d-b271-c69b4a7df90c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0017d0ff-97e2-4736-adb1-546dfb4174ef">
+            <TableID>dbo_dim_geografia</TableID>
+            <ColumnID>codigo_ilha</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="86778d9d-76e7-4a51-b9d3-20ccb221d608">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="1ad79568-d80f-490d-9eb9-675ab5f9df6e">
+          <TableID>dbo_dim_geografia</TableID>
+          <ColumnID>descricao_completa_ilha</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="f6dc52ef-451d-4e76-886d-af71156f4947">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="40bc1c23-00b3-401e-9512-854ec48c09d6">
+          <TableID>dbo_dim_geografia</TableID>
+          <ColumnID>descricao_ilha</ColumnID>
+        </Source>
+      </ValueColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="041b6b5c-554a-41f6-b7d8-709acea2458a">
+      <ID>Codigo Concelho 1</ID>
+      <Name>Código de Concelho</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1d78c96a-2033-4564-8364-e9c671c0fbd6">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ea7a9d40-a701-4dda-861e-abbfb2bb4b54">
+            <TableID>dbo_dim_geografia</TableID>
+            <ColumnID>codigo_concelho</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="99119493-8855-4d23-b311-28fd4a9b4747">
+      <ID>Descricao Concelho</ID>
+      <Name>Descrição de Concelho</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="73ecbf72-d59f-4fdf-805b-ca0bf2d0f01d">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e512a0e1-dca5-491b-bc96-1071211b64f9">
+            <TableID>dbo_dim_geografia</TableID>
+            <ColumnID>descricao_concelho</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d7a2e6bf-5a4a-4063-8d07-77d6609e612e">
+      <ID>Codigo Freguesia</ID>
+      <Name>Código de Freguesia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="58b5be16-dc5b-4fec-b3a1-6349e52866af">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f5ea54d2-c222-49a1-8014-c16e322d3761">
+            <TableID>dbo_dim_geografia</TableID>
+            <ColumnID>codigo_freguesia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c196748d-78d0-483e-b81c-c19c28611fc0">
+      <ID>Descricao Freguesia</ID>
+      <Name>Descrição de Freguesia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0f64a545-3360-400b-b2e0-a060cbd71348">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7e838212-1e59-4eea-9db4-9f239e362bad">
+            <TableID>dbo_dim_geografia</TableID>
+            <ColumnID>descricao_freguesia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="8078dc64-2ff9-4b0f-ba0b-f99688d2117a">
+      <ID>Hierarchy</ID>
+      <Name>Geografia</Name>
+      <AllMemberName>Total de Geografia</AllMemberName>
+      <Levels>
+        <Level dwd:design-time-name="b2f564d5-d49b-452d-9768-396e5f952993">
+          <ID>Ilha</ID>
+          <Name>Ilha</Name>
+          <SourceAttributeID>Codigo Ilha</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="534516d0-28ea-4ed9-81af-2000ec0493ff">
+          <ID>Concelho</ID>
+          <Name>Concelho</Name>
+          <SourceAttributeID>Codigo Concelho</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="b7e7536f-0756-4f49-a045-bd995bc1b887">
+          <ID>Freguesia</ID>
+          <Name>Freguesia</Name>
+          <SourceAttributeID>Sk Geografia</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ProactiveCaching dwd:design-time-name="79560572-d42c-44d5-8d83-5f23c2db52c5">
+    <SilenceInterval>-PT1S</SilenceInterval>
+    <Latency>-PT1S</Latency>
+    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="9882b964-4584-4d17-bb9a-1e59bfcb8668" />
+  </ProactiveCaching>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

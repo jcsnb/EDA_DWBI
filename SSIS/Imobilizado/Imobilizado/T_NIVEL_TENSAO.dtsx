@@ -1,0 +1,1231 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/28/2017 12:48:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LT123516"
+  DTS:CreatorName="NOVABASE\NB14865"
+  DTS:DTSID="{A10147B5-CD29-4314-969D-948D2B0F4850}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="T_NIVEL_TENSAO"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="106"
+  DTS:VersionGUID="{5910FAE8-75CD-4360-95FC-D193A069E484}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A3BA9797-09EA-4EA2-A43B-12C8C5FB458F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{55DD7340-83AB-4A4D-ACF6-6A29ED1062BA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1BCE2E19-D538-4460-821C-CEBC3EB602A6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{425A6992-B4D4-4C66-9B0B-6AF4A329BAF6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">(MDS) Modelo Geral | Entidade Nivel Tensão</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{53A13E78-33D7-4610-ADCE-467AEA31C807}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">t_nivel_tensao</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{60A4185A-0AD6-4834-B690-22F8B969AA1A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{44173E56-8A64-423D-A70F-5FEA3ABD6E1D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;&#x9;    numero_registos_inseridos = ?,&#xA;&#x9;&#x9;data_fim = CURRENT_TIMESTAMP,&#xA;&#x9;&#x9;duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;&#x9;&#x9;sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{22E60FD8-07F1-4E0E-BB0F-54687ADF8756}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{00B4509F-A21A-4DBA-9E4C-153097F43D88}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{F5A1D10F-31E0-47A2-B64B-8712882E25A7}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{762BFAAE-2D4E-4794-9A98-DB1F38619E8B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{97D78EA1-3FB0-483B-89E6-C0231E5E2BB6}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{536F953A-C60B-4294-9653-1A5D3A4A5B8D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{D3093FD4-CD6C-41C2-ACDC-09F20F04D1A8}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{4535501D-362E-4293-B7F6-D11015C8516B}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transformação para a dimensão Nível Tensão"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{C7EB4CF1-69C3-4AF3-82F5-DF9008DACA37}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transformação para a dimensão Nível Tensão">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Transformação para a dimensão Nível Tensão\Insere o registo Desconhecido"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E24D609F-BD84-4E46-8F00-5F41BEB0B5CC}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere o registo Desconhecido"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource=" INSERT INTO t_nivel_tensao(codigo_nivel_tensao,descricao_nivel_tensao,intervalo_inferior,intervalo_superior)&#xA;       VALUES ('DC','Desconhecido',null,null)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformação para a dimensão Nível Tensão\Limpeza da tabela de transformação"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TRUNCATE TABLE t_tempo"
+          DTS:DTSID="{EAB5DD6A-D9C7-4360-9AF2-B8E32E529815}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Limpeza da tabela de transformação"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="DECLARE @sql varchar(100)&#xA;SET @sql = 'TRUNCATE TABLE ' + ?&#xA;EXEC (@sql)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{CDF87F29-4B81-42F9-89BA-E2641EC60DE0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Transformação de dados para a dimensão Nível Tensão"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="e_nivel_tensao"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select	codigo_nivel_tensao,
+		descricao_nivel_tensao,
+		intervalo_inferior,
+		intervalo_superior
+from e_nivel_tensao</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].Columns[codigo_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[codigo_nivel_tensao]"
+                          length="3"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].Columns[codigo_nivel_tensao]"
+                          name="codigo_nivel_tensao"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].Columns[descricao_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[descricao_nivel_tensao]"
+                          length="50"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].Columns[descricao_nivel_tensao]"
+                          name="descricao_nivel_tensao"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_inferior]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[intervalo_inferior]"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_inferior]"
+                          name="intervalo_inferior"
+                          precision="38"
+                          scale="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_superior]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[intervalo_superior]"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_superior]"
+                          name="intervalo_superior"
+                          precision="38"
+                          scale="1"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[codigo_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="codigo_nivel_tensao" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[descricao_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="descricao_nivel_tensao" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[intervalo_inferior]"
+                          dataType="numeric"
+                          name="intervalo_inferior"
+                          precision="38"
+                          scale="1" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[intervalo_superior]"
+                          dataType="numeric"
+                          name="intervalo_superior"
+                          precision="38"
+                          scale="1" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[codigo_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[codigo_nivel_tensao]"
+                          name="codigo_nivel_tensao" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[descricao_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[descricao_nivel_tensao]"
+                          name="descricao_nivel_tensao" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[intervalo_inferior]"
+                          dataType="numeric"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[intervalo_inferior]"
+                          name="intervalo_inferior"
+                          precision="38"
+                          scale="1" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[intervalo_superior]"
+                          dataType="numeric"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[intervalo_superior]"
+                          name="intervalo_superior"
+                          precision="38"
+                          scale="1" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="t_nivel_tensao"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[t_nivel_tensao]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input].Columns[codigo_nivel_tensao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="codigo_nivel_tensao"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[codigo_nivel_tensao]"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].Columns[codigo_nivel_tensao]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input].Columns[descricao_nivel_tensao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="descricao_nivel_tensao"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[descricao_nivel_tensao]"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].Columns[descricao_nivel_tensao]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input].Columns[intervalo_inferior]"
+                          cachedDataType="numeric"
+                          cachedName="intervalo_inferior"
+                          cachedPrecision="38"
+                          cachedScale="1"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[intervalo_inferior]"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_inferior]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input].Columns[intervalo_superior]"
+                          cachedDataType="numeric"
+                          cachedName="intervalo_superior"
+                          cachedPrecision="38"
+                          cachedScale="1"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[intervalo_superior]"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_superior]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[codigo_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="codigo_nivel_tensao" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[descricao_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="descricao_nivel_tensao" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[intervalo_inferior]"
+                          dataType="numeric"
+                          name="intervalo_inferior"
+                          precision="38"
+                          scale="1" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[intervalo_superior]"
+                          dataType="numeric"
+                          name="intervalo_superior"
+                          precision="38"
+                          scale="1" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão.Paths[OLE DB Source Output]"
+                  endId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformação para a dimensão Nível Tensão.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{DC6BDDA5-C407-4FC2-994B-A31E45B971B8}"
+          DTS:From="Package\Transformação para a dimensão Nível Tensão\Limpeza da tabela de transformação"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformação para a dimensão Nível Tensão.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{536B9C1E-7E35-4C1F-9D7B-DE196337095E}"
+          DTS:From="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Transformação para a dimensão Nível Tensão\Insere o registo Desconhecido" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{45362679-B139-440C-A7E3-F88F53E08013}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Transformação para a dimensão Nível Tensão" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{E180E69C-924C-4899-AF74-48F5DD3E70F6}"
+      DTS:From="Package\Transformação para a dimensão Nível Tensão"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{B0E71D54-4BF4-4CE3-8701-B3CC61A06D91}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{9228A679-5342-4002-91C0-44A9ECB8EF88}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Envia Email"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{21630377-2090-44F5-9EF3-C6813E79A841}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Envia Email"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::remetente_email]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Ocorreu um erro no componente " + @[System::SourceName] + ", do processo " + @[System::PackageName] + ": " + "\n\r" +@[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">@[$Project::assunto_email_erros]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::destinatario_email_erros]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{4BDEEFBB-B2CB-478F-B881-07EAF97F22F6}"
+              SendMailTask:From="dwbi@eda.pt"
+              SendMailTask:To="pedro.soares@novabase.pt"
+              SendMailTask:Subject="Erro em processo de integração de dados"
+              SendMailTask:MessageSource="Ocorreu um erro no componente , do processo T_NIVEL_TENSAO: &#xA;&#xA;" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{51B1BA0A-8998-4F65-BED6-3F8229E57428}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere registo de erro"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="INSERT INTO log_erros (processo, componente, mensagem,codigo_execucao,data)&#xA;  VALUES (?,?,?,?,current_timestamp)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{0EEF9B37-B1CB-4CBB-BA14-62986CD0F6F6}"
+          DTS:From="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Envia Email" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="5.5,83" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="14.5,5" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          TopLeft="110,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="254,201"
+          Size="254,244"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="823,101" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="3,160" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="6,84" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="10,6" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="105,48">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          TopLeft="104.75,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250,220"
+          Size="250,263"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="40,95" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Transformação para a dimensão Nível Tensão\Insere o registo Desconhecido"
+          TopLeft="61,181" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\Transformação para a dimensão Nível Tensão\Limpeza da tabela de transformação"
+          TopLeft="46.5,16" />
+        <NodeLayout
+          Size="340,42"
+          Id="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão"
+          TopLeft="2,103" />
+        <EdgeLayout
+          Id="Package\Transformação para a dimensão Nível Tensão.PrecedenceConstraints[Constraint]"
+          TopLeft="173.75,58">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformação para a dimensão Nível Tensão.PrecedenceConstraints[Constraint 1]"
+          TopLeft="171.75,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="347,274"
+          Size="347,317"
+          Id="Package\Transformação para a dimensão Nível Tensão"
+          TopLeft="370,69" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="290,227">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80,0"
+              Start="0,0"
+              End="72.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="72.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="717,225.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="106,0"
+              Start="0,0"
+              End="98.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="98.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package.EventHandlers[OnError]\Envia Email"
+          TopLeft="84,162" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package.EventHandlers[OnError]\Insere registo de erro"
+          TopLeft="60,60" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="150.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao"
+          TopLeft="353.5,36.5" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao"
+          TopLeft="360,139" />
+        <EdgeLayout
+          Id="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão.Paths[OLE DB Source Output]"
+          TopLeft="430.75,78.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.5"
+              Start="0,0"
+              End="0,53">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\e_nivel_tensao">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformação para a dimensão Nível Tensão\Transformação de dados para a dimensão Nível Tensão\t_nivel_tensao">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

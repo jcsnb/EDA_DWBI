@@ -1,0 +1,50 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/26/2017 10:29:33 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DCDWBIQDDW00"
+  DTS:CreatorName="GRUPOEDA\ExtPwDBi02"
+  DTS:DTSID="{667E9F77-7D3B-4EA1-ACE4-335CF46DDEE2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{3B1F91B7-3174-4F36-80BD-9FB03DF6404C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <AnnotationLayout
+          Text="Esta tem que ser testada"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="159,40"
+          Id="b6ce98e3-90d3-4aeb-a025-33e7d8be9fc8"
+          TopLeft="140,151" />
+        <AnnotationLayout
+          Text="fjfdjdj"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="59,60"
+          Id="74bd95e2-6c51-4a99-9fb1-82ed27fdfa60"
+          TopLeft="417,149" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,1879 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/28/2017 12:48:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LT123516"
+  DTS:CreatorName="NOVABASE\NB14865"
+  DTS:DTSID="{BE4B916B-1B83-4F23-8372-516F2A6869D4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="L_NIVEL_TENSAO"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="139"
+  DTS:VersionGUID="{2F696433-9AA4-4C5E-B413-03688F76ADA6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D0811855-67C4-4241-B93C-24D47F202497}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8E5C22E3-A2D0-41B0-A85B-7252690C745A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_atualizados">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F5A7F87F-D52C-400E-B002-7FAF5B0841DE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DB67FBE3-5621-4AE3-AC59-065BD173A188}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DD4DBD0F-7171-445A-B16C-E259D522D7F4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inseridos">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{789C7F42-C2AF-4D88-BCA2-B1D1E9EEC898}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">(MDS) Modelo Geral | Entidade Nivel Tensão</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{688EFAAC-E055-4F41-9562-06AEC7F318FB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">dim_nivel_tensao</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carregamento da dimensão Nivel de Tensao"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{DCD604ED-E37A-47B6-BB5A-ABBE67C8F03B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carregamento da dimensão Nivel de Tensao">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{EDCDF27D-BA1A-4439-A8A3-297332639A47}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Carregamento da Dimensão"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="chave_auditoria"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria.Outputs[Derived Column Output].Columns[sk_auditoria]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria.Outputs[Derived Column Output].Columns[sk_auditoria]"
+                          name="sk_auditoria"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::chave_auditoria]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::chave_auditoria]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos atualizados"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Conta registos atualizados">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::numero_registos_atualizados</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos atualizados.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos atualizados.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos atualizados.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos inseridos"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Conta registos inseridos">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::numero_registos_inseridos</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos inseridos.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos inseridos.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos inseridos.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="dim_nivel_tensao"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[dim_nivel_tensao]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Connections[OleDbConnection]"
+                      connectionManagerID="{3C7B1FFB-933F-449D-B7BE-023614EA667A}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input].Columns[codigo_nivel_tensao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="codigo_nivel_tensao"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[codigo_nivel_tensao]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[codigo_nivel_tensao]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input].Columns[descricao_nivel_tensao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="descricao_nivel_tensao"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[descricao_nivel_tensao]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[descricao_nivel_tensao]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input].Columns[intervalo_inferior]"
+                          cachedDataType="numeric"
+                          cachedName="intervalo_inferior"
+                          cachedPrecision="38"
+                          cachedScale="1"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[intervalo_inferior]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_inferior]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input].Columns[intervalo_superior]"
+                          cachedDataType="numeric"
+                          cachedName="intervalo_superior"
+                          cachedPrecision="38"
+                          cachedScale="1"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[intervalo_superior]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_superior]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[sk_nivel_tensao]"
+                          dataType="i4"
+                          name="sk_nivel_tensao" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[codigo_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="codigo_nivel_tensao" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[descricao_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="descricao_nivel_tensao" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[intervalo_inferior]"
+                          dataType="numeric"
+                          name="intervalo_inferior"
+                          precision="38"
+                          scale="1" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input].ExternalColumns[intervalo_superior]"
+                          dataType="numeric"
+                          name="intervalo_superior"
+                          precision="38"
+                          scale="1" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[dim_nivel_tensao] SET [descricao_nivel_tensao] = ?,[intervalo_inferior] = ?,[intervalo_superior] = ? WHERE [codigo_nivel_tensao] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="{3C7B1FFB-933F-449D-B7BE-023614EA667A}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input].Columns[codigo_nivel_tensao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="codigo_nivel_tensao"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[codigo_nivel_tensao]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input].Columns[descricao_nivel_tensao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="descricao_nivel_tensao"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[descricao_nivel_tensao]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input].Columns[intervalo_inferior]"
+                          cachedDataType="numeric"
+                          cachedName="intervalo_inferior"
+                          cachedPrecision="38"
+                          cachedScale="1"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_inferior]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input].Columns[intervalo_superior]"
+                          cachedDataType="numeric"
+                          cachedName="intervalo_superior"
+                          cachedPrecision="38"
+                          cachedScale="1"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_superior]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="numeric"
+                          name="Param_1"
+                          precision="38"
+                          scale="1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="numeric"
+                          name="Param_2"
+                          precision="38"
+                          scale="1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension"
+                  componentClassID="Microsoft.SCD"
+                  contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+                  description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+                  name="Slowly Changing Dimension"
+                  version="3">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SELECT statement used to create a schema rowset."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [codigo_nivel_tensao], [descricao_nivel_tensao], [intervalo_inferior], [intervalo_superior] FROM [dbo].[dim_nivel_tensao]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                      name="CurrentRowWhere"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                      name="UpdateChangingAttributeHistory">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                      name="FailOnFixedAttributeChange">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the column name for the inferred member."
+                      name="InferredMemberIndicator"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether inferred member updates are detected."
+                      name="EnableInferredMember">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                      name="FailOnLookupFailure">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies that all rows in the input are new or the transformation detects the change type."
+                      name="IncomingRowChangeType"
+                      typeConverter="IncomingRowChangeType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Connections[LookupConnection]"
+                      connectionManagerID="{3C7B1FFB-933F-449D-B7BE-023614EA667A}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="Defines the connection to use for lookups in the dimension table"
+                      name="LookupConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                      name="Slowly Changing Dimension Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[codigo_nivel_tensao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="codigo_nivel_tensao"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[codigo_nivel_tensao]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[codigo_nivel_tensao]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[descricao_nivel_tensao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="descricao_nivel_tensao"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[descricao_nivel_tensao]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[descricao_nivel_tensao]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[intervalo_inferior]"
+                          cachedDataType="numeric"
+                          cachedName="intervalo_inferior"
+                          cachedPrecision="38"
+                          cachedScale="1"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[intervalo_inferior]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_inferior]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[intervalo_superior]"
+                          cachedDataType="numeric"
+                          cachedName="intervalo_superior"
+                          cachedPrecision="38"
+                          cachedScale="1"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[intervalo_superior]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_superior]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[codigo_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="codigo_nivel_tensao" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[descricao_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="descricao_nivel_tensao" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[intervalo_inferior]"
+                          dataType="numeric"
+                          name="intervalo_inferior"
+                          precision="38"
+                          scale="1" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[intervalo_superior]"
+                          dataType="numeric"
+                          name="intervalo_superior"
+                          precision="38"
+                          scale="1" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                      description="Unchanged rows"
+                      exclusionGroup="1"
+                      name="Unchanged Output"
+                      synchronousInputId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Outputs[New Output]"
+                      description="New rows"
+                      exclusionGroup="1"
+                      name="New Output"
+                      synchronousInputId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                      description="Rows with changes in columns tagged FixedAttribute"
+                      exclusionGroup="1"
+                      name="Fixed Attribute Output"
+                      synchronousInputId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                      description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                      exclusionGroup="1"
+                      name="Changing Attribute Updates Output"
+                      synchronousInputId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                      description="HistoricalAttribute (Type 2) changes result in these new rows"
+                      exclusionGroup="2"
+                      name="Historical Attribute Inserts Output"
+                      synchronousInputId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                      description="Information to update unpopulated initial dimension row"
+                      exclusionGroup="1"
+                      name="Inferred Member Updates Output"
+                      synchronousInputId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="t_nivel_tensao"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select	codigo_nivel_tensao,
+		descricao_nivel_tensao,
+		intervalo_inferior,
+		intervalo_superior
+from t_nivel_tensao
+ORDER BY intervalo_inferior</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[codigo_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[codigo_nivel_tensao]"
+                          length="3"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[codigo_nivel_tensao]"
+                          name="codigo_nivel_tensao"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[descricao_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[descricao_nivel_tensao]"
+                          length="50"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[descricao_nivel_tensao]"
+                          name="descricao_nivel_tensao"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_inferior]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[intervalo_inferior]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_inferior]"
+                          name="intervalo_inferior"
+                          precision="38"
+                          scale="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_superior]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[intervalo_superior]"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_superior]"
+                          name="intervalo_superior"
+                          precision="38"
+                          scale="1"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[codigo_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="codigo_nivel_tensao" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[descricao_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="descricao_nivel_tensao" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[intervalo_inferior]"
+                          dataType="numeric"
+                          name="intervalo_inferior"
+                          precision="38"
+                          scale="1" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output].ExternalColumns[intervalo_superior]"
+                          dataType="numeric"
+                          name="intervalo_superior"
+                          precision="38"
+                          scale="1" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[codigo_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[codigo_nivel_tensao]"
+                          name="codigo_nivel_tensao" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[descricao_nivel_tensao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[descricao_nivel_tensao]"
+                          name="descricao_nivel_tensao" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[intervalo_inferior]"
+                          dataType="numeric"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[intervalo_inferior]"
+                          name="intervalo_inferior"
+                          precision="38"
+                          scale="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[intervalo_superior]"
+                          dataType="numeric"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[intervalo_superior]"
+                          name="intervalo_superior"
+                          precision="38"
+                          scale="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão.Paths[Changing Attribute Updates Output]"
+                  endId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos atualizados.Inputs[Row Count Input 1]"
+                  name="Changing Attribute Updates Output"
+                  startId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+                <path
+                  refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão.Paths[Derived Column Output]"
+                  endId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Derived Column Output"
+                  startId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão.Paths[New Output]"
+                  endId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos inseridos.Inputs[Row Count Input 1]"
+                  name="New Output"
+                  startId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension.Outputs[New Output]" />
+                <path
+                  refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão.Paths[OLE DB Source Output]"
+                  endId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão.Paths[Row Count Output 1]"
+                  endId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos atualizados.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão.Paths[Row Count Output 11]"
+                  endId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos inseridos.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{730674DB-74E3-4AC5-8B51-DDE528140ABE}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{EE6F56B1-6D38-43A4-A619-406936C45821}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;  numero_registos_atualizados = ?,&#xA;     numero_registos_inseridos = ?,&#xA;  data_fim = CURRENT_TIMESTAMP,&#xA;  duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;  sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_atualizados"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::numero_registos_inseridos"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{663CA739-0D58-40C1-AC9B-67B313884E56}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{8FDBE95A-3BFE-42C7-A154-550E27FE938C}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{EE51E00F-A0C0-4F94-9E14-3F77476F01F2}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CD16ACF1-DA63-44A4-9908-9579F8156D69}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{D6133650-EDA3-4334-8F80-F2D37FEAC6FB}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9276D60E-DCAD-4FE4-AE3C-944FEB4D12A5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{CE90EF21-874B-4ED4-849A-18CC755B6AE1}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{EA15AD35-334D-4D26-B03A-237A415BA3C8}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{25DEE9CB-6714-4F10-903F-B651D201DB2D}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carregamento da dimensão Nivel de Tensao" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{85A9A04F-B195-4B0F-B91B-DC5A15ADD956}"
+      DTS:From="Package\Carregamento da dimensão Nivel de Tensao"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{27BFED1C-4B6E-40D6-946F-01F82FF1B6C9}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{8B21ADF9-4A69-49BC-B8A8-830D026C216D}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Envia Email"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{F85DB9C2-5A76-46AA-9D89-B1AF5B5EBAFA}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Envia Email"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::remetente_email]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Ocorreu um erro no componente " + @[System::SourceName] + ", do processo " + @[System::PackageName] + ": " + "\n\r" +@[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">@[$Project::assunto_email_erros]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::destinatario_email_erros]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{4BDEEFBB-B2CB-478F-B881-07EAF97F22F6}"
+              SendMailTask:From="dwbi@eda.pt"
+              SendMailTask:To="pedro.soares@novabase.pt"
+              SendMailTask:Subject="Erro em processo de integração de dados"
+              SendMailTask:MessageSource="Ocorreu um erro no componente , do processo L_NIVEL_TENSAO: &#xA;&#xA;" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{91663FD1-CB58-45AB-AEE7-87A42BD21B1D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere registo de erro"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="INSERT INTO log_erros (processo, componente, mensagem,codigo_execucao,data)&#xA;  VALUES (?,?,?,?,current_timestamp)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{B525F217-3607-4D4F-87CD-2390441F3616}"
+          DTS:From="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Envia Email" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão"
+          TopLeft="51.5,49.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="319,155"
+          Size="319,198"
+          Id="Package\Carregamento da dimensão Nivel de Tensao"
+          TopLeft="394.5,175" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="5.50000000000001,107.5" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="15.5,4.5" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          TopLeft="110.5,46.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="254,205"
+          Size="254,248"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="817.5,149" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="9,107.5" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="12,5.5" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="107.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          TopLeft="107.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="247,307"
+          Size="247,350"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="60,98" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="307,273.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87.5,0"
+              Start="0,0"
+              End="80,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="80,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="713.5,273.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104,0"
+              Start="0,0"
+              End="96.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="96.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package.EventHandlers[OnError]\Envia Email"
+          TopLeft="84,162" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package.EventHandlers[OnError]\Insere registo de erro"
+          TopLeft="60,60" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="150.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao"
+          TopLeft="189.5,5.5" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos inseridos"
+          TopLeft="43.5,312.5" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Conta registos atualizados"
+          TopLeft="331,311.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension"
+          TopLeft="158.5,209.5" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\chave_auditoria"
+          TopLeft="186.5,107.5" />
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão.Paths[OLE DB Source Output]"
+          TopLeft="263,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão.Paths[Derived Column Output]"
+          TopLeft="263,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao"
+          TopLeft="60.5,394.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\OLE DB Command"
+          TopLeft="347,400.5" />
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão.Paths[Changing Attribute Updates Output]"
+          TopLeft="296.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="135.5,59.9999999999999"
+              Start="0,0"
+              End="135.5,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2735042735042" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2735042735042"
+                    Point2="0,24.2735042735042"
+                    Point3="4,24.2735042735042" />
+                  <mssgle:LineSegment
+                    End="131.5,24.2735042735042" />
+                  <mssgle:CubicBezierSegment
+                    Point1="131.5,24.2735042735042"
+                    Point2="135.5,24.2735042735042"
+                    Point3="135.5,28.2735042735042" />
+                  <mssgle:LineSegment
+                    End="135.5,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-10.7839062500001,29.2735042735042,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão.Paths[Row Count Output 1]"
+          TopLeft="431,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão.Paths[New Output]"
+          TopLeft="229.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-90.5000000000001,60.9999999999999"
+              Start="0,0"
+              End="-90.5000000000001,53.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.6780626780626" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.6780626780626"
+                    Point2="0,24.6780626780626"
+                    Point3="-4,24.6780626780626" />
+                  <mssgle:LineSegment
+                    End="-86.5000000000001,24.6780626780626" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-86.5000000000001,24.6780626780626"
+                    Point2="-90.5000000000001,24.6780626780626"
+                    Point3="-90.5000000000001,28.6780626780626" />
+                  <mssgle:LineSegment
+                    End="-90.5000000000001,53.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-72.34138671875,29.6780626780626,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão.Paths[Row Count Output 11]"
+          TopLeft="140,354.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.0000000000001"
+              Start="0,0"
+              End="0,32.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\t_nivel_tensao">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{3C7B1FFB-933F-449D-B7BE-023614EA667A}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[dim_nivel_tensao]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;t_nivel_tensao.Outputs[OLE DB Source Output].Columns[codigo_nivel_tensao]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;codigo_nivel_tensao&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;t_nivel_tensao.Outputs[OLE DB Source Output].Columns[descricao_nivel_tensao]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;descricao_nivel_tensao&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;t_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_inferior]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;intervalo_inferior&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;t_nivel_tensao.Outputs[OLE DB Source Output].Columns[intervalo_superior]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;intervalo_superior&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da dimensão Nivel de Tensao\Carregamento da Dimensão\dim_nivel_tensao">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

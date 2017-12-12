@@ -1,0 +1,1231 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/28/2017 12:48:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LT123516"
+  DTS:CreatorName="NOVABASE\NB14865"
+  DTS:DTSID="{012125D1-8956-4B99-9CC3-BEBDA2C196E6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="T_TIPO_MOVIMENTO_IMOBILIZADO"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="129"
+  DTS:VersionGUID="{354A28DF-04BE-41EB-B284-F99C757D7CA9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A78561DA-65B1-4A2C-BE3A-755246CC595E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{954F2F4E-11BC-4104-821B-4351DD622199}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5D68388D-D62D-4FB6-BB2D-9B4FC607FF55}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ACA50A96-AA95-44B7-BF58-685D4F8095C7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">SAP - Tabelas TABW, TABWT e TABWH</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0353B78D-6BA4-4697-BCD1-7767AC8A0FB8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">t_tipo_movimento_imobilizado</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{340059AA-1D35-4618-8E64-544F080B76AE}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{72F004EA-676F-44FF-ACA5-195AB86B1640}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;&#x9;    numero_registos_inseridos = ?,&#xA;&#x9;&#x9;data_fim = CURRENT_TIMESTAMP,&#xA;&#x9;&#x9;duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;&#x9;&#x9;sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CB238DD7-E5A0-4571-9529-08303BD486F1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{F7C354DC-4395-4E2F-B79D-33026E5C46CC}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{4CF4041C-EBAD-494A-B989-C8F77D6671B8}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{512E870E-68B1-4E29-A4FB-9B2CDB7A5C93}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5A272856-173C-4568-9A03-4588B4EB38DC}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E0A4C493-2F74-4A0B-901B-6C37ED288CBF}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{6CC9DFA5-7051-42D7-A0CC-BDB36C09994B}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{71200679-7CAA-4142-B8C2-1C11840CDEB5}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{8E4381CD-3D01-4958-90B4-4804F73A917B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transformação para a dimensão Tipo Movimento de Imobilizado">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Insere o registo Desconhecido"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{BE29EFE5-3D12-484B-9D34-0CFB3BE72283}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere o registo Desconhecido"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="USE [STG]&#xA;GO&#xA;&#xA;INSERT INTO [dbo].[t_tipo_movimento_imobilizado]&#xA;           ([codigo_tipo_movimento_imobilizado]&#xA;           ,[descricao_tipo_movimento_imobilizado]&#xA;           ,[codigo_grupo_movimento_imobilizado]&#xA;           ,[descricao_grupo_movimento_imobilizado])&#xA;     VALUES&#xA;           ('XXX','Desconhecido','XX','Desconhecido')&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Limpeza da tabela de transformação"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TRUNCATE TABLE t_tempo"
+          DTS:DTSID="{F07281D8-8565-4134-A57B-4543AE58838D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Limpeza da tabela de transformação"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="DECLARE @sql varchar(100)&#xA;SET @sql = 'TRUNCATE TABLE ' + ?&#xA;EXEC (@sql)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{ED6C29A8-4A68-478E-AF58-B27C2C80B1F3}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Transformação de dados para a dimensão Tipo de Movimento de Imobilizado"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="e_tipo_movimento_imobilizado"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select	codigo_tipo_movimento_imobilizado,
+		descricao_tipo_movimento_imobilizado,
+		codigo_grupo_movimento_imobilizado,
+		descricao_grupo_movimento_imobilizado
+from e_tipo_movimento_imobilizado</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].ExternalColumns[codigo_tipo_movimento_imobilizado]"
+                          length="3"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          name="codigo_tipo_movimento_imobilizado"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].ExternalColumns[descricao_tipo_movimento_imobilizado]"
+                          length="50"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          name="descricao_tipo_movimento_imobilizado"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].ExternalColumns[codigo_grupo_movimento_imobilizado]"
+                          length="2"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          name="codigo_grupo_movimento_imobilizado"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].Columns[descricao_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].ExternalColumns[descricao_grupo_movimento_imobilizado]"
+                          length="40"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].Columns[descricao_grupo_movimento_imobilizado]"
+                          name="descricao_grupo_movimento_imobilizado"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].ExternalColumns[codigo_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="codigo_tipo_movimento_imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].ExternalColumns[descricao_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="descricao_tipo_movimento_imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].ExternalColumns[codigo_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="codigo_grupo_movimento_imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].ExternalColumns[descricao_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="descricao_grupo_movimento_imobilizado" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Error Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Error Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          name="codigo_tipo_movimento_imobilizado" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Error Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Error Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          name="descricao_tipo_movimento_imobilizado" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Error Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Error Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          name="codigo_grupo_movimento_imobilizado" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Error Output].Columns[descricao_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Error Output].Columns[descricao_grupo_movimento_imobilizado]"
+                          name="descricao_grupo_movimento_imobilizado" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="t_tipo_movimento_imobilizado"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[t_tipo_movimento_imobilizado]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">10000</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].Columns[codigo_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="codigo_tipo_movimento_imobilizado"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[codigo_tipo_movimento_imobilizado]"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].Columns[codigo_tipo_movimento_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].Columns[descricao_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="descricao_tipo_movimento_imobilizado"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[descricao_tipo_movimento_imobilizado]"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].Columns[descricao_tipo_movimento_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].Columns[codigo_grupo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="codigo_grupo_movimento_imobilizado"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[codigo_grupo_movimento_imobilizado]"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].Columns[codigo_grupo_movimento_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].Columns[descricao_grupo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="descricao_grupo_movimento_imobilizado"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[descricao_grupo_movimento_imobilizado]"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output].Columns[descricao_grupo_movimento_imobilizado]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[codigo_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="codigo_tipo_movimento_imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[descricao_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="descricao_tipo_movimento_imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[codigo_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="codigo_grupo_movimento_imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[descricao_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="descricao_grupo_movimento_imobilizado" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado.Paths[OLE DB Source Output]"
+                  endId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{4B1532F1-F381-45E1-A1CF-BFA63E5ECC68}"
+          DTS:From="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Limpeza da tabela de transformação"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformação para a dimensão Tipo Movimento de Imobilizado.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{52AE9B86-52FE-4547-826D-8B1B5932C143}"
+          DTS:From="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Insere o registo Desconhecido" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A25244B8-11B6-49FE-8CDF-0FA84FD7AFF8}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Transformação para a dimensão Tipo Movimento de Imobilizado" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{6F5C4CE5-5EDA-46FB-9AEB-196B83840FD2}"
+      DTS:From="Package\Transformação para a dimensão Tipo Movimento de Imobilizado"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{0B552CF2-D010-433C-8741-5B6C12193AB4}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{BBFCEFF5-3FC7-46DA-8727-A181611ADCBE}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Envia Email"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{BC024436-7D0E-4E4F-A20C-1A9A14B1960E}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Envia Email"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::remetente_email]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Ocorreu um erro no componente " + @[System::SourceName] + ", do processo " + @[System::PackageName] + ": " + "\n\r" +@[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">@[$Project::assunto_email_erros]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::destinatario_email_erros]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{4BDEEFBB-B2CB-478F-B881-07EAF97F22F6}"
+              SendMailTask:From="dwbi@eda.pt"
+              SendMailTask:To="pedro.soares@novabase.pt"
+              SendMailTask:Subject="Erro em processo de integração de dados"
+              SendMailTask:MessageSource="Ocorreu um erro no componente , do processo T_TIPO_MOVIMENTO_IMOBILIZADO: &#xA;&#xA;" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{59CDBF62-08E3-4F05-BB1A-DF58B949144C}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere registo de erro"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="INSERT INTO log_erros (processo, componente, mensagem,codigo_execucao,data)&#xA;  VALUES (?,?,?,?,current_timestamp)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{8CD638E2-0994-4F15-B590-C5FD2579BC17}"
+          DTS:From="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Envia Email" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="5.5,83" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="14.5,5" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          TopLeft="110,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="254,142"
+          Size="254,185"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="800,108" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="3,160" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="6,84" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="10,6" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="105,48">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          TopLeft="104.75,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250,220"
+          Size="250,263"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="46,72" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Insere o registo Desconhecido"
+          TopLeft="55,180" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Limpeza da tabela de transformação"
+          TopLeft="36.5,10" />
+        <NodeLayout
+          Size="281,42"
+          Id="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado"
+          TopLeft="22,95" />
+        <EdgeLayout
+          Id="Package\Transformação para a dimensão Tipo Movimento de Imobilizado.PrecedenceConstraints[Constraint]"
+          TopLeft="164,52">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformação para a dimensão Tipo Movimento de Imobilizado.PrecedenceConstraints[Constraint 1]"
+          TopLeft="164,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="339,282"
+          Size="339,325"
+          Id="Package\Transformação para a dimensão Tipo Movimento de Imobilizado"
+          TopLeft="370,40" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="296,203">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,0"
+              Start="0,0"
+              End="66.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="709,201.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91,0"
+              Start="0,0"
+              End="83.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="83.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package.EventHandlers[OnError]\Envia Email"
+          TopLeft="84,162" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package.EventHandlers[OnError]\Insere registo de erro"
+          TopLeft="60,60" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="150.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado"
+          TopLeft="374,135" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado"
+          TopLeft="376,40" />
+        <EdgeLayout
+          Id="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado.Paths[OLE DB Source Output]"
+          TopLeft="487,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\e_tipo_movimento_imobilizado">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformação para a dimensão Tipo Movimento de Imobilizado\Transformação de dados para a dimensão Tipo de Movimento de Imobilizado\t_tipo_movimento_imobilizado">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

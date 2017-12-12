@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Staging Area"
+  DTS:DTSID="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=10.13.50.67\DWBIDEV;User ID=nb14865;Initial Catalog=STG;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Packet Size=32767;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="VYgFpYqEAA=="
+        p4:IV="Yi22HE3WR4E=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">GF9mr5iTehR8DiIozx1aB2UZb9KBBnlW+IIpopZ+5m6Xi9sMIjFOid2BxzfQCZHhNzyO+1ITopqjr7d0I0/aGXJxrGrv86amHna2H/acMN3eaJbCcGX7bCmzoRU/aPFUc4SzangMgXXhQR2GXRl5EOBRrNAXoSCJ</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

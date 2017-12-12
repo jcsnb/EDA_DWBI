@@ -1,0 +1,324 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a51fe0ae-aa73-4344-8678-aca613e4bbb5" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Barramento</ID>
+  <Name>Barramento</Name>
+  <CreatedTimestamp>0001-01-01T01:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T01:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-708" scrolltop="-2752" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8229" y="12594" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dim_barramento" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4921" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00003913000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dim_barramento" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-708</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-2752</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T01:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="435b0bea-66c4-49bf-a7ff-926a389076c5">
+    <DataSourceViewID>DWH</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="e8a3620a-4530-4396-a2aa-16506355a5bf">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="3f8bb3ad-e434-4e70-942b-48fef6587851">
+      <ID>Sk Barramento</ID>
+      <Name>Código EDA</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b0347397-5593-4adf-b07d-90b8cfd2d421">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="92336345-9e76-4c47-9458-010921a54b40">
+            <TableID>dbo_dim_barramento</TableID>
+            <ColumnID>sk_barramento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="36c3a520-c60a-4c02-9210-f558213b64ea">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b96fdc7f-b28c-4248-b2c3-d0928ac37273">
+          <TableID>dbo_dim_barramento</TableID>
+          <ColumnID>codigo_eda</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="b688402f-ff90-4784-aea2-31e8cd8f3120">
+          <AttributeID>Nome Barramento</AttributeID>
+          <Name>Nome Barramento</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0d239375-c2eb-49bc-abd8-4cbaece5b4b5">
+          <AttributeID>Tipo Barramento</AttributeID>
+          <Name>Tipo Barramento</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8c480ab4-573b-4258-946c-d7e9b4acd2aa">
+          <AttributeID>Ano Fabrico</AttributeID>
+          <Name>Ano Fabrico</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9f3ec392-d75e-4653-8f3f-a613ae3cc541">
+          <AttributeID>Codigo Freguesia</AttributeID>
+          <Name>Codigo Freguesia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3dbf32a1-8e2c-40db-a573-8fae56b7b9a7">
+          <AttributeID>Situacao</AttributeID>
+          <Name>Situacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8ad1637c-5c6f-4fc8-a135-1a10d4eb29eb">
+          <AttributeID>Tensao Nominal</AttributeID>
+          <Name>Tensao Nominal</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4fe37cb5-d18a-48df-97e1-dca13a6db385">
+          <AttributeID>Corrente Nominal</AttributeID>
+          <Name>Corrente Nominal</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="43c7e409-2c6b-4549-bd81-02a0d321e8fc">
+          <AttributeID>Corrente Curto Circuito</AttributeID>
+          <Name>Corrente Curto Circuito</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="09f004ea-1f7f-41f3-9e24-08433cdbe8a0">
+          <AttributeID>Atual</AttributeID>
+          <Name>Atual</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8ebf7227-f705-4612-9e74-4a81fe434d2d">
+          <AttributeID>Codigo Eda</AttributeID>
+          <Name>Codigo referencia</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="47f0da90-4df9-4716-8984-b38f3ff0bd22">
+      <ID>Nome Barramento</ID>
+      <Name>Nome Barramento</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="50ea75b8-1857-4a72-a0b4-a72231a8be99">
+          <DataType>WChar</DataType>
+          <DataSize>150</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a71236c3-b775-42f1-b09e-d1ef1fab7c84">
+            <TableID>dbo_dim_barramento</TableID>
+            <ColumnID>nome_barramento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="16cea761-abdb-448f-9fa3-5fd1ec528c72">
+      <ID>Tipo Barramento</ID>
+      <Name>Tipo Barramento</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6941c6ca-a0e2-4207-8ce6-d98211d4cc65">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d646d4f4-7dfa-4da0-bda6-572c1beab5a7">
+            <TableID>dbo_dim_barramento</TableID>
+            <ColumnID>tipo_barramento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8782bd35-e110-434e-97d7-946948c750c7">
+      <ID>Ano Fabrico</ID>
+      <Name>Ano Fabrico</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="37fc345e-1997-40b4-8c55-c7ebee8981e6">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="50cc773f-3b79-4258-a064-5c9a01efd8a3">
+            <TableID>dbo_dim_barramento</TableID>
+            <ColumnID>ano_fabrico</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d6582e6d-3833-42c4-96d3-51dc69e32632">
+      <ID>Codigo Freguesia</ID>
+      <Name>Codigo Freguesia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="eab62834-5835-462a-9ac3-5f96d531d172">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="caa20700-6ef4-4c51-8c46-c702a8fa9f97">
+            <TableID>dbo_dim_barramento</TableID>
+            <ColumnID>codigo_freguesia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="122e7908-6af2-4852-8653-9cfb98e69104">
+      <ID>Situacao</ID>
+      <Name>Situacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5837cd8c-0796-462f-8e13-3924f3294fe5">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5000d2db-8fc4-4df5-bbab-95e34e459416">
+            <TableID>dbo_dim_barramento</TableID>
+            <ColumnID>situacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ede08f2f-0b30-4254-8d2d-e6413ac5ab48">
+      <ID>Tensao Nominal</ID>
+      <Name>Tensao Nominal</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="818f3865-d344-4a21-b289-9d3b501b2635">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="46083cfe-f87b-4911-8c9b-cabc72f76d5c">
+            <TableID>dbo_dim_barramento</TableID>
+            <ColumnID>tensao_nominal</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="234df562-2400-49de-9c08-87b235b9c5dd">
+      <ID>Corrente Nominal</ID>
+      <Name>Corrente Nominal</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8e7e729f-eb09-4cc4-901b-77341b258663">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5cb84fd4-252c-4a5e-a8b0-d2d3fee1d85a">
+            <TableID>dbo_dim_barramento</TableID>
+            <ColumnID>corrente_nominal</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="49468670-65f0-4cdd-8e28-4356042f0ee7">
+      <ID>Corrente Curto Circuito</ID>
+      <Name>Corrente Curto Circuito</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5ac42ca6-e8fb-40a5-a309-7c19caec0779">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c430f025-a415-4bf7-9249-9dd35a059b31">
+            <TableID>dbo_dim_barramento</TableID>
+            <ColumnID>corrente_curto_circuito</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="43ccc0d2-82fb-42ba-8975-54655f668b4c">
+      <ID>Atual</ID>
+      <Name>Atual</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f741cbcc-91ca-435c-8f90-309e9edab934">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="74185f69-e769-472f-93d1-936f3076dbb1">
+            <TableID>dbo_dim_barramento</TableID>
+            <ColumnID>atual</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9be8ddec-1d06-4c32-85b5-2c0b57406ac0">
+      <ID>Codigo Eda</ID>
+      <Name>Codigo referencia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="960370bf-e87b-41c4-95ab-82baf764ba29">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="273d104e-822d-4bd3-b032-e4c7b946975d">
+            <TableID>dbo_dim_barramento</TableID>
+            <ColumnID>codigo_eda</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

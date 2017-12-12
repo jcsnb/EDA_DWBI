@@ -1,0 +1,1536 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/28/2017 12:48:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LT123516"
+  DTS:CreatorName="NOVABASE\NB14865"
+  DTS:DTSID="{4646B3DD-326A-426E-9385-837BF18F8E33}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="E_GEOGRAFIA"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="133"
+  DTS:VersionGUID="{66943EAB-8677-48F6-BAB0-05E319D9F399}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8B61170A-AB52-4C0F-8034-ACBE09603F58}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A8C66734-D96B-47CC-A6D7-FCA9548B79C0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BE9EF687-C1A1-4164-AC72-8B403C8F6632}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{91775CA1-D83C-4975-9099-EA4D395EF27D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">Master Data Services</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{38FD18C9-5C21-4C43-A3C7-940FB27421A5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">e_geografia</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Criação dos registos da Dimensão Tempo"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{8C1EC3FB-795F-485E-BCA3-DEC96620374B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Criação dos registos da Dimensão Tempo">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{3470CEF4-FEF3-4F48-9DF5-CFAF9F43DF18}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Extração de dados do MDS - Geografia"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Conversão de dados"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Inputs[Data Conversion Input].Columns[codigo_freguesia]"
+                          cachedDataType="numeric"
+                          cachedName="codigo_freguesia"
+                          cachedPrecision="38"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[codigo_freguesia]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Inputs[Data Conversion Input].Columns[descricao_freguesia]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="descricao_freguesia"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[descricao_freguesia]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Inputs[Data Conversion Input].Columns[area_freguesia]"
+                          cachedDataType="numeric"
+                          cachedName="area_freguesia"
+                          cachedPrecision="38"
+                          cachedScale="7"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[area_freguesia]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Inputs[Data Conversion Input].Columns[codigo_concelho]"
+                          cachedDataType="numeric"
+                          cachedName="codigo_concelho"
+                          cachedPrecision="38"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[codigo_concelho]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Inputs[Data Conversion Input].Columns[descricao_concelho]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="descricao_concelho"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[descricao_concelho]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Inputs[Data Conversion Input].Columns[codigo_ilha]"
+                          cachedDataType="numeric"
+                          cachedName="codigo_ilha"
+                          cachedPrecision="38"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[codigo_ilha]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Inputs[Data Conversion Input].Columns[descricao_ilha]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="descricao_ilha"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[descricao_ilha]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_codigo_freguesia]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_codigo_freguesia]"
+                          name="c_codigo_freguesia"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[codigo_freguesia]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_descricao_freguesia]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_descricao_freguesia]"
+                          name="c_descricao_freguesia"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[descricao_freguesia]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_area_freguesia]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_area_freguesia]"
+                          name="c_area_freguesia"
+                          precision="38"
+                          scale="7"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[area_freguesia]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_codigo_concelho]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_codigo_concelho]"
+                          name="c_codigo_concelho"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[codigo_concelho]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_descricao_concelho]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_descricao_concelho]"
+                          name="c_descricao_concelho"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[descricao_concelho]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_codigo_ilha]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_codigo_ilha]"
+                          name="c_codigo_ilha"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[codigo_ilha]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_descricao_ilha]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_descricao_ilha]"
+                          name="c_descricao_ilha"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[descricao_ilha]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="e_geografia"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[e_geografia]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">10000</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].Columns[c_codigo_freguesia]"
+                          cachedDataType="i4"
+                          cachedName="c_codigo_freguesia"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[codigo_freguesia]"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_codigo_freguesia]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].Columns[c_descricao_freguesia]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="c_descricao_freguesia"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[descricao_freguesia]"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_descricao_freguesia]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].Columns[c_area_freguesia]"
+                          cachedDataType="numeric"
+                          cachedName="c_area_freguesia"
+                          cachedPrecision="38"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[area_freguesia]"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_area_freguesia]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].Columns[c_codigo_concelho]"
+                          cachedDataType="i4"
+                          cachedName="c_codigo_concelho"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[codigo_concelho]"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_codigo_concelho]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].Columns[c_descricao_concelho]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="c_descricao_concelho"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[descricao_concelho]"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_descricao_concelho]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].Columns[c_codigo_ilha]"
+                          cachedDataType="i4"
+                          cachedName="c_codigo_ilha"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[codigo_ilha]"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_codigo_ilha]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].Columns[c_descricao_ilha]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="c_descricao_ilha"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[descricao_ilha]"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output].Columns[c_descricao_ilha]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[codigo_freguesia]"
+                          dataType="i4"
+                          name="codigo_freguesia" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[descricao_freguesia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="descricao_freguesia" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[area_freguesia]"
+                          dataType="numeric"
+                          name="area_freguesia"
+                          precision="38"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[codigo_concelho]"
+                          dataType="i4"
+                          name="codigo_concelho" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[descricao_concelho]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="descricao_concelho" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[codigo_ilha]"
+                          dataType="i4"
+                          name="codigo_ilha" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input].ExternalColumns[descricao_ilha]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="descricao_ilha" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="MDS - Geografia"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT	codigo_freguesia,
+		descricao_freguesia,
+		area_freguesia,
+		codigo_concelho,
+		descricao_concelho,
+		codigo_ilha,
+		descricao_ilha
+  FROM MDS.mdm.Geografia</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Connections[OleDbConnection]"
+                      connectionManagerID="{24EECBBF-8EF1-4AAB-8A87-789849462946}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Master Data Services]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[codigo_freguesia]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[codigo_freguesia]"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[codigo_freguesia]"
+                          name="codigo_freguesia"
+                          precision="38"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[descricao_freguesia]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[descricao_freguesia]"
+                          length="100"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[descricao_freguesia]"
+                          name="descricao_freguesia"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[area_freguesia]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[area_freguesia]"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[area_freguesia]"
+                          name="area_freguesia"
+                          precision="38"
+                          scale="7"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[codigo_concelho]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[codigo_concelho]"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[codigo_concelho]"
+                          name="codigo_concelho"
+                          precision="38"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[descricao_concelho]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[descricao_concelho]"
+                          length="100"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[descricao_concelho]"
+                          name="descricao_concelho"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[codigo_ilha]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[codigo_ilha]"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[codigo_ilha]"
+                          name="codigo_ilha"
+                          precision="38"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[descricao_ilha]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[descricao_ilha]"
+                          length="100"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].Columns[descricao_ilha]"
+                          name="descricao_ilha"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[codigo_freguesia]"
+                          dataType="numeric"
+                          name="codigo_freguesia"
+                          precision="38" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[descricao_freguesia]"
+                          dataType="wstr"
+                          length="100"
+                          name="descricao_freguesia" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[area_freguesia]"
+                          dataType="numeric"
+                          name="area_freguesia"
+                          precision="38"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[codigo_concelho]"
+                          dataType="numeric"
+                          name="codigo_concelho"
+                          precision="38" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[descricao_concelho]"
+                          dataType="wstr"
+                          length="100"
+                          name="descricao_concelho" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[codigo_ilha]"
+                          dataType="numeric"
+                          name="codigo_ilha"
+                          precision="38" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output].ExternalColumns[descricao_ilha]"
+                          dataType="wstr"
+                          length="100"
+                          name="descricao_ilha" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[codigo_freguesia]"
+                          dataType="numeric"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[codigo_freguesia]"
+                          name="codigo_freguesia"
+                          precision="38" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[descricao_freguesia]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[descricao_freguesia]"
+                          name="descricao_freguesia" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[area_freguesia]"
+                          dataType="numeric"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[area_freguesia]"
+                          name="area_freguesia"
+                          precision="38"
+                          scale="7" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[codigo_concelho]"
+                          dataType="numeric"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[codigo_concelho]"
+                          name="codigo_concelho"
+                          precision="38" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[descricao_concelho]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[descricao_concelho]"
+                          name="descricao_concelho" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[codigo_ilha]"
+                          dataType="numeric"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[codigo_ilha]"
+                          name="codigo_ilha"
+                          precision="38" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[descricao_ilha]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[descricao_ilha]"
+                          name="descricao_ilha" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia.Paths[Data Conversion Output]"
+                  endId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia.Paths[OLE DB Source Output]"
+                  endId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados.Inputs[Data Conversion Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Criação dos registos da Dimensão Tempo\Limpeza da tabela de extração"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TRUNCATE TABLE e_tempo"
+          DTS:DTSID="{E323BD25-6631-4924-BEC1-3B754D002C97}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Limpeza da tabela de extração"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="DECLARE @sql varchar(100)&#xA;SET @sql = 'TRUNCATE TABLE ' + ?&#xA;EXEC (@sql)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Criação dos registos da Dimensão Tempo.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{55AFC2FB-ABA7-4FCD-A0AA-057E0D98AFD7}"
+          DTS:From="Package\Criação dos registos da Dimensão Tempo\Limpeza da tabela de extração"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{02FA0F5A-9BF6-4A6A-A44E-56C40D4ACA27}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{29CBA5F7-3B27-4827-9683-5D4C0A008011}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;&#x9;    numero_registos_inseridos = ?,&#xA;&#x9;&#x9;data_fim = CURRENT_TIMESTAMP,&#xA;&#x9;&#x9;duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;&#x9;&#x9;sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{DFD7F944-7A58-48EC-BFC4-70EB5A6AC440}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{AC18360F-E9DB-4AC4-95F6-395995B752D9}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3804844F-9078-4CFF-856D-ADB5134A551A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{FF9D2259-C1FA-4BF5-B34F-177E2C2805FE}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F3D74491-7342-4E4E-A661-43B3C7897DF5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1AFF3D80-FC0D-458D-AA54-F7BCE45B3754}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{537EF0B3-06EB-4431-936F-7F29EA549938}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{EC7B8488-525F-4043-8B76-1B832856C328}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C76A5C74-966D-4EAC-BC5D-FD3C534AE58D}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Criação dos registos da Dimensão Tempo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{240560B1-2811-4EDD-BDE5-2445F1A4145D}"
+      DTS:From="Package\Criação dos registos da Dimensão Tempo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{91366D52-86DB-4543-BCB5-DA477539367F}"
+      DTS:EventID="509082520"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{B0A40596-B9B6-42AE-9D02-7643917E83AE}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Envia Email"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{0E4EF45C-5B14-4136-A610-9458B9F1F504}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Envia Email"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::remetente_email]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Ocorreu um erro no componente " + @[System::SourceName] + ", do processo " + @[System::PackageName] + ": " + "\n\r" +@[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">@[$Project::assunto_email_erros]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::destinatario_email_erros]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{4BDEEFBB-B2CB-478F-B881-07EAF97F22F6}"
+              SendMailTask:From="dwbi@eda.pt"
+              SendMailTask:To="pedro.soares@novabase.pt"
+              SendMailTask:Subject="Erro em processo de integração de dados"
+              SendMailTask:MessageSource="Ocorreu um erro no componente , do processo E_GEOGRAFIA: &#xA;&#xA;" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{EB1B4582-CA4F-496E-BA8D-607C0D0EB889}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere registo de erro"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="INSERT INTO log_erros (processo, componente, mensagem,codigo_execucao,data)&#xA;  VALUES (?,?,?,?,current_timestamp)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{68398E12-47D2-4633-989A-6E6DF91149FC}"
+          DTS:From="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Envia Email" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="261,42"
+          Id="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia"
+          TopLeft="27,95" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Criação dos registos da Dimensão Tempo\Limpeza da tabela de extração"
+          TopLeft="43.5,9" />
+        <EdgeLayout
+          Id="Package\Criação dos registos da Dimensão Tempo.PrecedenceConstraints[Constraint]"
+          TopLeft="156.25,51">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="344,202"
+          Size="344,245"
+          Id="Package\Criação dos registos da Dimensão Tempo"
+          TopLeft="537,50" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="5.5,83" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="14.5,5" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          TopLeft="110,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="254,142"
+          Size="254,185"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="937,77" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="3,160" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="6,84" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="10,6" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="105,48">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          TopLeft="104.75,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250,257"
+          Size="250,300"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="208,20" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="458,171.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79,0"
+              Start="0,0"
+              End="71.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="71.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="881,171">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56,0"
+              Start="0,0"
+              End="48.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="133,42"
+          Id="Package.EventHandlers[OnError]\Envia Email"
+          TopLeft="29.5,107.5" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package.EventHandlers[OnError]\Insere registo de erro"
+          TopLeft="5.50000000000001,5.5" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="96,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia"
+          TopLeft="489,82" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\Conversão de dados"
+          TopLeft="479,174" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia"
+          TopLeft="495,272" />
+        <EdgeLayout
+          Id="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia.Paths[OLE DB Source Output]"
+          TopLeft="566.5,124">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia.Paths[Data Conversion Output]"
+          TopLeft="564.25,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\MDS - Geografia">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Criação dos registos da Dimensão Tempo\Extração de dados do MDS - Geografia\e_geografia">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,2029 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/28/2017 12:48:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LT123516"
+  DTS:CreatorName="NOVABASE\NB14865"
+  DTS:DTSID="{C19C6A87-EAC4-42D2-98CE-29A0272D996C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="E_DEPRECIACAO_PERIODICA"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="286"
+  DTS:VersionGUID="{D224083A-B4F7-4BD1-AAA5-AF0925BA5B9E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7F7452F7-AEE0-4541-93C9-8E5ED9D232FE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{63D7EC86-8DF0-4070-A837-63B63F4FE156}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::codigo_empresa_eda]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="codigo_empresa_eda">
+      <DTS:VariableValue
+        DTS:DataType="8">1001</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{64EA2664-D222-4F52-86AA-20BDC5B40D5A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="codigo_plano">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{27F3CA4E-FB3B-4898-9885-88DBC79C2694}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C39A8860-AA3F-4BCD-AA8A-651A97EB7774}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{538462F2-8004-44B3-B68B-3768AA57622D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">SAP - Tabela ANLP</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{76BE1664-751B-4E58-B969-50E0F52869B0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">e_depreciacao_periodica</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extração de partidas do imobilizado"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{33204781-B2EC-4014-B545-AAFC9D4833CE}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extração de partidas do imobilizado">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{a0c85de4-bb53-4b63-9cf8-1d1d9e4c5ffd}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Extração de dados periódicos"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Conversão de dados"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Inputs[Data Conversion Input].Columns[BUKRS]"
+                          cachedDataType="wstr"
+                          cachedLength="4"
+                          cachedName="BUKRS"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[BUKRS]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Inputs[Data Conversion Input].Columns[GJAHR]"
+                          cachedDataType="wstr"
+                          cachedLength="4"
+                          cachedName="GJAHR"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[GJAHR]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Inputs[Data Conversion Input].Columns[PERAF]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="PERAF"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[PERAF]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Inputs[Data Conversion Input].Columns[ANLN1]"
+                          cachedDataType="wstr"
+                          cachedLength="12"
+                          cachedName="ANLN1"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[ANLN1]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Inputs[Data Conversion Input].Columns[ANLN2]"
+                          cachedDataType="wstr"
+                          cachedLength="4"
+                          cachedName="ANLN2"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[ANLN2]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Inputs[Data Conversion Input].Columns[NAFAZ]"
+                          cachedDataType="numeric"
+                          cachedName="NAFAZ"
+                          cachedPrecision="16"
+                          cachedScale="2"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[NAFAZ]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Inputs[Data Conversion Input].Columns[SAFAZ]"
+                          cachedDataType="numeric"
+                          cachedName="SAFAZ"
+                          cachedPrecision="16"
+                          cachedScale="2"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[SAFAZ]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Inputs[Data Conversion Input].Columns[AFBNR]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="AFBNR"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[AFBNR]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[codigo_empresa]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[codigo_empresa]"
+                          name="codigo_empresa"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[BUKRS]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[ano]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[ano]"
+                          name="ano"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[GJAHR]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[mes]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[mes]"
+                          name="mes"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[PERAF]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[numero_imobilizado]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[numero_imobilizado]"
+                          name="numero_imobilizado"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[ANLN1]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[subnumero_imobilizado]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[subnumero_imobilizado]"
+                          name="subnumero_imobilizado"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[ANLN2]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[depreciacao_normal_lancar]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[depreciacao_normal_lancar]"
+                          name="depreciacao_normal_lancar"
+                          precision="16"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[NAFAZ]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[depreciacao_especial_lancar]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[depreciacao_especial_lancar]"
+                          name="depreciacao_especial_lancar"
+                          precision="16"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[SAFAZ]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[numero_sequencial_depreciacao]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[numero_sequencial_depreciacao]"
+                          name="numero_sequencial_depreciacao"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[AFBNR]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  description="This source component extracts table data from the SAP system"
+                  name="Dados de Movimentos de Imobilizado">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specify the SAP table to be extracted"
+                      name="TableName">ANLP</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the maximum number of rows to be extracted (0 is unlimited)"
+                      name="MaxRows">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the package size for large data extraction (0 is unlimited)"
+                      name="PackageSize">40000</property>
+                    <property
+                      dataType="System.String"
+                      description="Specify WHERE clause for extraction"
+                      name="WhereClause">BUKRS = @[User::codigo_empresa_eda] AND AFABER = '01'</property>
+                    <property
+                      dataType="System.String"
+                      description="Name of the SAP custom function module if you like to use it"
+                      name="CustomFunctionName">RFC_READ_TABLE</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Defines if a custom function module should be used"
+                      name="UseCustomFunction">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="String Conversion"
+                      name="StringConversion">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Delimiter"
+                      name="Delimiter"></property>
+                    <property
+                      dataType="System.String"
+                      description="Order By clause"
+                      name="OrderBy"></property>
+                    <property
+                      dataType="System.String"
+                      description="Internal properties, Please use the editor"
+                      name="InternalXML">&lt;StorageTableBase xmlns="http://tempuri.org/StorageTableBase.xsd"&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;MANDT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Mandante&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BUKRS&lt;/ColName&gt;
+    &lt;ColDescription&gt;Empresa&lt;/ColDescription&gt;
+    &lt;ColLength&gt;4&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;GJAHR&lt;/ColName&gt;
+    &lt;ColDescription&gt;Exercício&lt;/ColDescription&gt;
+    &lt;ColLength&gt;4&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;n&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;PERAF&lt;/ColName&gt;
+    &lt;ColDescription&gt;Período do cálculo da depreciação&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;n&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;AFBNR&lt;/ColName&gt;
+    &lt;ColDescription&gt;Nº sequencial da execução de lançamento de depr.no período&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;n&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ANLN1&lt;/ColName&gt;
+    &lt;ColDescription&gt;Nº principal do imobilizado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;12&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ANLN2&lt;/ColName&gt;
+    &lt;ColDescription&gt;Subnº do imobilizado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;4&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;AFABER&lt;/ColName&gt;
+    &lt;ColDescription&gt;Área de avaliação efetiva ou derivada&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;n&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ZUJHR&lt;/ColName&gt;
+    &lt;ColDescription&gt;Ano de aquisição do imobilizado (não utilizado)&lt;/ColDescription&gt;
+    &lt;ColLength&gt;4&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;n&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ZUCOD&lt;/ColName&gt;
+    &lt;ColDescription&gt;Subestrutura de aquisições de imobilizado (não utilizado)&lt;/ColDescription&gt;
+    &lt;ColLength&gt;4&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;n&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;AUFWP&lt;/ColName&gt;
+    &lt;ColDescription&gt;Valorização planejada do valor de reposição&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;AUFWB&lt;/ColName&gt;
+    &lt;ColDescription&gt;Valorização lançada do valor de reposição&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;AUFWZ&lt;/ColName&gt;
+    &lt;ColDescription&gt;Valorização a lançar do valor de reposição&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;NAFAP&lt;/ColName&gt;
+    &lt;ColDescription&gt;Depreciação normal planejada do ano&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;NAFAG&lt;/ColName&gt;
+    &lt;ColDescription&gt;Depreciação normal lançada do ano&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;NAFAZ&lt;/ColName&gt;
+    &lt;ColDescription&gt;Depreciação normal a lançar&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;SAFAP&lt;/ColName&gt;
+    &lt;ColDescription&gt;Depreciação especial planejada do ano&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;SAFAG&lt;/ColName&gt;
+    &lt;ColDescription&gt;Depreciação especial lançada do ano&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;SAFAZ&lt;/ColName&gt;
+    &lt;ColDescription&gt;Depreciação especial a lançar&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;AAFAP&lt;/ColName&gt;
+    &lt;ColDescription&gt;Depreciação extraordinária planejada do ano&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;AAFAG&lt;/ColName&gt;
+    &lt;ColDescription&gt;Depreciação extraordinária lançada do ano&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;AAFAZ&lt;/ColName&gt;
+    &lt;ColDescription&gt;Depreciação extraordinária a lançar&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;MAFAP&lt;/ColName&gt;
+    &lt;ColDescription&gt;Transferência planejada de reservas do ano&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;MAFAG&lt;/ColName&gt;
+    &lt;ColDescription&gt;Depreciação lançada com redução do valor de aquisição do ano&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;MAFAZ&lt;/ColName&gt;
+    &lt;ColDescription&gt;Depreciação com redução do valor aquisição a lançar do ano&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ZINSP&lt;/ColName&gt;
+    &lt;ColDescription&gt;Juros planejados do ano&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ZINSG&lt;/ColName&gt;
+    &lt;ColDescription&gt;Juros lançados do ano&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ZINSZ&lt;/ColName&gt;
+    &lt;ColDescription&gt;Juros do ano a lançar&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;AUFNP&lt;/ColName&gt;
+    &lt;ColDescription&gt;Valorização planejada da depreciação normal acumulada&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;AUFNG&lt;/ColName&gt;
+    &lt;ColDescription&gt;Valorização lançada da depreciação normal acumulada&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;AUFNZ&lt;/ColName&gt;
+    &lt;ColDescription&gt;Valorização da depreciação normal acumulada a lançar&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ANSWL&lt;/ColName&gt;
+    &lt;ColDescription&gt;Movimentos do ano com modificação do valor de aquisição&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;INVZM&lt;/ColName&gt;
+    &lt;ColDescription&gt;Subsídio de investimento do ano&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;p&lt;/ABAPType&gt;
+    &lt;Decimals&gt;2&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;KTOGR&lt;/ColName&gt;
+    &lt;ColDescription&gt;Determinação de contas&lt;/ColDescription&gt;
+    &lt;ColLength&gt;8&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;AFASL&lt;/ColName&gt;
+    &lt;ColDescription&gt;Chave de depreciação&lt;/ColDescription&gt;
+    &lt;ColLength&gt;4&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;KOSTL&lt;/ColName&gt;
+    &lt;ColDescription&gt;Centro de custo&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;GSBER&lt;/ColName&gt;
+    &lt;ColDescription&gt;Divisão&lt;/ColDescription&gt;
+    &lt;ColLength&gt;4&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;CAUFN&lt;/ColName&gt;
+    &lt;ColDescription&gt;Ordem interna&lt;/ColDescription&gt;
+    &lt;ColLength&gt;12&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XUNUL&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: lançar conta negativa&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ANUPD&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: tipo de modificação da tabela&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;FKBER&lt;/ColName&gt;
+    &lt;ColDescription&gt;Área funcional&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BELNR&lt;/ColName&gt;
+    &lt;ColDescription&gt;Nº documento de um documento de lançamento de depreciação&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;LSTAR&lt;/ColName&gt;
+    &lt;ColDescription&gt;Tipo de atividade&lt;/ColDescription&gt;
+    &lt;ColLength&gt;6&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;GEBER&lt;/ColName&gt;
+    &lt;ColDescription&gt;Fundos&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;GRANT_NBR&lt;/ColName&gt;
+    &lt;ColDescription&gt;Subsídio público&lt;/ColDescription&gt;
+    &lt;ColLength&gt;20&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;GEBER2&lt;/ColName&gt;
+    &lt;ColDescription&gt;Fundos para classificação contábil do inventário&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;FKBER2&lt;/ColName&gt;
+    &lt;ColDescription&gt;Área de função para classificação contábil do inventário&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;GRANT_NBR2&lt;/ColName&gt;
+    &lt;ColDescription&gt;Subsídio público para classificação contábil do inventário&lt;/ColDescription&gt;
+    &lt;ColLength&gt;20&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;FISTL2&lt;/ColName&gt;
+    &lt;ColDescription&gt;Centro financeiro para classificação contábil do inventário&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;IMKEY&lt;/ColName&gt;
+    &lt;ColDescription&gt;Chave interna para objeto de bens imóveis&lt;/ColDescription&gt;
+    &lt;ColLength&gt;40&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;PS_PSP_PNR2&lt;/ColName&gt;
+    &lt;ColDescription&gt;Elemento PEP - Custos&lt;/ColDescription&gt;
+    &lt;ColLength&gt;24&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;n&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BUDGET_PD&lt;/ColName&gt;
+    &lt;ColDescription&gt;AdO: período de orçamento&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BUDGET_PD2&lt;/ColName&gt;
+    &lt;ColDescription&gt;Período orçamento p/classificações contábeis inventário&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;SEGMENT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Segmento para o reporting do segmento&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;PRCTR&lt;/ColName&gt;
+    &lt;ColDescription&gt;Centro de lucro&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;FISTL&lt;/ColName&gt;
+    &lt;ColDescription&gt;Centro financeiro&lt;/ColDescription&gt;
+    &lt;ColLength&gt;16&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;AutomaticDateConversion&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;SubstitutionDateValue&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;MaxRowsVariable&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;PackageSizeVariable&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;PrimaryKeyPackaging&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;BackgroundExtraction&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;BufferLocation&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;UseCompression&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;UseFieldExits&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+&lt;/StorageTableBase&gt;</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">XtractIS.XtractSourceTable</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Connections[Xtract SAP Connection]"
+                      connectionManagerID="{C61E7FA6-BF35-4FBA-B82F-B14EE5F60600}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SAP]"
+                      description="Xtract SAP Connection"
+                      name="Xtract SAP Connection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput]"
+                      name="XtractOutput">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[BUKRS]"
+                          dataType="wstr"
+                          description="Empresa"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[BUKRS]"
+                          length="4"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[BUKRS]"
+                          name="BUKRS" />
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[GJAHR]"
+                          dataType="wstr"
+                          description="Exercício"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[GJAHR]"
+                          length="4"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[GJAHR]"
+                          name="GJAHR" />
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[PERAF]"
+                          dataType="wstr"
+                          description="Período do cálculo da depreciação"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[PERAF]"
+                          length="3"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[PERAF]"
+                          name="PERAF" />
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[AFBNR]"
+                          dataType="wstr"
+                          description="Nº sequencial da execução de lançamento de depr.no período"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[AFBNR]"
+                          length="2"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[AFBNR]"
+                          name="AFBNR" />
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[ANLN1]"
+                          dataType="wstr"
+                          description="Nº principal do imobilizado"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[ANLN1]"
+                          length="12"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[ANLN1]"
+                          name="ANLN1" />
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[ANLN2]"
+                          dataType="wstr"
+                          description="Subnº do imobilizado"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[ANLN2]"
+                          length="4"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[ANLN2]"
+                          name="ANLN2" />
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[NAFAZ]"
+                          dataType="numeric"
+                          description="Depreciação normal a lançar"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[NAFAZ]"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[NAFAZ]"
+                          name="NAFAZ"
+                          precision="16"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[SAFAZ]"
+                          dataType="numeric"
+                          description="Depreciação especial a lançar"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[SAFAZ]"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[SAFAZ]"
+                          name="SAFAZ"
+                          precision="16"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[KTOGR]"
+                          dataType="wstr"
+                          description="Determinação de contas"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[KTOGR]"
+                          length="8"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[KTOGR]"
+                          name="KTOGR" />
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[KOSTL]"
+                          dataType="wstr"
+                          description="Centro de custo"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[KOSTL]"
+                          length="10"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].Columns[KOSTL]"
+                          name="KOSTL" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[BUKRS]"
+                          dataType="wstr"
+                          description="Empresa"
+                          length="4"
+                          name="BUKRS" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[GJAHR]"
+                          dataType="wstr"
+                          description="Exercício"
+                          length="4"
+                          name="GJAHR" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[PERAF]"
+                          dataType="wstr"
+                          description="Período do cálculo da depreciação"
+                          length="3"
+                          name="PERAF" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[AFBNR]"
+                          dataType="wstr"
+                          description="Nº sequencial da execução de lançamento de depr.no período"
+                          length="2"
+                          name="AFBNR" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[ANLN1]"
+                          dataType="wstr"
+                          description="Nº principal do imobilizado"
+                          length="12"
+                          name="ANLN1" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[ANLN2]"
+                          dataType="wstr"
+                          description="Subnº do imobilizado"
+                          length="4"
+                          name="ANLN2" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[NAFAZ]"
+                          dataType="numeric"
+                          description="Depreciação normal a lançar"
+                          name="NAFAZ"
+                          precision="16"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[SAFAZ]"
+                          dataType="numeric"
+                          description="Depreciação especial a lançar"
+                          name="SAFAZ"
+                          precision="16"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[KTOGR]"
+                          dataType="wstr"
+                          description="Determinação de contas"
+                          length="8"
+                          name="KTOGR" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput].ExternalColumns[KOSTL]"
+                          dataType="wstr"
+                          description="Centro de custo"
+                          length="10"
+                          name="KOSTL" />
+                      </externalMetadataColumns>
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="e_depreciacao_periodica"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[e_depreciacao_periodica]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].Columns[codigo_empresa]"
+                          cachedDataType="i4"
+                          cachedName="codigo_empresa"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[codigo_empresa]"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[codigo_empresa]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].Columns[ano]"
+                          cachedDataType="i4"
+                          cachedName="ano"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[ano]"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[ano]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].Columns[mes]"
+                          cachedDataType="i4"
+                          cachedName="mes"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[mes]"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[mes]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].Columns[numero_imobilizado]"
+                          cachedDataType="i8"
+                          cachedName="numero_imobilizado"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[numero_imobilizado]"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[numero_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].Columns[subnumero_imobilizado]"
+                          cachedDataType="i8"
+                          cachedName="subnumero_imobilizado"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[subnumero_imobilizado]"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[subnumero_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].Columns[depreciacao_especial_lancar]"
+                          cachedDataType="numeric"
+                          cachedName="depreciacao_especial_lancar"
+                          cachedPrecision="16"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[depreciacao_especial_lancar]"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[depreciacao_especial_lancar]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].Columns[numero_sequencial_depreciacao]"
+                          cachedDataType="i2"
+                          cachedName="numero_sequencial_depreciacao"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[numero_sequencial_depreciacao]"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[numero_sequencial_depreciacao]" />
+                        <inputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].Columns[depreciacao_normal_lancar]"
+                          cachedDataType="numeric"
+                          cachedName="depreciacao_normal_lancar"
+                          cachedPrecision="16"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[depreciacao_normal_lancar]"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output].Columns[depreciacao_normal_lancar]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[codigo_empresa]"
+                          dataType="i4"
+                          name="codigo_empresa" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[ano]"
+                          dataType="i4"
+                          name="ano" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[mes]"
+                          dataType="i4"
+                          name="mes" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[numero_imobilizado]"
+                          dataType="i8"
+                          name="numero_imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[subnumero_imobilizado]"
+                          dataType="i8"
+                          name="subnumero_imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[depreciacao_especial_lancar]"
+                          dataType="numeric"
+                          name="depreciacao_especial_lancar"
+                          precision="16"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[numero_sequencial_depreciacao]"
+                          dataType="i2"
+                          name="numero_sequencial_depreciacao" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input].ExternalColumns[depreciacao_normal_lancar]"
+                          dataType="numeric"
+                          name="depreciacao_normal_lancar"
+                          precision="16"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos.Paths[Data Conversion Output]"
+                  endId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Extração de partidas do imobilizado\Extração de dados periódicos.Paths[XtractOutput]"
+                  endId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados.Inputs[Data Conversion Input]"
+                  name="XtractOutput"
+                  startId="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado.Outputs[XtractOutput]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Extração de partidas do imobilizado\Limpeza da tabela de extração"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TRUNCATE TABLE e_movimentos_imobilizado_periodico"
+          DTS:DTSID="{3126a469-bccd-48c0-b26a-d97d6d30d67a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Limpeza da tabela de extração"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="DECLARE @sql varchar(100)&#xA;SET @sql = 'TRUNCATE TABLE ' + ?&#xA;EXEC (@sql)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Extração de partidas do imobilizado.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{c99fe7c4-9139-4b9f-9dc5-096a53eb472c}"
+          DTS:From="Package\Extração de partidas do imobilizado\Limpeza da tabela de extração"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Extração de partidas do imobilizado\Extração de dados periódicos" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{4721D69A-4AE4-4D37-8787-D9EDC350D617}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E19109CE-33BA-472A-863B-833096F50216}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;&#x9;    numero_registos_inseridos = ?,&#xA;&#x9;&#x9;data_fim = CURRENT_TIMESTAMP,&#xA;&#x9;&#x9;duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;&#x9;&#x9;sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{447F8A80-46F6-4379-AD8F-850FA25643FC}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{0E43ED1F-F505-47B6-B76A-1553E6113AF4}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{C23A6077-F78E-4192-87A1-94E625AF5350}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B6EEA01B-ED7E-44E1-8650-DCBB2D4FD139}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{244D7A7E-B4ED-4878-AE93-2ACE0506C84C}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{770D9ABB-12D8-423D-9D25-74DF7048970C}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{657D8796-CFA5-48DC-8973-888FA03ADAF7}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{DF95409B-E162-497F-AF71-585DB2BCD376}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A981C556-085A-43C9-B177-8ACEE1E8CA03}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Extração de partidas do imobilizado" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{327DB0E0-35EA-4CFA-9F44-12283C3960C9}"
+      DTS:From="Package\Extração de partidas do imobilizado"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{7C42B3BC-6835-4EDB-92CD-D1A4399FA672}"
+      DTS:EventID="509082520"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{8BBB21C3-8773-4266-968E-41285B77E8CC}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Envia Email"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{770F1FB2-A60E-4E59-8DC5-5AD65CB51A4E}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Envia Email"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::remetente_email]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Ocorreu um erro no componente " + @[System::SourceName] + ", do processo " + @[System::PackageName] + ": " + "\n\r" +@[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">@[$Project::assunto_email_erros]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::destinatario_email_erros]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{4BDEEFBB-B2CB-478F-B881-07EAF97F22F6}"
+              SendMailTask:From="dwbi@eda.pt"
+              SendMailTask:To="pedro.soares@novabase.pt"
+              SendMailTask:Subject="Erro em processo de integração de dados"
+              SendMailTask:MessageSource="Ocorreu um erro no componente , do processo E_DEPRECIACAO_PERIODICA: &#xA;&#xA;" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{61B3FC2B-897E-4A9A-9555-94676703E781}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere registo de erro"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="INSERT INTO log_erros (processo, componente, mensagem,codigo_execucao,data)&#xA;  VALUES (?,?,?,?,current_timestamp)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{EE4259D8-5550-46AA-BD1B-91DCE8A93EDC}"
+          DTS:From="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Envia Email" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Extração de partidas do imobilizado\Extração de dados periódicos"
+          TopLeft="64.5,153" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Extração de partidas do imobilizado\Limpeza da tabela de extração"
+          TopLeft="60,60" />
+        <EdgeLayout
+          Id="Package\Extração de partidas do imobilizado.PrecedenceConstraints[Constraint]"
+          TopLeft="172,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="324,250"
+          Size="324,293"
+          Id="Package\Extração de partidas do imobilizado"
+          TopLeft="434,84" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="5.5,83" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="14.5,5" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          TopLeft="110,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="254,142"
+          Size="254,185"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="818,140" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="3,160" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="6,84" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="10,6" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="105,48">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          TopLeft="104.75,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250,257"
+          Size="250,300"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="116,79" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="366,229.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68,0"
+              Start="0,0"
+              End="60.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="60.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="758,231.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60,0"
+              Start="0,0"
+              End="52.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="52.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package.EventHandlers[OnError]\Envia Email"
+          TopLeft="29.5,107.5" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package.EventHandlers[OnError]\Insere registo de erro"
+          TopLeft="5.50000000000001,5.5" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="96,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Extração de partidas do imobilizado\Extração de dados periódicos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="255,42"
+          Id="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Dados de Movimentos de Imobilizado"
+          TopLeft="386,36" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica"
+          TopLeft="415,234" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Extração de partidas do imobilizado\Extração de dados periódicos\Conversão de dados"
+          TopLeft="424,133" />
+        <EdgeLayout
+          Id="Package\Extração de partidas do imobilizado\Extração de dados periódicos.Paths[XtractOutput]"
+          TopLeft="512.25,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extração de partidas do imobilizado\Extração de dados periódicos.Paths[Data Conversion Output]"
+          TopLeft="511.75,175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extração de partidas do imobilizado\Extração de dados periódicos\e_depreciacao_periodica">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

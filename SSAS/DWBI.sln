@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "DWBI", "DWBI\DWBI.dwproj", "{63D17E73-E8B8-4C37-8FCC-4172B8663FEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Desenvolvimento|Default = Desenvolvimento|Default
+		Development|Default = Development|Default
+		Qualidade|Default = Qualidade|Default
+		Quality|Default = Quality|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63D17E73-E8B8-4C37-8FCC-4172B8663FEB}.Desenvolvimento|Default.ActiveCfg = Desenvolvimento
+		{63D17E73-E8B8-4C37-8FCC-4172B8663FEB}.Desenvolvimento|Default.Build.0 = Desenvolvimento
+		{63D17E73-E8B8-4C37-8FCC-4172B8663FEB}.Desenvolvimento|Default.Deploy.0 = Desenvolvimento
+		{63D17E73-E8B8-4C37-8FCC-4172B8663FEB}.Development|Default.ActiveCfg = Development
+		{63D17E73-E8B8-4C37-8FCC-4172B8663FEB}.Development|Default.Build.0 = Development
+		{63D17E73-E8B8-4C37-8FCC-4172B8663FEB}.Development|Default.Deploy.0 = Development
+		{63D17E73-E8B8-4C37-8FCC-4172B8663FEB}.Qualidade|Default.ActiveCfg = Qualidade
+		{63D17E73-E8B8-4C37-8FCC-4172B8663FEB}.Qualidade|Default.Build.0 = Qualidade
+		{63D17E73-E8B8-4C37-8FCC-4172B8663FEB}.Qualidade|Default.Deploy.0 = Qualidade
+		{63D17E73-E8B8-4C37-8FCC-4172B8663FEB}.Quality|Default.ActiveCfg = Quality
+		{63D17E73-E8B8-4C37-8FCC-4172B8663FEB}.Quality|Default.Build.0 = Quality
+		{63D17E73-E8B8-4C37-8FCC-4172B8663FEB}.Quality|Default.Deploy.0 = Quality
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://nbtfs.novabase.pt/tfs/244244%20-%20gte%20bs%20perf%20mng
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DWBI\\DWBI.dwproj
+		SccProjectName1 = DWBI
+		SccLocalPath1 = DWBI
+	EndGlobalSection
+EndGlobal

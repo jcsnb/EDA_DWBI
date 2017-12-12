@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SAP"
+  DTS:DTSID="{C61E7FA6-BF35-4FBA-B82F-B14EE5F60600}"
+  DTS:CreationName="XTRACT">
+  <DTS:ObjectData>
+    <XtractConnectionManager
+      ConnectionString="USER=WEBSERVICE LANG=PT CLIENT=800 SYSNR= ASHOST=10.13.50.135 PASSWD=Bi!/Ext&amp; RFCLIB=NW " />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

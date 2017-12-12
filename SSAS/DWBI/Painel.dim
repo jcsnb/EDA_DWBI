@@ -1,0 +1,375 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="2c576e51-172a-4824-ba1f-b1641c6a5030" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Painel</ID>
+  <Name>Painel</Name>
+  <CreatedTimestamp>2017-10-30T04:27:08.676667Z</CreatedTimestamp>
+  <LastSchemaUpdate>2017-10-30T04:27:08.676667Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1792" scrolltop="-2752" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8229" y="12594" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dim_painel" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4419" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00004311000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dim_painel" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1792</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-2752</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>2017-10-30T04:27:10.13Z</LastProcessed>
+  <State>Processed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="1f657ba5-9f22-46f3-97a9-149885941dd0">
+    <DataSourceViewID>DWH</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="28f770a4-678e-4edc-890b-92211b4fb396">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Language>1033</Language>
+  <Collation>Latin1_General_CI_AS</Collation>
+  <UnknownMemberName>Unknown</UnknownMemberName>
+  <Attributes>
+    <Attribute dwd:design-time-name="6133bb2f-8e82-4e71-901b-80c3d9f5703f">
+      <ID>Sk Painel</ID>
+      <Name>Código EDA</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="48e076b9-b6b7-48a4-8373-8fed90e03e9e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="317654ea-fc29-4eb7-b35f-eacfbab28b30">
+            <TableID>dbo_dim_painel</TableID>
+            <ColumnID>sk_painel</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a76f3f43-d805-4d51-80e5-5d7fd5b44636">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="2c604083-0df4-4c39-a506-498aa7de3171">
+          <TableID>dbo_dim_painel</TableID>
+          <ColumnID>codigo_eda</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="cf6ce358-166f-4005-b98e-795c2c0638e5">
+          <AttributeID>Nome Painel</AttributeID>
+          <Name>Nome Painel</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="de73327b-502f-4677-91fd-bf176db6c043">
+          <AttributeID>Numero Painel</AttributeID>
+          <Name>Numero Painel</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="da92ae60-368c-48a6-9f6c-4676a9b610be">
+          <AttributeID>Data Entrada Exploracao</AttributeID>
+          <Name>Data Entrada Exploracao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8eab01f2-31bb-463a-8ab6-28a0d3c50338">
+          <AttributeID>Disponibilidade</AttributeID>
+          <Name>Disponibilidade</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0cee7f2b-5948-4f79-9e4f-f889ce237319">
+          <AttributeID>Situacao</AttributeID>
+          <Name>Situacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="50780061-772a-4844-9dad-6e342064058c">
+          <AttributeID>Tensao Nominal</AttributeID>
+          <Name>Tensao Nominal</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="28b56cae-a5dc-447d-8801-33751cb3c90e">
+          <AttributeID>Funcao</AttributeID>
+          <Name>Funcao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7320e8b4-0eb5-4bca-91ed-ed0c30715ec1">
+          <AttributeID>Atual</AttributeID>
+          <Name>Atual</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cbf45ca2-5e9e-4b1c-89e6-bc83da38add7">
+          <AttributeID>Codigo Eda</AttributeID>
+          <Name>Codigo referencia</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7aac9cc3-5975-41d4-a16f-0975288ddadc">
+      <ID>Nome Painel</ID>
+      <Name>Nome Painel</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="88bcd77c-100f-44f5-af90-1895d9871aff">
+          <DataType>WChar</DataType>
+          <DataSize>150</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0d8d4b15-b0f5-4e9b-89c8-506942da617a">
+            <TableID>dbo_dim_painel</TableID>
+            <ColumnID>nome_painel</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="f431fc57-f53e-425c-90f6-f30d100e8a31">
+        <DataType>WChar</DataType>
+        <DataSize>150</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="2a84f325-69fc-4170-ad53-43003f8e188a">
+          <TableID>dbo_dim_painel</TableID>
+          <ColumnID>nome_painel</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="156649be-02c1-4b74-a691-d59106a90466">
+      <ID>Numero Painel</ID>
+      <Name>Numero Painel</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a6f149f2-c633-4e7c-a6fc-04094eabeff5">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0d06589d-1914-47f6-bc63-09eb9b431d0d">
+            <TableID>dbo_dim_painel</TableID>
+            <ColumnID>numero_painel</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a081f331-c698-4f5c-9d1e-cddd647a056f">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="fc251f36-2715-4334-966f-f791d57e33eb">
+          <TableID>dbo_dim_painel</TableID>
+          <ColumnID>numero_painel</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2ecd95e0-c916-48a3-98e6-36f88512add5">
+      <ID>Data Entrada Exploracao</ID>
+      <Name>Data Entrada Exploracao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3e24bb96-d422-4c5f-b6f7-778053218ab8">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3ffbe09b-4378-44f2-9c0c-f7b17e5c7340">
+            <TableID>dbo_dim_painel</TableID>
+            <ColumnID>data_entrada_exploracao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="9eb92ae8-3d3a-403e-a4e1-228a2f3a7e6f">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="17241f79-4bd1-4d32-90e8-05630b0a0401">
+          <TableID>dbo_dim_painel</TableID>
+          <ColumnID>data_entrada_exploracao</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e495a718-e70f-40a5-a978-55e5cd24cf35">
+      <ID>Disponibilidade</ID>
+      <Name>Disponibilidade</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="47d9d119-20e4-476f-ba53-a19912d00477">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4797abcc-aa14-48f4-ba6d-a1f5d9cc6d18">
+            <TableID>dbo_dim_painel</TableID>
+            <ColumnID>disponibilidade</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="e17cd4fd-68d2-41d9-9a3a-c9592b6749e1">
+        <DataType>WChar</DataType>
+        <DataSize>30</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="f00b6c96-838f-4ecb-823c-1553aea34bea">
+          <TableID>dbo_dim_painel</TableID>
+          <ColumnID>disponibilidade</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="679a332b-3cdc-4aa2-8bdf-344a32a9d5ed">
+      <ID>Situacao</ID>
+      <Name>Situacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ef5ed007-9ef9-402d-83b8-89ea087d684f">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c7adead5-8c83-4edf-bbd6-aa9ee5fc80a3">
+            <TableID>dbo_dim_painel</TableID>
+            <ColumnID>situacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="00fd65b0-507f-49f0-bea9-ba96604428c2">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5c67fb85-af18-4395-a3df-1e1ab42bd32b">
+          <TableID>dbo_dim_painel</TableID>
+          <ColumnID>situacao</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f6abfece-4661-4bac-9817-449d7c9a326a">
+      <ID>Tensao Nominal</ID>
+      <Name>Tensao Nominal</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0187d5fc-acc9-4bcb-bb54-d15570c3e54c">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2c218f12-257a-4cc0-9cd0-6891e8da50cd">
+            <TableID>dbo_dim_painel</TableID>
+            <ColumnID>tensao_nominal</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="ea5ab087-9f9c-416c-9386-4f142e661f3f">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="ff9dc302-837b-4ed6-bc59-baee0048320b">
+          <TableID>dbo_dim_painel</TableID>
+          <ColumnID>tensao_nominal</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f39ae11c-c6cc-4821-bcab-c72d0917f177">
+      <ID>Funcao</ID>
+      <Name>Funcao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d816850e-181e-4e41-ab62-18538ee123cc">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="af6e1ef4-801d-4a37-8f33-68ee8b0f0f44">
+            <TableID>dbo_dim_painel</TableID>
+            <ColumnID>funcao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="5e4a8f78-66ad-468a-8e57-6c4a9d30de55">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="01bd2e7e-9616-448a-9cd2-68f7a1931fe5">
+          <TableID>dbo_dim_painel</TableID>
+          <ColumnID>funcao</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="10d5a3d4-dff0-4660-88a7-081cb4a68905">
+      <ID>Atual</ID>
+      <Name>Atual</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="94904005-0bd7-4a57-a59f-c42ae8dfe2ef">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fdb55170-03d0-4319-b5a2-b84947fc6515">
+            <TableID>dbo_dim_painel</TableID>
+            <ColumnID>atual</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a82b8d20-5a37-49b1-8511-54460898d95a">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="03c6fdd7-676f-4165-859d-e6638b14abef">
+          <TableID>dbo_dim_painel</TableID>
+          <ColumnID>atual</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ad99ae50-f213-4b88-b2db-41c5aea5371b">
+      <ID>Codigo Eda</ID>
+      <Name>Codigo referencia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="17ff1515-e4a6-498e-bdb1-389f812e2f9e">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="80797464-36db-46b9-8f4e-8b5371f124c1">
+            <TableID>dbo_dim_painel</TableID>
+            <ColumnID>codigo_eda</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ProactiveCaching dwd:design-time-name="8c59ec16-4ab2-4276-8af7-2f2a91fbdd0d">
+    <SilenceInterval>-PT1S</SilenceInterval>
+    <Latency>-PT1S</Latency>
+    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="a7e0b6a2-6ae5-4a6d-a48d-d295459198d9" />
+  </ProactiveCaching>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

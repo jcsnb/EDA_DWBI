@@ -1,0 +1,495 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ccf44d26-1cf8-4f9b-b424-634e1e265ef5" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Posto Transformação</ID>
+  <Name>Posto Transformação</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1567" scrolltop="-3585" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8229" y="12171" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dim_posto_transformacao" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="5054" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000be13000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dim_posto_transformacao" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1567</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3585</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="4faf6d43-908f-4c87-bf44-d2d483b77864">
+    <DataSourceViewID>DWH</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="6868e675-1726-49d8-8b4c-daa1b1b2dbba">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="3f1cb1aa-915f-4829-a9df-5091e707276b">
+      <ID>Sk Posto Transformacao</ID>
+      <Name>Código EDA</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="50f674ac-22ec-49df-88d1-0ae4aaf2d0c0">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="56199fa2-d207-4950-8c52-3b390d11ebb1">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>sk_posto_transformacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="ba220e2f-718e-4ce7-9f3d-955081dde621">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="2bb6bcb3-7dff-4242-a0f4-5cce6f2c4885">
+          <TableID>dbo_dim_posto_transformacao</TableID>
+          <ColumnID>codigo_eda</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="06e252d6-be52-497d-a466-f167770005ed">
+          <AttributeID>Codigo Eda</AttributeID>
+          <Name>Codigo referencia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="95861f7d-9f04-44f2-9c7a-d25e0fa8ac7b">
+          <AttributeID>Nome Posto Transformacao</AttributeID>
+          <Name>Nome Posto Transformacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8fb180a9-97fc-4281-b737-bff66fc33390">
+          <AttributeID>Tipo Instalacao</AttributeID>
+          <Name>Tipo Instalacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5c1030be-8c8f-4e58-afb9-266e32723eb1">
+          <AttributeID>Tipo Construtivo</AttributeID>
+          <Name>Tipo Construtivo</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="589adfb6-3615-4acc-a989-0166af2267ca">
+          <AttributeID>Data Entrada Exploracao</AttributeID>
+          <Name>Data Entrada Exploracao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2810a046-59fe-44fa-8f3d-2c13104eabb8">
+          <AttributeID>Data Ultima Alteracao Tecnica</AttributeID>
+          <Name>Data Ultima Alteracao Tecnica</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7af16d39-9fd8-49e0-af44-bba7e9b6833b">
+          <AttributeID>Data Saida Exploracao</AttributeID>
+          <Name>Data Saida Exploracao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="057aef7f-4d79-4358-8bb1-f9a64e83c1df">
+          <AttributeID>Ano Fabrico</AttributeID>
+          <Name>Ano Fabrico</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a75b6ba5-5281-45ad-92f8-401b6562ddd7">
+          <AttributeID>Codigo Freguesia</AttributeID>
+          <Name>Codigo Freguesia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4e5dd3c5-8a24-48b9-9de8-40266c7dd835">
+          <AttributeID>Latitude</AttributeID>
+          <Name>Latitude</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4bae170c-3888-44a3-9814-851a9e185b33">
+          <AttributeID>Longitude</AttributeID>
+          <Name>Longitude</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="98593ac0-0906-4041-a30b-4ba986d916d3">
+          <AttributeID>Situacao</AttributeID>
+          <Name>Situacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c4a67f0e-3219-48a4-9d87-9da8b52c8761">
+          <AttributeID>Area Geografica Influencia</AttributeID>
+          <Name>Area Geografica Influencia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="792ead0d-8643-4550-bceb-0e3b1c9353f2">
+          <AttributeID>Potencia Instalada</AttributeID>
+          <Name>Potencia Instalada</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5201d9bc-6f34-4fe6-835d-77da72ba8c95">
+          <AttributeID>Geracao Instalada</AttributeID>
+          <Name>Geracao Instalada</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f9798240-2e67-4c99-a63a-80529d8e53ea">
+          <AttributeID>Tensao Nominal</AttributeID>
+          <Name>Tensao Nominal</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f23906ea-7d29-4847-8d22-5c3b98fb0e9e">
+          <AttributeID>Linhas Ligadas Instalacao</AttributeID>
+          <Name>Linhas Ligadas Instalacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="48564e41-5207-4deb-a2fd-8643efb1f437">
+          <AttributeID>Linhas Alimentacao Instalacao</AttributeID>
+          <Name>Linhas Alimentacao Instalacao</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0e54d528-8cf2-4aa4-b3e1-504ab15517ec">
+      <ID>Codigo Eda</ID>
+      <Name>Codigo referencia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="68fdc076-950c-40c5-accc-77a900796988">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="072ae441-1dd0-42c8-8b52-31eab484be2e">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>codigo_eda</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a5521dfc-252a-45e7-b498-4a1658c00ca6">
+      <ID>Nome Posto Transformacao</ID>
+      <Name>Nome Posto Transformacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4b27ad08-0434-4fa8-bb4e-19dc1821cc5d">
+          <DataType>WChar</DataType>
+          <DataSize>150</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="979ae586-3afa-4e64-b090-bc54131bc208">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>nome_posto_transformacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b6bd8d8d-dd3e-4eb4-b291-d260edc9c12c">
+      <ID>Tipo Instalacao</ID>
+      <Name>Tipo Instalacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3ac36b75-3d5d-43e2-bbe1-82b728ef69ca">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a310b44f-b610-458c-b058-6c841dfc0ce0">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>tipo_instalacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="533ec651-e079-4606-935c-36349f7969de">
+      <ID>Tipo Construtivo</ID>
+      <Name>Tipo Construtivo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c2a44dbf-dd61-49e4-93b9-661113ab40cc">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a4262ed1-de24-43c1-8f27-8f94d1fdb387">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>tipo_construtivo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0572aaeb-075a-4245-a558-25888f146029">
+      <ID>Data Entrada Exploracao</ID>
+      <Name>Data Entrada Exploracao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b252be3e-0e6f-46ff-a6fd-98fc4ad8fdb8">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="369b8799-325b-495a-b418-f463d3d61532">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>data_entrada_exploracao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4d3462ba-1d5b-4c86-82f9-1d797404987a">
+      <ID>Data Ultima Alteracao Tecnica</ID>
+      <Name>Data Ultima Alteracao Tecnica</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="41335811-5af5-4899-b7b7-da8dc2595607">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ec557f50-7a86-4693-be31-ae45ef421d37">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>data_ultima_alteracao_tecnica</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="53d84da1-7fc0-4eea-9863-8933235ed5c2">
+      <ID>Data Saida Exploracao</ID>
+      <Name>Data Saida Exploracao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="66fa7050-a05b-45c1-8a06-3c1fe24f462b">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0458c1b6-b069-4983-9e32-84fc4a211380">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>data_saida_exploracao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a63638e7-de55-4ba2-90e3-4f7f0c125836">
+      <ID>Ano Fabrico</ID>
+      <Name>Ano Fabrico</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f41b120a-dffb-44e2-ac77-cec51a744eb1">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d60ae705-06eb-4618-b3e3-0c5d1340f8b0">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>ano_fabrico</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="aa1abed1-bcde-4233-9070-f0f260c86428">
+      <ID>Codigo Freguesia</ID>
+      <Name>Codigo Freguesia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a380dbd9-c002-4020-a1c6-655b5fe2062b">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5f02d010-6755-4379-93fa-b42df7127b97">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>codigo_freguesia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8d4d23e9-88df-4cef-95d5-c9848b15465d">
+      <ID>Latitude</ID>
+      <Name>Latitude</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2ebc611d-aa3f-422c-b93d-0bd7df4e4d6f">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4a369ccc-0db0-4f8d-8190-50b9d5231224">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>latitude</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4b5928a1-d571-4f91-9167-0427eb61aa07">
+      <ID>Longitude</ID>
+      <Name>Longitude</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5cfd4858-b961-4bdd-9c29-036babf67a56">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6ba6ef0d-2099-4a0c-9667-1977045d7ae2">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>longitude</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5bcbabe8-f05a-4a9e-8daf-b5329cbe9116">
+      <ID>Situacao</ID>
+      <Name>Situacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f5a158ed-7eba-44e9-ac69-50a5a541c130">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e3dba5fb-9e3f-4915-a167-5650a5982a8c">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>situacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="71f7e860-a3c3-4f97-bead-810b23317af9">
+      <ID>Area Geografica Influencia</ID>
+      <Name>Area Geografica Influencia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="067ce459-9c8c-4037-ad2f-c6bcf79648cf">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4b820499-027b-4d82-88d7-858081a99ea8">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>area_geografica_influencia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c05c8bbb-c05e-4921-af93-adc7c579b904">
+      <ID>Potencia Instalada</ID>
+      <Name>Potencia Instalada</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b49f060e-befe-44c8-8dc2-3e950e1f2cde">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="09d43b3b-4697-4e4e-9bdc-c4e80007f6f4">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>potencia_instalada</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5918f005-09c2-414d-b500-124bdbfb4853">
+      <ID>Geracao Instalada</ID>
+      <Name>Geracao Instalada</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="91a28e87-3b7d-4e4e-adc9-0cd172f6d448">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="af257b23-2e87-46e7-9d69-3b955db7a241">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>geracao_instalada</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3fe2f3c5-5ace-42cf-906a-cd1e62572b6d">
+      <ID>Tensao Nominal</ID>
+      <Name>Tensao Nominal</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c82cfe56-8107-4eeb-ab08-d04c41e2527b">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="41bf7c76-656f-4d16-b78b-484b6bb5e807">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>tensao_nominal</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="daa9734b-906a-45e6-8177-33f0c9c56f12">
+      <ID>Linhas Ligadas Instalacao</ID>
+      <Name>Linhas Ligadas Instalacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="40510859-29b8-4356-92c4-359f73fe3188">
+          <DataType>WChar</DataType>
+          <DataSize>250</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="65cb53d8-a68d-4a96-97ee-cb09b6c906c6">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>linhas_ligadas_instalacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9bf03c62-4caa-4bc9-903a-443822c5a20b">
+      <ID>Linhas Alimentacao Instalacao</ID>
+      <Name>Linhas Alimentacao Instalacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ddd8d490-2856-46a7-9ae3-9f2b8d096def">
+          <DataType>WChar</DataType>
+          <DataSize>250</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c265fd9b-23e8-41c2-8ac3-b89c5636be1e">
+            <TableID>dbo_dim_posto_transformacao</TableID>
+            <ColumnID>linhas_alimentacao_instalacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

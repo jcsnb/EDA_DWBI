@@ -1,0 +1,1248 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/12/2017 3:37:46 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DCDWBIQDDW00"
+  DTS:CreatorName="GRUPOEDA\ExtPwDBi03"
+  DTS:DTSID="{4CCD1F99-8D8D-4724-86AB-5B1E495D2A22}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="E_POSTO_TRANSFORMACAO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="92"
+  DTS:VersionGUID="{165AB147-3D5A-4F96-8C08-A86C03D3F966}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DBE90887-7110-4595-97D6-98742709509D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BDD4FE9E-29CA-4B99-AD22-9A3153F546D2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3853B606-915D-4A0F-B331-0422AEDD8D44}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4FEC3543-0958-419F-AB05-FCFB3D5AF1E3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">SIT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4C1651D4-B72C-4945-A06C-E1C0CEBC1E37}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">e_posto_transformacao</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{18F78171-3ECB-4A00-86BC-539F04B6E275}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tipo_equipamento">
+      <DTS:VariableValue
+        DTS:DataType="8">pt_pts</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extração dos registos do Equipamento - Posto Transformação"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{65FF284B-F7A8-4562-8534-162BD6AF743A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extração dos registos do Equipamento - Posto Transformação">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{BCDED8CD-EA98-4804-81A1-E6C9D1B55CCB}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Extração de dados Equipamento - Posto Transformação"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="e_equipamento"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [sit_id]
+      ,[sap_id]
+      ,[tipo_equipamento]
+      ,[descricao_equipamento]
+      ,[sit_id_pai]
+      ,[mensagem_id]
+      ,[estado_carregamento]
+      ,[data_carregamento]
+      ,[operacao]
+      ,[propriedade_codigo]
+      ,[propriedade_valor]
+FROM [dbo].[e_equipamento]
+WHERE [tipo_equipamento] = ?
+--AND operacao &lt;&gt;'DELETE' -- Esta condição da operação deverá ser retirada após carregamento inicial</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"Parameter0:Input",{18F78171-3ECB-4A00-86BC-539F04B6E275};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Connections[OleDbConnection]"
+                      connectionManagerID="{C8792051-F092-44BF-81D6-E208CD5ADB72}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[sit_id]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[sit_id]"
+                          length="64"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[sit_id]"
+                          name="sit_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[sap_id]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[sap_id]"
+                          length="64"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[sap_id]"
+                          name="sap_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[descricao_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[descricao_equipamento]"
+                          length="128"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[descricao_equipamento]"
+                          name="descricao_equipamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[tipo_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[tipo_equipamento]"
+                          length="64"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[tipo_equipamento]"
+                          name="tipo_equipamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[operacao]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[operacao]"
+                          length="15"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[operacao]"
+                          name="operacao"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[sit_id_pai]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[sit_id_pai]"
+                          length="64"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[sit_id_pai]"
+                          name="sit_id_pai"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[mensagem_id]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[mensagem_id]"
+                          length="50"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[mensagem_id]"
+                          name="mensagem_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[estado_carregamento]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[estado_carregamento]"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[estado_carregamento]"
+                          name="estado_carregamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[data_carregamento]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[data_carregamento]"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[data_carregamento]"
+                          name="data_carregamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[propriedade_codigo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[propriedade_codigo]"
+                          length="64"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[propriedade_codigo]"
+                          name="propriedade_codigo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[propriedade_valor]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[propriedade_valor]"
+                          length="1024"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[propriedade_valor]"
+                          name="propriedade_valor"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[sit_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          name="sit_id" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[sap_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          name="sap_id" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[descricao_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="128"
+                          name="descricao_equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[tipo_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          name="tipo_equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[operacao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="operacao" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[sit_id_pai]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          name="sit_id_pai" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[mensagem_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="mensagem_id" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[estado_carregamento]"
+                          dataType="i4"
+                          name="estado_carregamento" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[data_carregamento]"
+                          dataType="i4"
+                          name="data_carregamento" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[propriedade_codigo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          name="propriedade_codigo" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].ExternalColumns[propriedade_valor]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1024"
+                          name="propriedade_valor" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[sit_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[sit_id]"
+                          name="sit_id" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[sap_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[sap_id]"
+                          name="sap_id" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[sit_id_pai]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[sit_id_pai]"
+                          name="sit_id_pai" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[descricao_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="128"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[descricao_equipamento]"
+                          name="descricao_equipamento" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[tipo_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[tipo_equipamento]"
+                          name="tipo_equipamento" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[mensagem_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[mensagem_id]"
+                          name="mensagem_id" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[estado_carregamento]"
+                          dataType="i4"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[estado_carregamento]"
+                          name="estado_carregamento" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[data_carregamento]"
+                          dataType="i4"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[data_carregamento]"
+                          name="data_carregamento" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[operacao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[operacao]"
+                          name="operacao" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[propriedade_codigo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[propriedade_codigo]"
+                          name="propriedade_codigo" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[propriedade_valor]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1024"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[propriedade_valor]"
+                          name="propriedade_valor" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="e_posto_transformacao"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[e_posto_transformacao]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Connections[OleDbConnection]"
+                      connectionManagerID="{C8792051-F092-44BF-81D6-E208CD5ADB72}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].Columns[sit_id]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="64"
+                          cachedName="sit_id"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[sit_id]"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[sit_id]" />
+                        <inputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].Columns[sit_id_pai]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="64"
+                          cachedName="sit_id_pai"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[sit_id_pai]"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[sit_id_pai]" />
+                        <inputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].Columns[tipo_equipamento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="64"
+                          cachedName="tipo_equipamento"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[tipo_equipamento]"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[tipo_equipamento]" />
+                        <inputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].Columns[operacao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="operacao"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[operacao]"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[operacao]" />
+                        <inputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].Columns[sap_id]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="64"
+                          cachedName="sap_id"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[sap_id]"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[sap_id]" />
+                        <inputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].Columns[descricao_equipamento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="128"
+                          cachedName="descricao_equipamento"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[descricao_equipamento]"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[descricao_equipamento]" />
+                        <inputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].Columns[mensagem_id]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="mensagem_id"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[mensagem_id]"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[mensagem_id]" />
+                        <inputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].Columns[estado_carregamento]"
+                          cachedDataType="i4"
+                          cachedName="estado_carregamento"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[estado_carregamento]"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[estado_carregamento]" />
+                        <inputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].Columns[data_carregamento]"
+                          cachedDataType="i4"
+                          cachedName="data_carregamento"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[data_carregamento]"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[data_carregamento]" />
+                        <inputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].Columns[propriedade_codigo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="64"
+                          cachedName="propriedade_codigo"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[propriedade_codigo]"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[propriedade_codigo]" />
+                        <inputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].Columns[propriedade_valor]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1024"
+                          cachedName="propriedade_valor"
+                          externalMetadataColumnId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[propriedade_valor]"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output].Columns[propriedade_valor]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[sit_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          name="sit_id" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[tipo_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          name="tipo_equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[operacao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="operacao" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[sit_id_pai]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          name="sit_id_pai" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[sap_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          name="sap_id" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[descricao_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="128"
+                          name="descricao_equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[mensagem_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="mensagem_id" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[estado_carregamento]"
+                          dataType="i4"
+                          name="estado_carregamento" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[data_carregamento]"
+                          dataType="i4"
+                          name="data_carregamento" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[propriedade_codigo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="64"
+                          name="propriedade_codigo" />
+                        <externalMetadataColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input].ExternalColumns[propriedade_valor]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1024"
+                          name="propriedade_valor" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação.Paths[OLE DB Source Output]"
+                  endId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Extração dos registos do Equipamento - Posto Transformação\Limpeza da tabela de extração e_posto_transformacao"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0E8F3C56-7CBC-41B5-8F1F-06A694B3AA20}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Limpeza da tabela de extração e_posto_transformacao"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{C8792051-F092-44BF-81D6-E208CD5ADB72}"
+              SQLTask:SqlStatementSource="truncate table e_posto_transformacao" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Extração dos registos do Equipamento - Posto Transformação.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{C8F2B06F-445E-4399-90EB-5A51F991608B}"
+          DTS:From="Package\Extração dos registos do Equipamento - Posto Transformação\Limpeza da tabela de extração e_posto_transformacao"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{6874697C-D88F-44DC-B854-DB6B3721A908}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{C895E1EF-9D70-4A76-8295-2317ADD9E172}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;&#x9;    numero_registos_inseridos = ?,&#xA;&#x9;&#x9;data_fim = CURRENT_TIMESTAMP,&#xA;&#x9;&#x9;duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;&#x9;&#x9;sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ACFE0184-854F-48CF-ADC5-7BB2C8F95E1E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{C8792051-F092-44BF-81D6-E208CD5ADB72}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{C5EF7D70-0E7E-4AE1-ADB1-FEFEE222B248}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{2E1DAFCB-08B5-4B96-B9D7-5E89F92D544D}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{21F4EC71-446B-481F-9984-EC873FA87F7F}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{63647E0A-9364-4B6D-8118-04D5B2DB06A3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{C8792051-F092-44BF-81D6-E208CD5ADB72}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{67DCED29-0599-4EA5-92A9-5BA1E7F9907A}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{A70EDE74-BB91-4F22-B0CF-C24D25B9233D}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{25A9C3D0-FC1D-454A-A65F-36B810FD90E5}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{80D06B62-FDA0-4AFB-915F-6BC899FFC059}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Extração dos registos do Equipamento - Posto Transformação" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{020A74BF-3366-4EB9-BCAA-42DFAF8DD961}"
+      DTS:From="Package\Extração dos registos do Equipamento - Posto Transformação"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="341,42"
+          Id="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação"
+          TopLeft="25,139" />
+        <NodeLayout
+          Size="337,42"
+          Id="Package\Extração dos registos do Equipamento - Posto Transformação\Limpeza da tabela de extração e_posto_transformacao"
+          TopLeft="31.75,53.75" />
+        <EdgeLayout
+          Id="Package\Extração dos registos do Equipamento - Posto Transformação.PrecedenceConstraints[Constraint]"
+          TopLeft="197.875,95.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.25"
+              Start="0,0"
+              End="0,35.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="376,236"
+          Size="376,279"
+          Id="Package\Extração dos registos do Equipamento - Posto Transformação"
+          TopLeft="427.25,74.75" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="31.4285714285716,131.571428571428" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="47.1428571428572,31.5714285714286" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint]"
+          TopLeft="139.285714285714,73.5714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.9999999999994"
+              Start="0,0"
+              End="0,50.4999999999994">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.4999999999994" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="271,229"
+          Size="271,272"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="886,73.2857142857143" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="40,181" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="43,110" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="42,28" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint]"
+          TopLeft="139.5,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="141.75,152">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="306,278"
+          Size="306,321"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="53,57" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="359,215.875">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68.25,0"
+              Start="0,0"
+              End="60.75,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="60.75,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="819.25,211.767857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66.75,0"
+              Start="0,0"
+              End="59.25,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="59.25,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento"
+          TopLeft="442,22" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao"
+          TopLeft="420,194" />
+        <EdgeLayout
+          Id="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação.Paths[OLE DB Source Output]"
+          TopLeft="516.5,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,130"
+              Start="0,0"
+              End="0,122.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,122.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_equipamento">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extração dos registos do Equipamento - Posto Transformação\Extração de dados Equipamento - Posto Transformação\e_posto_transformacao">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

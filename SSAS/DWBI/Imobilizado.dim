@@ -1,0 +1,307 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="cf4c1a50-841d-4eeb-acf1-8692281f9d84" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Imobilizado</ID>
+  <Name>Imobilizado</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1898" scrolltop="-5768" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8837" y="16536" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dim_imobilizado" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="5662" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00001e16000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dim_imobilizado" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1898</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5768</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="8ce05170-b35e-48b5-a68d-ef343a6b477a">
+    <DataSourceViewID>DWH</DataSourceViewID>
+  </Source>
+  <UnknownMember>Hidden</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="a59239b6-799f-4760-bfd1-38de5f03ca48">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="59e4cd86-ec71-472c-a001-4468b9629b6d">
+      <ID>Imobilizado</ID>
+      <Name>Imobilizado</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="db646caf-fdb4-4e02-b244-73fddc87e57f">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8c74fd6d-0c74-44f0-b4bb-893741c645b2">
+            <TableID>dbo_dim_imobilizado</TableID>
+            <ColumnID>sk_imobilizado</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="c7612785-6b15-43df-b9e8-4a4b1e991140">
+        <DataType>WChar</DataType>
+        <DataSize>147</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="234ecb2b-fd59-4a52-8095-b19ddbb6e247">
+          <TableID>dbo_dim_imobilizado</TableID>
+          <ColumnID>descricao_completa_imobilizado</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="15649833-5331-4668-b37b-28086d826bd7">
+          <AttributeID>Codigo Empresa</AttributeID>
+          <Name>Codigo Empresa</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="baa49368-7aaf-419f-8897-06920c632e8f">
+          <AttributeID>Codigo Centro Custo</AttributeID>
+          <Name>Codigo Centro Custo</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4cad8821-68fc-4b19-a262-8fc709c1e46c">
+          <AttributeID>Codigo Classe Imobilizado</AttributeID>
+          <Name>Codigo Classe Imobilizado</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d8d6e22b-6677-42bc-ab5a-b2a6d46b4b94">
+          <AttributeID>Data Incorporacao</AttributeID>
+          <Name>Data Incorporacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5a6d803a-7d19-4412-b31b-53ae4cc35655">
+          <AttributeID>Data Desativacao</AttributeID>
+          <Name>Data Desativacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8cce0606-2f85-446d-b6e9-c3fbec35f1f7">
+          <AttributeID>Numero Investimento</AttributeID>
+          <Name>Numero Investimento</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="97453aa8-5b54-4721-8f9a-aafa8f8ced8d">
+          <AttributeID>Numero Inventario</AttributeID>
+          <Name>Numero Inventario</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="88be25f0-2e9f-438c-b8e1-0f5c028a3c92">
+          <AttributeID>Grupo Imobilizado</AttributeID>
+          <Name>Grupo Imobilizado</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f5a1ce01-fac6-4116-98c1-fbca0f1b0d9e">
+      <ID>Codigo Empresa</ID>
+      <Name>Codigo Empresa</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="62f76118-7974-4c65-9225-169b8b8af25e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="baec31bb-8d3f-46ce-a8a9-830062a0ef01">
+            <TableID>dbo_dim_imobilizado</TableID>
+            <ColumnID>codigo_empresa</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="34f65cd1-5790-4877-916f-2d9eba403a42">
+      <ID>Codigo Centro Custo</ID>
+      <Name>Codigo Centro Custo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="35d7748b-fe73-4817-a4c2-81c3d24291bf">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="73887bf5-6698-4d05-9df1-4bf2f003cf91">
+            <TableID>dbo_dim_imobilizado</TableID>
+            <ColumnID>codigo_centro_custo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e006ae21-0fcd-4453-9644-ffefcda15b29">
+      <ID>Codigo Classe Imobilizado</ID>
+      <Name>Classe Imobilizado</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="73fc98ad-21cc-4b88-9ca9-73eb5a8fd06f">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="22ccbd41-f3fc-4599-a471-12a83d67b6d7">
+            <TableID>dbo_dim_imobilizado</TableID>
+            <ColumnID>codigo_classe_imobilizado</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="f3d4d01c-8af8-4d45-b33b-b36321a7fbf0">
+        <DataType>WChar</DataType>
+        <DataSize>58</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="cf0b7402-fc1f-4640-9ba5-2c9223d46abe">
+          <TableID>dbo_dim_imobilizado</TableID>
+          <ColumnID>descricao_completa_classe_imobilizado</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a0811e3e-892b-4fc1-80d6-88a3e33af078">
+      <ID>Data Incorporacao</ID>
+      <Name>Data Incorporacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c8f173d1-5a5b-4efe-9119-4481d7fd63e2">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ad30a70b-44e3-4199-9b8d-95c336f3360b">
+            <TableID>dbo_dim_imobilizado</TableID>
+            <ColumnID>data_incorporacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d4d11af8-b734-4b6c-ae71-14a3be97c384">
+      <ID>Data Desativacao</ID>
+      <Name>Data Desativacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="03a230d8-752f-429d-8f5c-9a912b24af6c">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a63ed8d3-bbf2-4408-83a6-cb03feeec3f6">
+            <TableID>dbo_dim_imobilizado</TableID>
+            <ColumnID>data_desativacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b25aed4c-185a-42c1-94a3-770826745b43">
+      <ID>Numero Investimento</ID>
+      <Name>Numero Investimento</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="118efd84-0c66-4b87-96bd-e71cd1709c07">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e6c21c62-b0ca-4a98-b06f-a4ad79c7eab4">
+            <TableID>dbo_dim_imobilizado</TableID>
+            <ColumnID>numero_inventario</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="47f12c34-1df1-4e5b-b7a2-54e08bb2a2fa">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="1ae005e4-7687-47db-9ab5-7916fb6c3ec0">
+          <TableID>dbo_dim_imobilizado</TableID>
+          <ColumnID>numero_inventario</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4f0e13c0-58b9-477c-9120-5ae91cb1202f">
+      <ID>Numero Inventario</ID>
+      <Name>Numero Inventario</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="48a97045-1557-4690-b710-42015636c1db">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a04b87bd-cc49-4254-a1ea-301d1e781423">
+            <TableID>dbo_dim_imobilizado</TableID>
+            <ColumnID>numero_inventario</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4e52e03e-ddf2-45bd-bfe3-87a43dc21b0f">
+      <ID>Grupo Imobilizado</ID>
+      <Name>Grupo Imobilizado</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2f975f6a-1dd6-438f-a076-11b0287c0a4a">
+          <DataType>WChar</DataType>
+          <DataSize>12</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cfd35c8b-138d-4e36-93a3-a71ef3384da9">
+            <TableID>dbo_dim_imobilizado</TableID>
+            <ColumnID>grupo_imobilizado</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <AttributeAllMemberName>Total de Imobilizado</AttributeAllMemberName>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="84cf94a6-c4f4-4756-b641-ce701c4be28d">
+      <ID>Hierarchy</ID>
+      <Name>Hierarquia de Imobilizado</Name>
+      <AllMemberName>Total de Imobilizado</AllMemberName>
+      <Levels>
+        <Level dwd:design-time-name="12dca3cc-4657-44bb-a48b-f6c223548b11">
+          <ID>Classe Imobilizado</ID>
+          <Name>Classe Imobilizado</Name>
+          <SourceAttributeID>Codigo Classe Imobilizado</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="f20b3165-9c84-4715-a0d0-163769dd150a">
+          <ID>Imobilizado</ID>
+          <Name>Imobilizado</Name>
+          <SourceAttributeID>Imobilizado</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

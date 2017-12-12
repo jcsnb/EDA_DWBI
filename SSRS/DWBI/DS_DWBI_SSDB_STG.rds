@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DS_DWBI_SSDB_STG">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=10.13.50.67\dwbidev;Initial Catalog=STG</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>e1c20132-dfec-4d96-95e2-eb5b3e3078b4</DataSourceID>
+</RptDataSource>

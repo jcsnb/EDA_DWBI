@@ -1,0 +1,236 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>DWBI</Database>
+    <Server>10.13.50.68:60199</Server>
+    <ConnectionString>Data Source=10.13.50.68:60199;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>8ELC3Y3JLc3RgUe/5WeB2rnMdBQ=03/12/2017 22:24:3003/12/2017 12:45:39</TimeStamp>
+        <ID>
+          <String>Data_source_DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>FxT1J/dRnr0WbXuPmHsSVYaGFJg=03/12/2017 12:57:3103/12/2017 12:45:39</TimeStamp>
+        <ID>
+          <String>DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>yLow8fGh4dI2ozC4QiXcRE4ZsCc=03/12/2017 12:45:3903/12/2017 12:45:39</TimeStamp>
+        <ID>
+          <String>Auditoria</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>81jWZvenIeiq3zbu4Wl4oXm4qdQ=03/12/2017 12:45:4003/12/2017 12:45:39</TimeStamp>
+        <ID>
+          <String>Equipamento</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>MjWkSao0WmHfi8PrZMqFsMbqQPI=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Geografia</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>6iWneahO9Z/y9QUIx5II527s72Q=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Painel</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>fjUKA47oDHMkZ34kjj9QreUaPyc=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Tempo</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>TzKubly6SdLvrpA9JQerVK2HYek=03/12/2017 12:45:3903/12/2017 12:45:39</TimeStamp>
+        <ID>
+          <String>Barramento</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>fWn+ctdaBnbg3xstrkOKjpDwvUk=03/12/2017 12:45:4003/12/2017 12:45:39</TimeStamp>
+        <ID>
+          <String>Escalao Bateria Condensadores</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Dt/SeaP/whIzL68UV8bmqxh4fzc=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Transformador</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>w+SWPMwffpNkAam574HcB4m3+20=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Subestação</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>gAsl4D9CfV8d4tJnPtFjpDqabIQ=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Imobilizado</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>yOpPV76Ur1yAlMP4cAoUYcbwzt4=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Tipologia de Ativo</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>mAHilC4nFHRpq6PB11w/+4VB79Q=03/12/2017 12:45:3903/12/2017 12:45:39</TimeStamp>
+        <ID>
+          <String>Conta do Razão</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ROy5s4JRrkURa4lhevePI4kvyvo=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Nível de Tensão</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>vKrfUCvYIILFDm9ULBIvqjzAQUg=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Nivel de Tensão Detalhe</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>pjggfbgGEmaZwD6QguwRWoWYsAY=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Relação de Transformação</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ICmNnrKhjVnSBkqCmGjPeA3mT2Q=03/12/2017 12:45:3903/12/2017 12:45:39</TimeStamp>
+        <ID>
+          <String>Contador Leitura</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>7isyieSBxEDIJTSe6PcJtQQg4rU=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Qualidade</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>NZvznDmsrZeXDcbDOvFtBajaiYc=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Tempo Minutos</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>5F5xBdTTqQrcyYBBEPr5lKBRfws=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Linha</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>C8s6rpYKTfDMLmmj+NnJRn19xug=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Troço</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>1i+pjwJmSTv7hjhqeHdbowO6FFc=04/12/2017 00:47:0503/12/2017 12:45:39</TimeStamp>
+        <ID>
+          <String>Centro de Custo</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>5x3zBKfy4XkAAMEjQ1SlgflfJeU=04/12/2017 01:09:1703/12/2017 12:56:07</TimeStamp>
+        <ID>
+          <String>Dim Equipamento Scada</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>NGuEGQRYSL83HZb+cYDpgSwm1/g=03/12/2017 12:45:4003/12/2017 12:45:39bOl7XKyHSgXWI8tkrUEbyqb1T9c=03/12/2017 12:45:4003/12/2017 12:45:39</TimeStamp>
+        <ID>
+          <String>Equipamento</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>YatM1LNefF2lxVZmnNtvV/SSz24=03/12/2017 12:45:4003/12/2017 12:45:40nDe6mr8HeIIaomYtdgHLffDWgoY=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Movimentos de Imobilizado</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>b17ukIxpvlyEaS0RjupMkJxQnko=03/12/2017 12:45:4003/12/2017 12:45:39tdUb3XYDK/wAZN2ya3i9dU0hnOw=03/12/2017 12:45:4003/12/2017 12:45:39</TimeStamp>
+        <ID>
+          <String>Equipamento Detalhe</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>8KCjhdmoFkU84DUhCP6RC2fKVEk=03/12/2017 12:45:4003/12/2017 12:45:40UxHXrjSir3lnM4ymJJ9SvrVmS14=03/12/2017 12:45:4003/12/2017 12:45:40</TimeStamp>
+        <ID>
+          <String>Medições</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>WbWRkNrO8lIKosg7KbwBj8GH0BI=04/12/2017 01:09:5603/12/2017 23:14:50+E5OVKamyp5zIVKrALfMFxojwzo=03/12/2017 23:14:5003/12/2017 23:14:50</TimeStamp>
+        <ID>
+          <String>Medições Scada</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>hATZ1GdyuTX5l3u1kVOp6epWUjM=03/12/2017 12:45:3903/12/2017 12:45:39</TimeStamp>
+      <ID>
+        <String>DWBI</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2017-12-04T01:10:05.75Z</LastDeployed>
+</DeploymentSnapshot>

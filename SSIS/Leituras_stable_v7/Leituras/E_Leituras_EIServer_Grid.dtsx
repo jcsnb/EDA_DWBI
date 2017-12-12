@@ -1,0 +1,2662 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/19/2017 5:29:33 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DCDWBIQDDW00"
+  DTS:CreatorName="GRUPOEDA\ExtPwDBi01"
+  DTS:Description="DTS Wizard-generated package"
+  DTS:DTSID="{45B6DAF0-AD15-4078-85B7-0DC27843C39F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="2070"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="E_Leituras_EIServer_Grid"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="151"
+  DTS:VersionGUID="{1337FC60-8A3C-4C14-A050-48B86882E70E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[EIServer_FileConnection]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9C1D4C17-4AD1-407B-9175-F0FBA74DD3C2}"
+      DTS:ObjectName="EIServer_FileConnection">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::EISERVER_File]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2070"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="a">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Contador"
+              DTS:DTSID="{8756343F-5588-4838-BCC9-D40B2380970E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DataPeriodo"
+              DTS:DTSID="{46FD1E73-3D86-4DC7-A35E-9F72D7FDA6D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ContadorDesc"
+              DTS:DTSID="{F0B6F92C-F27E-4D6E-BD9B-CA54FFCB1E2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Medida"
+              DTS:DTSID="{F0D19318-31F7-4D0A-A4A3-4A96C05BCDE4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Unidade"
+              DTS:DTSID="{9A59A474-5A01-4A4A-9B72-6C0E3A059FFA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Valor"
+              DTS:DTSID="{802A2259-E33F-4F6B-96C2-1962DBFBF309}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Qualidade"
+              DTS:DTSID="{92E09008-AF80-4DD7-8963-C09C10387F6F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DataModificacao"
+              DTS:DTSID="{C2E6187C-3A8A-4640-B8C0-26B662B7CABC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FusoHorario"
+              DTS:DTSID="{2FD3C265-2275-4DFB-9A27-FAA700F33F99}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{11C8E5D1-7338-4A49-8172-1D8599817A5B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DataModificacaoFicheiro">
+      <DTS:VariableValue
+        DTS:DataType="7">1/30/2001 1:54:00 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{581F7B34-7233-47C6-8512-43660EA37240}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="EISERVER_File">
+      <DTS:VariableValue
+        DTS:DataType="8">a</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{14FC97DA-4291-4D56-9300-230B5C999A87}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExecID">
+      <DTS:VariableValue
+        DTS:DataType="8">a</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C5551669-F78E-4BB2-B50F-B87FBE632739}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="RIGHT( @[$Project::EISERVER_Grids_Path], FINDSTRING( REVERSE(@[$Project::EISERVER_Grids_Path]), &quot;\\&quot;, 1 )-1 )"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Folder">
+      <DTS:VariableValue
+        DTS:DataType="8">GRIDS</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6F1D90BE-B1C0-455C-9CFD-82E4AED330E3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NumLinhasInseridas">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DF3C7AFC-DC70-4BE9-BB5F-46587BED54AE}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::EISERVER_Grids_Path] + &quot;\\Erros&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PastaFicheirosErro">
+      <DTS:VariableValue
+        DTS:DataType="8">\\10.11.6.164\eiserver\GRIDS\Erros</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A560151A-5655-482A-882C-CC828AABAAF7}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::EISERVER_Grids_Path] + &quot;\\EmProcessamento&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PastaFicheirosProcessar">
+      <DTS:VariableValue
+        DTS:DataType="8">\\10.11.6.164\eiserver\GRIDS\EmProcessamento</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7909A2E5-82AB-4F07-8594-44C4E1C3A92D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">e_leituras_EISERVER</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{754902B1-230D-47A9-A955-106E0C9B1001}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TotalLinhasInseridas">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FimAudit"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{DDA5E1D2-275E-4B3B-BE56-B5A477FB6D68}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FimAudit">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{3CF7709E-0A96-4503-8C93-9FD58E3C11EA}"
+          DTS:EvaluateAsExpression="True"
+          DTS:Expression="@[System::ExecutionInstanceGUID]"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="ExecutionInstanceGUID">
+          <DTS:VariableValue
+            DTS:DataType="8">{97C4B8C2-3AEB-4314-A97E-55FF7DD1F18D}</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{89CD8BB2-B043-461A-9A39-94ABC11D287C}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="numero_registos_final">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{D2B3F670-6262-476E-A810-E1FAF291069E}"
+          DTS:EvaluateAsExpression="True"
+          DTS:Expression="@[User::TotalLinhasInseridas]"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="numero_registos_inseridos">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{2220A708-A38B-4E9A-99CA-A0026F93DDF4}"
+          DTS:EvaluateAsExpression="True"
+          DTS:Expression="@[User::Tabela]"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Tabela_p">
+          <DTS:VariableValue
+            DTS:DataType="8">e_leituras_EISERVER</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FimAudit\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CD90256A-82E2-44F6-A696-4D13552D8266}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5F2AF0A2-5790-46EE-9418-D09C5B1F8F79}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;     numero_registos_inseridos = ?,&#xA;  data_fim = CURRENT_TIMESTAMP,&#xA;  duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2000-01-01 00:00:00.000') AS TIME),&#xA;  sucesso = 1&#xA;  WHERE codigo_execucao = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_inseridos"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FimAudit\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{995DF96A-952B-4444-87B4-55706B2C6EBC}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9C64960F-7222-4865-A1EF-EF1D40EA6BDB}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Tabela_p"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FimAudit.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{97F7A7B2-AC1D-4821-9DA7-5FD6920426E9}"
+          DTS:From="Package\FimAudit\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\FimAudit\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Importa Leituras EIServer"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{17F8D88D-133A-495D-9F50-D0EE0B1C504A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Importa Leituras EIServer">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{80BA6C4B-8753-4B22-872A-0679DE83F728}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Foreach EISERVER File">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="Microsoft.ForEachFileEnumerator"
+            DTS:DTSID="{C9845DCE-B82E-43D0-8C1F-D6341DC70CAA}"
+            DTS:ObjectName="{C9845DCE-B82E-43D0-8C1F-D6341DC70CAA}">
+            <DTS:PropertyExpression
+              DTS:Name="Directory">@[$Project::EISERVER_Grids_Path]</DTS:PropertyExpression>
+            <DTS:ObjectData>
+              <ForEachFileEnumeratorProperties>
+                <FEFEProperty
+                  Folder="\\10.11.6.164\eiserver\GRIDS" />
+                <FEFEProperty
+                  FileSpec="*.*" />
+                <FEFEProperty
+                  FileNameRetrievalType="0" />
+                <FEFEProperty
+                  Recurse="0" />
+              </ForEachFileEnumeratorProperties>
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1"
+              DTS:CreationName="Microsoft.Pipeline"
+              DTS:DTSID="{6D70D9D2-AACA-42BD-AEC0-6BD33AFE63D1}"
+              DTS:ExecutableType="Microsoft.Pipeline"
+              DTS:FailPackageOnFailure="True"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Data Flow Task 1"
+              DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <pipeline
+                  defaultBufferSize="3145728"
+                  version="1">
+                  <components>
+                    <component
+                      refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion"
+                      componentClassID="Microsoft.DataConvert"
+                      contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                      description="Data Conversion"
+                      name="Data Conversion"
+                      usesDispositions="true">
+                      <inputs>
+                        <input
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Inputs[Data Conversion Input]"
+                          name="Data Conversion Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Inputs[Data Conversion Input].Columns[FileName]"
+                              cachedDataType="wstr"
+                              cachedLength="260"
+                              cachedName="FileName"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[FileName]" />
+                          </inputColumns>
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Outputs[Data Conversion Output]"
+                          exclusionGroup="1"
+                          name="Data Conversion Output"
+                          synchronousInputId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Inputs[Data Conversion Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FileName]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              length="260"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FileName]"
+                              name="Copy of FileName"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.Int32"
+                                  description="Specifies the input column used as the source of data for the conversion."
+                                  name="SourceInputColumnLineageID">#{Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[FileName]}</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Outputs[Data Conversion Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="Data Conversion Error Output"
+                          synchronousInputId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Inputs[Data Conversion Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column"
+                      componentClassID="Microsoft.DerivedColumn"
+                      contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                      description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                      name="Derived Column"
+                      usesDispositions="true">
+                      <inputs>
+                        <input
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]"
+                          description="Input to the Derived Column Transformation"
+                          name="Derived Column Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[Contador]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="Contador"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Contador]"
+                              truncationRowDisposition="FailComponent"
+                              usageType="readWrite">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">[TRIM](#{Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Contador]})</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">TRIM(Contador)</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[ContadorDesc]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="200"
+                              cachedName="ContadorDesc"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[ContadorDesc]"
+                              truncationRowDisposition="FailComponent"
+                              usageType="readWrite">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">[TRIM](#{Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[ContadorDesc]})</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">TRIM(ContadorDesc)</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[Medida]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="Medida"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Medida]"
+                              truncationRowDisposition="FailComponent"
+                              usageType="readWrite">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">[TRIM](#{Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Medida]})</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">TRIM(Medida)</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[Unidade]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="Unidade"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Unidade]"
+                              truncationRowDisposition="FailComponent"
+                              usageType="readWrite">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">[TRIM](#{Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Qualidade]})</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">TRIM(Qualidade)</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[Valor]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="Valor"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Valor]" />
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[Qualidade]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="Qualidade"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Qualidade]" />
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[FusoHorario]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="FusoHorario"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[FusoHorario]"
+                              truncationRowDisposition="FailComponent"
+                              usageType="readWrite">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">[TRIM](#{Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[FusoHorario]})</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">TRIM(FusoHorario)</property>
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[DataPeriodo]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="DataPeriodo"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[DataPeriodo]" />
+                          </inputColumns>
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output]"
+                          description="Default Output of the Derived Column Transformation"
+                          exclusionGroup="1"
+                          name="Derived Column Output"
+                          synchronousInputId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[ExecID]"
+                              dataType="i4"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[ExecID]"
+                              name="ExecID"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">@[User::ExecID]</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">@[User::ExecID]</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[Folder]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              length="20"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[Folder]"
+                              name="Folder"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">(DT_STR,20,1252)@[User::Folder]</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">(DT_STR,20,1252)@[User::Folder]</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[Valor_conv]"
+                              dataType="numeric"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[Valor_conv]"
+                              name="Valor_conv"
+                              precision="38"
+                              scale="4"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">(DT_NUMERIC,38,4)[REPLACE]([REPLACE](#{Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Valor]},",",""),".",",")</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">(DT_NUMERIC,38,4)REPLACE(REPLACE(Valor,",",""),".",",")</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[DataPeriodo_conv]"
+                              dataType="dbTimeStamp"
+                              errorOrTruncationOperation="Computation"
+                              errorRowDisposition="FailComponent"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[DataPeriodo_conv]"
+                              name="DataPeriodo_conv"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Expression"
+                                  name="Expression">(DT_DBTIMESTAMP)(DT_STR,20,1252)(([SUBSTRING](#{Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[DataPeriodo]},7,4) + "-" + [SUBSTRING](#{Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[DataPeriodo]},4,2) + "-" + [SUBSTRING](#{Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[DataPeriodo]},1,2)) + " " + [SUBSTRING](#{Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[DataPeriodo]},12,5))</property>
+                                <property
+                                  containsID="true"
+                                  dataType="System.String"
+                                  description="Derived Column Friendly Expression"
+                                  expressionType="Notify"
+                                  name="FriendlyExpression">(DT_DBTIMESTAMP)(DT_STR,20,1252)((SUBSTRING(DataPeriodo,7,4) + "-" + SUBSTRING(DataPeriodo,4,2) + "-" + SUBSTRING(DataPeriodo,1,2)) + " " + SUBSTRING(DataPeriodo,12,5))</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                        <output
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output]"
+                          description="Error Output of the Derived Column Transformation"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="Derived Column Error Output"
+                          synchronousInputId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras"
+                      componentClassID="Microsoft.OLEDBDestination"
+                      contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                      description="OLE DB Destination"
+                      name="Destination - e_leituras"
+                      usesDispositions="true"
+                      version="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">[dbo].[e_leituras_EISERVER]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable">User::Tabela</property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">4</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepIdentity">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                          name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 20000</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                          name="FastLoadMaxInsertCommitSize">20000</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Connections[OleDbConnection]"
+                          connectionManagerID="{9C64960F-7222-4865-A1EF-EF1D40EA6BDB}:invalid"
+                          connectionManagerRefId="{9C64960F-7222-4865-A1EF-EF1D40EA6BDB}:invalid"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input]"
+                          errorOrTruncationOperation="Insert"
+                          errorRowDisposition="FailComponent"
+                          hasSideEffects="true"
+                          name="Destination Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].Columns[Contador]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="Contador"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[Contador]"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Contador]" />
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].Columns[ContadorDesc]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="200"
+                              cachedName="ContadorDesc"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[ContadorDesc]"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[ContadorDesc]" />
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].Columns[Unidade]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="Unidade"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[Unidade]"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Unidade]" />
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].Columns[Qualidade]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="Qualidade"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[Qualidade]"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Qualidade]" />
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].Columns[DataModificacao]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="DataModificacao"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[DataModificacao]"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[DataModificacao]" />
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].Columns[FusoHorario]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="FusoHorario"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[FusoHorario]"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[FusoHorario]" />
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].Columns[ExecID]"
+                              cachedDataType="i4"
+                              cachedName="ExecID"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[IDExecucao]"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[ExecID]" />
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].Columns[Medida]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="Medida"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[Medida]"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Medida]" />
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].Columns[Folder]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="20"
+                              cachedName="Folder"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[Pasta]"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[Folder]" />
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].Columns[Copy of FileName]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="260"
+                              cachedName="Copy of FileName"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[FicheiroOrigem]"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FileName]" />
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].Columns[Valor_conv]"
+                              cachedDataType="numeric"
+                              cachedName="Valor_conv"
+                              cachedPrecision="38"
+                              cachedScale="4"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[Valor]"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[Valor_conv]" />
+                            <inputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].Columns[DataPeriodo_conv]"
+                              cachedDataType="dbTimeStamp"
+                              cachedName="DataPeriodo_conv"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[DataPeriodo]"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output].Columns[DataPeriodo_conv]" />
+                          </inputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[Contador]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="Contador" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[DataPeriodo]"
+                              dataType="dbTimeStamp"
+                              name="DataPeriodo" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[ContadorDesc]"
+                              codePage="1252"
+                              dataType="str"
+                              length="200"
+                              name="ContadorDesc" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[Unidade]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="Unidade" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[Valor]"
+                              dataType="numeric"
+                              name="Valor"
+                              precision="38"
+                              scale="4" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[Qualidade]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="Qualidade" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[DataModificacao]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="DataModificacao" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[FusoHorario]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="FusoHorario" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[FicheiroOrigem]"
+                              codePage="1252"
+                              dataType="str"
+                              length="500"
+                              name="FicheiroOrigem" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[IDExecucao]"
+                              dataType="i4"
+                              name="IDExecucao" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[Medida]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="Medida" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input].ExternalColumns[Pasta]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="Pasta" />
+                          </externalMetadataColumns>
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Outputs[OLE DB Destination Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="OLE DB Destination Error Output"
+                          synchronousInputId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Row Count"
+                      componentClassID="Microsoft.RowCount"
+                      contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                      description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                      name="Row Count">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable to hold the row count."
+                          name="VariableName">User::NumLinhasInseridas</property>
+                      </properties>
+                      <inputs>
+                        <input
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Row Count.Inputs[Row Count Input 1]"
+                          hasSideEffects="true"
+                          name="Row Count Input 1">
+                          <externalMetadataColumns />
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Row Count.Outputs[Row Count Output 1]"
+                          name="Row Count Output 1"
+                          synchronousInputId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Row Count.Inputs[Row Count Input 1]">
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID"
+                      componentClassID="Microsoft.FlatFileSource"
+                      contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                      description="Flat File Source"
+                      localeId="2070"
+                      name="Source - EISERVER_GRID"
+                      usesDispositions="true"
+                      version="1">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Specifies whether zero-length columns are treated as null."
+                          name="RetainNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                          name="FileNameColumnName">FileName</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Connections[FlatFileConnection]"
+                          connectionManagerID="Package.ConnectionManagers[EIServer_FileConnection]"
+                          connectionManagerRefId="Package.ConnectionManagers[EIServer_FileConnection]"
+                          name="FlatFileConnection" />
+                      </connections>
+                      <outputs>
+                        <output
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output]"
+                          name="Flat File Source Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Contador]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[Contador]"
+                              length="50"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Contador]"
+                              name="Contador"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[DataPeriodo]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[DataPeriodo]"
+                              length="50"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[DataPeriodo]"
+                              name="DataPeriodo"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[ContadorDesc]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[ContadorDesc]"
+                              length="200"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[ContadorDesc]"
+                              name="ContadorDesc"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Unidade]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[Unidade]"
+                              length="50"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Unidade]"
+                              name="Unidade"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Valor]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[Valor]"
+                              length="50"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Valor]"
+                              name="Valor"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Qualidade]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[Qualidade]"
+                              length="50"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Qualidade]"
+                              name="Qualidade"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[DataModificacao]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[DataModificacao]"
+                              length="50"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[DataModificacao]"
+                              name="DataModificacao"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[FusoHorario]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[FusoHorario]"
+                              length="50"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[FusoHorario]"
+                              name="FusoHorario"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[FileName]"
+                              dataType="wstr"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[FileName]"
+                              length="260"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[FileName]"
+                              name="FileName"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Medida]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[Medida]"
+                              length="50"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].Columns[Medida]"
+                              name="Medida"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[Contador]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="Contador" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[DataPeriodo]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="DataPeriodo" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[ContadorDesc]"
+                              codePage="1252"
+                              dataType="str"
+                              length="200"
+                              name="ContadorDesc" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[Unidade]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="Unidade" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[Valor]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="Valor" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[Qualidade]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="Qualidade" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[DataModificacao]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="DataModificacao" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[FusoHorario]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="FusoHorario" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[FileName]"
+                              dataType="wstr"
+                              length="260"
+                              name="FileName" />
+                            <externalMetadataColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output].ExternalColumns[Medida]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="Medida" />
+                          </externalMetadataColumns>
+                        </output>
+                        <output
+                          refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Error Output]"
+                          isErrorOut="true"
+                          name="Flat File Source Error Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              codePage="1252"
+                              dataType="text"
+                              description="Flat File Source Error Output Column"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              name="Flat File Source Error Output Column" />
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                            <outputColumn
+                              refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Error Output].Columns[FileName]"
+                              dataType="wstr"
+                              length="260"
+                              lineageId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Error Output].Columns[FileName]"
+                              name="FileName" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                  </components>
+                  <paths>
+                    <path
+                      refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1.Paths[Data Conversion Output]"
+                      endId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras.Inputs[Destination Input]"
+                      name="Data Conversion Output"
+                      startId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Outputs[Data Conversion Output]" />
+                    <path
+                      refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1.Paths[Derived Column Output]"
+                      endId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Derived Column Output"
+                      startId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Outputs[Derived Column Output]" />
+                    <path
+                      refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1.Paths[Flat File Source Output]"
+                      endId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Row Count.Inputs[Row Count Input 1]"
+                      name="Flat File Source Output"
+                      startId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID.Outputs[Flat File Source Output]" />
+                    <path
+                      refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1.Paths[Row Count Output 1]"
+                      endId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]"
+                      name="Row Count Output 1"
+                      startId="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Row Count.Outputs[Row Count Output 1]" />
+                  </paths>
+                </pipeline>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Finish Load File Log"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{a2a0395f-f8bd-4f9e-9ac5-af1919cef3af}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Finish Load File Log"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{9C64960F-7222-4865-A1EF-EF1D40EA6BDB}"
+                  SQLTask:SqlStatementSource="UPDATE [dbo].[log_load_files]&#xA;SET FinishLoadDate = GETDATE()&#xA; ,Rows = ?&#xA; ,STATUS = 'EmStaging'&#xA;WHERE ExecID = ?&#xA; AND STATUS = 'Loading';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::NumLinhasInseridas"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::ExecID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Move ficheiro sucesso"
+              DTS:CreationName="Microsoft.FileSystemTask"
+              DTS:Description="File System Task"
+              DTS:DTSID="{7160D4D6-06B5-46A2-A26D-1FF83E5F25CC}"
+              DTS:ExecutableType="Microsoft.FileSystemTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Move ficheiro sucesso"
+              DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <FileSystemData
+                  TaskOperationType="MoveFile"
+                  TaskSourcePath="{9C1D4C17-4AD1-407B-9175-F0FBA74DD3C2}"
+                  TaskDestinationPath="User::PastaFicheirosProcessar"
+                  TaskIsDestinationVariable="True" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Obtem data modificação"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{991ef456-284e-4121-950b-1d2c90576f8d}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Obtem data modificação"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{9C64960F-7222-4865-A1EF-EF1D40EA6BDB}"
+                  SQLTask:SqlStatementSource="DECLARE @dates TABLE (ID INT IDENTITY, DataModif VARCHAR(100))&#xA;DECLARE @filepath AS VARCHAR(4000) =  ?&#xA;DECLARE @doscmd AS VARCHAR(4000) = 'for %a in (' + @filepath + ') do echo %~ta'&#xA;&#xA;INSERT INTO @dates&#xA;EXECUTE xp_cmdshell @doscmd&#xA;&#xA;SELECT DataModif&#xA;FROM @dates&#xA;WHERE ID = 3&#xA;&#xA;"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="0"
+                    SQLTask:DtsVariableName="User::DataModificacaoFicheiro" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::EISERVER_File"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Soma linhas inseridas"
+              DTS:CreationName="Microsoft.ExpressionTask"
+              DTS:Description="Expression Task"
+              DTS:DTSID="{DD304F43-73A9-4242-BE0D-1FF403CD3664}"
+              DTS:ExecutableType="Microsoft.ExpressionTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Soma linhas inseridas"
+              DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <ExpressionTask
+                  Expression="@[User::TotalLinhasInseridas] =  @[User::TotalLinhasInseridas] +  @[User::NumLinhasInseridas]" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File\Start Load File Log"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{1a069e58-bf41-42a3-9987-eef48fe7e537}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Start Load File Log"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{9C64960F-7222-4865-A1EF-EF1D40EA6BDB}"
+                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[log_load_files]&#xA;SELECT ? AS execid&#xA; ,? AS filepath&#xA; ,? AS modifDate&#xA; ,getdate() AS StartLoadDate&#xA; ,NULL AS FinishLoadDate&#xA; ,NULL AS [Rows]&#xA;,NULL as [sk_audit_load]&#xA;,NULL as [DWHLoadDate]&#xA; ,'Loading' AS STATUS&#xA; ,NULL AS ErrorMessage&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::ExecID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::EISERVER_File"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::DataModificacaoFicheiro"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="7"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{C622831C-B93D-477A-B459-7957792F2A37}"
+              DTS:From="Package\Importa Leituras EIServer\Foreach EISERVER File\Soma linhas inseridas"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\Importa Leituras EIServer\Foreach EISERVER File\Finish Load File Log" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{74822AB0-2F68-4E18-BF02-BA3E8579464F}"
+              DTS:From="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\Importa Leituras EIServer\Foreach EISERVER File\Move ficheiro sucesso" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File.PrecedenceConstraints[Constraint 2]"
+              DTS:CreationName=""
+              DTS:DTSID="{ABE03D58-822A-4754-AED1-532AFF9B8FC4}"
+              DTS:From="Package\Importa Leituras EIServer\Foreach EISERVER File\Move ficheiro sucesso"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 2"
+              DTS:To="Package\Importa Leituras EIServer\Foreach EISERVER File\Soma linhas inseridas" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File.PrecedenceConstraints[Constraint 3]"
+              DTS:CreationName=""
+              DTS:DTSID="{59A5CA1D-1F20-4E10-87E3-6D72D27AF78F}"
+              DTS:From="Package\Importa Leituras EIServer\Foreach EISERVER File\Obtem data modificação"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 3"
+              DTS:To="Package\Importa Leituras EIServer\Foreach EISERVER File\Start Load File Log" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File.PrecedenceConstraints[Constraint 4]"
+              DTS:CreationName=""
+              DTS:DTSID="{CF6189D4-6AB3-4009-AF76-00DB3A62A1A1}"
+              DTS:From="Package\Importa Leituras EIServer\Foreach EISERVER File\Start Load File Log"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 4"
+              DTS:To="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1" />
+          </DTS:PrecedenceConstraints>
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File.EventHandlers[OnError]"
+              DTS:CreationName="OnError"
+              DTS:DTSID="{CE3C231C-9A45-4BE6-91F6-E314D9ADE942}"
+              DTS:EventID="0"
+              DTS:EventName="OnError"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="The propagate property of the event"
+                  DTS:DTSID="{F67A4281-ED61-4244-8532-7E755E66C54C}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File.EventHandlers[OnError]\Finish Load File Log Error"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{671d7da7-966c-4a0c-971c-cf18d1a2c068}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Finish Load File Log Error">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{9C64960F-7222-4865-A1EF-EF1D40EA6BDB}"
+                      SQLTask:SqlStatementSource="UPDATE [dbo].[log_load_files]&#xA;SET FinishLoadDate = GETDATE()&#xA; ,Rows = ?&#xA; ,Status = 'Error'&#xA;,ErrorMessage = ? + ' - ' + ?&#xA;WHERE ExecID = ?&#xA; AND Status = 'Loading'&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="0"
+                        SQLTask:DtsVariableName="User::NumLinhasInseridas"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="3"
+                        SQLTask:ParameterSize="-1" />
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="1"
+                        SQLTask:DtsVariableName="System::ErrorCode"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="2"
+                        SQLTask:DtsVariableName="System::ErrorDescription"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="3"
+                        SQLTask:DtsVariableName="User::ExecID"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="3"
+                        SQLTask:ParameterSize="-1" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File.EventHandlers[OnError]\Move ficheiro em processamento para erros"
+                  DTS:CreationName="Microsoft.FileSystemTask"
+                  DTS:Description="File System Task"
+                  DTS:DTSID="{c67cf177-9a3f-47fd-915a-e820e04177d8}"
+                  DTS:ExecutableType="Microsoft.FileSystemTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Move ficheiro em processamento para erros"
+                  DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <FileSystemData
+                      TaskOperationType="MoveFile"
+                      TaskSourcePath="{9C1D4C17-4AD1-407B-9175-F0FBA74DD3C2}"
+                      TaskDestinationPath="User::PastaFicheirosErro"
+                      TaskIsDestinationVariable="True" />
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+              <DTS:PrecedenceConstraints>
+                <DTS:PrecedenceConstraint
+                  DTS:refId="Package\Importa Leituras EIServer\Foreach EISERVER File.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+                  DTS:CreationName=""
+                  DTS:DTSID="{25F1A19B-601F-4238-8BD9-19782BE0F52D}"
+                  DTS:From="Package\Importa Leituras EIServer\Foreach EISERVER File.EventHandlers[OnError]\Move ficheiro em processamento para erros"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint"
+                  DTS:To="Package\Importa Leituras EIServer\Foreach EISERVER File.EventHandlers[OnError]\Finish Load File Log Error" />
+              </DTS:PrecedenceConstraints>
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{272681A0-E76E-47D8-B834-5BEE04F15543}"
+              DTS:ObjectName="{272681A0-E76E-47D8-B834-5BEE04F15543}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::EISERVER_File" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Importa Leituras EIServer\Obtem sk_auditoria da execução"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2af920e1-f3ba-41b2-996e-6cc999260def}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Obtem sk_auditoria da execução"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5F2AF0A2-5790-46EE-9418-D09C5B1F8F79}"
+              SQLTask:SqlStatementSource="SELECT [sk_auditoria] FROM [dbo].[dim_auditoria] WHERE [codigo_execucao] = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::ExecID" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Importa Leituras EIServer.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{8D04FC76-EC43-4018-9844-D244C336949B}"
+          DTS:From="Package\Importa Leituras EIServer\Obtem sk_auditoria da execução"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Importa Leituras EIServer\Foreach EISERVER File" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\InicioAudit"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B31011B2-D719-4637-BCC7-D726E395C76C}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="InicioAudit">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{A0EA2335-0888-4BA4-B876-3E6104DC830A}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="chave_auditoria">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{5B52AA5D-3959-4996-AC16-E31513BDDC23}"
+          DTS:EvaluateAsExpression="True"
+          DTS:Expression="@[System::ExecutionInstanceGUID]"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="ExecutionInstanceGUID">
+          <DTS:VariableValue
+            DTS:DataType="8">{97C4B8C2-3AEB-4314-A97E-55FF7DD1F18D}</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{113A25F9-C587-40FF-BF79-3CFF5939E22B}"
+          DTS:EvaluateAsExpression="True"
+          DTS:Expression="@[$Project::log_origem]"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="log_origem">
+          <DTS:VariableValue
+            DTS:DataType="8">EIServer</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{A829263F-C679-4FC0-A520-0249EDAC63C5}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="numero_registos_inicial">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{3BDD0748-2FD4-4B07-B6CF-E6DC8EC60867}"
+          DTS:EvaluateAsExpression="True"
+          DTS:Expression="@[System::PackageName]"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="PackageName">
+          <DTS:VariableValue
+            DTS:DataType="8">E_Leituras_EIServer_Grid</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{E8C3DA5B-8F65-40FA-B2D7-59C88088A7AB}"
+          DTS:EvaluateAsExpression="True"
+          DTS:Expression="@[User::Tabela]"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Tabela_p">
+          <DTS:VariableValue
+            DTS:DataType="8">e_leituras_EISERVER</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{3D2049C3-E7C9-41F4-852B-815C5C811B61}"
+          DTS:EvaluateAsExpression="True"
+          DTS:Expression="@[System::UserName]"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="UserName">
+          <DTS:VariableValue
+            DTS:DataType="8">GRUPOEDA\ExtPwDBi01</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\InicioAudit\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{898918B6-B76E-4040-A21A-C76BC0785B85}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5F2AF0A2-5790-46EE-9418-D09C5B1F8F79}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\InicioAudit\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E974F294-40DB-4201-A773-B794E94113BF}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9C64960F-7222-4865-A1EF-EF1D40EA6BDB}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Tabela_p"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\InicioAudit\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{DEAAA146-EC5A-41E3-971A-A98FC10AC350}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5F2AF0A2-5790-46EE-9418-D09C5B1F8F79}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::log_origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::Tabela_p"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\InicioAudit.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{087A79F0-FE7B-41D7-8604-6B922A3C303D}"
+          DTS:From="Package\InicioAudit\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\InicioAudit\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\InicioAudit.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{5C71338F-EBE2-428A-9AF7-0066DA0BCE58}"
+          DTS:From="Package\InicioAudit\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\InicioAudit\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{6F935C6D-D0FB-466C-97C7-E77E8176E611\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{B1050F5B-9CE7-4BA1-B6AE-B5829FB11DAC}"
+      DTS:From="Package\Importa Leituras EIServer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{6F935C6D-D0FB-466C-97C7-E77E8176E611}"
+      DTS:To="Package\FimAudit" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{D93FB655-2892-4837-9EAE-AAEF930AC67F\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{58A71BFF-A357-4556-A064-69BE5B9261AB}"
+      DTS:From="Package\InicioAudit"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{D93FB655-2892-4837-9EAE-AAEF930AC67F}"
+      DTS:To="Package\Importa Leituras EIServer" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{EB44C5C6-31B3-4878-9124-7D879E93CB82}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{720A51DE-5A96-48A7-B491-B443F5EE50CC}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Envia Email"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{B709DA8D-F59B-4699-96F6-8E75FE354CBA}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Envia Email"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::remetente_email]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Ocorreu um erro no componente " + @[System::SourceName] + ", do processo " + @[System::PackageName] + ": " + "\n\r" +@[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">@[$Project::assunto_email_erros]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::destinatario_email_erros]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{4BDEEFBB-B2CB-478F-B881-07EAF97F22F6}"
+              SendMailTask:From="dwbi@eda.pt"
+              SendMailTask:To="diogo.querido@novabase.pt"
+              SendMailTask:Subject="Erro em processo de integração de dados"
+              SendMailTask:MessageSource="Ocorreu um erro no componente , do processo E_Leituras_EIServer_Grid: &#xA;&#xA;" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{D29E81A1-6D41-468F-900B-84722C419310}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere registo de erro"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9C64960F-7222-4865-A1EF-EF1D40EA6BDB}"
+              SQLTask:SqlStatementSource="INSERT INTO log_erros (processo, componente, mensagem,codigo_execucao,data)&#xA;  VALUES (?,?,?,?,current_timestamp)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{86DA4DF4-D422-4133-8F0C-DF3449919DFB}"
+          DTS:From="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Envia Email" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\FimAudit\Atualiza registo de auditoria"
+          TopLeft="4.5,107.5" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\FimAudit\Conta Nº Registos Final"
+          TopLeft="15.5,5.5" />
+        <EdgeLayout
+          Id="Package\FimAudit.PrecedenceConstraints[Constraint 4]"
+          TopLeft="110,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="221,205"
+          Size="221,248"
+          Id="Package\FimAudit"
+          TopLeft="811.5,129.595238095237" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1"
+          TopLeft="27,142" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Finish Load File Log"
+          TopLeft="21,347" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Move ficheiro sucesso"
+          TopLeft="16,212" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Obtem data modificação"
+          TopLeft="10,0" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Soma linhas inseridas"
+          TopLeft="17,280" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Start Load File Log"
+          TopLeft="23.5,70" />
+        <EdgeLayout
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File.PrecedenceConstraints[Constraint]"
+          TopLeft="107,322">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25"
+              Start="0,0"
+              End="0,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File.PrecedenceConstraints[Constraint 1]"
+          TopLeft="107,184">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File.PrecedenceConstraints[Constraint 2]"
+          TopLeft="107,254">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File.PrecedenceConstraints[Constraint 3]"
+          TopLeft="107,42">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File.PrecedenceConstraints[Constraint 4]"
+          TopLeft="107,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="215,404"
+          Size="215,447"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File"
+          TopLeft="14.0714285714286,71.2142857142857" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\Importa Leituras EIServer\Obtem sk_auditoria da execução"
+          TopLeft="5.5,3.21428571428572" />
+        <EdgeLayout
+          Id="Package\Importa Leituras EIServer.PrecedenceConstraints[Constraint]"
+          TopLeft="121.785714285714,45.2142857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.9999999999999"
+              Start="0,0"
+              End="0,18.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="244,524"
+          Size="244,567"
+          Id="Package\Importa Leituras EIServer"
+          TopLeft="326.928571428571,7.88095238095167" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\InicioAudit\Atualiza Nº Registos Inicial"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\InicioAudit\Conta Nº Registos Inicial"
+          TopLeft="10,107.5" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\InicioAudit\Cria registo de auditoria"
+          TopLeft="12,5.5" />
+        <EdgeLayout
+          Id="Package\InicioAudit.PrecedenceConstraints[Constraint 1]"
+          TopLeft="108,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\InicioAudit.PrecedenceConstraints[Constraint 2]"
+          TopLeft="108,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="216,307"
+          Size="216,350"
+          Id="Package\InicioAudit"
+          TopLeft="9.71428571428578,83.5952380952373" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{6F935C6D-D0FB-466C-97C7-E77E8176E611\}]"
+          TopLeft="570.928571428571,291.380952380952">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="240.571428571429,-37.7857142857143"
+              Start="0,0"
+              End="233.071428571429,-37.7857142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="116.285714285715,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="116.285714285715,0"
+                    Point2="120.285714285715,0"
+                    Point3="120.285714285715,-4" />
+                  <mssgle:LineSegment
+                    End="120.285714285715,-33.7857142857143" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.285714285715,-33.7857142857143"
+                    Point2="120.285714285715,-37.7857142857143"
+                    Point3="124.285714285715,-37.7857142857143" />
+                  <mssgle:LineSegment
+                    End="233.071428571429,-37.7857142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{D93FB655-2892-4837-9EAE-AAEF930AC67F\}]"
+          TopLeft="225.714285714286,258.595238095237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101.214285714285,32.7857142857143"
+              Start="0,0"
+              End="93.7142857142852,32.7857142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.6071428571426,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.6071428571426,0"
+                    Point2="50.6071428571426,0"
+                    Point3="50.6071428571426,4" />
+                  <mssgle:LineSegment
+                    End="50.6071428571426,28.7857142857143" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.6071428571426,28.7857142857143"
+                    Point2="50.6071428571426,32.7857142857143"
+                    Point3="54.6071428571426,32.7857142857143" />
+                  <mssgle:LineSegment
+                    End="93.7142857142852,32.7857142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package.EventHandlers[OnError]\Envia Email"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package.EventHandlers[OnError]\Insere registo de erro"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Importa Leituras EIServer\Foreach EISERVER File.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File.EventHandlers[OnError]\Finish Load File Log Error"
+          TopLeft="94,125" />
+        <NodeLayout
+          Size="285,42"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File.EventHandlers[OnError]\Move ficheiro em processamento para erros"
+          TopLeft="49,22" />
+        <EdgeLayout
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="192.25,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Row Count"
+          TopLeft="71.5,107.5" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Source - EISERVER_GRID"
+          TopLeft="41.5,5.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Derived Column"
+          TopLeft="57.5,206.5" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras"
+          TopLeft="37.5000000000001,367.5" />
+        <EdgeLayout
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1.Paths[Row Count Output 1]"
+          TopLeft="135.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="139,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Data Conversion"
+          TopLeft="59,288" />
+        <EdgeLayout
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1.Paths[Derived Column Output]"
+          TopLeft="135.75,248.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.5"
+              Start="0,0"
+              End="0,32">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1.Paths[Data Conversion Output]"
+          TopLeft="134.25,330">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.5"
+              Start="0,0"
+              End="0,30">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Importa Leituras EIServer\Foreach EISERVER File\Data Flow Task 1\Destination - e_leituras">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

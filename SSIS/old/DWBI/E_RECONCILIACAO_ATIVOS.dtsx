@@ -1,0 +1,2265 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/3/2017 6:05:50 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LT123516"
+  DTS:CreatorName="NOVABASE\NB14865"
+  DTS:DTSID="{D36A7004-BE92-4F1F-B4BD-9FFD10EEBC00}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="E_RECONCILIACAO_ATIVOS"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{4BC3C866-8E69-4C06-BCC9-EB66CC9ACDCA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{38848EDA-4113-4228-8459-63CFBBF06136}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\NB14865\Desktop\Reconciliação dos ativos financeiros validado GACON e a enviar NOVABASE.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carregamento do Excel"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{de0b6119-d16e-4a80-906a-3846124049b9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carregamento do Excel"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carregamento do Excel\Conversão de Dados"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Conversão de Dados"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Classe (atual em sistema)]"
+                      cachedDataType="r8"
+                      cachedName="Classe (atual em sistema)"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Classe (atual em sistema)]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Denominação Classe Imob#]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Denominação Classe Imob#"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Denominação Classe Imob#]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Imobilizado]"
+                      cachedDataType="r8"
+                      cachedName="Imobilizado"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Imobilizado]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Sbnº]"
+                      cachedDataType="r8"
+                      cachedName="Sbnº"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Sbnº]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Nº inventário]"
+                      cachedDataType="r8"
+                      cachedName="Nº inventário"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Nº inventário]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[1ª Denominação do imobili]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="1ª Denominação do imobili"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[1ª Denominação do imobili]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[2ª Denominação do imobili]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="2ª Denominação do imobili"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[2ª Denominação do imobili]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Centro cst]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Centro cst"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Centro cst]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Denominação centro de custo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Denominação centro de custo"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Denominação centro de custo]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Valor aquis#atual]"
+                      cachedDataType="r8"
+                      cachedName="Valor aquis#atual"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Valor aquis#atual]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Val#cont#iní#exe]"
+                      cachedDataType="r8"
+                      cachedName="Val#cont#iní#exe"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Val#cont#iní#exe]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[MI]"
+                      cachedDataType="r8"
+                      cachedName="MI"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[MI]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Dt#incorp#]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Dt#incorp#"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Dt#incorp#]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Ano]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Ano"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Ano]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Família SAP original]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Família SAP original"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Família SAP original]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[% V#A# Original]"
+                      cachedDataType="r8"
+                      cachedName="% V#A# Original"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[% V#A# Original]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Família]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Família"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Família]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Local de instalação]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Local de instalação"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Local de instalação]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Identificação]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Identificação"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Identificação]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Tipologia]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Tipologia"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Tipologia]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Equipamentos de nivel 2 e 3]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Equipamentos de nivel 2 e 3"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Equipamentos de nivel 2 e 3]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Nova Classe]"
+                      cachedDataType="r8"
+                      cachedName="Nova Classe"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Nova Classe]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Observações]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Observações"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Observações]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input].Columns[Indicações Área Técnica EDA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Indicações Área Técnica EDA"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Indicações Área Técnica EDA]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[classe_atual]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[classe_atual]"
+                      name="classe_atual"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Classe (atual em sistema)]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[descricao_classe_imobilizado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[descricao_classe_imobilizado]"
+                      name="descricao_classe_imobilizado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Denominação Classe Imob#]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[numero_imobilizado]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[numero_imobilizado]"
+                      name="numero_imobilizado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Imobilizado]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[subnumero_imobilizado]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[subnumero_imobilizado]"
+                      name="subnumero_imobilizado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Sbnº]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[numero_inventario]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[numero_inventario]"
+                      name="numero_inventario"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Nº inventário]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[descricao_imobilizado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[descricao_imobilizado]"
+                      name="descricao_imobilizado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[1ª Denominação do imobili]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[descricao_imobilizado_continuacao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[descricao_imobilizado_continuacao]"
+                      name="descricao_imobilizado_continuacao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[2ª Denominação do imobili]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[codigo_centro_custo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[codigo_centro_custo]"
+                      name="codigo_centro_custo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Centro cst]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[descricao_centro_custo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[descricao_centro_custo]"
+                      name="descricao_centro_custo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Denominação centro de custo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[valor_aquisicao]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[valor_aquisicao]"
+                      name="valor_aquisicao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Valor aquis#atual]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[valor_contabilistico_inicio_exercicio]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[valor_contabilistico_inicio_exercicio]"
+                      name="valor_contabilistico_inicio_exercicio"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Val#cont#iní#exe]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[mi]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[mi]"
+                      name="mi"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[MI]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[data_incorporacao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[data_incorporacao]"
+                      name="data_incorporacao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Dt#incorp#]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[ano]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[ano]"
+                      name="ano"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Ano]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[familia_sap_original]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[familia_sap_original]"
+                      name="familia_sap_original"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Família SAP original]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[percentagem_distribuicao]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[percentagem_distribuicao]"
+                      name="percentagem_distribuicao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[% V#A# Original]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[familia]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[familia]"
+                      name="familia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Família]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[local_instalacao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[local_instalacao]"
+                      name="local_instalacao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Local de instalação]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[identificacao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[identificacao]"
+                      name="identificacao"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Identificação]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[tipologia]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[tipologia]"
+                      name="tipologia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Tipologia]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[equipamentos_nivel_2_3]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[equipamentos_nivel_2_3]"
+                      name="equipamentos_nivel_2_3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Equipamentos de nivel 2 e 3]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[nova_classe]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[nova_classe]"
+                      name="nova_classe"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Nova Classe]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[observacoes]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[observacoes]"
+                      name="observacoes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Observações]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[indicacoes_area_tecnica_eda]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[indicacoes_area_tecnica_eda]"
+                      name="indicacoes_area_tecnica_eda"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Indicações Área Técnica EDA]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carregamento do Excel\e_reconciliacao_ativos"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="e_reconciliacao_ativos"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[e_reconciliacao_ativos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Connections[OleDbConnection]"
+                  connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[classe_atual]"
+                      cachedDataType="r8"
+                      cachedName="classe_atual"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[classe_atual]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[classe_atual]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[descricao_classe_imobilizado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="descricao_classe_imobilizado"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[descricao_classe_imobilizado]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[descricao_classe_imobilizado]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[numero_imobilizado]"
+                      cachedDataType="r8"
+                      cachedName="numero_imobilizado"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[numero_imobilizado]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[numero_imobilizado]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[subnumero_imobilizado]"
+                      cachedDataType="r8"
+                      cachedName="subnumero_imobilizado"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[subnumero_imobilizado]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[subnumero_imobilizado]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[numero_inventario]"
+                      cachedDataType="r8"
+                      cachedName="numero_inventario"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[numero_inventario]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[numero_inventario]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[descricao_imobilizado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="descricao_imobilizado"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[descricao_imobilizado]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[descricao_imobilizado]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[descricao_imobilizado_continuacao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="descricao_imobilizado_continuacao"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[descricao_imobilizado_continuacao]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[descricao_imobilizado_continuacao]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[codigo_centro_custo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="codigo_centro_custo"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[codigo_centro_custo]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[codigo_centro_custo]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[descricao_centro_custo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="descricao_centro_custo"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[descricao_centro_custo]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[descricao_centro_custo]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[valor_aquisicao]"
+                      cachedDataType="r8"
+                      cachedName="valor_aquisicao"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[valor_aquisicao]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[valor_aquisicao]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[valor_contabilistico_inicio_exercicio]"
+                      cachedDataType="r8"
+                      cachedName="valor_contabilistico_inicio_exercicio"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[valor_contabilistico_inicio_exercicio]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[valor_contabilistico_inicio_exercicio]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[mi]"
+                      cachedDataType="r8"
+                      cachedName="mi"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[mi]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[mi]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[data_incorporacao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="data_incorporacao"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[data_incorporacao]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[data_incorporacao]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[ano]"
+                      cachedDataType="i4"
+                      cachedName="ano"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[ano]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[ano]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[familia_sap_original]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="familia_sap_original"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[familia_sap_original]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[familia_sap_original]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[percentagem_distribuicao]"
+                      cachedDataType="r8"
+                      cachedName="percentagem_distribuicao"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[percentagem_distribuicao]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[percentagem_distribuicao]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[familia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="familia"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[familia]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[familia]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[local_instalacao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="local_instalacao"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[local_instalacao]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[local_instalacao]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[identificacao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="identificacao"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[identificacao]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[identificacao]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[tipologia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="tipologia"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[tipologia]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[tipologia]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[equipamentos_nivel_2_3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="equipamentos_nivel_2_3"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[equipamentos_nivel_2_3]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[equipamentos_nivel_2_3]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[nova_classe]"
+                      cachedDataType="r8"
+                      cachedName="nova_classe"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[nova_classe]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[nova_classe]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[observacoes]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="observacoes"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[observacoes]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[observacoes]" />
+                    <inputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].Columns[indicacoes_area_tecnica_eda]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="indicacoes_area_tecnica_eda"
+                      externalMetadataColumnId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[indicacoes_area_tecnica_eda]"
+                      lineageId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output].Columns[indicacoes_area_tecnica_eda]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[classe_atual]"
+                      dataType="r8"
+                      name="classe_atual" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[descricao_classe_imobilizado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="descricao_classe_imobilizado" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[numero_imobilizado]"
+                      dataType="r8"
+                      name="numero_imobilizado" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[subnumero_imobilizado]"
+                      dataType="r8"
+                      name="subnumero_imobilizado" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[numero_inventario]"
+                      dataType="r8"
+                      name="numero_inventario" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[descricao_imobilizado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="descricao_imobilizado" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[descricao_imobilizado_continuacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="descricao_imobilizado_continuacao" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[codigo_centro_custo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="codigo_centro_custo" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[descricao_centro_custo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="descricao_centro_custo" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[valor_aquisicao]"
+                      dataType="r8"
+                      name="valor_aquisicao" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[valor_contabilistico_inicio_exercicio]"
+                      dataType="r8"
+                      name="valor_contabilistico_inicio_exercicio" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[mi]"
+                      dataType="r8"
+                      name="mi" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[data_incorporacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="data_incorporacao" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[ano]"
+                      dataType="i4"
+                      name="ano" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[familia_sap_original]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="familia_sap_original" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[percentagem_distribuicao]"
+                      dataType="r8"
+                      name="percentagem_distribuicao" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[familia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="familia" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[local_instalacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="local_instalacao" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[identificacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="identificacao" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[tipologia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tipologia" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[equipamentos_nivel_2_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="equipamentos_nivel_2_3" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[nova_classe]"
+                      dataType="r8"
+                      name="nova_classe" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[observacoes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="observacoes" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input].ExternalColumns[indicacoes_area_tecnica_eda]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="indicacoes_area_tecnica_eda" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carregamento do Excel\e_reconciliacao_ativos.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\e_reconciliacao_ativos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carregamento do Excel\e_reconciliacao_ativos.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carregamento do Excel\Reconciliacao de Ativos"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Reconciliacao de Ativos"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'6 Imobilizado$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Classe (atual em sistema)]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Classe (atual em sistema)]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Classe (atual em sistema)]"
+                      name="Classe (atual em sistema)"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Denominação Classe Imob#]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Denominação Classe Imob#]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Denominação Classe Imob#]"
+                      name="Denominação Classe Imob#"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Imobilizado]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Imobilizado]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Imobilizado]"
+                      name="Imobilizado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Sbnº]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Sbnº]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Sbnº]"
+                      name="Sbnº"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Imob + Sbnº]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Imob + Sbnº]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Imob + Sbnº]"
+                      name="Imob + Sbnº"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Nº inventário]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Nº inventário]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Nº inventário]"
+                      name="Nº inventário"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[1ª Denominação do imobili]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[1ª Denominação do imobili]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[1ª Denominação do imobili]"
+                      name="1ª Denominação do imobili"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[2ª Denominação do imobili]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[2ª Denominação do imobili]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[2ª Denominação do imobili]"
+                      name="2ª Denominação do imobili"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Centro cst]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Centro cst]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Centro cst]"
+                      name="Centro cst"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Denominação centro de custo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Denominação centro de custo]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Denominação centro de custo]"
+                      name="Denominação centro de custo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Valor aquis#atual]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Valor aquis#atual]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Valor aquis#atual]"
+                      name="Valor aquis#atual"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Val#cont#iní#exe]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Val#cont#iní#exe]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Val#cont#iní#exe]"
+                      name="Val#cont#iní#exe"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[MI]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[MI]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[MI]"
+                      name="MI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Dt#incorp#]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Dt#incorp#]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Dt#incorp#]"
+                      name="Dt#incorp#"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[CFiscal]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[CFiscal]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[CFiscal]"
+                      name="CFiscal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[ViÚ]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[ViÚ]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[ViÚ]"
+                      name="ViÚ"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Depr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Depr]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Depr]"
+                      name="Depr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[CdUsado]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[CdUsado]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[CdUsado]"
+                      name="CdUsado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Iní#dpr#no]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Iní#dpr#no]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Iní#dpr#no]"
+                      name="Iní#dpr#no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Ano]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Ano]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Ano]"
+                      name="Ano"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Ilha Inicial]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Ilha Inicial]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Ilha Inicial]"
+                      name="Ilha Inicial"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Família SAP original]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Família SAP original]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Família SAP original]"
+                      name="Família SAP original"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[C#E#]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[C#E#]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[C#E#]"
+                      name="C#E#"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Concessão]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Concessão]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Concessão]"
+                      name="Concessão"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[DIF Classe]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[DIF Classe]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[DIF Classe]"
+                      name="DIF Classe"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[DIF Concessão]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[DIF Concessão]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[DIF Concessão]"
+                      name="DIF Concessão"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[V#A# Original]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[V#A# Original]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[V#A# Original]"
+                      name="V#A# Original"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[V#C# Original]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[V#C# Original]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[V#C# Original]"
+                      name="V#C# Original"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[% V#A# Original]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[% V#A# Original]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[% V#A# Original]"
+                      name="% V#A# Original"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[-]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[-]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[-]"
+                      name="-"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Reconciliação]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Reconciliação]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Reconciliação]"
+                      name="Reconciliação"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[S#I#]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[S#I#]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[S#I#]"
+                      name="S#I#"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Critério]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Critério]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Critério]"
+                      name="Critério"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Família]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Família]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Família]"
+                      name="Família"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Local de instalação]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Local de instalação]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Local de instalação]"
+                      name="Local de instalação"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Identificação]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Identificação]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Identificação]"
+                      name="Identificação"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Designação Principal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Designação Principal]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Designação Principal]"
+                      name="Designação Principal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Equipamentos de nivel 2 e 3]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Equipamentos de nivel 2 e 3]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Equipamentos de nivel 2 e 3]"
+                      name="Equipamentos de nivel 2 e 3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Designação Ativo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Designação Ativo]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Designação Ativo]"
+                      name="Designação Ativo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Tipologia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Tipologia]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Tipologia]"
+                      name="Tipologia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Ilha]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Ilha]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Ilha]"
+                      name="Ilha"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Nova Classe]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Nova Classe]"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Nova Classe]"
+                      name="Nova Classe"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Observações]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Observações]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Observações]"
+                      name="Observações"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Indicações Área Técnica EDA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Indicações Área Técnica EDA]"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].Columns[Indicações Área Técnica EDA]"
+                      name="Indicações Área Técnica EDA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Classe (atual em sistema)]"
+                      dataType="r8"
+                      name="Classe (atual em sistema)" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Denominação Classe Imob#]"
+                      dataType="wstr"
+                      length="255"
+                      name="Denominação Classe Imob#" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Imobilizado]"
+                      dataType="r8"
+                      name="Imobilizado" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Sbnº]"
+                      dataType="r8"
+                      name="Sbnº" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Imob + Sbnº]"
+                      dataType="wstr"
+                      length="255"
+                      name="Imob + Sbnº" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Nº inventário]"
+                      dataType="r8"
+                      name="Nº inventário" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[1ª Denominação do imobili]"
+                      dataType="wstr"
+                      length="255"
+                      name="1ª Denominação do imobili" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[2ª Denominação do imobili]"
+                      dataType="wstr"
+                      length="255"
+                      name="2ª Denominação do imobili" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Centro cst]"
+                      dataType="wstr"
+                      length="255"
+                      name="Centro cst" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Denominação centro de custo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Denominação centro de custo" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Valor aquis#atual]"
+                      dataType="r8"
+                      name="Valor aquis#atual" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Val#cont#iní#exe]"
+                      dataType="r8"
+                      name="Val#cont#iní#exe" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[MI]"
+                      dataType="r8"
+                      name="MI" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Dt#incorp#]"
+                      dataType="wstr"
+                      length="255"
+                      name="Dt#incorp#" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[CFiscal]"
+                      dataType="r8"
+                      name="CFiscal" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[ViÚ]"
+                      dataType="r8"
+                      name="ViÚ" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Depr]"
+                      dataType="wstr"
+                      length="255"
+                      name="Depr" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[CdUsado]"
+                      dataType="wstr"
+                      length="255"
+                      name="CdUsado" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Iní#dpr#no]"
+                      dataType="wstr"
+                      length="255"
+                      name="Iní#dpr#no" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Ano]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ano" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Ilha Inicial]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ilha Inicial" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Família SAP original]"
+                      dataType="wstr"
+                      length="255"
+                      name="Família SAP original" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[C#E#]"
+                      dataType="wstr"
+                      length="255"
+                      name="C#E#" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Concessão]"
+                      dataType="wstr"
+                      length="255"
+                      name="Concessão" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[DIF Classe]"
+                      dataType="wstr"
+                      length="255"
+                      name="DIF Classe" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[DIF Concessão]"
+                      dataType="wstr"
+                      length="255"
+                      name="DIF Concessão" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[V#A# Original]"
+                      dataType="r8"
+                      name="V#A# Original" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[V#C# Original]"
+                      dataType="r8"
+                      name="V#C# Original" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[% V#A# Original]"
+                      dataType="r8"
+                      name="% V#A# Original" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[-]"
+                      dataType="r8"
+                      name="-" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Reconciliação]"
+                      dataType="wstr"
+                      length="255"
+                      name="Reconciliação" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[S#I#]"
+                      dataType="r8"
+                      name="S#I#" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Critério]"
+                      dataType="wstr"
+                      length="255"
+                      name="Critério" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Família]"
+                      dataType="wstr"
+                      length="255"
+                      name="Família" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Local de instalação]"
+                      dataType="wstr"
+                      length="255"
+                      name="Local de instalação" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Identificação]"
+                      dataType="wstr"
+                      length="255"
+                      name="Identificação" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Designação Principal]"
+                      dataType="wstr"
+                      length="255"
+                      name="Designação Principal" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Equipamentos de nivel 2 e 3]"
+                      dataType="wstr"
+                      length="255"
+                      name="Equipamentos de nivel 2 e 3" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Designação Ativo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Designação Ativo" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Tipologia]"
+                      dataType="wstr"
+                      length="255"
+                      name="Tipologia" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Ilha]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ilha" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Nova Classe]"
+                      dataType="r8"
+                      name="Nova Classe" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Observações]"
+                      dataType="wstr"
+                      length="255"
+                      name="Observações" />
+                    <externalMetadataColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output].ExternalColumns[Indicações Área Técnica EDA]"
+                      dataType="wstr"
+                      length="255"
+                      name="Indicações Área Técnica EDA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Classe (atual em sistema)]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Classe (atual em sistema)]"
+                      name="Classe (atual em sistema)" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Denominação Classe Imob#]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Denominação Classe Imob#]"
+                      name="Denominação Classe Imob#" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Imobilizado]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Imobilizado]"
+                      name="Imobilizado" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Sbnº]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Sbnº]"
+                      name="Sbnº" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Imob + Sbnº]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Imob + Sbnº]"
+                      name="Imob + Sbnº" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Nº inventário]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Nº inventário]"
+                      name="Nº inventário" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[1ª Denominação do imobili]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[1ª Denominação do imobili]"
+                      name="1ª Denominação do imobili" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[2ª Denominação do imobili]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[2ª Denominação do imobili]"
+                      name="2ª Denominação do imobili" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Centro cst]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Centro cst]"
+                      name="Centro cst" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Denominação centro de custo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Denominação centro de custo]"
+                      name="Denominação centro de custo" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Valor aquis#atual]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Valor aquis#atual]"
+                      name="Valor aquis#atual" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Val#cont#iní#exe]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Val#cont#iní#exe]"
+                      name="Val#cont#iní#exe" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[MI]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[MI]"
+                      name="MI" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Dt#incorp#]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Dt#incorp#]"
+                      name="Dt#incorp#" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[CFiscal]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[CFiscal]"
+                      name="CFiscal" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[ViÚ]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[ViÚ]"
+                      name="ViÚ" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Depr]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Depr]"
+                      name="Depr" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[CdUsado]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[CdUsado]"
+                      name="CdUsado" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Iní#dpr#no]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Iní#dpr#no]"
+                      name="Iní#dpr#no" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Ano]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Ano]"
+                      name="Ano" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Ilha Inicial]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Ilha Inicial]"
+                      name="Ilha Inicial" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Família SAP original]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Família SAP original]"
+                      name="Família SAP original" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[C#E#]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[C#E#]"
+                      name="C#E#" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Concessão]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Concessão]"
+                      name="Concessão" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[DIF Classe]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[DIF Classe]"
+                      name="DIF Classe" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[DIF Concessão]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[DIF Concessão]"
+                      name="DIF Concessão" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[V#A# Original]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[V#A# Original]"
+                      name="V#A# Original" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[V#C# Original]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[V#C# Original]"
+                      name="V#C# Original" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[% V#A# Original]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[% V#A# Original]"
+                      name="% V#A# Original" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[-]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[-]"
+                      name="-" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Reconciliação]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Reconciliação]"
+                      name="Reconciliação" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[S#I#]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[S#I#]"
+                      name="S#I#" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Critério]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Critério]"
+                      name="Critério" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Família]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Família]"
+                      name="Família" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Local de instalação]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Local de instalação]"
+                      name="Local de instalação" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Identificação]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Identificação]"
+                      name="Identificação" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Designação Principal]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Designação Principal]"
+                      name="Designação Principal" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Equipamentos de nivel 2 e 3]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Equipamentos de nivel 2 e 3]"
+                      name="Equipamentos de nivel 2 e 3" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Designação Ativo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Designação Ativo]"
+                      name="Designação Ativo" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Tipologia]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Tipologia]"
+                      name="Tipologia" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Ilha]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Ilha]"
+                      name="Ilha" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Nova Classe]"
+                      dataType="r8"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Nova Classe]"
+                      name="Nova Classe" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Observações]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Observações]"
+                      name="Observações" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Indicações Área Técnica EDA]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[Indicações Área Técnica EDA]"
+                      name="Indicações Área Técnica EDA" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carregamento do Excel.Paths[Data Conversion Output]"
+              endId="Package\Carregamento do Excel\e_reconciliacao_ativos.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Carregamento do Excel\Conversão de Dados.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Carregamento do Excel.Paths[Excel Source Output]"
+              endId="Package\Carregamento do Excel\Conversão de Dados.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\Carregamento do Excel\Reconciliacao de Ativos.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table e_reconciliacao_ativos"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1AF02ACA-7C08-41AC-9206-D9D4985E1FF4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table e_reconciliacao_ativos"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+          SQLTask:SqlStatementSource="truncate table e_reconciliacao_ativos" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C0B4503A-98B3-410A-880F-737A56DBBABA}"
+      DTS:From="Package\Truncate Table e_reconciliacao_ativos"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carregamento do Excel" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Carregamento do Excel"
+          TopLeft="299,149" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\Truncate Table e_reconciliacao_ativos"
+          TopLeft="269,55" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="395.5,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carregamento do Excel">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Carregamento do Excel\e_reconciliacao_ativos"
+          TopLeft="423,250" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Carregamento do Excel\Conversão de Dados"
+          TopLeft="424,154" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Carregamento do Excel\Reconciliacao de Ativos"
+          TopLeft="416,64" />
+        <EdgeLayout
+          Id="Package\Carregamento do Excel.Paths[Data Conversion Output]"
+          TopLeft="513.5,196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento do Excel.Paths[Excel Source Output]"
+          TopLeft="511,106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento do Excel\e_reconciliacao_ativos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

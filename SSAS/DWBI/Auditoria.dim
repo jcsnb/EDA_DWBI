@@ -1,0 +1,400 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="21e833ac-ad07-4afa-a584-18388424aa1d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Auditoria</ID>
+  <Name>Auditoria</Name>
+  <CreatedTimestamp>2017-10-30T04:27:08.66Z</CreatedTimestamp>
+  <LastSchemaUpdate>2017-10-30T04:27:08.66Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1621" scrolltop="-3440" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="6376" y="10504" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dim_auditoria" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4815" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000cf12000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dim_auditoria" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1621</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3440</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>2017-10-30T04:27:09.706667Z</LastProcessed>
+  <State>Processed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="ae495a02-4ccb-4656-aeff-3383caa78fe2">
+    <DataSourceViewID>DWH</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="1dafdd3e-01cc-47aa-8f72-f8fa31a14f1e">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Language>1033</Language>
+  <Collation>Latin1_General_CI_AS</Collation>
+  <UnknownMemberName>Unknown</UnknownMemberName>
+  <Attributes>
+    <Attribute dwd:design-time-name="14cc2000-b475-48a5-b395-03861b9c1713">
+      <ID>Sk Auditoria</ID>
+      <Name>Sk Auditoria</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3f92f17d-57a7-4991-ad37-dd2a62a99594">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4250845f-2591-4998-80a2-fda161f76b58">
+            <TableID>dbo_dim_auditoria</TableID>
+            <ColumnID>sk_auditoria</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="7d7c25ac-36e0-470c-a1d0-103c245c7e6f">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3e75fc6a-563b-4929-9827-f54868ee9dee">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>sk_auditoria</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="88bf7cb3-e7f1-4ea5-9107-d5e49d2af67b">
+          <AttributeID>Codigo Execucao</AttributeID>
+          <Name>Codigo Execucao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9b9ee63f-9e2c-4e74-8017-c43cec87d51b">
+          <AttributeID>Utilizador</AttributeID>
+          <Name>Utilizador</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="056dbd64-e4d5-428b-aed7-7c88c8ac68cc">
+          <AttributeID>Processo</AttributeID>
+          <Name>Processo</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cf7de7bc-c82c-4919-9c27-0cc1c9fc581f">
+          <AttributeID>Origem</AttributeID>
+          <Name>Origem</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3da8ba50-83be-432c-9bbe-20f4d9f12895">
+          <AttributeID>Tabela</AttributeID>
+          <Name>Tabela</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0b71696f-c479-4043-b74c-7ab16fb7a789">
+          <AttributeID>Data Inicio</AttributeID>
+          <Name>Data Inicio</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bf396333-b317-4c9d-b7f5-e210c39a6159">
+          <AttributeID>Data Fim</AttributeID>
+          <Name>Data Fim</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d9b1b759-09d1-4e39-b132-96391bf0bcba">
+          <AttributeID>Sucesso</AttributeID>
+          <Name>Sucesso</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0337435b-a728-4004-8305-f640c2cfffc9">
+      <ID>Codigo Execucao</ID>
+      <Name>Codigo Execucao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="333d1de3-e6de-4369-8b5c-eb891ee74667">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fdcfc7d9-7f90-4614-b836-8122944f0de4">
+            <TableID>dbo_dim_auditoria</TableID>
+            <ColumnID>sk_auditoria</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="97b06016-2ab9-49b2-8f08-7b6626367930">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b7af57c7-ccf3-4dd2-820b-f2247654072e">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>codigo_execucao</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="d1c606c4-0de7-4855-92f1-51b3a2e476fb">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e4e707d7-dfb7-41b3-afee-47ab3f74a508">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>codigo_execucao</ColumnID>
+        </Source>
+      </ValueColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8beea038-cc67-4054-b668-61b344d614f7">
+      <ID>Utilizador</ID>
+      <Name>Utilizador</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9dc775c5-3b77-4302-bcb7-0a4877c689d0">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="78646e75-139a-4e24-93b9-d9634f7c6c1c">
+            <TableID>dbo_dim_auditoria</TableID>
+            <ColumnID>sk_auditoria</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="3782f6f3-0d0a-4208-ad51-b19b15588fa6">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="ce612540-a0a7-4862-864f-6d56585fff86">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>utilizador</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="d1a4ecfc-82aa-40be-bf3f-d32a692e9bc6">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="eccda962-7180-4269-8bbf-303b8479a258">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>utilizador</ColumnID>
+        </Source>
+      </ValueColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="08d98c27-783a-4888-9564-f756f0dbf112">
+      <ID>Processo</ID>
+      <Name>Processo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6bb954b9-ff44-451e-b9e8-740d0d989b0f">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3e0f7b0b-54af-434c-921e-3cc9e152c6e7">
+            <TableID>dbo_dim_auditoria</TableID>
+            <ColumnID>sk_auditoria</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="1c5ac11f-2bf8-4004-bf24-e85ce0853fce">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5e224aca-cc89-44f1-9c06-097007287e7d">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>processo</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="a6cd1688-abe0-4d03-8810-c4239c82174f">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5d21fc37-ed03-4630-a828-f9edbaa5e7be">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>processo</ColumnID>
+        </Source>
+      </ValueColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="78ff7cfb-2fa1-4c9f-ac70-ef51f869beea">
+      <ID>Origem</ID>
+      <Name>Origem</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dbec4d6f-7562-44d5-a9da-51a4d03877cf">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0301c999-2181-483f-a9c5-29910b4864f3">
+            <TableID>dbo_dim_auditoria</TableID>
+            <ColumnID>sk_auditoria</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="b49e6c8a-ca97-46a9-aff2-2441997ec7ef">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="0c402e8d-ce84-43e2-a857-132731987223">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>origem</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="d68ddaf7-dccc-428b-9105-3da9b58aae28">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a3204a40-6c89-4cdb-80d7-36629dc1e333">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>origem</ColumnID>
+        </Source>
+      </ValueColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3bf87870-3873-41b4-ac13-33667def4215">
+      <ID>Tabela</ID>
+      <Name>Tabela</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3fb644e3-cd2d-4e7c-a5fb-31545d07950e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9855c421-b004-4e7d-bc8d-9b0cf9f870c1">
+            <TableID>dbo_dim_auditoria</TableID>
+            <ColumnID>sk_auditoria</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="3df95e35-8f2c-46b4-a3ee-356d6f4eb011">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="625168d3-1141-4cd4-916d-f6843e74f8b3">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>tabela</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="436c17c6-e6f5-4261-9818-9767a485584e">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="394d4851-fd00-40b7-a890-2acc376f07f0">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>tabela</ColumnID>
+        </Source>
+      </ValueColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7d7cc5af-6e4b-4a6c-8726-72a98e6caad9">
+      <ID>Data Inicio</ID>
+      <Name>Data Inicio</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="163c61b7-f068-4090-a25e-99924f9b537e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="904e9207-e4a2-4678-bba3-8b6081787ddb">
+            <TableID>dbo_dim_auditoria</TableID>
+            <ColumnID>sk_auditoria</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="939a7da8-c6df-4ad3-aff0-b865be611a73">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="82c94eca-4bc6-457a-b493-28d21d5b973a">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>data_inicio</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="64de6cda-b64d-4006-aef2-e5912bb3c4ce">
+        <DataType>Date</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c0d08a2b-b93c-4e23-ac98-666f5e7dc34b">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>data_inicio</ColumnID>
+        </Source>
+      </ValueColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="60be8ebc-02af-4c99-9e20-c60b8e90c3e7">
+      <ID>Data Fim</ID>
+      <Name>Data Fim</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="39ec6551-0cec-4d09-8375-dfa8a08e1c62">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3cf845b1-a155-4e18-8ba8-41f4446e3cf8">
+            <TableID>dbo_dim_auditoria</TableID>
+            <ColumnID>sk_auditoria</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="ffc27121-5228-4c1f-a295-fa7e017bb86b">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="925b4826-8c42-451e-bd28-902d70672e6c">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>data_fim</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="47399d6c-3c8a-410d-b8f3-e3c5be381645">
+        <DataType>Date</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a75c76b3-ac16-4cbb-9de2-3d4a7ec0644a">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>data_fim</ColumnID>
+        </Source>
+      </ValueColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8fa485c5-ec87-4869-98b6-449042b34d54">
+      <ID>Sucesso</ID>
+      <Name>Sucesso</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cfbe6be8-c103-4cb6-88a0-8b892bd0d530">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9fec4674-0145-4e94-8ab7-0d0127ad273c">
+            <TableID>dbo_dim_auditoria</TableID>
+            <ColumnID>sk_auditoria</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="aaae6e81-42bb-4f9b-92ec-62a99040bbf0">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3926e45d-aeff-42e7-bf80-c830617f8f32">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>sucesso</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="e91e40a7-6cad-44b5-9e92-7e780eaa0199">
+        <DataType>Boolean</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="eafe95eb-3efe-4102-a6cd-d3bdc38b9c00">
+          <TableID>dbo_dim_auditoria</TableID>
+          <ColumnID>sucesso</ColumnID>
+        </Source>
+      </ValueColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ProactiveCaching dwd:design-time-name="5190bbec-6b14-4244-a084-fe0a8aa64c68">
+    <SilenceInterval>-PT1S</SilenceInterval>
+    <Latency>-PT1S</Latency>
+    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+    <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="92c64ec9-fcef-4b7d-8793-e0993dde4018" />
+  </ProactiveCaching>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

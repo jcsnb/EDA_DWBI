@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DWBIDEV_STG"
+  DTS:DTSID="{9C64960F-7222-4865-A1EF-EF1D40EA6BDB}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=10.13.50.67\DWBIDEV;Initial Catalog=STG;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-PackagePart1-{F81D6F71-C5ED-463F-9AD0-45095FAA9DB0}.\EDADWBISQL.DWBI_DW;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="Q7MvbrYmeFY="
+        p4:IV="si3P8ICky7DVa46sD/ubDQ=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">WNp/UqrrTFfwsQtlk9kjXE1Iyf5BtuaTru8McAg8NKTmi4FwgUqVcpQ8hxIqRVpNYJl7h03bGTjW8epHu96elkvl3J1n3q3ajbc4huZycPYuCu+BC2YG/PrQ6F6OrZ57V3fD0q8XvSo+HhR72xJ22o0i01YHJRr3/8nKltPBWX4=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

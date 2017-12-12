@@ -1,0 +1,1726 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/28/2017 12:48:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LT123516"
+  DTS:CreatorName="NOVABASE\NB14865"
+  DTS:DTSID="{52E753DE-904B-4E2F-B2ED-7E66458FE026}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="T_TEMPO"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="93"
+  DTS:VersionGUID="{867823BA-1268-4E73-A03D-C6294829CA3C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1CCE6C96-27BC-4D09-9B7A-E1A891F99B4C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{464114C1-41EC-4736-B888-0FE26E5CF882}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B22CA13C-CC5E-4BC3-97A4-CB682EB38EB9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2E5F6802-590E-43FB-8F61-23E42B61F46E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">Script SQL</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CA162EBE-36EC-45FA-9C28-DB2990838E18}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">t_tempo</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{28A0DCB9-A0A3-427B-BF99-CA0496CC50AB}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{81054E96-EBDE-48E9-B6CC-446B68321B49}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;&#x9;    numero_registos_inseridos = ?,&#xA;&#x9;&#x9;data_fim = CURRENT_TIMESTAMP,&#xA;&#x9;&#x9;duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;&#x9;&#x9;sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1EDBBB3E-642A-49AF-A5A4-CD4FD22314B3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{84EB855E-95AE-4F17-9DD9-803F0BBF5745}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{9FA36645-7FC8-4FDF-A027-62D8C327F1B8}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F1EB210E-C361-4082-B91F-C68F0F93107B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{329307D2-B04B-4D40-A3E2-75C39982AA62}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0E730F7F-02A0-4687-AA80-C097ECB42454}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{88A935C6-44FD-4745-98DB-78ADD1C5652B}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{AA24D87A-7F06-49B3-9203-BC7CF0C2DF85}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transformação para a dimensão Tempo"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{80E80C4C-4F41-4B61-AA5F-553711B2D697}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transformação para a dimensão Tempo">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Transformação para a dimensão Tempo\Insere o registo desconhecido"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{182ba2f7-4e0f-49b3-b9d8-40db7af21371}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere o registo desconhecido"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="USE STG&#xA;GO&#xA;&#xA;INSERT INTO [dbo].[t_tempo]&#xA;           ([sk_tempo]&#xA;           ,[data]&#xA;           ,[data_completa]&#xA;           ,[mes_ano]&#xA;           ,[ano]&#xA;           ,[semestre]&#xA;           ,[trimestre]&#xA;           ,[mes]&#xA;           ,[semana]&#xA;           ,[dia_ano]&#xA;           ,[dia_mes]&#xA;           ,[nome_mes]&#xA;           ,[nome_dia]&#xA;           ,[estacao_ano]&#xA;           ,[fim_semana]&#xA;           ,[ultimo_dia_mes]&#xA;           ,[ultimo_dia_ano]&#xA;           ,[feriado]&#xA;           ,[dia_util])&#xA;     VALUES&#xA;           (1&#xA;           ,null&#xA;           ,'Desconhecido'&#xA;           ,null&#xA;           ,null&#xA;           ,null&#xA;           ,null&#xA;           ,null&#xA;           ,null&#xA;           ,null&#xA;           ,null&#xA;           ,null&#xA;           ,null&#xA;           ,null&#xA;           ,null&#xA;           ,null&#xA;           ,null&#xA;           ,null&#xA;           ,null)&#xA;           &#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformação para a dimensão Tempo\Limpeza da tabela de transformação"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TRUNCATE TABLE t_tempo"
+          DTS:DTSID="{3A93FEBE-4A6D-4015-97CA-17989EDBF685}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Limpeza da tabela de transformação"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="DECLARE @sql varchar(100)&#xA;SET @sql = 'TRUNCATE TABLE ' + ?&#xA;EXEC (@sql)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{00DC3F5A-F171-42D5-B984-5D26E66DA65F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Transformação de dados para a dimensão tempo"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="e_tempo"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT t.sk_tempo
+      ,t.data
+      ,t.data_completa
+      ,t.mes_ano
+      ,t.ano
+      ,t.semestre
+      ,t.trimestre
+      ,t.mes
+      ,t.semana
+      ,t.dia_ano
+      ,t.dia_mes
+      ,t.nome_mes
+      ,t.nome_dia
+      ,t.estacao_ano
+      ,t.fim_semana
+      ,t.ultimo_dia_mes
+      ,t.ultimo_dia_ano
+	  ,case when f.code is null then 0 else 1 end as feriado
+	  ,case fim_semana when 1 then 0 -- se é fim de semana, não é dia útil
+					   else case when f.code is null then 1 -- se não é feriado é dia útil
+					   else 0 end -- é feriado
+		end as dia_util
+  FROM e_tempo t
+	   LEFT JOIN MDS.mdm.Feriado f ON t.sk_tempo = f.code</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[sk_tempo]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[sk_tempo]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[sk_tempo]"
+                          name="sk_tempo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[data]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[data]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[data]"
+                          name="data"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[data_completa]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[data_completa]"
+                          length="30"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[data_completa]"
+                          name="data_completa"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[mes_ano]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[mes_ano]"
+                          length="8"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[mes_ano]"
+                          name="mes_ano"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[ano]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[ano]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[ano]"
+                          name="ano"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[semestre]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[semestre]"
+                          length="20"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[semestre]"
+                          name="semestre"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[trimestre]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[trimestre]"
+                          length="20"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[trimestre]"
+                          name="trimestre"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[mes]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[mes]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[mes]"
+                          name="mes"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[semana]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[semana]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[semana]"
+                          name="semana"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[dia_ano]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[dia_ano]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[dia_ano]"
+                          name="dia_ano"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[dia_mes]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[dia_mes]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[dia_mes]"
+                          name="dia_mes"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[nome_mes]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[nome_mes]"
+                          length="10"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[nome_mes]"
+                          name="nome_mes"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[nome_dia]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[nome_dia]"
+                          length="50"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[nome_dia]"
+                          name="nome_dia"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[estacao_ano]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[estacao_ano]"
+                          length="10"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[estacao_ano]"
+                          name="estacao_ano"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[fim_semana]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[fim_semana]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[fim_semana]"
+                          name="fim_semana"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[ultimo_dia_mes]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[ultimo_dia_mes]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[ultimo_dia_mes]"
+                          name="ultimo_dia_mes"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[ultimo_dia_ano]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[ultimo_dia_ano]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[ultimo_dia_ano]"
+                          name="ultimo_dia_ano"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[feriado]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[feriado]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[feriado]"
+                          name="feriado"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[dia_util]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[dia_util]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[dia_util]"
+                          name="dia_util"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[sk_tempo]"
+                          dataType="i4"
+                          name="sk_tempo" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[data]"
+                          dataType="dbDate"
+                          name="data" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[data_completa]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="data_completa" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[mes_ano]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="mes_ano" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[ano]"
+                          dataType="i2"
+                          name="ano" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[semestre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="semestre" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[trimestre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="trimestre" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[mes]"
+                          dataType="ui1"
+                          name="mes" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[semana]"
+                          dataType="ui1"
+                          name="semana" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[dia_ano]"
+                          dataType="i2"
+                          name="dia_ano" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[dia_mes]"
+                          dataType="ui1"
+                          name="dia_mes" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[nome_mes]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="nome_mes" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[nome_dia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="nome_dia" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[estacao_ano]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="estacao_ano" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[fim_semana]"
+                          dataType="bool"
+                          name="fim_semana" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[ultimo_dia_mes]"
+                          dataType="bool"
+                          name="ultimo_dia_mes" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[ultimo_dia_ano]"
+                          dataType="bool"
+                          name="ultimo_dia_ano" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[feriado]"
+                          dataType="i4"
+                          name="feriado" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].ExternalColumns[dia_util]"
+                          dataType="i4"
+                          name="dia_util" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[sk_tempo]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[sk_tempo]"
+                          name="sk_tempo" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[data]"
+                          dataType="dbDate"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[data]"
+                          name="data" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[data_completa]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[data_completa]"
+                          name="data_completa" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[mes_ano]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[mes_ano]"
+                          name="mes_ano" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[ano]"
+                          dataType="i2"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[ano]"
+                          name="ano" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[semestre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[semestre]"
+                          name="semestre" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[trimestre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[trimestre]"
+                          name="trimestre" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[mes]"
+                          dataType="ui1"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[mes]"
+                          name="mes" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[semana]"
+                          dataType="ui1"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[semana]"
+                          name="semana" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[dia_ano]"
+                          dataType="i2"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[dia_ano]"
+                          name="dia_ano" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[dia_mes]"
+                          dataType="ui1"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[dia_mes]"
+                          name="dia_mes" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[nome_mes]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[nome_mes]"
+                          name="nome_mes" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[nome_dia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[nome_dia]"
+                          name="nome_dia" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[estacao_ano]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[estacao_ano]"
+                          name="estacao_ano" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[fim_semana]"
+                          dataType="bool"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[fim_semana]"
+                          name="fim_semana" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[ultimo_dia_mes]"
+                          dataType="bool"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[ultimo_dia_mes]"
+                          name="ultimo_dia_mes" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[ultimo_dia_ano]"
+                          dataType="bool"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[ultimo_dia_ano]"
+                          name="ultimo_dia_ano" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[feriado]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[feriado]"
+                          name="feriado" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[dia_util]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[dia_util]"
+                          name="dia_util" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="t_tempo"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[t_tempo]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">1000</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[sk_tempo]"
+                          cachedDataType="i4"
+                          cachedName="sk_tempo"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[sk_tempo]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[sk_tempo]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[data]"
+                          cachedDataType="dbDate"
+                          cachedName="data"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[data]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[data]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[data_completa]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="data_completa"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[data_completa]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[data_completa]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[mes_ano]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="mes_ano"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[mes_ano]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[mes_ano]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[ano]"
+                          cachedDataType="i2"
+                          cachedName="ano"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[ano]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[ano]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[semestre]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="semestre"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[semestre]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[semestre]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[trimestre]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="trimestre"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[trimestre]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[trimestre]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[mes]"
+                          cachedDataType="ui1"
+                          cachedName="mes"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[mes]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[mes]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[semana]"
+                          cachedDataType="ui1"
+                          cachedName="semana"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[semana]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[semana]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[dia_ano]"
+                          cachedDataType="i2"
+                          cachedName="dia_ano"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[dia_ano]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[dia_ano]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[dia_mes]"
+                          cachedDataType="ui1"
+                          cachedName="dia_mes"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[dia_mes]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[dia_mes]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[nome_mes]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="nome_mes"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[nome_mes]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[nome_mes]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[nome_dia]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="nome_dia"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[nome_dia]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[nome_dia]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[estacao_ano]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="estacao_ano"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[estacao_ano]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[estacao_ano]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[fim_semana]"
+                          cachedDataType="bool"
+                          cachedName="fim_semana"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[fim_semana]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[fim_semana]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[ultimo_dia_mes]"
+                          cachedDataType="bool"
+                          cachedName="ultimo_dia_mes"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[ultimo_dia_mes]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[ultimo_dia_mes]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[ultimo_dia_ano]"
+                          cachedDataType="bool"
+                          cachedName="ultimo_dia_ano"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[ultimo_dia_ano]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[ultimo_dia_ano]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[feriado]"
+                          cachedDataType="i4"
+                          cachedName="feriado"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[feriado]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[feriado]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].Columns[dia_util]"
+                          cachedDataType="i4"
+                          cachedName="dia_util"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[dia_util]"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output].Columns[dia_util]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[sk_tempo]"
+                          dataType="i4"
+                          name="sk_tempo" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[data]"
+                          dataType="dbDate"
+                          name="data" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[data_completa]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="data_completa" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[mes_ano]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="mes_ano" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[ano]"
+                          dataType="i2"
+                          name="ano" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[semestre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="semestre" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[trimestre]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="trimestre" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[mes]"
+                          dataType="ui1"
+                          name="mes" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[semana]"
+                          dataType="ui1"
+                          name="semana" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[dia_ano]"
+                          dataType="i2"
+                          name="dia_ano" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[dia_mes]"
+                          dataType="ui1"
+                          name="dia_mes" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[nome_mes]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="nome_mes" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[nome_dia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="nome_dia" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[estacao_ano]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="estacao_ano" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[fim_semana]"
+                          dataType="bool"
+                          name="fim_semana" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[ultimo_dia_mes]"
+                          dataType="bool"
+                          name="ultimo_dia_mes" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[ultimo_dia_ano]"
+                          dataType="bool"
+                          name="ultimo_dia_ano" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[feriado]"
+                          dataType="bool"
+                          name="feriado" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input].ExternalColumns[dia_util]"
+                          dataType="bool"
+                          name="dia_util" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo.Paths[OLE DB Source Output]"
+                  endId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformação para a dimensão Tempo.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{EA7D814E-F6B9-485E-B0AA-42EEA142C0FE}"
+          DTS:From="Package\Transformação para a dimensão Tempo\Limpeza da tabela de transformação"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformação para a dimensão Tempo.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{2953734F-A3C3-4CAB-AFB7-DC0023460AAF}"
+          DTS:From="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Transformação para a dimensão Tempo\Insere o registo desconhecido" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FF7260B3-6E65-43D9-9A74-B0BB1E231606}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Transformação para a dimensão Tempo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2906BB04-DF45-4ED3-9DCB-CD3C07E16E10}"
+      DTS:From="Package\Transformação para a dimensão Tempo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{E8285056-F968-4AC7-8DB9-C737C6ED0E10}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{E8462DEA-B2EA-4A24-AA37-9CC2F9C65CA0}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Envia Email"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{f316b5b1-b868-4c92-af2c-af5937e5e761}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Envia Email"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::remetente_email]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Ocorreu um erro no componente " + @[System::SourceName] + ", do processo " + @[System::PackageName] + ": " + "\n\r" +@[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">@[$Project::assunto_email_erros]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::destinatario_email_erros]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{4BDEEFBB-B2CB-478F-B881-07EAF97F22F6}"
+              SendMailTask:From="dwbi@eda.pt"
+              SendMailTask:To="pedro.soares@novabase.pt"
+              SendMailTask:Subject="Erro em processo de integração de dados"
+              SendMailTask:MessageSource="Ocorreu um erro no componente , do processo T_TEMPO: &#xA;&#xA;" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{bcea60a3-0974-4871-8e87-cc797e5f657e}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere registo de erro"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="INSERT INTO log_erros (processo, componente, mensagem,codigo_execucao,data)&#xA;  VALUES (?,?,?,?,current_timestamp)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{61ce526d-f8f3-4766-9fba-32160ea922db}"
+          DTS:From="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Envia Email" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="5.5,83" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="14.5,5" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          TopLeft="110,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="254,142"
+          Size="254,185"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="749,72" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="3,160" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="6,84" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="10,6" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="105,48">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          TopLeft="104.75,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250,220"
+          Size="250,263"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="47,30" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\Transformação para a dimensão Tempo\Limpeza da tabela de transformação"
+          TopLeft="34.5,23" />
+        <NodeLayout
+          Size="310,42"
+          Id="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo"
+          TopLeft="2,103" />
+        <EdgeLayout
+          Id="Package\Transformação para a dimensão Tempo.PrecedenceConstraints[Constraint]"
+          TopLeft="160.25,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Transformação para a dimensão Tempo\Insere o registo desconhecido"
+          TopLeft="42,181" />
+        <EdgeLayout
+          Id="Package\Transformação para a dimensão Tempo.PrecedenceConstraints[Constraint 1]"
+          TopLeft="154.5,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="325,278"
+          Size="325,321"
+          Id="Package\Transformação para a dimensão Tempo"
+          TopLeft="355,40" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="297,161.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="58,39"
+              Start="0,0"
+              End="50.5,39">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25,0"
+                    Point2="29,0"
+                    Point3="29,4" />
+                  <mssgle:LineSegment
+                    End="29,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29,35"
+                    Point2="29,39"
+                    Point3="33,39" />
+                  <mssgle:LineSegment
+                    End="50.5,39" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="680,200.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="69,-36"
+              Start="0,0"
+              End="61.5,-36">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="30.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.5,0"
+                    Point2="34.5,0"
+                    Point3="34.5,-4" />
+                  <mssgle:LineSegment
+                    End="34.5,-32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.5,-32"
+                    Point2="34.5,-36"
+                    Point3="38.5,-36" />
+                  <mssgle:LineSegment
+                    End="61.5,-36" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package.EventHandlers[OnError]\Envia Email"
+          TopLeft="84,162" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package.EventHandlers[OnError]\Insere registo de erro"
+          TopLeft="60,60" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="150.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="118,42"
+          Id="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo"
+          TopLeft="354.5,138.5" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo"
+          TopLeft="353.5,36.5" />
+        <EdgeLayout
+          Id="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo.Paths[OLE DB Source Output]"
+          TopLeft="413.5,78.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\e_tempo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformação para a dimensão Tempo\Transformação de dados para a dimensão tempo\t_tempo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

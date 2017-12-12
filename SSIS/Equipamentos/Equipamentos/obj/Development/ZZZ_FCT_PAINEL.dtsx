@@ -1,0 +1,1698 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/12/2017 3:37:46 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DCDWBIQDDW00"
+  DTS:CreatorName="GRUPOEDA\ExtPwDBi03"
+  DTS:DTSID="{3682FB46-53A3-46A6-84B6-DFC7F4E6EA2E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="ZZZ_FCT_PAINEL"
+  DTS:PackageType="5"
+  DTS:VersionBuild="86"
+  DTS:VersionGUID="{52513811-F3D0-4540-9102-599A8D82FB6C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7C88443A-6175-4D81-80B7-045189CCEC13}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{50ED7D26-1F17-4207-830F-1683EB82EEFF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_atualizados">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4E7787D7-166E-4D94-8073-1E09503CB908}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E7B300D4-713C-4B42-B92E-40A950C48E0E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CC1FC083-F5E2-4B15-9563-D04C6DAF35D0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inseridos">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3A2DAB62-518A-4413-A7D1-1AF33ACB1495}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">SIT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2E06043E-7DF0-4E88-81BD-B5249E0D75C9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">fct_painel</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carregamento da factual Painel"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B4F4D5EA-DD08-4945-89C5-26E8FEF5728A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carregamento da factual Painel">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{106B7EE5-83A5-430E-8D13-8D3892F78193}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Carregamento de novos elementos na Factual"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="dim_painel"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[v_t_dim_painel]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [sk_painel]
+      ,[sit_id]
+      ,[codigo_eda]
+	  ,[codigo_freguesia]
+      ,CONVERT(date, getdate()) as tempo
+	  ,[data_inicio]
+      ,[data_fim]
+      ,[atual]
+      ,[sk_auditoria]
+  FROM [dbo].[dim_painel]
+  WHERE [atual] = 1</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Connections[OleDbConnection]"
+                      connectionManagerID="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[sit_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[sit_id]"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[sit_id]"
+                          name="sit_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[codigo_eda]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[codigo_eda]"
+                          length="50"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[codigo_eda]"
+                          name="codigo_eda"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[codigo_freguesia]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[codigo_freguesia]"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[codigo_freguesia]"
+                          name="codigo_freguesia"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[data_inicio]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[data_inicio]"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[data_inicio]"
+                          name="data_inicio"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[data_fim]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[data_fim]"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[data_fim]"
+                          name="data_fim"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[atual]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[atual]"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[atual]"
+                          name="atual"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[sk_painel]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[sk_painel]"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[sk_painel]"
+                          name="sk_painel"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[tempo]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[tempo]"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[tempo]"
+                          name="tempo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[sk_auditoria]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[sk_auditoria]"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[sk_auditoria]"
+                          name="sk_auditoria"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[sit_id]"
+                          dataType="i4"
+                          name="sit_id" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[codigo_eda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="codigo_eda" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[codigo_freguesia]"
+                          dataType="i4"
+                          name="codigo_freguesia" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[data_inicio]"
+                          dataType="dbDate"
+                          name="data_inicio" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[data_fim]"
+                          dataType="dbDate"
+                          name="data_fim" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[atual]"
+                          dataType="bool"
+                          name="atual" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[sk_painel]"
+                          dataType="i4"
+                          name="sk_painel" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[tempo]"
+                          dataType="dbDate"
+                          name="tempo" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].ExternalColumns[sk_auditoria]"
+                          dataType="i4"
+                          name="sk_auditoria" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[sk_painel]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[sk_painel]"
+                          name="sk_painel" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[sit_id]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[sit_id]"
+                          name="sit_id" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[codigo_eda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[codigo_eda]"
+                          name="codigo_eda" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[codigo_freguesia]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[codigo_freguesia]"
+                          name="codigo_freguesia" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[tempo]"
+                          dataType="dbDate"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[tempo]"
+                          name="tempo" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[data_inicio]"
+                          dataType="dbDate"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[data_inicio]"
+                          name="data_inicio" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[data_fim]"
+                          dataType="dbDate"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[data_fim]"
+                          name="data_fim" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[atual]"
+                          dataType="bool"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[atual]"
+                          name="atual" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[sk_auditoria]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[sk_auditoria]"
+                          name="sk_auditoria" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="fct_painel"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[fct_painel]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Connections[OleDbConnection]"
+                      connectionManagerID="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].Columns[sk_painel]"
+                          cachedDataType="i4"
+                          cachedName="sk_painel"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].ExternalColumns[sk_painel]"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[sk_painel]" />
+                        <inputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].Columns[sk_auditoria]"
+                          cachedDataType="i4"
+                          cachedName="sk_auditoria"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].ExternalColumns[sk_auditoria]"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[sk_auditoria]" />
+                        <inputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].Columns[sk_tempo]"
+                          cachedDataType="i4"
+                          cachedName="sk_tempo"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].ExternalColumns[sk_tempo]"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Outputs[Lookup Match Output].Columns[sk_tempo]" />
+                        <inputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].Columns[sk_geografia]"
+                          cachedDataType="i4"
+                          cachedName="sk_geografia"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].ExternalColumns[sk_geografia]"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Match Output].Columns[sk_geografia]" />
+                        <inputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].Columns[sk_equipamento]"
+                          cachedDataType="i4"
+                          cachedName="sk_equipamento"
+                          externalMetadataColumnId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].ExternalColumns[sk_equipamento]"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Match Output].Columns[sk_equipamento]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].ExternalColumns[sk_tempo]"
+                          dataType="i4"
+                          name="sk_tempo" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].ExternalColumns[sk_geografia]"
+                          dataType="i4"
+                          name="sk_geografia" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].ExternalColumns[sk_painel]"
+                          dataType="i4"
+                          name="sk_painel" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].ExternalColumns[sk_equipamento]"
+                          dataType="i4"
+                          name="sk_equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input].ExternalColumns[sk_auditoria]"
+                          dataType="i4"
+                          name="sk_auditoria" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="sk_equipamento"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+FROM [dbo].[dim_equipamento]
+WHERE Atual = 1</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT *
+FROM [dbo].[dim_equipamento]
+WHERE Atual = 1) [refTable]
+where [refTable].[sit_id] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="sk_equipamento" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sk_equipamento_pai" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sit_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sit_id_pai" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="codigo_eda" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="tipo_equipamento" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="descricao_equipamento" dataType="DT_STR" length="150" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="codigo_freguesia" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="data_inicio" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="data_fim" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="atual" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sk_auditoria" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[sit_id]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Connections[OleDbConnection]"
+                      connectionManagerID="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Inputs[Lookup Input].Columns[sit_id]"
+                          cachedDataType="i4"
+                          cachedName="sit_id"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[sit_id]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">sit_id</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Match Output].Columns[sk_equipamento]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Match Output].Columns[sk_equipamento]"
+                          name="sk_equipamento"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">sk_equipamento</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="sk_geografia"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dim_geografia]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dim_geografia]) [refTable]
+where [refTable].[codigo_freguesia] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="sk_geografia" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="codigo_freguesia" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="descricao_freguesia" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="area_freguesia" dataType="DT_NUMERIC" length="0" precision="38" scale="7" codePage="0"/&gt;&lt;referenceColumn name="codigo_concelho" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="descricao_concelho" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="codigo_ilha" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="descricao_ilha" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="sk_auditoria" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[codigo_freguesia]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Connections[OleDbConnection]"
+                      connectionManagerID="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Inputs[Lookup Input].Columns[codigo_freguesia]"
+                          cachedDataType="i4"
+                          cachedName="codigo_freguesia"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[codigo_freguesia]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">codigo_freguesia</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Match Output].Columns[sk_geografia]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Match Output].Columns[sk_geografia]"
+                          name="sk_geografia"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">sk_geografia</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="sk_tempo"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dim_tempo]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dim_tempo]) [refTable]
+where [refTable].[data] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="sk_tempo" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="data" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="data_completa" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="mes_ano" dataType="DT_STR" length="8" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ano" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="semestre" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="trimestre" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="mes" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="semana" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="dia_ano" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="dia_mes" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nome_mes" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="nome_dia" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="estacao_ano" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="fim_semana" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ultimo_dia_mes" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ultimo_dia_ano" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="feriado" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="dia_util" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sk_auditoria" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[tempo]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Connections[OleDbConnection]"
+                      connectionManagerID="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Inputs[Lookup Input].Columns[tempo]"
+                          cachedDataType="dbDate"
+                          cachedName="tempo"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output].Columns[tempo]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">data</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Outputs[Lookup Match Output].Columns[sk_tempo]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Outputs[Lookup Match Output].Columns[sk_tempo]"
+                          name="sk_tempo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">sk_tempo</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual.Paths[Lookup Match Output]"
+                  endId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual.Paths[Lookup Match Output1]"
+                  endId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual.Paths[Lookup Match Output2]"
+                  endId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel.Inputs[OLE DB Destination Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual.Paths[OLE DB Source Output]"
+                  endId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo.Inputs[Lookup Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:Disabled="True"
+      DTS:DTSID="{34FE776E-2433-4D30-9927-D9E1D45A6424}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6890B604-88A5-44A7-BB35-43C90E2AD25F}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;     numero_registos_inseridos = ?,&#xA;  data_fim = CURRENT_TIMESTAMP,&#xA;  duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;  sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8A71C884-0E84-4E91-954C-7F2A4FFD8B37}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{8C3F9A34-83B4-4EAD-A127-C5038D7AF366}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:Disabled="True"
+      DTS:DTSID="{7B4EBB32-869C-49C9-BE59-F8B1A4C91AA3}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{67E63AB3-CC26-41CE-819A-052DC277E836}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{24249334-9C39-4066-A704-B8C233B06CAD}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{C8792051-F092-44BF-81D6-E208CD5ADB72}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B7323180-EF67-48D5-8566-59EBB8A27034}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{DB474EFA-EFD4-474F-83B8-02B5F8C16E24}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{7D3C8D35-2FC4-48FA-87FA-7FCB4C2766E3}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1F92BFC6-0AC2-4BE2-8AAC-255212F8CED2}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carregamento da factual Painel" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D8DDAE9F-5EA8-4E2A-BA0A-FCCA741A089D}"
+      DTS:From="Package\Carregamento da factual Painel"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual"
+          TopLeft="42,80" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="399,282"
+          Size="399,325"
+          Id="Package\Carregamento da factual Painel"
+          TopLeft="436.964285714286,40.0714285714286" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="31.4285714285716,131.571428571428" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="47.1428571428572,31.5714285714286" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint]"
+          TopLeft="139.285714285714,73.5714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.9999999999994"
+              Start="0,0"
+              End="0,50.4999999999994">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.4999999999994" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="271,229"
+          Size="271,272"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="903.964285714286,75.0357142857143" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="40,181" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="43,110" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="54,26" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint]"
+          TopLeft="150,68">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,42"
+              Start="0,0"
+              End="-9,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="-4,21" />
+                  <mssgle:LineSegment
+                    End="-5,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,21"
+                    Point2="-9,21"
+                    Point3="-9,25" />
+                  <mssgle:LineSegment
+                    End="-9,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="141.75,152">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="306,278"
+          Size="306,321"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="69.1428571428571,39.6785714285714" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="375.142857142857,201.375">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.8214285714289,0"
+              Start="0,0"
+              End="54.3214285714289,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="54.3214285714289,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="835.964285714286,202.571428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68,8.46428571428569"
+              Start="0,0"
+              End="60.5,8.46428571428569">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="30,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30,0"
+                    Point2="34,0"
+                    Point3="34,4" />
+                  <mssgle:LineSegment
+                    End="34,4.46428571428569" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34,4.46428571428569"
+                    Point2="34,8.46428571428569"
+                    Point3="38,8.46428571428569" />
+                  <mssgle:LineSegment
+                    End="60.5,8.46428571428569" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo"
+          TopLeft="301,103" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia"
+          TopLeft="298,198" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel"
+          TopLeft="310,380" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento"
+          TopLeft="296,291" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel"
+          TopLeft="301,9" />
+        <EdgeLayout
+          Id="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual.Paths[Lookup Match Output]"
+          TopLeft="365.5,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,16.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual.Paths[OLE DB Source Output]"
+          TopLeft="364.75,51">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual.Paths[Lookup Match Output2]"
+          TopLeft="373.25,333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,13.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual.Paths[Lookup Match Output1]"
+          TopLeft="370.75,240">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,15.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_tempo">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dim_tempo]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_geografia">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dim_geografia]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\fct_painel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\sk_equipamento">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da factual Painel\Carregamento de novos elementos na Factual\dim_painel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

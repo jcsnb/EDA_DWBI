@@ -1,0 +1,2406 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/12/2017 3:37:46 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DCDWBIQDDW00"
+  DTS:CreatorName="GRUPOEDA\ExtPwDBi03"
+  DTS:DTSID="{B763415F-1A6A-46CD-85CB-DDF61A64DC25}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="L_EQUIPAMENTO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="123"
+  DTS:VersionGUID="{613DABAF-32F5-4E20-9B35-A026B7121FAE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6521237A-4BF3-4C72-9029-EE55DC2A53C5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{43DD1CB9-169E-4EBC-9971-E7F2B376E2AA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_atualizados">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{222F8F58-8EBC-4791-AC89-BD8D14F4DE39}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{49D5345C-BDFA-4ACF-B666-FCEB523D8B9E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4FD840EB-E070-44EF-9D5E-B4882DBE4CD3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inseridos">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D846CFFC-DC2E-4269-8D6D-4C1BDB4B682A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">SIT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7A324DF0-A666-434B-860C-48A1B2EF600F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">dim_equipamento</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carregamento da dimensão Equipamento"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{EA3B2795-B1F2-4A13-AA1B-BC5B92876AE5}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carregamento da dimensão Equipamento">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Carregamento da dimensão Equipamento\Atualização de Registos"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{C149D75F-6E15-4E81-A50F-67BE31F1BEC2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualização de Registos"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource="UPDATE dim_equipamento&#xA;SET dim_equipamento.[descricao_equipamento] = update_dim_equipamento.[descricao_equipamento],&#xA;&#x9;dim_equipamento.[tensao_nominal] = update_dim_equipamento.[tensao_nominal],&#xA;&#x9;dim_equipamento.[codigo_freguesia] = update_dim_equipamento.[codigo_freguesia]&#xA;&#x9;,dim_equipamento.[sk_auditoria] = update_dim_equipamento.[sk_auditoria]&#xA;FROM [DWH].[dbo].[dim_equipamento] dim_equipamento&#xA;INNER JOIN [STG].[dbo].[update_dim_equipamento] update_dim_equipamento&#xA;ON update_dim_equipamento.sit_id = dim_equipamento.sit_id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carregamento da dimensão Equipamento\Atualização Hierarquia"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3899C056-11A5-4275-927A-BA091725AEAD}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualização Hierarquia"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource="UPDATE dim_equipamento&#xA;&#x9;SET dim_equipamento.sk_equipamento_pai = dim_equipamento_pai.sk_equipamento&#xA;FROM&#x9;[DWH].[dbo].[dim_equipamento] dim_equipamento&#xA;INNER JOIN [STG].[dbo].[t_equipamento] t_equipamento &#xA;ON t_equipamento.[sit_id] = dim_equipamento.[sit_id]&#xA;INNER JOIN [DWH].[dbo].[dim_equipamento] dim_equipamento_pai &#xA;ON dim_equipamento_pai.[sit_id] = dim_equipamento.[sit_id_pai]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{D85F362E-AAD6-483C-A884-E495879CDEDA}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Carregamento de novos elementos na Dimensão"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="chave_auditoria"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Outputs[Derived Column Output].Columns[sk_auditoria]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Outputs[Derived Column Output].Columns[sk_auditoria]"
+                          name="sk_auditoria"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::chave_auditoria]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::chave_auditoria]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos atualizados"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Conta registos atualizados">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::numero_registos_atualizados</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos atualizados.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos atualizados.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos atualizados.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos inseridos"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Conta registos inseridos">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::numero_registos_inseridos</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos inseridos.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos inseridos.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos inseridos.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="dim_equipamento"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[dim_equipamento]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Connections[OleDbConnection]"
+                      connectionManagerID="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].Columns[sit_id]"
+                          cachedDataType="i4"
+                          cachedName="sit_id"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sit_id]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[sit_id]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].Columns[sit_id_pai]"
+                          cachedDataType="i4"
+                          cachedName="sit_id_pai"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sit_id_pai]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[sit_id_pai]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].Columns[codigo_eda]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="codigo_eda"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[codigo_eda]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[codigo_eda]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].Columns[data_inicio]"
+                          cachedDataType="dbDate"
+                          cachedName="data_inicio"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[data_inicio]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[data_inicio]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].Columns[data_fim]"
+                          cachedDataType="dbDate"
+                          cachedName="data_fim"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[data_fim]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[data_fim]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].Columns[atual]"
+                          cachedDataType="bool"
+                          cachedName="atual"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[atual]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[atual]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].Columns[tipo_equipamento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="tipo_equipamento"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[tipo_equipamento]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[tipo_equipamento]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].Columns[descricao_equipamento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="descricao_equipamento"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[descricao_equipamento]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[descricao_equipamento]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].Columns[sk_auditoria]"
+                          cachedDataType="i4"
+                          cachedName="sk_auditoria"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sk_auditoria]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Outputs[Derived Column Output].Columns[sk_auditoria]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].Columns[codigo_freguesia]"
+                          cachedDataType="i4"
+                          cachedName="codigo_freguesia"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[codigo_freguesia]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[codigo_freguesia]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].Columns[tensao_nominal]"
+                          cachedDataType="numeric"
+                          cachedName="tensao_nominal"
+                          cachedPrecision="18"
+                          cachedScale="1"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[tensao_nominal]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[tensao_nominal]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sit_id]"
+                          dataType="i4"
+                          name="sit_id" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sit_id_pai]"
+                          dataType="i4"
+                          name="sit_id_pai" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[codigo_eda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="codigo_eda" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[data_inicio]"
+                          dataType="dbDate"
+                          name="data_inicio" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[data_fim]"
+                          dataType="dbDate"
+                          name="data_fim" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[atual]"
+                          dataType="bool"
+                          name="atual" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[tipo_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="tipo_equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sk_auditoria]"
+                          dataType="i4"
+                          name="sk_auditoria" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sk_equipamento]"
+                          dataType="i4"
+                          name="sk_equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sk_equipamento_pai]"
+                          dataType="i4"
+                          name="sk_equipamento_pai" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[descricao_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="descricao_equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[codigo_freguesia]"
+                          dataType="i4"
+                          name="codigo_freguesia" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[tensao_nominal]"
+                          dataType="numeric"
+                          name="tensao_nominal"
+                          precision="18"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Há mudanças de atributos?"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dim_equipamento]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dim_equipamento]) [refTable]
+where [refTable].[descricao_equipamento] = ? and [refTable].[codigo_freguesia] = ? and [refTable].[tensao_nominal] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="sk_equipamento" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sk_equipamento_pai" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sit_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sit_id_pai" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="codigo_eda" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="tipo_equipamento" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="descricao_equipamento" dataType="DT_STR" length="150" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="tensao_nominal" dataType="DT_NUMERIC" length="0" precision="18" scale="1" codePage="0"/&gt;&lt;referenceColumn name="codigo_freguesia" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="data_inicio" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="data_fim" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="atual" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sk_auditoria" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[descricao_equipamento]};#{Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[codigo_freguesia]};#{Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[tensao_nominal]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Connections[OleDbConnection]"
+                      connectionManagerID="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Inputs[Lookup Input].Columns[descricao_equipamento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="descricao_equipamento"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[descricao_equipamento]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">descricao_equipamento</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Inputs[Lookup Input].Columns[tensao_nominal]"
+                          cachedDataType="numeric"
+                          cachedName="tensao_nominal"
+                          cachedPrecision="18"
+                          cachedScale="1"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[tensao_nominal]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">tensao_nominal</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Inputs[Lookup Input].Columns[codigo_freguesia]"
+                          cachedDataType="i4"
+                          cachedName="codigo_freguesia"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[codigo_freguesia]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">codigo_freguesia</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Há novos registos?"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dim_equipamento]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dim_equipamento]) [refTable]
+where [refTable].[codigo_eda] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="sk_equipamento" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sk_equipamento_pai" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sit_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sit_id_pai" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="codigo_eda" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="tipo_equipamento" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="descricao_equipamento" dataType="DT_STR" length="150" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="tensao_nominal" dataType="DT_NUMERIC" length="0" precision="18" scale="2" codePage="0"/&gt;&lt;referenceColumn name="codigo_freguesia" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="data_inicio" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="data_fim" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="atual" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sk_auditoria" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[codigo_eda]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Connections[OleDbConnection]"
+                      connectionManagerID="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Inputs[Lookup Input].Columns[codigo_eda]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="codigo_eda"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[codigo_eda]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">codigo_eda</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="update_dim_equipamento"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[update_dim_equipamento]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Connections[OleDbConnection]"
+                      connectionManagerID="{C8792051-F092-44BF-81D6-E208CD5ADB72}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].Columns[sit_id]"
+                          cachedDataType="i4"
+                          cachedName="sit_id"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sit_id]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[sit_id]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].Columns[sit_id_pai]"
+                          cachedDataType="i4"
+                          cachedName="sit_id_pai"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sit_id_pai]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[sit_id_pai]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].Columns[codigo_eda]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="codigo_eda"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[codigo_eda]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[codigo_eda]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].Columns[tipo_equipamento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="tipo_equipamento"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[tipo_equipamento]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[tipo_equipamento]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].Columns[data_inicio]"
+                          cachedDataType="dbDate"
+                          cachedName="data_inicio"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[data_inicio]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[data_inicio]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].Columns[data_fim]"
+                          cachedDataType="dbDate"
+                          cachedName="data_fim"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[data_fim]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[data_fim]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].Columns[atual]"
+                          cachedDataType="bool"
+                          cachedName="atual"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[atual]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[atual]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].Columns[descricao_equipamento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="descricao_equipamento"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[descricao_equipamento]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[descricao_equipamento]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].Columns[codigo_freguesia]"
+                          cachedDataType="i4"
+                          cachedName="codigo_freguesia"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[codigo_freguesia]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[codigo_freguesia]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].Columns[sk_auditoria]"
+                          cachedDataType="i4"
+                          cachedName="sk_auditoria"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sk_auditoria]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Outputs[Derived Column Output].Columns[sk_auditoria]" />
+                        <inputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].Columns[tensao_nominal]"
+                          cachedDataType="numeric"
+                          cachedName="tensao_nominal"
+                          cachedPrecision="18"
+                          cachedScale="1"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[tensao_nominal]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[tensao_nominal]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sit_id]"
+                          dataType="i4"
+                          name="sit_id" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sit_id_pai]"
+                          dataType="i4"
+                          name="sit_id_pai" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[codigo_eda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="codigo_eda" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[tipo_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="tipo_equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[descricao_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="descricao_equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[codigo_freguesia]"
+                          dataType="i4"
+                          name="codigo_freguesia" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[data_inicio]"
+                          dataType="dbDate"
+                          name="data_inicio" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[data_fim]"
+                          dataType="dbDate"
+                          name="data_fim" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[atual]"
+                          dataType="bool"
+                          name="atual" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[sk_auditoria]"
+                          dataType="i4"
+                          name="sk_auditoria" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input].ExternalColumns[tensao_nominal]"
+                          dataType="numeric"
+                          name="tensao_nominal"
+                          precision="18"
+                          scale="1" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="v_t_dim_equipamento"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[v_t_dim_equipamento]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [sit_id]
+      ,[sit_id_pai]
+      ,[codigo_eda]
+      ,[tipo_equipamento]
+      ,[descricao_equipamento]
+      ,[tensao_nominal]
+      ,[codigo_freguesia]
+      ,[data_inicio]
+      ,[data_fim]
+      ,[operacao]
+      ,[atual]
+  FROM [dbo].[v_t_dim_equipamento]
+WHERE [operacao]&lt;&gt;'DELETE'</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Connections[OleDbConnection]"
+                      connectionManagerID="{C8792051-F092-44BF-81D6-E208CD5ADB72}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[sit_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[sit_id]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[sit_id]"
+                          name="sit_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[sit_id_pai]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[sit_id_pai]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[sit_id_pai]"
+                          name="sit_id_pai"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[codigo_eda]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[codigo_eda]"
+                          length="50"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[codigo_eda]"
+                          name="codigo_eda"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[tipo_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[tipo_equipamento]"
+                          length="50"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[tipo_equipamento]"
+                          name="tipo_equipamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[data_inicio]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[data_inicio]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[data_inicio]"
+                          name="data_inicio"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[data_fim]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[data_fim]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[data_fim]"
+                          name="data_fim"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[operacao]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[operacao]"
+                          length="15"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[operacao]"
+                          name="operacao"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[atual]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[atual]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[atual]"
+                          name="atual"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[descricao_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[descricao_equipamento]"
+                          length="150"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[descricao_equipamento]"
+                          name="descricao_equipamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[codigo_freguesia]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[codigo_freguesia]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[codigo_freguesia]"
+                          name="codigo_freguesia"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[tensao_nominal]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[tensao_nominal]"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].Columns[tensao_nominal]"
+                          name="tensao_nominal"
+                          precision="18"
+                          scale="1"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[sit_id]"
+                          dataType="i4"
+                          name="sit_id" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[sit_id_pai]"
+                          dataType="i4"
+                          name="sit_id_pai" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[codigo_eda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="codigo_eda" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[tipo_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="tipo_equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[data_inicio]"
+                          dataType="dbDate"
+                          name="data_inicio" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[data_fim]"
+                          dataType="dbDate"
+                          name="data_fim" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[operacao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="operacao" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[atual]"
+                          dataType="bool"
+                          name="atual" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[descricao_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="descricao_equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[codigo_freguesia]"
+                          dataType="i4"
+                          name="codigo_freguesia" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output].ExternalColumns[tensao_nominal]"
+                          dataType="numeric"
+                          name="tensao_nominal"
+                          precision="18"
+                          scale="1" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[sit_id]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[sit_id]"
+                          name="sit_id" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[sit_id_pai]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[sit_id_pai]"
+                          name="sit_id_pai" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[codigo_eda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[codigo_eda]"
+                          name="codigo_eda" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[tipo_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[tipo_equipamento]"
+                          name="tipo_equipamento" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[descricao_equipamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[descricao_equipamento]"
+                          name="descricao_equipamento" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[tensao_nominal]"
+                          dataType="numeric"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[tensao_nominal]"
+                          name="tensao_nominal"
+                          precision="18"
+                          scale="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[codigo_freguesia]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[codigo_freguesia]"
+                          name="codigo_freguesia" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[data_inicio]"
+                          dataType="dbDate"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[data_inicio]"
+                          name="data_inicio" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[data_fim]"
+                          dataType="dbDate"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[data_fim]"
+                          name="data_fim" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[operacao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[operacao]"
+                          name="operacao" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[atual]"
+                          dataType="bool"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[atual]"
+                          name="atual" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[Derived Column Output]"
+                  endId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[Lookup Match Output]"
+                  endId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[Lookup No Match Output]"
+                  endId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos inseridos.Inputs[Row Count Input 1]"
+                  name="Lookup No Match Output"
+                  startId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[Lookup No Match Output1]"
+                  endId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos atualizados.Inputs[Row Count Input 1]"
+                  name="Lookup No Match Output"
+                  startId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[OLE DB Source Output]"
+                  endId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[Row Count Output 1]"
+                  endId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos inseridos.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[Row Count Output 11]"
+                  endId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos atualizados.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carregamento da dimensão Equipamento\Equipamento Desconhecido"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3ADD7E26-F6C3-4D4C-8AC5-BA769969DABB}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Equipamento Desconhecido"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT 1 FROM [DWH].[dbo].[dim_equipamento] WHERE codigo_eda='Desconhecido') &#xA;BEGIN&#xA;   INSERT INTO [dbo].[dim_equipamento](&#xA;&#x9;&#x9;&#x9;[sk_equipamento_pai]&#xA;&#x9;&#x9;&#x9;,[sit_id],[sit_id_pai]&#xA;&#x9;&#x9;&#x9;,[codigo_eda]&#xA;&#x9;&#x9;&#x9;,[tipo_equipamento]&#xA;           ,[descricao_equipamento]&#xA;           ,[codigo_freguesia]&#xA;           ,[data_inicio]&#xA;           ,[data_fim]&#xA;           ,[atual]&#xA;           ,[sk_auditoria])&#xA;     VALUES&#xA;           (0&#xA;           ,0&#xA;           ,0&#xA;           ,'Desconhecido'&#xA;           ,'Desconhecido'&#xA;           ,'Desconhecido'&#xA;           ,0&#xA;           ,'2000-01-01'&#xA;           ,NULL&#xA;           ,1&#xA;           ,?)&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carregamento da dimensão Equipamento\Limpa tabelas de update"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{FBBB00A3-C86D-4978-A9A4-D78E72A63E15}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Limpa tabelas de update"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{C8792051-F092-44BF-81D6-E208CD5ADB72}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE update_dim_equipamento" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carregamento da dimensão Equipamento.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{B0FEBF05-0E5A-4BFE-A3E4-E25F060F211A}"
+          DTS:From="Package\Carregamento da dimensão Equipamento\Limpa tabelas de update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carregamento da dimensão Equipamento.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{336DAD3D-4C13-4D25-AF40-0E1B0EBB6797}"
+          DTS:From="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Carregamento da dimensão Equipamento\Atualização de Registos" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carregamento da dimensão Equipamento.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{2D491A56-303A-4252-860A-645EEBA1DADA}"
+          DTS:From="Package\Carregamento da dimensão Equipamento\Atualização de Registos"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Carregamento da dimensão Equipamento\Atualização Hierarquia" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carregamento da dimensão Equipamento.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{9ABB1482-272A-42E2-88B1-92E04CBE6AD2}"
+          DTS:From="Package\Carregamento da dimensão Equipamento\Equipamento Desconhecido"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Carregamento da dimensão Equipamento\Limpa tabelas de update" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{57E247C2-AFB5-4695-9DA3-1676C3104229}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5C83FE8D-F619-4BB1-B181-819A0D374C72}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;     numero_registos_inseridos = ?,&#xA;     numero_registos_atualizados = ?,&#xA;  data_fim = CURRENT_TIMESTAMP,&#xA;  duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;  sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_inseridos"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::numero_registos_atualizados"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{300677CF-7C21-4D6D-A0E7-D0F71C40A87A}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{F5028CCB-C69C-40E0-AFDB-2009CE4DB860}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{A8C5715A-74BE-4364-8062-C9F77F6D11EA}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F615EADF-66CE-4606-87F0-6F5A4B9D6420}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{77FF024A-749C-4B59-A9A9-4CB721680B22}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{AEF93D41-2EC3-4E7F-BB23-B86E4F63E0C7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{A47489E4-BACC-4EE3-8480-ECE09DA61A42}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{CC85D799-5A94-4DF8-BD78-8CD32A1F08CC}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5B4B7355-7B7C-46BB-A592-DA4D05ACF3F7}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carregamento da dimensão Equipamento" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{4F7FC943-5795-4F7C-91D2-D9BBE70B5340}"
+      DTS:From="Package\Carregamento da dimensão Equipamento"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Carregamento da dimensão Equipamento\Atualização de Registos"
+          TopLeft="98.75,256.5" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Carregamento da dimensão Equipamento\Atualização Hierarquia"
+          TopLeft="102.75,331.5" />
+        <NodeLayout
+          Size="308,42"
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão"
+          TopLeft="40.75,173.75" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Carregamento da dimensão Equipamento\Equipamento Desconhecido"
+          TopLeft="92.25,23.25" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Carregamento da dimensão Equipamento\Limpa tabelas de update"
+          TopLeft="100,96.5" />
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Equipamento.PrecedenceConstraints[Constraint]"
+          TopLeft="196.125,138.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.25"
+              Start="0,0"
+              End="0,27.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Equipamento.PrecedenceConstraints[Constraint 1]"
+          TopLeft="194.25,215.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.7500000000001"
+              Start="0,0"
+              End="0,33.2500000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.2500000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Equipamento.PrecedenceConstraints[Constraint 2]"
+          TopLeft="194.25,298.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.9999999999999"
+              Start="0,0"
+              End="0,25.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Equipamento.PrecedenceConstraints[Constraint 3]"
+          TopLeft="197.125,65.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.25"
+              Start="0,0"
+              End="0,23.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="399,429"
+          Size="399,472"
+          Id="Package\Carregamento da dimensão Equipamento"
+          TopLeft="438.964285714286,0.071428571428612" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="31.4285714285716,131.571428571428" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="47.1428571428572,31.5714285714286" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint]"
+          TopLeft="139.285714285714,73.5714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.9999999999994"
+              Start="0,0"
+              End="0,50.4999999999994">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.4999999999994" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="271,229"
+          Size="271,272"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="894.964285714286,85.0357142857143" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="40,181" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="43,110" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="54,26" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint]"
+          TopLeft="150,68">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,42"
+              Start="0,0"
+              End="-9,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="-4,21" />
+                  <mssgle:LineSegment
+                    End="-5,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,21"
+                    Point2="-9,21"
+                    Point3="-9,25" />
+                  <mssgle:LineSegment
+                    End="-9,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="141.75,152">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="306,278"
+          Size="306,321"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="69.1428571428571,57.6785714285714" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="375.142857142857,218.178571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.8214285714289,17.8928571428572"
+              Start="0,0"
+              End="56.3214285714289,17.8928571428572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.9107142857144,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.9107142857144,0"
+                    Point2="31.9107142857144,0"
+                    Point3="31.9107142857144,4" />
+                  <mssgle:LineSegment
+                    End="31.9107142857144,13.8928571428572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.9107142857144,13.8928571428572"
+                    Point2="31.9107142857144,17.8928571428572"
+                    Point3="35.9107142857144,17.8928571428572" />
+                  <mssgle:LineSegment
+                    End="56.3214285714289,17.8928571428572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="837.964285714286,236.071428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57,-15.0357142857143"
+              Start="0,0"
+              End="49.5,-15.0357142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.5,0"
+                    Point2="28.5,0"
+                    Point3="28.5,-4" />
+                  <mssgle:LineSegment
+                    End="28.5,-11.0357142857143" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.5,-11.0357142857143"
+                    Point2="28.5,-15.0357142857143"
+                    Point3="32.5,-15.0357142857143" />
+                  <mssgle:LineSegment
+                    End="49.5,-15.0357142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos inseridos"
+          TopLeft="158,307" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Conta registos atualizados"
+          TopLeft="524,376" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento"
+          TopLeft="515,460" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?"
+          TopLeft="537,286" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento"
+          TopLeft="311,21" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?"
+          TopLeft="327,195" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\chave_auditoria"
+          TopLeft="331,111" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento"
+          TopLeft="165,405" />
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[OLE DB Source Output]"
+          TopLeft="405.25,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[Lookup No Match Output1]"
+          TopLeft="640.5,328">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.5,48"
+              Start="0,0"
+              End="-15.5,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="-4,24" />
+                  <mssgle:LineSegment
+                    End="-11.5,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.5,24"
+                    Point2="-15.5,24"
+                    Point3="-15.5,28" />
+                  <mssgle:LineSegment
+                    End="-15.5,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-63.55638671875,29,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[Lookup No Match Output]"
+          TopLeft="411,237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-157.5,70"
+              Start="0,0"
+              End="-157.5,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31"
+                    Point2="0,35"
+                    Point3="-4,35" />
+                  <mssgle:LineSegment
+                    End="-153.5,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-153.5,35"
+                    Point2="-157.5,35"
+                    Point3="-157.5,39" />
+                  <mssgle:LineSegment
+                    End="-157.5,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-134.55638671875,40,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[Lookup Match Output]"
+          TopLeft="437.666666666667,237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="202.833333333333,49"
+              Start="0,0"
+              End="202.833333333333,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.877358490566" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.877358490566"
+                    Point2="0,19.877358490566"
+                    Point3="4,19.877358490566" />
+                  <mssgle:LineSegment
+                    End="198.833333333333,19.877358490566" />
+                  <mssgle:CubicBezierSegment
+                    Point1="198.833333333333,19.877358490566"
+                    Point2="202.833333333333,19.877358490566"
+                    Point3="202.833333333333,23.877358490566" />
+                  <mssgle:LineSegment
+                    End="202.833333333333,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="53.2252799479167,24.877358490566,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[Derived Column Output]"
+          TopLeft="409.25,153">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[Row Count Output 11]"
+          TopLeft="625,418">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,42"
+              Start="0,0"
+              End="-9,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="-4,21" />
+                  <mssgle:LineSegment
+                    End="-5,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,21"
+                    Point2="-9,21"
+                    Point3="-9,25" />
+                  <mssgle:LineSegment
+                    End="-9,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão.Paths[Row Count Output 1]"
+          TopLeft="250,349">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\update_dim_equipamento">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há mudanças de atributos?">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dim_equipamento]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\v_t_dim_equipamento">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\Há novos registos?">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dim_equipamento]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da dimensão Equipamento\Carregamento de novos elementos na Dimensão\dim_equipamento">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

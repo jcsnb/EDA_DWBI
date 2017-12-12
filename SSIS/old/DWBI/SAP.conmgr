@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SAP"
+  DTS:DTSID="{C61E7FA6-BF35-4FBA-B82F-B14EE5F60600}"
+  DTS:CreationName="XTRACT">
+  <DTS:ObjectData>
+    <XtractConnectionManager>
+      <AppServer>10.13.50.135</AppServer>
+      <Client>800</Client>
+      <User>WEBSERVICE</User>
+      <Password
+        Sensitive="1"
+        p4:Salt="0hTakZLXig=="
+        p4:IV="jwO6REwajwo=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">duNRso6Sm1ovo0ls5Lfzpn3/CwF9gXpMR9bjYu+H71GTdJVwSoFJvkN7B0YDZr5EOdzTqmUrvmE=</Password>
+      <Language>PT</Language>
+    </XtractConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

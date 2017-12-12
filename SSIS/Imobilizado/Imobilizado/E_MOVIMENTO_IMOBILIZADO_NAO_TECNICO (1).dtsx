@@ -1,0 +1,1786 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/28/2017 12:48:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LT123516"
+  DTS:CreatorName="NOVABASE\NB14865"
+  DTS:DTSID="{554A42C1-9221-487C-B5B9-B2F887AC7F6B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="E_MOVIMENTO_IMOBILIZADO_NAO_TECNICO"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="203"
+  DTS:VersionGUID="{1A88A6E3-7F34-43CF-B997-83A68FB36FE0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[D:\NB14865\Desktop\Fontes de Dados\Preparação Imobilizado.accdb]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E8B9975A-878C-4A80-97EE-00374ED6A923}"
+      DTS:ObjectName="D:\NB14865\Desktop\Fontes de Dados\Preparação Imobilizado.accdb">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=D:\NB14865\Desktop\Fontes de Dados\Preparação Imobilizado.accdb;Provider=Microsoft.ACE.OLEDB.16.0;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E03D42ED-560E-4C3B-BBA5-EDA122C8EF03}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{195163B8-72CB-4DA5-AA87-345073A916E5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D6B39F32-75B7-4810-8897-E96DC7BE9E8D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{10EF29BE-6DA3-4627-A837-1B84AB7C0C11}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">Access -TIMOB_DADOS</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{53873EC7-CB25-418F-8C82-C93882EAD8DF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">e_movimento_imobilizado_repartido</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extração de dados do Access"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{2F0F8E36-4350-413D-A6C5-EF70E5353F40}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extração de dados do Access">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Extração de dados do Access\Extração de dados de Imobilizado"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{C86661E2-77A8-44A2-85D4-FFA494EFF438}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Extração de dados de Imobilizado"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Inputs[Data Conversion Input].Columns[Imobilizado]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Imobilizado"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Imobilizado]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Inputs[Data Conversion Input].Columns[Centro cst]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Centro cst"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Centro cst]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Inputs[Data Conversion Input].Columns[Dtincorp]"
+                          cachedDataType="date"
+                          cachedName="Dtincorp"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Dtincorp]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Inputs[Data Conversion Input].Columns[Ano]"
+                          cachedDataType="i2"
+                          cachedName="Ano"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Ano]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Inputs[Data Conversion Input].Columns[Aqorimob]"
+                          cachedDataType="date"
+                          cachedName="Aqorimob"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Aqorimob]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Inputs[Data Conversion Input].Columns[Inídprno]"
+                          cachedDataType="date"
+                          cachedName="Inídprno"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Inídprno]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Inputs[Data Conversion Input].Columns[Valor aquisatual]"
+                          cachedDataType="r8"
+                          cachedName="Valor aquisatual"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Valor aquisatual]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Inputs[Data Conversion Input].Columns[AmortExerc]"
+                          cachedDataType="r8"
+                          cachedName="AmortExerc"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[AmortExerc]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Inputs[Data Conversion Input].Columns[Sbnº]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Sbnº"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Sbnº]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[numero_imobilizado]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[numero_imobilizado]"
+                          name="numero_imobilizado"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Imobilizado]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[codigo_centro_custo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[codigo_centro_custo]"
+                          name="codigo_centro_custo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Centro cst]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[data_incorporacao]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[data_incorporacao]"
+                          name="data_incorporacao"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Dtincorp]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[ano]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[ano]"
+                          name="ano"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Ano]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[data_aquisicao]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[data_aquisicao]"
+                          name="data_aquisicao"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Aqorimob]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[data_inicio_depreciacao]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[data_inicio_depreciacao]"
+                          name="data_inicio_depreciacao"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Inídprno]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[valor_aquisicao]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[valor_aquisicao]"
+                          name="valor_aquisicao"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Valor aquisatual]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[amortizacao_exercicio]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[amortizacao_exercicio]"
+                          name="amortizacao_exercicio"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[AmortExerc]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[subnumero_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="5"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[subnumero_imobilizado]"
+                          name="subnumero_imobilizado"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Sbnº]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="e_movimento_imobilizado_repartido"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[e_movimento_imobilizado_repartido]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:invalid"
+                      connectionManagerRefId="{794BA778-2C33-4A48-9EE1-3781430DD008}:invalid"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].Columns[numero_imobilizado]"
+                          cachedDataType="i8"
+                          cachedName="numero_imobilizado"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[numero_imobilizado]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[numero_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].Columns[codigo_centro_custo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="codigo_centro_custo"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[codigo_centro_custo]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[codigo_centro_custo]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].Columns[data_incorporacao]"
+                          cachedDataType="date"
+                          cachedName="data_incorporacao"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[data_incorporacao]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[data_incorporacao]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].Columns[ano]"
+                          cachedDataType="i2"
+                          cachedName="ano"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[ano]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[ano]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].Columns[data_aquisicao]"
+                          cachedDataType="date"
+                          cachedName="data_aquisicao"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[data_aquisicao]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[data_aquisicao]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].Columns[data_inicio_depreciacao]"
+                          cachedDataType="date"
+                          cachedName="data_inicio_depreciacao"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[data_inicio_depreciacao]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[data_inicio_depreciacao]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].Columns[valor_aquisicao]"
+                          cachedDataType="r8"
+                          cachedName="valor_aquisicao"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[valor_aquisicao]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[valor_aquisicao]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].Columns[amortizacao_exercicio]"
+                          cachedDataType="r8"
+                          cachedName="amortizacao_exercicio"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[amortizacao_exercicio]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[amortizacao_exercicio]" />
+                        <inputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].Columns[subnumero_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="subnumero_imobilizado"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[subnumero_imobilizado]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[subnumero_imobilizado]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[numero_imobilizado]"
+                          dataType="i8"
+                          name="numero_imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[subnumero_imobilizado]"
+                          dataType="i4"
+                          name="subnumero_imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[codigo_centro_custo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="codigo_centro_custo" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[data_incorporacao]"
+                          dataType="dbTimeStamp"
+                          name="data_incorporacao" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[ano]"
+                          dataType="i2"
+                          name="ano" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[data_aquisicao]"
+                          dataType="dbTimeStamp"
+                          name="data_aquisicao" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[data_inicio_depreciacao]"
+                          dataType="dbTimeStamp"
+                          name="data_inicio_depreciacao" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[valor_aquisicao]"
+                          dataType="r8"
+                          name="valor_aquisicao" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input].ExternalColumns[amortizacao_exercicio]"
+                          dataType="r8"
+                          name="amortizacao_exercicio" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Ficheiro Access de Imobilizado"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">TIMOB_DADOS</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[D:\NB14865\Desktop\Fontes de Dados\Preparação Imobilizado.accdb]"
+                      connectionManagerRefId="Package.ConnectionManagers[D:\NB14865\Desktop\Fontes de Dados\Preparação Imobilizado.accdb]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Imobilizado]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Imobilizado]"
+                          length="255"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Imobilizado]"
+                          name="Imobilizado"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Centro cst]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Centro cst]"
+                          length="255"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Centro cst]"
+                          name="Centro cst"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Dtincorp]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Dtincorp]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Dtincorp]"
+                          name="Dtincorp"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Ano]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Ano]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Ano]"
+                          name="Ano"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Aqorimob]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Aqorimob]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Aqorimob]"
+                          name="Aqorimob"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Inídprno]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Inídprno]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Inídprno]"
+                          name="Inídprno"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Valor aquisatual]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Valor aquisatual]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Valor aquisatual]"
+                          name="Valor aquisatual"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[AmortExerc]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[AmortExerc]"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[AmortExerc]"
+                          name="AmortExerc"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Sbnº]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Sbnº]"
+                          length="255"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].Columns[Sbnº]"
+                          name="Sbnº"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                          dataType="r8"
+                          name="ID" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Classe]"
+                          dataType="wstr"
+                          length="255"
+                          name="Classe" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Imobilizado]"
+                          dataType="wstr"
+                          length="255"
+                          name="Imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Concessao]"
+                          dataType="wstr"
+                          length="255"
+                          name="Concessao" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Nº inventário]"
+                          dataType="wstr"
+                          length="255"
+                          name="Nº inventário" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Sbnº]"
+                          dataType="wstr"
+                          length="255"
+                          name="Sbnº" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[NR_SUBNR]"
+                          dataType="wstr"
+                          length="255"
+                          name="NR_SUBNR" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Nº de série]"
+                          dataType="wstr"
+                          length="255"
+                          name="Nº de série" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Nº agrimob]"
+                          dataType="wstr"
+                          length="255"
+                          name="Nº agrimob" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Sala]"
+                          dataType="wstr"
+                          length="255"
+                          name="Sala" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[1ª Denominação do imobilizado]"
+                          dataType="wstr"
+                          length="255"
+                          name="1ª Denominação do imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[2ª Denominação do imobilizado]"
+                          dataType="wstr"
+                          length="255"
+                          name="2ª Denominação do imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Centro cst]"
+                          dataType="wstr"
+                          length="255"
+                          name="Centro cst" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Fornecedor]"
+                          dataType="wstr"
+                          length="255"
+                          name="Fornecedor" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[MI]"
+                          dataType="wstr"
+                          length="255"
+                          name="MI" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[CFiscal]"
+                          dataType="wstr"
+                          length="255"
+                          name="CFiscal" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[ViÚ]"
+                          dataType="wstr"
+                          length="255"
+                          name="ViÚ" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Depr]"
+                          dataType="wstr"
+                          length="255"
+                          name="Depr" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[CdUsado]"
+                          dataType="wstr"
+                          length="255"
+                          name="CdUsado" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Dtincorp]"
+                          dataType="date"
+                          name="Dtincorp" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Ano]"
+                          dataType="i2"
+                          name="Ano" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Aqorimob]"
+                          dataType="date"
+                          name="Aqorimob" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Inídprno]"
+                          dataType="date"
+                          name="Inídprno" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Actividade]"
+                          dataType="wstr"
+                          length="255"
+                          name="Actividade" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Equipamento]"
+                          dataType="wstr"
+                          length="255"
+                          name="Equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Valor aquisatual]"
+                          dataType="r8"
+                          name="Valor aquisatual" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Valcontiníexe]"
+                          dataType="r8"
+                          name="Valcontiníexe" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[AmortAcum]"
+                          dataType="r8"
+                          name="AmortAcum" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[AmortExerc]"
+                          dataType="r8"
+                          name="AmortExerc" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[EF_bruto]"
+                          dataType="r8"
+                          name="EF_bruto" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[EF_AA]"
+                          dataType="r8"
+                          name="EF_AA" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[EF Amort Ex]"
+                          dataType="r8"
+                          name="EF Amort Ex" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[EF VLC]"
+                          dataType="r8"
+                          name="EF VLC" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[CD_EF_Bruto]"
+                          dataType="r8"
+                          name="CD_EF_Bruto" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[CD_EF_AA]"
+                          dataType="r8"
+                          name="CD_EF_AA" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[CD_EF_Amort_Ex]"
+                          dataType="r8"
+                          name="CD_EF_Amort_Ex" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[CD_EF_VLC]"
+                          dataType="r8"
+                          name="CD_EF_VLC" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[CE]"
+                          dataType="wstr"
+                          length="255"
+                          name="CE" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Sb_Bruto_N]"
+                          dataType="r8"
+                          name="Sb_Bruto_N" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Sb_AA_N]"
+                          dataType="r8"
+                          name="Sb_AA_N" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Subs_Rec_N-1]"
+                          dataType="r8"
+                          name="Subs_Rec_N-1" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Comp Ano]"
+                          dataType="r8"
+                          name="Comp Ano" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Subs Antes Amort]"
+                          dataType="r8"
+                          name="Subs Antes Amort" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Amort Subs Exerc]"
+                          dataType="r8"
+                          name="Amort Subs Exerc" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Subs_Rec_N]"
+                          dataType="r8"
+                          name="Subs_Rec_N" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output].ExternalColumns[Imob Liq Comp]"
+                          dataType="r8"
+                          name="Imob Liq Comp" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Imobilizado]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Imobilizado]"
+                          name="Imobilizado" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Centro cst]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Centro cst]"
+                          name="Centro cst" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Dtincorp]"
+                          dataType="date"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Dtincorp]"
+                          name="Dtincorp" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Ano]"
+                          dataType="i2"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Ano]"
+                          name="Ano" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Aqorimob]"
+                          dataType="date"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Aqorimob]"
+                          name="Aqorimob" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Inídprno]"
+                          dataType="date"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Inídprno]"
+                          name="Inídprno" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Valor aquisatual]"
+                          dataType="r8"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Valor aquisatual]"
+                          name="Valor aquisatual" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[AmortExerc]"
+                          dataType="r8"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[AmortExerc]"
+                          name="AmortExerc" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Sbnº]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Error Output].Columns[Sbnº]"
+                          name="Sbnº" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Extração de dados do Access\Extração de dados de Imobilizado.Paths[Data Conversion Output]"
+                  endId="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Extração de dados do Access\Extração de dados de Imobilizado.Paths[OLE DB Source Output]"
+                  endId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion.Inputs[Data Conversion Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Extração de dados do Access\Limpeza da tabela de extração"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TRUNCATE TABLE e_tempo"
+          DTS:DTSID="{5055544B-CBDA-44A7-A70F-0F1F1B58D2D6}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Limpeza da tabela de extração"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="DECLARE @sql varchar(100)&#xA;SET @sql = 'TRUNCATE TABLE ' + ?&#xA;EXEC (@sql)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Extração de dados do Access.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{54B3AB0F-95F1-4053-A45B-C8432D4B157A}"
+          DTS:From="Package\Extração de dados do Access\Limpeza da tabela de extração"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Extração de dados do Access\Extração de dados de Imobilizado" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{AE80BC63-202E-4C0F-9723-D72B2454740F}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{A2CDBB22-A53F-44C5-AB8B-D9BCCFDAE19B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;&#x9;    numero_registos_inseridos = ?,&#xA;&#x9;&#x9;data_fim = CURRENT_TIMESTAMP,&#xA;&#x9;&#x9;duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;&#x9;&#x9;sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{C31B1ABD-A829-40BB-A058-CE8E9FBA67C2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{A68ADB0C-F9C2-4E3D-8D1B-B41D309B1FD4}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{8CC3EBB3-26FE-43FE-B9A3-3C361DE69933}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6EAF7BF9-D130-4F87-B27D-4F32AD2D168F}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3AFC3E37-EDC3-447C-9E43-AF8365E058E0}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6CEB547E-DD12-48DD-8198-54DC08B9B385}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{16EA479B-E15D-4E51-8EAE-E5688E13339C}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{1432B02A-F6C2-49E6-A85E-CEB45C339487}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{85540A43-06F5-44B8-B75B-A0B330FF28D7}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Extração de dados do Access" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{3EDCF6A1-A5E7-4628-9498-F7B20C331C08}"
+      DTS:From="Package\Extração de dados do Access"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{6F35DAF5-0528-4314-928F-1EF8CA23F3C9}"
+      DTS:EventID="509082520"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{78D82D58-1D34-4356-AA88-7E788FD78AF1}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Envia Email"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{1CD75116-3AF1-4F20-916B-62DCE9E1CE48}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Envia Email"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::remetente_email]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Ocorreu um erro no componente " + @[System::SourceName] + ", do processo " + @[System::PackageName] + ": " + "\n\r" +@[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">@[$Project::assunto_email_erros]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::destinatario_email_erros]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{4BDEEFBB-B2CB-478F-B881-07EAF97F22F6}"
+              SendMailTask:From="dwbi@eda.pt"
+              SendMailTask:To="pedro.soares@novabase.pt"
+              SendMailTask:Subject="Erro em processo de integração de dados"
+              SendMailTask:MessageSource="Ocorreu um erro no componente , do processo E_MOVIMENTO_IMOBILIZADO_NAO_TECNICO: &#xA;&#xA;" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1C2B3B2B-6356-469C-AE03-F43EDA6684EF}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere registo de erro"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="INSERT INTO log_erros (processo, componente, mensagem,codigo_execucao,data)&#xA;  VALUES (?,?,?,?,current_timestamp)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{315A634A-531F-4404-AA01-B3B392FF75AF}"
+          DTS:From="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Envia Email" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="238,42"
+          Id="Package\Extração de dados do Access\Extração de dados de Imobilizado"
+          TopLeft="40,98" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Extração de dados do Access\Limpeza da tabela de extração"
+          TopLeft="43.5,9" />
+        <EdgeLayout
+          Id="Package\Extração de dados do Access.PrecedenceConstraints[Constraint]"
+          TopLeft="157,51">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="325,202"
+          Size="325,245"
+          Id="Package\Extração de dados do Access"
+          TopLeft="537,50" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="5.5,83" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="14.5,5" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          TopLeft="110,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="254,142"
+          Size="254,185"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="937,77" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="3,160" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="6,84" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="10,6" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="105,48">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          TopLeft="104.75,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250,257"
+          Size="250,300"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="208,20" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="458,171.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79,0"
+              Start="0,0"
+              End="71.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="71.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="862,171">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75,0"
+              Start="0,0"
+              End="67.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="67.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package.EventHandlers[OnError]\Envia Email"
+          TopLeft="29.5,107.5" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package.EventHandlers[OnError]\Insere registo de erro"
+          TopLeft="5.50000000000001,5.5" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="96,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Extração de dados do Access\Extração de dados de Imobilizado">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado"
+          TopLeft="434,75" />
+        <NodeLayout
+          Size="249,42"
+          Id="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido"
+          TopLeft="426,248" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Extração de dados do Access\Extração de dados de Imobilizado\Data Conversion"
+          TopLeft="468,157" />
+        <EdgeLayout
+          Id="Package\Extração de dados do Access\Extração de dados de Imobilizado.Paths[OLE DB Source Output]"
+          TopLeft="545.5,117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extração de dados do Access\Extração de dados de Imobilizado.Paths[Data Conversion Output]"
+          TopLeft="548.25,199">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extração de dados do Access\Extração de dados de Imobilizado\Ficheiro Access de Imobilizado">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extração de dados do Access\Extração de dados de Imobilizado\e_movimento_imobilizado_repartido">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

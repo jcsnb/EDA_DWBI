@@ -1,0 +1,641 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/9/2017 2:09:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DCDWBIPROT"
+  DTS:CreatorName="GRUPOEDA\ExtPwDBi02"
+  DTS:DTSID="{3E12A281-FCA2-4331-A378-EEE5EA776076}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0600.250"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="src_equipamento_detalhe"
+  DTS:PackageType="5"
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{ADF7B454-6A78-4216-8180-072C49D90B6F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\equipamento detalhe"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{22AA7E56-9A19-482D-80A5-DB807871CF44}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="equipamento detalhe"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\equipamento detalhe\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\equipamento detalhe\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\equipamento detalhe\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\equipamento detalhe\Data Conversion.Inputs[Data Conversion Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\equipamento detalhe\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\equipamento detalhe\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\equipamento detalhe\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\equipamento detalhe\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\equipamento detalhe\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\equipamento detalhe\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\equipamento detalhe\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\equipamento detalhe\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\equipamento detalhe\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\equipamento detalhe\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\equipamento detalhe\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\equipamento detalhe\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\equipamento detalhe\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\equipamento detalhe\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\equipamento detalhe\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\equipamento detalhe\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\equipamento detalhe\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[src_equipamento_detalhe]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\equipamento detalhe\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{C8792051-F092-44BF-81D6-E208CD5ADB72}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DCDWBIQDDW00_DWBIDEV.STG]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MessageId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MessageId"
+                      externalMetadataColumnId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[message_id]"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].Columns[MessageId]" />
+                    <inputColumn
+                      refId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SIT_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="SIT_ID"
+                      externalMetadataColumnId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[sit_id]"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].Columns[SIT_ID]" />
+                    <inputColumn
+                      refId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PropertyCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="PropertyCode"
+                      externalMetadataColumnId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[property_code]"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].Columns[PropertyCode]" />
+                    <inputColumn
+                      refId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PropertyValue]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="PropertyValue"
+                      externalMetadataColumnId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[property_value]"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].Columns[PropertyValue]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[message_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="message_id" />
+                    <externalMetadataColumn
+                      refId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[sit_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="sit_id" />
+                    <externalMetadataColumn
+                      refId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[property_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="property_code" />
+                    <externalMetadataColumn
+                      refId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[property_value]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1024"
+                      name="property_value" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\equipamento detalhe\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\equipamento detalhe\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\equipamento detalhe\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\equipamento detalhe\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\equipamento detalhe\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\equipamento detalhe\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SAP_UpsertEquipments_InputControl]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT equip_prop.[MessageId]
+      ,equip_prop.[SIT_ID]
+      ,[PropertyCode]
+      ,[PropertyValue]
+  FROM [dbo].[SAP_UpsertEquipments_EquipmentProperty] equip_prop
+INNER JOIN
+( 
+			SELECT	MessageId,SIT_ID,Operation 
+			FROM	[SIGSIT].[dbo].[SAP_UpsertEquipments_Equipment]
+			WHERE	EquipmentTypeCode IN ('subestacao','barramento','tranformador','painel','escalao_bateria_condensadores') 
+) equip
+ON equip.SIT_ID = equip_prop.SIT_ID</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\equipamento detalhe\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{C7A27C86-5298-4DA2-A80B-CF3A94B6A7D1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[InterfaceSIGSIT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].Columns[MessageId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MessageId]"
+                      length="50"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].Columns[MessageId]"
+                      name="MessageId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].Columns[SIT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SIT_ID]"
+                      length="64"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].Columns[SIT_ID]"
+                      name="SIT_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].Columns[PropertyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PropertyCode]"
+                      length="64"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].Columns[PropertyCode]"
+                      name="PropertyCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].Columns[PropertyValue]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PropertyValue]"
+                      length="1024"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].Columns[PropertyValue]"
+                      name="PropertyValue"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MessageId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MessageId" />
+                    <externalMetadataColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SIT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="SIT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PropertyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="PropertyCode" />
+                    <externalMetadataColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PropertyValue]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1024"
+                      name="PropertyValue" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MessageId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MessageId]"
+                      name="MessageId" />
+                    <outputColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SIT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SIT_ID]"
+                      name="SIT_ID" />
+                    <outputColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PropertyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PropertyCode]"
+                      name="PropertyCode" />
+                    <outputColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PropertyValue]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PropertyValue]"
+                      name="PropertyValue" />
+                    <outputColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\equipamento detalhe.Paths[Data Conversion Output]"
+              endId="Package\equipamento detalhe\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\equipamento detalhe\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\equipamento detalhe.Paths[Derived Column Output]"
+              endId="Package\equipamento detalhe\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\equipamento detalhe\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\equipamento detalhe.Paths[OLE DB Source Output]"
+              endId="Package\equipamento detalhe\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\equipamento detalhe\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="178,42"
+          Id="Package\equipamento detalhe"
+          TopLeft="307,167" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\equipamento detalhe">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\equipamento detalhe\OLE DB Source"
+          TopLeft="351,35" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\equipamento detalhe\OLE DB Destination"
+          TopLeft="346,298" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\equipamento detalhe\Data Conversion"
+          TopLeft="349,210" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\equipamento detalhe\Derived Column"
+          TopLeft="347,125" />
+        <EdgeLayout
+          Id="Package\equipamento detalhe.Paths[Data Conversion Output]"
+          TopLeft="429.25,252">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\equipamento detalhe.Paths[OLE DB Source Output]"
+          TopLeft="425,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\equipamento detalhe.Paths[Derived Column Output]"
+          TopLeft="425.5,167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\equipamento detalhe\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\equipamento detalhe\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

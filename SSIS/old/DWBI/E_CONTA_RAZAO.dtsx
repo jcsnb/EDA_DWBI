@@ -1,0 +1,2214 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/28/2017 12:48:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LT123516"
+  DTS:CreatorName="NOVABASE\NB14865"
+  DTS:DTSID="{0E0849C4-E25C-4BD1-99D2-C0590C132427}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="E_CONTA_RAZAO"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="201"
+  DTS:VersionGUID="{56E1CE49-5D6F-46E9-B06C-CD7CFE92448B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EEC9B97D-2F68-4DC3-97C5-F7821B814534}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0B15904E-1D68-4FFB-90BD-2A0F3FE19E33}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::codigo_empresa_eda]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="codigo_empresa_eda">
+      <DTS:VariableValue
+        DTS:DataType="8">1001</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7943D685-8EB9-4763-8838-61E03A701366}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="contas_">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BE76696B-AF63-4720-B361-3E501769DFDE}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::linguagem]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="linguagem">
+      <DTS:VariableValue
+        DTS:DataType="8">P</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{07BBC105-AD3E-4F55-8B6A-4C92B1F4004F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2C64B8FA-80EA-44CE-9513-F9E9FC9DB521}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C444BD86-00B2-46B4-B6F6-EB34B048C376}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">SAP - Tabelas SKB1 e SKAT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E5C27C75-2A66-454D-B0F3-875F836FA9E6}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::plano_contas]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="plano_contas">
+      <DTS:VariableValue
+        DTS:DataType="8">PCGE</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{250D3DE1-CA96-404B-BCF1-F03F4694C585}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">e_conta_razao</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Criação dos registos da Conta do Razao"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{58F51E67-3D9A-4B52-B594-8EC9B902B0FB}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Criação dos registos da Conta do Razao">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{1A01B26E-C1A1-4D1C-9070-26A7F30009FD}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Extração de dados da Conta do Razão"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Contas da Empresa"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  description="Tabela SKB1"
+                  name="Contas da Empresa">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specify the SAP table to be extracted"
+                      name="TableName">SKB1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the maximum number of rows to be extracted (0 is unlimited)"
+                      name="MaxRows">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the package size for large data extraction (0 is unlimited)"
+                      name="PackageSize">20000</property>
+                    <property
+                      dataType="System.String"
+                      description="Specify WHERE clause for extraction"
+                      name="WhereClause">BUKRS = @[User::codigo_empresa_eda]
+AND (SAKNR LIKE '4%' OR SAKNR LIKE '6%')</property>
+                    <property
+                      dataType="System.String"
+                      description="Name of the SAP custom function module if you like to use it"
+                      name="CustomFunctionName">RFC_READ_TABLE</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Defines if a custom function module should be used"
+                      name="UseCustomFunction">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="String Conversion"
+                      name="StringConversion">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Delimiter"
+                      name="Delimiter"></property>
+                    <property
+                      dataType="System.String"
+                      description="Order By clause"
+                      name="OrderBy"></property>
+                    <property
+                      dataType="System.String"
+                      description="Internal properties, Please use the editor"
+                      name="InternalXML">&lt;StorageTableBase xmlns="http://tempuri.org/StorageTableBase.xsd"&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;MANDT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Mandante&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BUKRS&lt;/ColName&gt;
+    &lt;ColDescription&gt;Empresa&lt;/ColDescription&gt;
+    &lt;ColLength&gt;4&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;SAKNR&lt;/ColName&gt;
+    &lt;ColDescription&gt;Nº conta do Razão&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BEGRU&lt;/ColName&gt;
+    &lt;ColDescription&gt;Grupo autorizações&lt;/ColDescription&gt;
+    &lt;ColLength&gt;4&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BUSAB&lt;/ColName&gt;
+    &lt;ColDescription&gt;Responsável da contabilidade&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;DATLZ&lt;/ColName&gt;
+    &lt;ColDescription&gt;Data CPU da última execução do programa de cálculo de juros&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;d&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ERDAT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Data de criação do registro&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;d&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ERNAM&lt;/ColName&gt;
+    &lt;ColDescription&gt;Nome do responsável que adicionou o objeto&lt;/ColDescription&gt;
+    &lt;ColLength&gt;12&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;FDGRV&lt;/ColName&gt;
+    &lt;ColDescription&gt;Grupo de administração de tesouraria&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;FDLEV&lt;/ColName&gt;
+    &lt;ColDescription&gt;Nível de administração de tesouraria&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;FIPLS&lt;/ColName&gt;
+    &lt;ColDescription&gt;Item do plano financeiro&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;n&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;FSTAG&lt;/ColName&gt;
+    &lt;ColDescription&gt;Grupo de status do campo&lt;/ColDescription&gt;
+    &lt;ColLength&gt;4&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;HBKID&lt;/ColName&gt;
+    &lt;ColDescription&gt;Chave breve de um banco da empresa&lt;/ColDescription&gt;
+    &lt;ColLength&gt;5&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;HKTID&lt;/ColName&gt;
+    &lt;ColDescription&gt;Chave breve das coordenadas de uma conta&lt;/ColDescription&gt;
+    &lt;ColLength&gt;5&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;KDFSL&lt;/ColName&gt;
+    &lt;ColDescription&gt;Chave para diferenças de câmbio em contas de ME&lt;/ColDescription&gt;
+    &lt;ColLength&gt;4&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;MITKZ&lt;/ColName&gt;
+    &lt;ColDescription&gt;A conta é conta coletiva&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;MWSKZ&lt;/ColName&gt;
+    &lt;ColDescription&gt;Categoria fiscal no mestre de contas&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;STEXT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Texto adicional conta do Razão&lt;/ColDescription&gt;
+    &lt;ColLength&gt;50&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;VZSKZ&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código de cálculo de juros&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;WAERS&lt;/ColName&gt;
+    &lt;ColDescription&gt;Moeda da conta&lt;/ColDescription&gt;
+    &lt;ColLength&gt;5&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;WMETH&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: administração da conta em sistema externo&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XGKON&lt;/ColName&gt;
+    &lt;ColDescription&gt;Conta de entrada de caixa / conta de saída de caixa&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XINTB&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: conta só pode ser lançada automaticamente?&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XKRES&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: possível exibir partidas individuais via conta?&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XLOEB&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: conta marcada para eliminação?&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XNKON&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: ClassCont.posterior em lançamentos automáticos?&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XOPVW&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: administração de partidas em aberto?&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XSPEB&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: conta bloqueada para lançamento?&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ZINDT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Data fixada do último cálculo de juros&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;d&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ZINRT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Periodicidade dos juros em meses&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;n&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ZUAWA&lt;/ColName&gt;
+    &lt;ColDescription&gt;Chave para a ordenação por nºs atribuição&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ALTKT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Nº conta alternativo na empresa&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XMITK&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: conta de reconciliação admite entrada de lançamento?&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;RECID&lt;/ColName&gt;
+    &lt;ColDescription&gt;Tipo de custos&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;FIPOS&lt;/ColName&gt;
+    &lt;ColDescription&gt;Item financeiro&lt;/ColDescription&gt;
+    &lt;ColLength&gt;24&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XMWNO&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: código de imposto não é campo obrigatório&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XSALH&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: administrar saldos só em moeda interna&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BEWGP&lt;/ColName&gt;
+    &lt;ColDescription&gt;Grupo de avaliação&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;INFKY&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código de inflação&lt;/ColDescription&gt;
+    &lt;ColLength&gt;8&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;TOGRU&lt;/ColName&gt;
+    &lt;ColDescription&gt;Grupo de tolerância para contas do Razão&lt;/ColDescription&gt;
+    &lt;ColLength&gt;4&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XLGCLR&lt;/ColName&gt;
+    &lt;ColDescription&gt;Compensação específica de grupo de ledgers&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;MCAKEY&lt;/ColName&gt;
+    &lt;ColDescription&gt;Chave MCA&lt;/ColDescription&gt;
+    &lt;ColLength&gt;5&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;AutomaticDateConversion&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;SubstitutionDateValue&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;MaxRowsVariable&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;PackageSizeVariable&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;PrimaryKeyPackaging&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;BackgroundExtraction&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;BufferLocation&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;UseCompression&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;UseFieldExits&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+&lt;/StorageTableBase&gt;</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">XtractIS.XtractSourceTable</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Contas da Empresa.Connections[Xtract SAP Connection]"
+                      connectionManagerID="{C61E7FA6-BF35-4FBA-B82F-B14EE5F60600}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SAP]"
+                      description="Xtract SAP Connection"
+                      name="Xtract SAP Connection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Contas da Empresa.Outputs[XtractOutput]"
+                      name="XtractOutput">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Contas da Empresa.Outputs[XtractOutput].Columns[SAKNR]"
+                          dataType="wstr"
+                          description="Nº conta do Razão"
+                          externalMetadataColumnId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Contas da Empresa.Outputs[XtractOutput].ExternalColumns[SAKNR]"
+                          length="10"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Contas da Empresa.Outputs[XtractOutput].Columns[SAKNR]"
+                          name="SAKNR" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Contas da Empresa.Outputs[XtractOutput].ExternalColumns[SAKNR]"
+                          dataType="wstr"
+                          description="Nº conta do Razão"
+                          length="10"
+                          name="SAKNR" />
+                      </externalMetadataColumns>
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Conversão de dados"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Inputs[Data Conversion Input].Columns[SAKNR]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="SAKNR"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Outputs[Merge Join Output].Columns[SAKNR]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Inputs[Data Conversion Input].Columns[TXT50]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="TXT50"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Outputs[Merge Join Output].Columns[TXT50]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Outputs[Data Conversion Output].Columns[codigo_conta_razao]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Outputs[Data Conversion Output].Columns[codigo_conta_razao]"
+                          name="codigo_conta_razao"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Outputs[Merge Join Output].Columns[SAKNR]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Outputs[Data Conversion Output].Columns[descricao_conta_razao]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="80"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Outputs[Data Conversion Output].Columns[descricao_conta_razao]"
+                          name="descricao_conta_razao"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Outputs[Merge Join Output].Columns[TXT50]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="e_conta_razao"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[e_conta_razao]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">1000</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Inputs[OLE DB Destination Input].Columns[codigo_conta_razao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="codigo_conta_razao"
+                          externalMetadataColumnId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Inputs[OLE DB Destination Input].ExternalColumns[codigo_conta_razao]"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Outputs[Data Conversion Output].Columns[codigo_conta_razao]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Inputs[OLE DB Destination Input].Columns[descricao_conta_razao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="descricao_conta_razao"
+                          externalMetadataColumnId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Inputs[OLE DB Destination Input].ExternalColumns[descricao_conta_razao]"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Outputs[Data Conversion Output].Columns[descricao_conta_razao]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Inputs[OLE DB Destination Input].ExternalColumns[codigo_conta_razao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="codigo_conta_razao" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Inputs[OLE DB Destination Input].ExternalColumns[descricao_conta_razao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="80"
+                          name="descricao_conta_razao" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join"
+                  componentClassID="Microsoft.MergeJoin"
+                  contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+                  name="Join"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of join to perform."
+                      name="JoinType"
+                      typeConverter="JoinType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the number of columns in the ordering key."
+                      name="NumKeyColumns">1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the null values are treated as equal values."
+                      name="TreatNullsAsEqual">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Indicates the requested maximum buffers per input before blocking."
+                      name="MaxBuffersPerInput">5</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Inputs[Merge Join Left Input]"
+                      hasSideEffects="true"
+                      name="Merge Join Left Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Inputs[Merge Join Left Input].Columns[SAKNR]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="SAKNR"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Contas.Outputs[Sort Output].Columns[SAKNR]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Inputs[Merge Join Right Input]"
+                      hasSideEffects="true"
+                      name="Merge Join Right Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Inputs[Merge Join Right Input].Columns[SAKNR]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="SAKNR"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições.Outputs[Sort Output].Columns[SAKNR]" />
+                        <inputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Inputs[Merge Join Right Input].Columns[TXT50]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="TXT50"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições.Outputs[Sort Output].Columns[TXT50]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Outputs[Merge Join Output]"
+                      isSorted="true"
+                      name="Merge Join Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Outputs[Merge Join Output].Columns[SAKNR]"
+                          dataType="wstr"
+                          description="Nº conta do Razão"
+                          length="10"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Outputs[Merge Join Output].Columns[SAKNR]"
+                          name="SAKNR"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Inputs[Merge Join Right Input].Columns[SAKNR]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Outputs[Merge Join Output].Columns[TXT50]"
+                          dataType="wstr"
+                          description="Texto descritivo das contas do Razão"
+                          length="50"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Outputs[Merge Join Output].Columns[TXT50]"
+                          name="TXT50">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Inputs[Merge Join Right Input].Columns[TXT50]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Contas"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Ordenação Contas"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Contas.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Contas.Inputs[Sort Input].Columns[SAKNR]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="SAKNR"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Contas da Empresa.Outputs[XtractOutput].Columns[SAKNR]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Contas.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Contas.Outputs[Sort Output].Columns[SAKNR]"
+                          dataType="wstr"
+                          description="Nº conta do Razão"
+                          length="10"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Contas.Outputs[Sort Output].Columns[SAKNR]"
+                          name="SAKNR"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Contas da Empresa.Outputs[XtractOutput].Columns[SAKNR]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Ordenação Descrições"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições.Inputs[Sort Input].Columns[SAKNR]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="SAKNR"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput].Columns[SAKNR]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições.Inputs[Sort Input].Columns[TXT50]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="TXT50"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput].Columns[TXT50]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições.Outputs[Sort Output].Columns[SAKNR]"
+                          dataType="wstr"
+                          description="Nº conta do Razão"
+                          length="10"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições.Outputs[Sort Output].Columns[SAKNR]"
+                          name="SAKNR"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput].Columns[SAKNR]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições.Outputs[Sort Output].Columns[TXT50]"
+                          dataType="wstr"
+                          description="Texto descritivo das contas do Razão"
+                          length="50"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições.Outputs[Sort Output].Columns[TXT50]"
+                          name="TXT50">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput].Columns[TXT50]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  description="Tabela SKAT"
+                  name="Textos das Contas">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specify the SAP table to be extracted"
+                      name="TableName">SKAT</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the maximum number of rows to be extracted (0 is unlimited)"
+                      name="MaxRows">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the package size for large data extraction (0 is unlimited)"
+                      name="PackageSize">20000</property>
+                    <property
+                      dataType="System.String"
+                      description="Specify WHERE clause for extraction"
+                      name="WhereClause">SPRAS = @[User::linguagem]
+AND KTOPL = @[User::plano_contas] 
+AND (SAKNR LIKE '4%' OR SAKNR LIKE '6%')</property>
+                    <property
+                      dataType="System.String"
+                      description="Name of the SAP custom function module if you like to use it"
+                      name="CustomFunctionName">RFC_READ_TABLE</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Defines if a custom function module should be used"
+                      name="UseCustomFunction">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="String Conversion"
+                      name="StringConversion">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Delimiter"
+                      name="Delimiter"></property>
+                    <property
+                      dataType="System.String"
+                      description="Order By clause"
+                      name="OrderBy"></property>
+                    <property
+                      dataType="System.String"
+                      description="Internal properties, Please use the editor"
+                      name="InternalXML">&lt;StorageTableBase xmlns="http://tempuri.org/StorageTableBase.xsd"&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;MANDT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Mandante&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;SPRAS&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código de idioma&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;KTOPL&lt;/ColName&gt;
+    &lt;ColDescription&gt;Plano de contas&lt;/ColDescription&gt;
+    &lt;ColLength&gt;4&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;SAKNR&lt;/ColName&gt;
+    &lt;ColDescription&gt;Nº conta do Razão&lt;/ColDescription&gt;
+    &lt;ColLength&gt;10&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;TXT20&lt;/ColName&gt;
+    &lt;ColDescription&gt;Texto das contas do Razão&lt;/ColDescription&gt;
+    &lt;ColLength&gt;20&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;TXT50&lt;/ColName&gt;
+    &lt;ColDescription&gt;Texto descritivo das contas do Razão&lt;/ColDescription&gt;
+    &lt;ColLength&gt;50&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;MCOD1&lt;/ColName&gt;
+    &lt;ColDescription&gt;Critério de pesquisa para utilização matchcode&lt;/ColDescription&gt;
+    &lt;ColLength&gt;25&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;AutomaticDateConversion&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;SubstitutionDateValue&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;MaxRowsVariable&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;PackageSizeVariable&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;PrimaryKeyPackaging&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;BackgroundExtraction&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;BufferLocation&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;UseCompression&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;UseFieldExits&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+&lt;/StorageTableBase&gt;</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">XtractIS.XtractSourceTable</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Connections[Xtract SAP Connection]"
+                      connectionManagerID="{C61E7FA6-BF35-4FBA-B82F-B14EE5F60600}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SAP]"
+                      description="Xtract SAP Connection"
+                      name="Xtract SAP Connection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput]"
+                      name="XtractOutput">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput].Columns[SAKNR]"
+                          dataType="wstr"
+                          description="Nº conta do Razão"
+                          externalMetadataColumnId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput].ExternalColumns[SAKNR]"
+                          length="10"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput].Columns[SAKNR]"
+                          name="SAKNR" />
+                        <outputColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput].Columns[TXT50]"
+                          dataType="wstr"
+                          description="Texto descritivo das contas do Razão"
+                          externalMetadataColumnId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput].ExternalColumns[TXT50]"
+                          length="50"
+                          lineageId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput].Columns[TXT50]"
+                          name="TXT50" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput].ExternalColumns[SAKNR]"
+                          dataType="wstr"
+                          description="Nº conta do Razão"
+                          length="10"
+                          name="SAKNR" />
+                        <externalMetadataColumn
+                          refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput].ExternalColumns[TXT50]"
+                          dataType="wstr"
+                          description="Texto descritivo das contas do Razão"
+                          length="50"
+                          name="TXT50" />
+                      </externalMetadataColumns>
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão.Paths[Data Conversion Output]"
+                  endId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão.Paths[Merge Join Output]"
+                  endId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados.Inputs[Data Conversion Input]"
+                  name="Merge Join Output"
+                  startId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Outputs[Merge Join Output]" />
+                <path
+                  refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão.Paths[Sort Output]"
+                  endId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Inputs[Merge Join Left Input]"
+                  name="Sort Output"
+                  startId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Contas.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão.Paths[Sort Output1]"
+                  endId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join.Inputs[Merge Join Right Input]"
+                  name="Sort Output"
+                  startId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão.Paths[XtractOutput]"
+                  endId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Contas.Inputs[Sort Input]"
+                  name="XtractOutput"
+                  startId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Contas da Empresa.Outputs[XtractOutput]" />
+                <path
+                  refId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão.Paths[XtractOutput1]"
+                  endId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições.Inputs[Sort Input]"
+                  name="XtractOutput"
+                  startId="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas.Outputs[XtractOutput]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Criação dos registos da Conta do Razao\Limpeza da tabela de extração"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TRUNCATE TABLE e_tempo"
+          DTS:DTSID="{A7B5977A-A3B0-45EF-9BCE-07D0D35AF476}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Limpeza da tabela de extração"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="DECLARE @sql varchar(100)&#xA;SET @sql = 'TRUNCATE TABLE ' + ?&#xA;EXEC (@sql)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Criação dos registos da Conta do Razao.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{545F53AB-11A0-49C1-B74D-B24BD0FC29A1}"
+          DTS:From="Package\Criação dos registos da Conta do Razao\Limpeza da tabela de extração"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3D35F1E4-4665-4B9D-8F7B-484DF3994263}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8518C356-BEA4-4ED1-A0E9-86E4F4D2A48D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;&#x9;    numero_registos_inseridos = ?,&#xA;&#x9;&#x9;data_fim = CURRENT_TIMESTAMP,&#xA;&#x9;&#x9;duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;&#x9;&#x9;sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F0EBBF13-455D-4186-BC29-9F8303CF05B6}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{B1CAB79C-1355-4B4E-8D7D-DD3C7CD5CB7D}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{05AE2003-6AFC-41B0-91AC-68CBBC40831C}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{15B9027D-E02F-45B8-BDC8-D2D8D5DB2905}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F8A698FD-C70A-4D35-9731-54C1B4069A07}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{56E7E140-4711-4A70-A599-CC36BBC712F3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{A2DDC34D-7A8D-44D1-BD21-C72A113AA24C}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{85EA34C6-41A9-46C3-8C0B-C32AFEEF309F}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{43F54A5A-A437-4B07-A886-D60AA692A773}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Criação dos registos da Conta do Razao" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{24D212E6-B204-4E6A-B5FB-E998764CB201}"
+      DTS:From="Package\Criação dos registos da Conta do Razao"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{E559ECB2-AABD-4716-98CD-8A3AF4538E6E}"
+      DTS:EventID="509082520"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{D3E347F8-75B2-403C-BEDD-6CA27CBB11C5}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Envia Email"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{E4D8A63A-5550-4BBA-87BB-4B5FA6CD4AE2}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Envia Email"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::remetente_email]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Ocorreu um erro no componente " + @[System::SourceName] + ", do processo " + @[System::PackageName] + ": " + "\n\r" +@[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">@[$Project::assunto_email_erros]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::destinatario_email_erros]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{4BDEEFBB-B2CB-478F-B881-07EAF97F22F6}"
+              SendMailTask:From="dwbi@eda.pt"
+              SendMailTask:To="pedro.soares@novabase.pt"
+              SendMailTask:Subject="Erro em processo de integração de dados"
+              SendMailTask:MessageSource="Ocorreu um erro no componente , do processo E_CONTA_RAZAO: &#xA;&#xA;" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{65763AFB-08C5-4C1D-B566-2240A3FCC766}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere registo de erro"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="INSERT INTO log_erros (processo, componente, mensagem,codigo_execucao,data)&#xA;  VALUES (?,?,?,?,current_timestamp)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{1A70433E-0675-4896-8D0D-DE36DBA34699}"
+          DTS:From="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Envia Email" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="258,42"
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão"
+          TopLeft="40.5,127" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Criação dos registos da Conta do Razao\Limpeza da tabela de extração"
+          TopLeft="55.5,17" />
+        <EdgeLayout
+          Id="Package\Criação dos registos da Conta do Razao.PrecedenceConstraints[Constraint]"
+          TopLeft="168.25,59">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68"
+              Start="0,0"
+              End="0,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="335,253"
+          Size="335,296"
+          Id="Package\Criação dos registos da Conta do Razao"
+          TopLeft="396,39" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="5.5,83" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="14.5,5" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          TopLeft="110,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="254,142"
+          Size="254,185"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="810,91" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="3,160" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="6,84" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="10,6" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="105,48">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          TopLeft="104.75,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250,257"
+          Size="250,300"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="69,37" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="319,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77,0"
+              Start="0,0"
+              End="69.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="69.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="731,185.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79,0"
+              Start="0,0"
+              End="71.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="71.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package.EventHandlers[OnError]\Envia Email"
+          TopLeft="29.5,107.5" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package.EventHandlers[OnError]\Insere registo de erro"
+          TopLeft="5.50000000000001,5.5" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="96,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao"
+          TopLeft="328,369" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Join"
+          TopLeft="346,222" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Descrições"
+          TopLeft="400,155" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Textos das Contas"
+          TopLeft="398,78" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Contas da Empresa"
+          TopLeft="195,77" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Conversão de dados"
+          TopLeft="315,295" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\Ordenação Contas"
+          TopLeft="195,153" />
+        <EdgeLayout
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão.Paths[XtractOutput1]"
+          TopLeft="491.75,120">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão.Paths[XtractOutput]"
+          TopLeft="278.75,119">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão.Paths[Sort Output1]"
+          TopLeft="491.5,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-81.5,25"
+              Start="0,0"
+              End="-81.5,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.7590361445783" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.7590361445783"
+                    Point2="0,14.7590361445783"
+                    Point3="-4,14.7590361445783" />
+                  <mssgle:LineSegment
+                    End="-77.5,14.7590361445783" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-77.5,14.7590361445783"
+                    Point2="-81.5,14.7590361445783"
+                    Point3="-81.5,18.7590361445783" />
+                  <mssgle:LineSegment
+                    End="-81.5,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão.Paths[Sort Output]"
+          TopLeft="277.5,195">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102.5,27"
+              Start="0,0"
+              End="102.5,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.9397590361446" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.9397590361446"
+                    Point2="0,15.9397590361446"
+                    Point3="4,15.9397590361446" />
+                  <mssgle:LineSegment
+                    End="98.5,15.9397590361446" />
+                  <mssgle:CubicBezierSegment
+                    Point1="98.5,15.9397590361446"
+                    Point2="102.5,15.9397590361446"
+                    Point3="102.5,19.9397590361446" />
+                  <mssgle:LineSegment
+                    End="102.5,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão.Paths[Merge Join Output]"
+          TopLeft="398.5,264">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão.Paths[Data Conversion Output]"
+          TopLeft="402,337">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Criação dos registos da Conta do Razao\Extração de dados da Conta do Razão\e_conta_razao">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

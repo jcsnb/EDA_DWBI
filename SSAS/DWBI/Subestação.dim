@@ -1,0 +1,1464 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e1139475-d998-44ae-abe9-d8ab722d7f3f" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Subestação</ID>
+  <Name>Subestação</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-231" scrolltop="-239" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8229" y="12594" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="dim_subestacao" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="5874" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000f216000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_dim_subestacao" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-231</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-239</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="fbc9be80-3eb1-4442-8839-275d6b97cf5d">
+    <DataSourceViewID>DWH</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="df88e0d8-3443-4001-abba-a055a0e81c8a">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="9ba00065-132c-4676-aa35-192fad8f0db2">
+      <ID>Sk Subestacao</ID>
+      <Name>Código EDA</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="777a018c-51f4-441d-b09e-f201451915d7">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ad9f159f-e384-425e-a878-0112e34f133e">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>sk_subestacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="fc8c10d0-d2fa-4d61-b52b-c6dcbccea1bc">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="168ff3e1-b590-43d4-a148-38fe17e758e9">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>codigo_eda</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="e7c00168-2d09-49df-b380-5330f0e24f08">
+          <AttributeID>Sigla Subestacao</AttributeID>
+          <Name>Sigla Subestacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4c472019-72ff-4bb1-bfde-6768b488a900">
+          <AttributeID>Situacao</AttributeID>
+          <Name>Situacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="802f625b-5a62-47b1-9883-c746aa56e888">
+          <AttributeID>Potencia Ligacao Disponivel v1 v2</AttributeID>
+          <Name>Potencia Ligacao Disponivel v1 v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="689ac82f-13f3-479f-a492-aaa6057bd3a2">
+          <AttributeID>Nome Subestacao</AttributeID>
+          <Name>Nome Subestacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bf316f8b-321d-4854-a2a8-c8b7b4baec80">
+          <AttributeID>Tipo Instalacao</AttributeID>
+          <Name>Tipo Instalacao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f3323f2b-e466-410e-a2c1-eab4686ce710">
+          <AttributeID>Proprietario</AttributeID>
+          <Name>Proprietario</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d3d14245-e972-4edd-b679-f6bc21a7e6da">
+          <AttributeID>Data Entrada Exploracao</AttributeID>
+          <Name>Data Entrada Exploracao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a5fd2630-39f8-4061-b68d-35eaae411a47">
+          <AttributeID>Data Ultima Alteracao Tecnica</AttributeID>
+          <Name>Data Ultima Alteracao Tecnica</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2b977f8a-1858-4a89-a354-e914a17f4a20">
+          <AttributeID>Data Saida Exploracao</AttributeID>
+          <Name>Data Saida Exploracao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="19f4c93e-759e-4b43-8f1f-ad9dd2433764">
+          <AttributeID>Latitude</AttributeID>
+          <Name>Latitude</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f8a92e97-a515-4bad-bd95-87cd54e3c270">
+          <AttributeID>Longitude</AttributeID>
+          <Name>Longitude</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="80f460f9-55c5-412b-8128-2acc050633b2">
+          <AttributeID>Tensao Nominal v1</AttributeID>
+          <Name>Tensao Nominal v1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6808f29e-6616-4775-baf5-977ab130b748">
+          <AttributeID>Tensao Nominal v2</AttributeID>
+          <Name>Tensao Nominal v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6b16dd11-ced7-4e43-a0f3-8622c5763926">
+          <AttributeID>Tensao Nominal v3</AttributeID>
+          <Name>Tensao Nominal v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9580bb6d-3ca5-420c-a9f6-3283dd3cf3ee">
+          <AttributeID>Tensao Servico v2</AttributeID>
+          <Name>Tensao Servico v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d97548e9-2c5c-4ddd-b8a5-3c6ba6235ea8">
+          <AttributeID>Tensao Servico v3</AttributeID>
+          <Name>Tensao Servico v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="fa41fc1b-3549-49c7-abcc-cd955e9bd2e8">
+          <AttributeID>Numero Niveis Tensao</AttributeID>
+          <Name>Numero Niveis Tensao</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="71528339-3ea8-40da-a0f5-f0d83bd519b1">
+          <AttributeID>Potencia Instalada</AttributeID>
+          <Name>Potencia Instalada</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ed0d478f-ea40-4185-a83e-7a2f6a0f3fdb">
+          <AttributeID>Potencia Curto Circuito Min v1</AttributeID>
+          <Name>Potencia Curto Circuito Min v1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6ef8cf62-bbbf-458c-9d87-a40aa5681514">
+          <AttributeID>Potencia Curto Circuito Max v1</AttributeID>
+          <Name>Potencia Curto Circuito Max v1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="58a720ce-af0d-4c4f-b340-32f3e1edd46b">
+          <AttributeID>Potencia Curto Circuito Min v2</AttributeID>
+          <Name>Potencia Curto Circuito Min v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="138e96f8-8779-43fc-915c-624d6f002d21">
+          <AttributeID>Potencia Curto Circuito Max v2</AttributeID>
+          <Name>Potencia Curto Circuito Max v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="936f3ccf-0171-41c5-9126-c3369b52adb4">
+          <AttributeID>Potencia Curto Circuito Min v3</AttributeID>
+          <Name>Potencia Curto Circuito Min v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b2be792b-5a01-4010-9be5-02caa7f8f7dd">
+          <AttributeID>Potencia Curto Circuito Max v3</AttributeID>
+          <Name>Potencia Curto Circuito Max v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="766b8a40-09fd-4686-9bef-49cea5324834">
+          <AttributeID>Esquema Ligacao Barramentos v1</AttributeID>
+          <Name>Esquema Ligacao Barramentos v1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4bcfa8f1-6dda-454f-b0cd-91bb23dd8ca9">
+          <AttributeID>Corrente Curto Circuito v1</AttributeID>
+          <Name>Corrente Curto Circuito v1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a71d3683-7644-4bb6-9fec-a1c72a728b4d">
+          <AttributeID>Regime Neutro v1</AttributeID>
+          <Name>Regime Neutro v1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a8b13236-21a9-4e89-ad49-acf2d937b45d">
+          <AttributeID>Bateria Condensadores Mt v1</AttributeID>
+          <Name>Bateria Condensadores Mt v1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="78b36e4f-eed8-49b1-b4cd-bd80b1be6224">
+          <AttributeID>Esquema Ligacao Barramentos v2</AttributeID>
+          <Name>Esquema Ligacao Barramentos v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9e6fb8ed-a593-477d-9a1b-4d504cd466df">
+          <AttributeID>Corrente Curto Circuito v2</AttributeID>
+          <Name>Corrente Curto Circuito v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="92380a95-4809-4b11-b81b-a9307235a317">
+          <AttributeID>Regime Neutro v2</AttributeID>
+          <Name>Regime Neutro v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="779048ae-9b6d-448e-8551-2485f42f7a0f">
+          <AttributeID>Bateria Condensadores Mt v2</AttributeID>
+          <Name>Bateria Condensadores Mt v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f2966e20-9663-4a3d-8d92-e05437de5e89">
+          <AttributeID>Esquema Ligacao Barramentos v3</AttributeID>
+          <Name>Esquema Ligacao Barramentos v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bbfcbca1-55d2-42b2-86d9-1c540edc21a5">
+          <AttributeID>Corrente Curto Circuito v3</AttributeID>
+          <Name>Corrente Curto Circuito v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3537bda9-df95-43f3-b44f-0980b62fd070">
+          <AttributeID>Regime Neutro v3</AttributeID>
+          <Name>Regime Neutro v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a5533282-2069-4b71-b796-69020e0cf938">
+          <AttributeID>Bateria Condensadores Mt v3</AttributeID>
+          <Name>Bateria Condensadores Mt v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2b9f76b1-ba13-4068-9c29-5c491c4c0fda">
+          <AttributeID>Potencia Total Transformacao v1 v2</AttributeID>
+          <Name>Potencia Total Transformacao v1 v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="07af10d6-3b20-4318-acdd-b919c964455e">
+          <AttributeID>Carga Natural v1 v2</AttributeID>
+          <Name>Carga Natural v1 v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="fac06afe-0ba0-49ee-bf58-89798d93bb73">
+          <AttributeID>Potencia Garantida v1 v2</AttributeID>
+          <Name>Potencia Garantida v1 v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2a81933c-e328-4934-a805-2bc3b4497189">
+          <AttributeID>Potencia Nao Garantida v1 v2</AttributeID>
+          <Name>Potencia Nao Garantida v1 v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bdba7b35-9374-42d1-af5e-f4db5ccb5bd3">
+          <AttributeID>Carga Nao Garantida v1 v2</AttributeID>
+          <Name>Carga Nao Garantida v1 v2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bf672cc4-bca7-4269-b625-dbe7185067da">
+          <AttributeID>Potencia Total Transformacao v1 v3</AttributeID>
+          <Name>Potencia Total Transformacao v1 v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="44ed9872-758b-4968-ad8d-7ea436f901d8">
+          <AttributeID>Carga Natural v1 v3</AttributeID>
+          <Name>Carga Natural v1 v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ff8730f5-6d39-4b95-b225-9143edf60726">
+          <AttributeID>Potencia Garantida v1 v3</AttributeID>
+          <Name>Potencia Garantida v1 v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="be34fbcc-e88c-4287-915b-83486e2ad4bd">
+          <AttributeID>Potencia Nao Garantida v1 v3</AttributeID>
+          <Name>Potencia Nao Garantida v1 v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="68ea6b77-541b-4188-bbf9-453f983aa72c">
+          <AttributeID>Potencia Ligacao Disponivel v1 v3</AttributeID>
+          <Name>Potencia Ligacao Disponivel v1 v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="935d2870-7bdc-4301-b7b5-49a91988151c">
+          <AttributeID>Carga Nao Garantida v1 v3</AttributeID>
+          <Name>Carga Nao Garantida v1 v3</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="23c68f17-cf55-4d0b-96bd-1588c76c9ef0">
+          <AttributeID>Atual</AttributeID>
+          <Name>Atual</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c313eda5-c6ec-4c2b-ac76-9c93ecb724be">
+          <AttributeID>Codigo Freguesia</AttributeID>
+          <Name>Codigo Freguesia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a1a0aca4-e4e7-4e47-a119-e5ed4be27487">
+          <AttributeID>Codigo Eda</AttributeID>
+          <Name>Codigo referencia</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1981692e-7562-4b9b-ac90-3c95efc0b18c">
+      <ID>Sigla Subestacao</ID>
+      <Name>Sigla Subestacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ad307d3d-90bd-406f-9b49-5d842bc4a9f3">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="27b41fe0-7378-4db9-999a-f2c0bc53c243">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>sigla_subestacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="2e271c4c-0e79-494f-974b-4246bde6b0cc">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="cfef5f58-88b4-4ced-9026-dd8b3224f6f4">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>sigla_subestacao</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="99a28c29-96b3-4829-bac1-e52df2deecc5">
+      <ID>Situacao</ID>
+      <Name>Situacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="49fbbd97-ad04-4176-bf95-c2cb316d3cad">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c3f7cb05-fdf7-467d-a911-73ba78da8ccb">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>situacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="9a9ef77e-67df-4546-bc21-883606fe04cb">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="74201f49-2d64-44b8-9f86-2d176d993bf5">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>situacao</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a9c0cdb4-1d6d-48d8-97ad-d806a645e3e7">
+      <ID>Potencia Ligacao Disponivel v1 v2</ID>
+      <Name>Potencia Ligacao Disponivel v1 v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cdca26e1-b99f-4158-b548-81fb99978ceb">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ee08845e-c17b-4363-b8d2-c3a85d9f439c">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_ligacao_disponivel_v1_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="954388e5-0d07-43aa-9da4-91efcbd33745">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="722bdf7b-50d8-4cca-94ec-70f975ed9310">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_ligacao_disponivel_v1_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Relação Transformação V1/V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6af115dc-0ef6-44ef-831c-3edce1f09896">
+      <ID>Nome Subestacao</ID>
+      <Name>Nome Subestacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="076f66ed-9bb0-4a4d-bd98-725f1fac4d15">
+          <DataType>WChar</DataType>
+          <DataSize>150</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b09eb240-0965-431d-9e8e-3c01312cc06c">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>nome_subestacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="38c7b368-83a3-48e6-adce-7baed1dcc794">
+        <DataType>WChar</DataType>
+        <DataSize>150</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b259817a-548a-41fb-808f-ab66b9d5de13">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>nome_subestacao</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="274c0d73-8cad-408b-b4b3-89d1e865a971">
+      <ID>Tipo Instalacao</ID>
+      <Name>Tipo Instalacao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="16dd8468-87c7-4296-a2c5-d5d425723350">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9b00cd1e-e6cf-478b-b32e-c7e753cb6f27">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>tipo_instalacao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="6bc9ac51-ccca-4fee-ba61-2048a4a01ae2">
+        <DataType>WChar</DataType>
+        <DataSize>30</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="7735d795-979d-4ed6-b8eb-919be69aa2fe">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>tipo_instalacao</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="659286fb-1dcc-4b4e-9a74-402d12595747">
+      <ID>Proprietario</ID>
+      <Name>Proprietario</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b30916aa-5bc3-4db9-bef4-46b8a59e79ee">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="811e6a0e-f746-4019-91e1-ed59edefed5b">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>proprietario</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="4fc2663b-a64a-4582-8cb3-6ba19209b8ef">
+        <DataType>WChar</DataType>
+        <DataSize>30</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="0227df9e-78bc-4c5e-a568-bd4ca92c0bdf">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>proprietario</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2f286697-a4db-4a85-8aea-2a78bb028778">
+      <ID>Data Entrada Exploracao</ID>
+      <Name>Data Entrada Exploracao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d6f63e60-69cd-45cf-acd6-31839c024e72">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8cb71af8-9454-43ad-b4cc-9597a7a6dbe7">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>data_entrada_exploracao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="e892a9cc-039f-48d1-807e-255fb2575242">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="1cd5f177-227a-49a3-9bd8-c9da31eb2db9">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>data_entrada_exploracao</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="99f2384e-c716-48a8-8b52-4a491bcd30af">
+      <ID>Data Ultima Alteracao Tecnica</ID>
+      <Name>Data Ultima Alteracao Tecnica</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0dc45cc2-8355-4ee7-a925-a2a80a0cea55">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d8669e72-1a9e-4796-9bd3-32250ebffd6b">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>data_ultima_alteracao_tecnica</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="0920166f-8c43-4562-8cc3-0346a3cda956">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="f321cef8-2a32-4b55-b2a4-43c700d9eebd">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>data_ultima_alteracao_tecnica</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cc44e358-60b4-48ab-ac3c-28349eaec482">
+      <ID>Data Saida Exploracao</ID>
+      <Name>Data Saida Exploracao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="29fe7d5c-cda9-42fd-9edd-c667e10d1231">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="92399897-3c76-4091-896f-0fd1cc770463">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>data_saida_exploracao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="e295e609-7193-4e45-b46e-57065270d678">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5333c042-6015-4f57-8b62-abf228f0f10d">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>data_saida_exploracao</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8798bec5-b280-4986-a4b7-846a78a9b252">
+      <ID>Latitude</ID>
+      <Name>Latitude</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3a61c0ba-7dd4-485b-b50c-3ab4ca4f6ad9">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="196d6654-2eb4-401e-90a1-c02e7054864c">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>latitude</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="3dc5ea0d-dcf2-494b-a287-b54880985491">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="6d8ab9f7-00b1-4a85-82cc-2078970c39c4">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>latitude</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5207082e-494d-441d-ba33-4b0f5ddf0257">
+      <ID>Longitude</ID>
+      <Name>Longitude</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="822678b6-adb4-46cd-b07a-7096e0e3cbdc">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9a25e37b-9371-473f-a62f-5fbe3c9e7393">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>longitude</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="c33d32c2-9db5-4267-ba0e-3796fc5666f4">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="1c27d195-17da-417b-bd17-8e0062fcd891">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>longitude</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5ac1b09a-c8cb-4a46-9652-535e6568718a">
+      <ID>Tensao Nominal v1</ID>
+      <Name>Tensao Nominal v1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cebad775-754e-44e7-9b35-6a18f9796234">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4d674aa3-c38e-4dc1-8b28-5cbd0ad4ff35">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>tensao_nominal_v1</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="b83001cc-b614-4b7b-b0c0-96f8dbe5b0fd">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="89602f9b-96d2-4699-9ca7-34a6adaec614">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>tensao_nominal_v1</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V1</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d3b2b029-2692-4f9c-83f0-2d0e9e15f527">
+      <ID>Tensao Nominal v2</ID>
+      <Name>Tensao Nominal v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2ba11466-217d-42ac-8261-0256c72a77a6">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7a03ded8-29df-4313-b8b9-44d03daaeb39">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>tensao_nominal_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="6ee94b45-cba4-41b4-841d-9e0dc8091cd9">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="6744c2ba-e593-449f-80bf-56a6168df553">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>tensao_nominal_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a971352f-dea6-4867-9967-1a82fbeec8bd">
+      <ID>Tensao Nominal v3</ID>
+      <Name>Tensao Nominal v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="aa655d8b-67c0-4585-85a8-4c66e85f9ab4">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8477c03c-18eb-484f-adb8-9a784f1cbe9e">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>tensao_nominal_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="76b1b038-829a-4d7b-97e7-f038b896bad0">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="09a7ca8f-4f5e-4bd7-90df-b2c4b510a5c3">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>tensao_nominal_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="624d657d-922d-4010-9cb1-26194a7716e0">
+      <ID>Tensao Servico v2</ID>
+      <Name>Tensao Servico v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6db5e3e6-4ffe-466a-b808-91ca44e79295">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="abd5f0fc-5ac4-43b7-a7e6-f8b3fd685a17">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>tensao_servico_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a4c563df-a36e-44e0-b213-50dafe8b38f0">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="f96453e4-c669-4e7d-9ec9-d7b828ae6085">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>tensao_servico_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="74e5b0ae-62b1-4d90-9447-7bedfa72af15">
+      <ID>Tensao Servico v3</ID>
+      <Name>Tensao Servico v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="594f0c53-902f-4af5-88aa-3e6ff152a5ee">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="35a421cf-30a5-4abf-93b5-42465a1dccbc">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>tensao_servico_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="ab73f245-be88-4b49-b738-b442014e3e21">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a957f52a-647e-4f63-9a5a-67eee83091e5">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>tensao_servico_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f1215afb-968f-49c6-96e1-6c82233d8fdf">
+      <ID>Numero Niveis Tensao</ID>
+      <Name>Numero Niveis Tensao</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e7ef1423-16b4-485d-951e-76438a33378f">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="07ee289e-4fe3-40f8-a40d-8c0c26cbb8f2">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>numero_niveis_tensao</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a3c13d0e-1e7c-496f-aba8-29c73d3fbdd6">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b6281087-ee18-43ef-8564-ab7a26b61682">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>numero_niveis_tensao</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3dadd013-93b1-48a1-b3ca-a89388c0e744">
+      <ID>Potencia Instalada</ID>
+      <Name>Potencia Instalada</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e5763b15-b997-46d4-b3e1-ec3e158a9a98">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="de599dd1-efe2-4e95-8ce8-2f62b8eef6c7">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_instalada</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="323a376b-82d3-40db-8658-72157f6c426c">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="ad2fe76c-a56d-4d3a-a309-2415d25c4fb9">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_instalada</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1ec5428c-6736-4591-8c5a-1d4ab499b275">
+      <ID>Potencia Curto Circuito Min v1</ID>
+      <Name>Potencia Curto Circuito Min v1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e1d38b66-d66b-487b-bb93-32a94799e2fa">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dc5a504a-e0f2-4d38-b7b6-4da0e097431f">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_curto_circuito_min_v1</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="8d4d32e5-0b2e-4bc4-aaf1-1b13d5d4b837">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="8ffcf1ff-2289-4c7c-adb3-ed706be3f3d2">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_curto_circuito_min_v1</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V1</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9318a59e-cddc-4078-b5f6-398652f77d06">
+      <ID>Potencia Curto Circuito Max v1</ID>
+      <Name>Potencia Curto Circuito Max v1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e882238e-150d-4694-abd8-5de2e810c3e5">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3ca02530-d249-4924-89df-5ff36247ffcf">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_curto_circuito_max_v1</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a55f117d-42fb-4328-97a4-e37985fa8969">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="be9fd37b-0f89-4a07-98ab-ef7aa26b0f2f">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_curto_circuito_max_v1</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V1</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e6572082-aeb6-45ea-ad6c-6cd7b0057f45">
+      <ID>Potencia Curto Circuito Min v2</ID>
+      <Name>Potencia Curto Circuito Min v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="713d39bf-3323-488c-963f-1ccc20177f99">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e2518d0f-575a-42c9-9c4f-828d5c653a2c">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_curto_circuito_min_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a31b015f-f640-409d-b651-70095f857a0e">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="fa94785a-6c5f-40fe-9c56-4296a4ab9974">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_curto_circuito_min_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="88201c8b-f6ec-45eb-bfc4-adfefdd6b977">
+      <ID>Potencia Curto Circuito Max v2</ID>
+      <Name>Potencia Curto Circuito Max v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e3e47b5a-e11d-4751-bd77-567445a7950d">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ac575ced-9655-45b4-81d2-4d995fa106d0">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_curto_circuito_max_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="9963abd5-e4f2-47e0-a9d7-db0e5d87e1c5">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b2c6404f-b902-436e-a872-234f2374c5b0">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_curto_circuito_max_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0ac4a34a-dc84-48c1-b1fe-2b86716ac798">
+      <ID>Potencia Curto Circuito Min v3</ID>
+      <Name>Potencia Curto Circuito Min v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e5dcb9b3-b52c-4da9-8538-3b3857867302">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fd0eb53e-9a97-41f0-8c6f-78302dce79fd">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_curto_circuito_min_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="3874c40a-0896-4f24-bf19-d7ddac32324b">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="7efbb490-3130-476f-b65d-bd70bf258a60">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_curto_circuito_min_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d1f14548-ad33-4c2b-a14c-ef589de742ab">
+      <ID>Potencia Curto Circuito Max v3</ID>
+      <Name>Potencia Curto Circuito Max v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="eaaebdaa-4df8-476a-8e07-f2431758642e">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4158b0d6-7cf2-417a-90c5-9dbee263d808">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_curto_circuito_max_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="e79ffae0-fa49-4a37-beca-0b8b1b503ac9">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="33fa449d-d553-4b6e-9214-2ebf8ee6cebc">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_curto_circuito_max_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b84df27d-2d3a-4f4c-b0ad-1dd70cb5a915">
+      <ID>Esquema Ligacao Barramentos v1</ID>
+      <Name>Esquema Ligacao Barramentos v1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bfff9dcb-fcf8-4f25-aa10-0fc3fca5beb8">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ee5a1842-4608-4a9b-a14d-6b4cc9efcf4e">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>Esquema_ligacao_barramentos_v1</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="7c3dfb29-0541-424f-a8b3-8f1f52693500">
+        <DataType>WChar</DataType>
+        <DataSize>30</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="9d69ad7b-59b5-4e30-99a6-187a0d389c27">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>Esquema_ligacao_barramentos_v1</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V1</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1baf44c3-777e-4ee1-a9a0-adb9186f881b">
+      <ID>Corrente Curto Circuito v1</ID>
+      <Name>Corrente Curto Circuito v1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="29844a6c-5189-44a6-8eeb-47929b9b5500">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f2117eb0-e48c-4594-b7c4-3868c1a04a78">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>corrente_curto_circuito_v1</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="36d4b094-99c6-4a54-b2fa-a25f92608f16">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="41a84651-d8e7-4e50-b433-7472118ed289">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>corrente_curto_circuito_v1</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V1</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4a6dbd96-0bea-4473-b9b4-9fcc9b42904c">
+      <ID>Regime Neutro v1</ID>
+      <Name>Regime Neutro v1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="62fed6f2-cde2-4842-821d-9e15512906b5">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bb01a541-a703-4d62-b714-36e84a8dfec5">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>regime_neutro_v1</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="ecc7a235-f2a4-4c05-b9ad-0f2a38a54943">
+        <DataType>WChar</DataType>
+        <DataSize>30</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="94513e44-ddcb-42ba-ab1a-2f9f29856568">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>regime_neutro_v1</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V1</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9fe7bbb1-8636-4e06-9485-324272cdada9">
+      <ID>Bateria Condensadores Mt v1</ID>
+      <Name>Bateria Condensadores Mt v1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e3d2929f-2bc2-457e-93a1-4e653f489548">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ef26a222-110d-4c96-a8fd-b732b51670e0">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>bateria_condensadores_mt_v1</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="11ef0192-91dd-410f-a7e8-a361e5191659">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="405f1c49-151c-4b6f-b726-251a8fde7500">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>bateria_condensadores_mt_v1</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V1</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9426560f-cdf1-4e37-9071-52cee97d495b">
+      <ID>Esquema Ligacao Barramentos v2</ID>
+      <Name>Esquema Ligacao Barramentos v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="010b70c2-38b2-44ae-8080-44f035234534">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dfdcfc50-dfb0-4439-8d0c-7e17a31613b2">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>esquema_ligacao_barramentos_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="de2f8e01-853c-4aa7-a948-a7bbced48ca7">
+        <DataType>WChar</DataType>
+        <DataSize>30</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="3f3121d9-1172-42cb-a903-b97724e95116">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>esquema_ligacao_barramentos_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d6b0420b-3190-4dcb-b5de-cb4d1cec101f">
+      <ID>Corrente Curto Circuito v2</ID>
+      <Name>Corrente Curto Circuito v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b23b7a4c-6f7c-43dc-a866-d2ca529c0294">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1d32ed5d-4299-47ec-9bf4-4acb161cf018">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>corrente_curto_circuito_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="bfb34cf2-1d58-40c9-bc5a-8ee989a243e7">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c4c24451-0113-42d8-81ba-d6c1cb3544b9">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>corrente_curto_circuito_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2a3e3458-ae1d-4316-af74-ee9bd18b5684">
+      <ID>Regime Neutro v2</ID>
+      <Name>Regime Neutro v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d9677ec4-ab78-4a6e-912a-194734a079ac">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a1f9f5ec-3b80-41ee-94a1-ed2db4f4fd63">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>regime_neutro_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="26622dee-3334-480a-975b-2e4fa63eb4f0">
+        <DataType>WChar</DataType>
+        <DataSize>30</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e74fa7ad-f87c-4cab-a954-a1b6eb915ec0">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>regime_neutro_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b2001116-61e4-4c2b-b873-1627aa5edab9">
+      <ID>Bateria Condensadores Mt v2</ID>
+      <Name>Bateria Condensadores Mt v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="73638f5b-7ea3-468a-9815-f6bc07f4f950">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7e711fe9-8909-4a64-8cc1-73a0e17dfc47">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>bateria_condensadores_mt_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="c645fe21-5cc1-401b-8533-2d79a57851ec">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="ca6584e9-ce30-4063-9ec8-3acfbe1f416b">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>bateria_condensadores_mt_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6ed0ed23-ffe0-4bf8-81cb-97aaa7735f56">
+      <ID>Esquema Ligacao Barramentos v3</ID>
+      <Name>Esquema Ligacao Barramentos v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f08f26a8-f10c-4a7f-9232-f855ecf765e4">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="578d8b23-613f-49af-843e-4e180bc4db4e">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>esquema_ligacao_barramentos_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="5f2481c9-97bc-4687-bf99-6738f6daf1d8">
+        <DataType>WChar</DataType>
+        <DataSize>30</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="9e146e1e-75a9-4c6f-8a82-a9ff835f13e3">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>esquema_ligacao_barramentos_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d1d75d65-b796-40dc-84c7-9e632026ffee">
+      <ID>Corrente Curto Circuito v3</ID>
+      <Name>Corrente Curto Circuito v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="15941e81-af0d-48ba-9b68-4bf213422173">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e1e394cb-863c-47b1-afa4-5b55189e7c4a">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>corrente_curto_circuito_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="e2e496b7-4ce9-43e1-8d7c-fefd1f7e4d26">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="ee9cc7fc-9f38-4caf-8004-0279f90090a4">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>corrente_curto_circuito_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="86e1fe4b-3430-4877-ae47-e5fec2d37c23">
+      <ID>Regime Neutro v3</ID>
+      <Name>Regime Neutro v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b66bbb1a-2675-4579-8078-c25bdf726243">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5a70e886-5bf4-4641-be9e-dfd6509d9347">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>regime_neutro_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="53739766-4a5e-4546-a216-8e22b5ef7cae">
+        <DataType>WChar</DataType>
+        <DataSize>30</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="62226598-25c7-4592-99d2-10b0f4ea6de1">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>regime_neutro_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cb62f6b6-4d98-4ba0-843b-ccacec34f403">
+      <ID>Bateria Condensadores Mt v3</ID>
+      <Name>Bateria Condensadores Mt v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="60198528-dd8b-4542-8bd0-54b6a5dc59ac">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c99c0aaa-0022-41c3-9a9e-38e22b09270d">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>bateria_condensadores_mt_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="db5e6bb9-7f9b-435e-978c-4455aecbc7f3">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="389ab954-cf3c-44b4-8915-a8188d12de4f">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>bateria_condensadores_mt_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Nível de Tensão V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ff6baec5-d730-4a8c-a48c-1f5d6f083c02">
+      <ID>Potencia Total Transformacao v1 v2</ID>
+      <Name>Potencia Total Transformacao v1 v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a881122d-f7a0-403e-9292-3f82a9b53b14">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="353994f5-9109-4aaf-aa8a-c38845a8970c">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_total_transformacao_v1_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="4f9dd188-bd37-4e8c-9fc4-7806eeaa1f91">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b76af30c-c955-451c-9985-6af3c6d216f0">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_total_transformacao_v1_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Relação Transformação V1/V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="31ce16d2-c0d4-4ab9-b01e-d45240aa7264">
+      <ID>Carga Natural v1 v2</ID>
+      <Name>Carga Natural v1 v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a79a00b1-9712-40be-b8ac-8e61408eb0fb">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3ca40a86-dd90-419a-980a-c1de3d044265">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>carga_natural_v1_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="c0927fc5-ca99-46f7-bc91-a80c231e12cd">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c7d76324-9bc2-4ab7-835d-5ac69971df1d">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>carga_natural_v1_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Relação Transformação V1/V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ed35f42c-26ae-4dc2-8d6a-71aca301dc72">
+      <ID>Potencia Garantida v1 v2</ID>
+      <Name>Potencia Garantida v1 v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2257d94f-91b3-4df8-a328-eab157113997">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="63a5ed56-a7a6-463f-b446-a0485d4c95c6">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_garantida_v1_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="b0eb80a6-3d5d-40c9-8d99-d6905d3f6311">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="8fd95b60-299b-4a17-8e1e-7200e4c85a05">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_garantida_v1_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Relação Transformação V1/V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="84314c86-0fac-4ef9-8fda-a58f49056410">
+      <ID>Potencia Nao Garantida v1 v2</ID>
+      <Name>Potencia Nao Garantida v1 v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cf7e1106-ed55-441f-a1e2-ac72b1c1d0e9">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="68753344-9543-4c14-b750-81503a2f48ca">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_nao_garantida_v1_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="25ebfe5a-001e-491c-b3d6-b4c3848d49a0">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c3236f7f-858b-44a6-962d-255a57e4b321">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_nao_garantida_v1_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Relação Transformação V1/V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7fb8ecb1-0c65-439e-8ae8-1152993ba275">
+      <ID>Carga Nao Garantida v1 v2</ID>
+      <Name>Carga Nao Garantida v1 v2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="502e570e-14e0-460e-a0d2-a6551d416a21">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f903ab94-4be6-47c9-b46d-6b1c5799eca3">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>carga_nao_garantida_v1_v2</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="ae524c7c-c6b1-40e6-8112-da7b8ba7e85c">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a2ca3f11-b893-4c9e-b8f2-1c1785d87688">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>carga_nao_garantida_v1_v2</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Relação Transformação V1/V2</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="25e772ca-0c4b-4f9f-bd9e-d57998d4eccf">
+      <ID>Potencia Total Transformacao v1 v3</ID>
+      <Name>Potencia Total Transformacao v1 v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5a326be3-44b1-426d-b2f0-2bf5d12bd46e">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2abc77b4-bd2e-4096-a27d-5981267429af">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_total_transformacao_v1_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="3ae847f3-a763-4d95-a47c-d63d62e972a9">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="1222dede-830a-465a-84be-7b386bd31f0d">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_total_transformacao_v1_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Relação Transformação V1/V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c37dac4d-acdc-47ea-92ed-d6b76355dc78">
+      <ID>Carga Natural v1 v3</ID>
+      <Name>Carga Natural v1 v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="34136ca6-7490-4c41-a9cf-d8f089fe5a06">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f97940e5-109b-4635-9100-b5415a06a8a6">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>carga_natural_v1_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="12182f7d-58d1-4016-9893-d35b97bf9596">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="025a1d38-435b-4cad-b831-b879f07ae42e">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>carga_natural_v1_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Relação Transformação V1/V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e5330ec3-1ee4-47b5-9d9a-bddd70f2831d">
+      <ID>Potencia Garantida v1 v3</ID>
+      <Name>Potencia Garantida v1 v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="34284f6a-52e9-4d4b-aeb7-2bfeaaa7343c">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e11983f9-765c-4d4b-8d6e-4fe2633a3c8b">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_garantida_v1_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="3acfec2b-677c-4fb7-b229-c3c944758442">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="8ed04e26-63e1-4707-95e2-622fa0f640b6">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_garantida_v1_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Relação Transformação V1/V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a3a257fa-2981-4d12-861e-fb990dde0a87">
+      <ID>Potencia Nao Garantida v1 v3</ID>
+      <Name>Potencia Nao Garantida v1 v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dda321cf-86c8-4af4-b827-dcac5e8ddba1">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9faf96d8-5dcf-4cf9-9d76-32acc251076e">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_nao_garantida_v1_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="6e3c04ee-3998-4cb7-96eb-87fd10ac3764">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="18c0b4aa-91fd-4f3d-b465-34b4f6d18a2a">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_nao_garantida_v1_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Relação Transformação V1/V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6e0a655c-ac98-4ccc-ae73-1009e6afab8d">
+      <ID>Potencia Ligacao Disponivel v1 v3</ID>
+      <Name>Potencia Ligacao Disponivel v1 v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d3823b76-f59c-4e6b-94b1-9438bb94fac3">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f91d5bbf-b4f1-4923-a0ea-056457bd0f4f">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>potencia_ligacao_disponivel_v1_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="11285ba2-aa52-4dc7-9e0a-74165da7bac2">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="470846c6-1d08-4bdb-bb77-26ef0a232b0d">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>potencia_ligacao_disponivel_v1_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Relação Transformação V1/V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6c048741-1b09-4a76-8738-ffbac9d66e0f">
+      <ID>Carga Nao Garantida v1 v3</ID>
+      <Name>Carga Nao Garantida v1 v3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="57700ee4-355d-4040-89a4-335ad4c8c5ad">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cf0798a4-861d-4762-b480-8708adb50965">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>carga_nao_garantida_v1_v3</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="4d30d46a-48e2-417a-b535-77c8e3cb6a70">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a995eedc-8a92-4be8-999b-1067bab32661">
+          <TableID>dbo_dim_subestacao</TableID>
+          <ColumnID>carga_nao_garantida_v1_v3</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyDisplayFolder>Informação Técnica Relação Transformação V1/V3</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5c385957-1e38-438b-9650-c0611b8b4588">
+      <ID>Atual</ID>
+      <Name>Atual</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7b203e86-e44d-4eec-8ad6-fab6a8b23eb3">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="76db72a5-ce68-4a6b-8c23-033a33d9cb81">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>atual</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bf91edbe-f942-40dc-a009-837be1378c34">
+      <ID>Codigo Freguesia</ID>
+      <Name>Codigo Freguesia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2e387bd3-473e-4fab-91c0-7f066aaa96bb">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b116f635-4b0d-4a97-be17-37f1eb05b0b7">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>codigo_freguesia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyDisplayFolder>Informação Geral</AttributeHierarchyDisplayFolder>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cfbabc4d-f6b1-469f-b9e0-311e634c85e7">
+      <ID>Codigo Eda</ID>
+      <Name>Codigo referencia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="62137983-28a2-45b9-9b24-e57fac386342">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="53862934-2800-4e98-a619-5b4d7a68a244">
+            <TableID>dbo_dim_subestacao</TableID>
+            <ColumnID>codigo_eda</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

@@ -1,0 +1,1333 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/28/2017 12:48:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LT123516"
+  DTS:CreatorName="NOVABASE\NB14865"
+  DTS:DTSID="{C3E15661-BA4E-4270-A5D8-CABC9FE9BE68}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="T_CENTRO_CUSTO"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="130"
+  DTS:VersionGUID="{A0F352D1-B60B-453E-A5DC-AC0A8FF1526E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5CBD690A-17AD-49DB-9100-2567CB56DA27}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DF3B0501-ED29-4D0B-A66B-3EAB15E63B45}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{01545A4F-FD7D-447C-AE7F-DEF9785C1D77}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{59FFE5FE-C35F-4122-8EC5-4FEAC13D4A3F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">(SAP) Tabelas CSKS, CSKT e T001</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9142E09C-275E-4818-9DD9-0C2CE3F9F283}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">t_centro_custo</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3EACF8F1-6150-4133-97F3-973D973C958B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2DEF34D8-A24A-411D-B916-035FD7A86839}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;&#x9;    numero_registos_inseridos = ?,&#xA;&#x9;&#x9;data_fim = CURRENT_TIMESTAMP,&#xA;&#x9;&#x9;duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;&#x9;&#x9;sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F45BC43A-4C54-4C68-BC9B-37580D4CF3C3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{AB292143-D379-4B4E-9AC6-BEA05AFBFD5D}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B042BF89-4C69-488E-AC7E-BC1321ED131F}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{FF8BFB8E-C2F0-4F0B-91AC-984E377C4DD5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CCEE764E-C921-483B-9A2A-4F0DC2DECD8C}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9A741C55-312F-4792-AC87-74B9ECD1C3BE}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{2E4CF776-A840-44D2-B8E3-94B61742DF8A}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{78A80BE2-E01F-4AF4-BF29-D81193B7288C}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transformação para a dimensão Centro de Custo"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{AE3DD5A4-571A-4339-BDCF-CB45C2A930CD}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transformação para a dimensão Centro de Custo">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Transformação para a dimensão Centro de Custo\Insere o registo Desconhecido"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{18F674BF-961A-4841-B4AF-39E3292A92E6}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere o registo Desconhecido"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="INSERT INTO t_centro_custo (codigo_centro_custo, descricao_centro_custo,data_inicio,data_fim, codigo_empresa,descricao_empresa, responsavel)&#xA;&#x9; VALUES('0000000000','Desconhecido',cast('20000101' as date),cast('99991231' as date),'0000','Desconhecido','Desconhecido')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformação para a dimensão Centro de Custo\Limpeza da tabela de transformação"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TRUNCATE TABLE t_tempo"
+          DTS:DTSID="{B4B6796A-81EF-42C9-80CF-CF54D84FEAF8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Limpeza da tabela de transformação"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="DECLARE @sql varchar(100)&#xA;SET @sql = 'TRUNCATE TABLE ' + ?&#xA;EXEC (@sql)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7D71732E-9ECD-4821-B4D8-0758A93542D2}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Transformação de dados para o Centro de Custo"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT codigo_centro_custo
+      ,descricao_centro_custo
+      ,codigo_empresa
+      ,descricao_empresa
+      ,responsavel
+      ,CAST(MIN(data_inicio) AS date) AS data_inicio
+      ,CAST(MAX(data_fim) AS date) AS data_fim
+  FROM e_centro_custo
+  GROUP BY codigo_centro_custo,
+	descricao_centro_custo,
+	codigo_empresa,
+	descricao_empresa,
+                   responsavel</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[codigo_centro_custo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[codigo_centro_custo]"
+                          length="10"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[codigo_centro_custo]"
+                          name="codigo_centro_custo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[descricao_centro_custo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[descricao_centro_custo]"
+                          length="40"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[descricao_centro_custo]"
+                          name="descricao_centro_custo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[codigo_empresa]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[codigo_empresa]"
+                          length="4"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[codigo_empresa]"
+                          name="codigo_empresa"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[descricao_empresa]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[descricao_empresa]"
+                          length="25"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[descricao_empresa]"
+                          name="descricao_empresa"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[responsavel]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[responsavel]"
+                          length="20"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[responsavel]"
+                          name="responsavel"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_inicio]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[data_inicio]"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_inicio]"
+                          name="data_inicio"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_fim]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[data_fim]"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_fim]"
+                          name="data_fim"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[codigo_centro_custo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="codigo_centro_custo" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[descricao_centro_custo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="descricao_centro_custo" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[codigo_empresa]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          name="codigo_empresa" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[descricao_empresa]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="descricao_empresa" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[responsavel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="responsavel" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[data_inicio]"
+                          dataType="dbDate"
+                          name="data_inicio" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[data_fim]"
+                          dataType="dbDate"
+                          name="data_fim" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[codigo_centro_custo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[codigo_centro_custo]"
+                          name="codigo_centro_custo" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[descricao_centro_custo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[descricao_centro_custo]"
+                          name="descricao_centro_custo" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[codigo_empresa]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[codigo_empresa]"
+                          name="codigo_empresa" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[descricao_empresa]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[descricao_empresa]"
+                          name="descricao_empresa" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[responsavel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[responsavel]"
+                          name="responsavel" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[data_inicio]"
+                          dataType="dbDate"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[data_inicio]"
+                          name="data_inicio" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[data_fim]"
+                          dataType="dbDate"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[data_fim]"
+                          name="data_fim" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="t_centro_custo"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[t_centro_custo]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].Columns[codigo_centro_custo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="codigo_centro_custo"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[codigo_centro_custo]"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[codigo_centro_custo]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].Columns[descricao_centro_custo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="descricao_centro_custo"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[descricao_centro_custo]"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[descricao_centro_custo]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].Columns[data_inicio]"
+                          cachedDataType="dbDate"
+                          cachedName="data_inicio"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[data_inicio]"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_inicio]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].Columns[data_fim]"
+                          cachedDataType="dbDate"
+                          cachedName="data_fim"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[data_fim]"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[data_fim]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].Columns[codigo_empresa]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="codigo_empresa"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[codigo_empresa]"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[codigo_empresa]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].Columns[descricao_empresa]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="25"
+                          cachedName="descricao_empresa"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[descricao_empresa]"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[descricao_empresa]" />
+                        <inputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].Columns[responsavel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="responsavel"
+                          externalMetadataColumnId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[responsavel]"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output].Columns[responsavel]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[codigo_centro_custo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="codigo_centro_custo" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[descricao_centro_custo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="descricao_centro_custo" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[data_inicio]"
+                          dataType="dbDate"
+                          name="data_inicio" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[data_fim]"
+                          dataType="dbDate"
+                          name="data_fim" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[codigo_empresa]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          name="codigo_empresa" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[descricao_empresa]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="descricao_empresa" />
+                        <externalMetadataColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input].ExternalColumns[responsavel]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="responsavel" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo.Paths[OLE DB Source Output]"
+                  endId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformação para a dimensão Centro de Custo.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{673F0EE4-F2DC-4687-95A3-F399F2808F9F}"
+          DTS:From="Package\Transformação para a dimensão Centro de Custo\Limpeza da tabela de transformação"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformação para a dimensão Centro de Custo.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{2FE3C3F6-9E94-4EC8-802B-D22A801B15D9}"
+          DTS:From="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Transformação para a dimensão Centro de Custo\Insere o registo Desconhecido" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{05048C8F-7D07-417C-ABC9-B3B5A81C1D7B}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Transformação para a dimensão Centro de Custo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{C96FE87F-8C31-4510-9669-6D7D7823F0BC}"
+      DTS:From="Package\Transformação para a dimensão Centro de Custo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{BE331B37-4E04-415E-8528-3BA1479E90CB}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{5097B304-C7E6-4A73-ACA6-4B1F0BD15D57}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Envia Email"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{00D8D258-93E4-4C61-B640-5F60EA510A86}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Envia Email"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::remetente_email]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Ocorreu um erro no componente " + @[System::SourceName] + ", do processo " + @[System::PackageName] + ": " + "\n\r" +@[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">@[$Project::assunto_email_erros]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::destinatario_email_erros]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{4BDEEFBB-B2CB-478F-B881-07EAF97F22F6}"
+              SendMailTask:From="dwbi@eda.pt"
+              SendMailTask:To="pedro.soares@novabase.pt"
+              SendMailTask:Subject="Erro em processo de integração de dados"
+              SendMailTask:MessageSource="Ocorreu um erro no componente , do processo T_CENTRO_CUSTO: &#xA;&#xA;" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{75E20658-5158-4B03-98FB-1957A1F7DEF5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere registo de erro"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="INSERT INTO log_erros (processo, componente, mensagem,codigo_execucao,data)&#xA;  VALUES (?,?,?,?,current_timestamp)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{7DE1FF2F-B631-4C8F-B637-9521A53BB1B2}"
+          DTS:From="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Envia Email" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="5.5,83" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="14.5,5" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          TopLeft="110,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="254,142"
+          Size="254,185"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="771,235" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="3,160" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="6,84" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="10,6" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="105,48">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          TopLeft="104.75,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250,220"
+          Size="250,263"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="47,193" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Transformação para a dimensão Centro de Custo\Insere o registo Desconhecido"
+          TopLeft="52,180" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\Transformação para a dimensão Centro de Custo\Limpeza da tabela de transformação"
+          TopLeft="24.5,9" />
+        <NodeLayout
+          Size="308,42"
+          Id="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo"
+          TopLeft="2,103" />
+        <EdgeLayout
+          Id="Package\Transformação para a dimensão Centro de Custo.PrecedenceConstraints[Constraint]"
+          TopLeft="154.75,51">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformação para a dimensão Centro de Custo.PrecedenceConstraints[Constraint 1]"
+          TopLeft="159.25,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="353,288"
+          Size="353,331"
+          Id="Package\Transformação para a dimensão Centro de Custo"
+          TopLeft="370,158" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="297,324">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73,0"
+              Start="0,0"
+              End="65.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="65.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="723,325.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48,0"
+              Start="0,0"
+              End="40.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="40.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package.EventHandlers[OnError]\Envia Email"
+          TopLeft="84,162" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package.EventHandlers[OnError]\Insere registo de erro"
+          TopLeft="60,60" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="150.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo"
+          TopLeft="478,156" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source"
+          TopLeft="476,60" />
+        <EdgeLayout
+          Id="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo.Paths[OLE DB Source Output]"
+          TopLeft="551.75,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\t_centro_custo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformação para a dimensão Centro de Custo\Transformação de dados para o Centro de Custo\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,3158 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/28/2017 12:48:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LT123516"
+  DTS:CreatorName="NOVABASE\NB14865"
+  DTS:DTSID="{BB29137D-CF58-4B48-A033-95EF33BBCB5A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="E_TIPO_MOVIMENTO_IMOBILIZADO"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="289"
+  DTS:VersionGUID="{4169B957-C1A5-4F03-8D24-1F3A5933E03B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A633A83C-FC2D-4C05-B575-455F078CC84D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4F774869-84EB-4173-8569-135C51EF3005}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::codigo_empresa_eda]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="codigo_empresa_eda">
+      <DTS:VariableValue
+        DTS:DataType="8">1001</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4A3E2448-5060-4572-9D53-6634F3D28083}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="codigo_plano">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B5A3BA9C-4FD0-4EBA-8D2C-9CEA31BF61E3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{539B9A80-8AA0-4C76-9ACA-1E72FCF42257}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6F2B5656-96F1-4521-951B-9CB8DBD3A3C9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">SAP - Tabelas TABW, TABWT e TABWH</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9F9B7980-B175-404D-8104-48BBDB4031CC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">e_tipo_movimento_imobilizado</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extração de tipos de movimentos de imobilizado"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{668504AF-23E8-40B5-8C56-6C94BFA5B1EE}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extração de tipos de movimentos de imobilizado">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{21D859F1-4135-4640-9DE3-AC92E773D5E7}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Extração de Tipos de Movimentos de Imobilizado"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Inputs[Data Conversion Input].Columns[BWASL]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="BWASL"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput].Columns[BWASL]" />
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Inputs[Data Conversion Input].Columns[BWAGRP]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="BWAGRP"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput].Columns[BWAGRP]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="3"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          name="codigo_tipo_movimento_imobilizado"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput].Columns[BWASL]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="2"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          name="codigo_grupo_movimento_imobilizado"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput].Columns[BWAGRP]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion 1"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Inputs[Data Conversion Input].Columns[BWASL]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="BWASL"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput].Columns[BWASL]" />
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Inputs[Data Conversion Input].Columns[BWATXT]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="BWATXT"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput].Columns[BWATXT]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="3"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          name="codigo_tipo_movimento_imobilizado"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput].Columns[BWASL]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          name="descricao_tipo_movimento_imobilizado"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput].Columns[BWATXT]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion 2"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Inputs[Data Conversion Input].Columns[BWAGRP]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="BWAGRP"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput].Columns[BWAGRP]" />
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Inputs[Data Conversion Input].Columns[BWGTXT]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="BWGTXT"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput].Columns[BWGTXT]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="2"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          name="codigo_grupo_movimento_imobilizado"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput].Columns[BWAGRP]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Output].Columns[descricao_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="40"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Output].Columns[descricao_grupo_movimento_imobilizado]"
+                          name="descricao_grupo_movimento_imobilizado"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput].Columns[BWGTXT]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  description="This source component extracts table data from the SAP system"
+                  name="Descrições de Tipos de Movimentos">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specify the SAP table to be extracted"
+                      name="TableName">TABWT</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the maximum number of rows to be extracted (0 is unlimited)"
+                      name="MaxRows">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the package size for large data extraction (0 is unlimited)"
+                      name="PackageSize">20000</property>
+                    <property
+                      dataType="System.String"
+                      description="Specify WHERE clause for extraction"
+                      name="WhereClause">SPRAS = 'P'</property>
+                    <property
+                      dataType="System.String"
+                      description="Name of the SAP custom function module if you like to use it"
+                      name="CustomFunctionName">RFC_READ_TABLE</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Defines if a custom function module should be used"
+                      name="UseCustomFunction">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="String Conversion"
+                      name="StringConversion">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Delimiter"
+                      name="Delimiter"></property>
+                    <property
+                      dataType="System.String"
+                      description="Order By clause"
+                      name="OrderBy"></property>
+                    <property
+                      dataType="System.String"
+                      description="Internal properties, Please use the editor"
+                      name="InternalXML">&lt;StorageTableBase xmlns="http://tempuri.org/StorageTableBase.xsd"&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;MANDT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Mandante&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;SPRAS&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código de idioma&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BWASL&lt;/ColName&gt;
+    &lt;ColDescription&gt;Tipo de movimento do imobilizado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BWATXT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Denominação do tipo de movimento do imobilizado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;50&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;AutomaticDateConversion&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;SubstitutionDateValue&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;MaxRowsVariable&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;PackageSizeVariable&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;PrimaryKeyPackaging&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;BackgroundExtraction&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;BufferLocation&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;UseCompression&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;UseFieldExits&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+&lt;/StorageTableBase&gt;</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">XtractIS.XtractSourceTable</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Connections[Xtract SAP Connection]"
+                      connectionManagerID="{C61E7FA6-BF35-4FBA-B82F-B14EE5F60600}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SAP]"
+                      description="Xtract SAP Connection"
+                      name="Xtract SAP Connection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput]"
+                      name="XtractOutput">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput].Columns[BWASL]"
+                          dataType="wstr"
+                          description="Tipo de movimento do imobilizado"
+                          externalMetadataColumnId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput].ExternalColumns[BWASL]"
+                          length="3"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput].Columns[BWASL]"
+                          name="BWASL" />
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput].Columns[BWATXT]"
+                          dataType="wstr"
+                          description="Denominação do tipo de movimento do imobilizado"
+                          externalMetadataColumnId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput].ExternalColumns[BWATXT]"
+                          length="50"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput].Columns[BWATXT]"
+                          name="BWATXT" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput].ExternalColumns[BWASL]"
+                          dataType="wstr"
+                          description="Tipo de movimento do imobilizado"
+                          length="3"
+                          name="BWASL" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput].ExternalColumns[BWATXT]"
+                          dataType="wstr"
+                          description="Denominação do tipo de movimento do imobilizado"
+                          length="50"
+                          name="BWATXT" />
+                      </externalMetadataColumns>
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="e_tipo_movimento_imobilizado"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[e_tipo_movimento_imobilizado]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Connections[OleDbConnection]"
+                      connectionManagerID="{794BA778-2C33-4A48-9EE1-3781430DD008}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Staging Area]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].Columns[codigo_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="codigo_tipo_movimento_imobilizado"
+                          externalMetadataColumnId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[codigo_tipo_movimento_imobilizado]"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output].Columns[codigo_tipo_movimento_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].Columns[descricao_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="descricao_tipo_movimento_imobilizado"
+                          externalMetadataColumnId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[descricao_tipo_movimento_imobilizado]"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output].Columns[descricao_tipo_movimento_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].Columns[codigo_grupo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="codigo_grupo_movimento_imobilizado"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[codigo_grupo_movimento_imobilizado]"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output].Columns[codigo_grupo_movimento_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].Columns[descricao_grupo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="descricao_grupo_movimento_imobilizado"
+                          externalMetadataColumnId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[descricao_grupo_movimento_imobilizado]"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output].Columns[descricao_grupo_movimento_imobilizado]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[codigo_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="codigo_tipo_movimento_imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[descricao_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="descricao_tipo_movimento_imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[codigo_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="codigo_grupo_movimento_imobilizado" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input].ExternalColumns[descricao_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="descricao_grupo_movimento_imobilizado" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  description="This source component extracts table data from the SAP system"
+                  name="Grupos de Tipos de Imobilizado">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specify the SAP table to be extracted"
+                      name="TableName">TABWH</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the maximum number of rows to be extracted (0 is unlimited)"
+                      name="MaxRows">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the package size for large data extraction (0 is unlimited)"
+                      name="PackageSize">20000</property>
+                    <property
+                      dataType="System.String"
+                      description="Specify WHERE clause for extraction"
+                      name="WhereClause">SPRAS = 'P'</property>
+                    <property
+                      dataType="System.String"
+                      description="Name of the SAP custom function module if you like to use it"
+                      name="CustomFunctionName">RFC_READ_TABLE</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Defines if a custom function module should be used"
+                      name="UseCustomFunction">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="String Conversion"
+                      name="StringConversion">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Delimiter"
+                      name="Delimiter"></property>
+                    <property
+                      dataType="System.String"
+                      description="Order By clause"
+                      name="OrderBy"></property>
+                    <property
+                      dataType="System.String"
+                      description="Internal properties, Please use the editor"
+                      name="InternalXML">&lt;StorageTableBase xmlns="http://tempuri.org/StorageTableBase.xsd"&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;MANDT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Mandante&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;SPRAS&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código de idioma&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BWAGRP&lt;/ColName&gt;
+    &lt;ColDescription&gt;Grupo de tipos de movimento&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BWGTXT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Denominação do grupo de tipos de movimento do imobilizado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;40&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;AutomaticDateConversion&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;SubstitutionDateValue&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;MaxRowsVariable&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;PackageSizeVariable&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;PrimaryKeyPackaging&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;BackgroundExtraction&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;BufferLocation&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;UseCompression&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;UseFieldExits&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+&lt;/StorageTableBase&gt;</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">XtractIS.XtractSourceTable</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Connections[Xtract SAP Connection]"
+                      connectionManagerID="{C61E7FA6-BF35-4FBA-B82F-B14EE5F60600}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SAP]"
+                      description="Xtract SAP Connection"
+                      name="Xtract SAP Connection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput]"
+                      name="XtractOutput">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput].Columns[BWAGRP]"
+                          dataType="wstr"
+                          description="Grupo de tipos de movimento"
+                          externalMetadataColumnId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput].ExternalColumns[BWAGRP]"
+                          length="2"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput].Columns[BWAGRP]"
+                          name="BWAGRP" />
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput].Columns[BWGTXT]"
+                          dataType="wstr"
+                          description="Denominação do grupo de tipos de movimento do imobilizado"
+                          externalMetadataColumnId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput].ExternalColumns[BWGTXT]"
+                          length="40"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput].Columns[BWGTXT]"
+                          name="BWGTXT" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput].ExternalColumns[BWAGRP]"
+                          dataType="wstr"
+                          description="Grupo de tipos de movimento"
+                          length="2"
+                          name="BWAGRP" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput].ExternalColumns[BWGTXT]"
+                          dataType="wstr"
+                          description="Denominação do grupo de tipos de movimento do imobilizado"
+                          length="40"
+                          name="BWGTXT" />
+                      </externalMetadataColumns>
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join"
+                  componentClassID="Microsoft.MergeJoin"
+                  contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+                  name="Merge Join"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of join to perform."
+                      name="JoinType"
+                      typeConverter="JoinType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the number of columns in the ordering key."
+                      name="NumKeyColumns">1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the null values are treated as equal values."
+                      name="TreatNullsAsEqual">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Indicates the requested maximum buffers per input before blocking."
+                      name="MaxBuffersPerInput">5</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Inputs[Merge Join Left Input]"
+                      hasSideEffects="true"
+                      name="Merge Join Left Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Inputs[Merge Join Left Input].Columns[codigo_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="codigo_tipo_movimento_imobilizado"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort.Outputs[Sort Output].Columns[codigo_tipo_movimento_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Inputs[Merge Join Left Input].Columns[codigo_grupo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="codigo_grupo_movimento_imobilizado"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort.Outputs[Sort Output].Columns[codigo_grupo_movimento_imobilizado]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Inputs[Merge Join Right Input]"
+                      hasSideEffects="true"
+                      name="Merge Join Right Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Inputs[Merge Join Right Input].Columns[codigo_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="codigo_tipo_movimento_imobilizado"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1.Outputs[Sort Output].Columns[codigo_tipo_movimento_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Inputs[Merge Join Right Input].Columns[descricao_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="descricao_tipo_movimento_imobilizado"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1.Outputs[Sort Output].Columns[descricao_tipo_movimento_imobilizado]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output]"
+                      isSorted="true"
+                      name="Merge Join Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          name="codigo_tipo_movimento_imobilizado"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Inputs[Merge Join Left Input].Columns[codigo_tipo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          name="codigo_grupo_movimento_imobilizado">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Inputs[Merge Join Left Input].Columns[codigo_grupo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          name="descricao_tipo_movimento_imobilizado">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Inputs[Merge Join Right Input].Columns[descricao_tipo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1"
+                  componentClassID="Microsoft.MergeJoin"
+                  contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+                  name="Merge Join 1"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of join to perform."
+                      name="JoinType"
+                      typeConverter="JoinType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the number of columns in the ordering key."
+                      name="NumKeyColumns">1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the null values are treated as equal values."
+                      name="TreatNullsAsEqual">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Indicates the requested maximum buffers per input before blocking."
+                      name="MaxBuffersPerInput">5</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Inputs[Merge Join Left Input]"
+                      hasSideEffects="true"
+                      name="Merge Join Left Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Inputs[Merge Join Left Input].Columns[codigo_grupo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="codigo_grupo_movimento_imobilizado"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Outputs[Sort Output].Columns[codigo_grupo_movimento_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Inputs[Merge Join Left Input].Columns[codigo_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="codigo_tipo_movimento_imobilizado"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Outputs[Sort Output].Columns[codigo_tipo_movimento_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Inputs[Merge Join Left Input].Columns[descricao_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="descricao_tipo_movimento_imobilizado"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Outputs[Sort Output].Columns[descricao_tipo_movimento_imobilizado]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Inputs[Merge Join Right Input]"
+                      hasSideEffects="true"
+                      name="Merge Join Right Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Inputs[Merge Join Right Input].Columns[codigo_grupo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="codigo_grupo_movimento_imobilizado"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3.Outputs[Sort Output].Columns[codigo_grupo_movimento_imobilizado]" />
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Inputs[Merge Join Right Input].Columns[descricao_grupo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="descricao_grupo_movimento_imobilizado"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3.Outputs[Sort Output].Columns[descricao_grupo_movimento_imobilizado]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output]"
+                      isSorted="true"
+                      name="Merge Join Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          name="codigo_tipo_movimento_imobilizado">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Inputs[Merge Join Left Input].Columns[codigo_tipo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          name="descricao_tipo_movimento_imobilizado">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Inputs[Merge Join Left Input].Columns[descricao_tipo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          name="codigo_grupo_movimento_imobilizado"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Inputs[Merge Join Left Input].Columns[codigo_grupo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output].Columns[descricao_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output].Columns[descricao_grupo_movimento_imobilizado]"
+                          name="descricao_grupo_movimento_imobilizado">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Inputs[Merge Join Right Input].Columns[descricao_grupo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort.Inputs[Sort Input].Columns[codigo_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="codigo_tipo_movimento_imobilizado"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[codigo_tipo_movimento_imobilizado]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort.Inputs[Sort Input].Columns[codigo_grupo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="codigo_grupo_movimento_imobilizado"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[codigo_grupo_movimento_imobilizado]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort.Outputs[Sort Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort.Outputs[Sort Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          name="codigo_tipo_movimento_imobilizado"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[codigo_tipo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort.Outputs[Sort Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort.Outputs[Sort Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          name="codigo_grupo_movimento_imobilizado">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Output].Columns[codigo_grupo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort 1"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1.Inputs[Sort Input].Columns[codigo_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="codigo_tipo_movimento_imobilizado"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Output].Columns[codigo_tipo_movimento_imobilizado]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1.Inputs[Sort Input].Columns[descricao_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="descricao_tipo_movimento_imobilizado"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Output].Columns[descricao_tipo_movimento_imobilizado]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1.Outputs[Sort Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1.Outputs[Sort Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          name="codigo_tipo_movimento_imobilizado"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Output].Columns[codigo_tipo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1.Outputs[Sort Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1.Outputs[Sort Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          name="descricao_tipo_movimento_imobilizado">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Output].Columns[descricao_tipo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort 2"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Inputs[Sort Input].Columns[codigo_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="codigo_tipo_movimento_imobilizado"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output].Columns[codigo_tipo_movimento_imobilizado]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Inputs[Sort Input].Columns[codigo_grupo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="codigo_grupo_movimento_imobilizado"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output].Columns[codigo_grupo_movimento_imobilizado]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Inputs[Sort Input].Columns[descricao_tipo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="descricao_tipo_movimento_imobilizado"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output].Columns[descricao_tipo_movimento_imobilizado]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Outputs[Sort Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Outputs[Sort Output].Columns[codigo_tipo_movimento_imobilizado]"
+                          name="codigo_tipo_movimento_imobilizado">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output].Columns[codigo_tipo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Outputs[Sort Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Outputs[Sort Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          name="codigo_grupo_movimento_imobilizado"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output].Columns[codigo_grupo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Outputs[Sort Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Outputs[Sort Output].Columns[descricao_tipo_movimento_imobilizado]"
+                          name="descricao_tipo_movimento_imobilizado">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output].Columns[descricao_tipo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort 3"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3.Inputs[Sort Input].Columns[codigo_grupo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="codigo_grupo_movimento_imobilizado"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Output].Columns[codigo_grupo_movimento_imobilizado]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3.Inputs[Sort Input].Columns[descricao_grupo_movimento_imobilizado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="descricao_grupo_movimento_imobilizado"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Output].Columns[descricao_grupo_movimento_imobilizado]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3.Outputs[Sort Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3.Outputs[Sort Output].Columns[codigo_grupo_movimento_imobilizado]"
+                          name="codigo_grupo_movimento_imobilizado"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Output].Columns[codigo_grupo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3.Outputs[Sort Output].Columns[descricao_grupo_movimento_imobilizado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3.Outputs[Sort Output].Columns[descricao_grupo_movimento_imobilizado]"
+                          name="descricao_grupo_movimento_imobilizado">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Output].Columns[descricao_grupo_movimento_imobilizado]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  description="This source component extracts table data from the SAP system"
+                  name="Tipos de Movimento da Contabilidade de Imobilizado">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specify the SAP table to be extracted"
+                      name="TableName">TABW</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the maximum number of rows to be extracted (0 is unlimited)"
+                      name="MaxRows">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the package size for large data extraction (0 is unlimited)"
+                      name="PackageSize">20000</property>
+                    <property
+                      dataType="System.String"
+                      description="Specify WHERE clause for extraction"
+                      name="WhereClause"></property>
+                    <property
+                      dataType="System.String"
+                      description="Name of the SAP custom function module if you like to use it"
+                      name="CustomFunctionName">RFC_READ_TABLE</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Defines if a custom function module should be used"
+                      name="UseCustomFunction">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="String Conversion"
+                      name="StringConversion">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Delimiter"
+                      name="Delimiter"></property>
+                    <property
+                      dataType="System.String"
+                      description="Order By clause"
+                      name="OrderBy"></property>
+                    <property
+                      dataType="System.String"
+                      description="Internal properties, Please use the editor"
+                      name="InternalXML">&lt;StorageTableBase xmlns="http://tempuri.org/StorageTableBase.xsd"&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;MANDT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Mandante&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BWASL&lt;/ColName&gt;
+    &lt;ColDescription&gt;Tipo de movimento do imobilizado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BWAGRP&lt;/ColName&gt;
+    &lt;ColDescription&gt;Grupo de tipos de movimento&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;true&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XVERGA&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: operação original no passado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XAKTIV&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: incorporar imobilizado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XDEAKT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: descapitalizar imobilizado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XABGMM&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: lançar automaticamente lucro/perda da baixa do imob.&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XERLOS&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: tipo de movimento de baixa com receita&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XAVERB&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: transferência de imob.entre empresas filiadas&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XABUCH&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: tipo de movimento não pode ser utilizado manualmente&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BWAKON&lt;/ColName&gt;
+    &lt;ColDescription&gt;Consolidação do tipo de movimento&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XPRJKT&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: deseja-se classificação contábil do projeto&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;ANSHKZ&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código de lançamento proposto&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BWASLG&lt;/ColName&gt;
+    &lt;ColDescription&gt;Tipo de movimento de lançamento de contrapartida em transf.&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BLART&lt;/ColName&gt;
+    &lt;ColDescription&gt;Tipo de documento proposto para tipo de movimento&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XABINV&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: reembolsar subvenção de invest.no prazo de retenção&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;BWASLN&lt;/ColName&gt;
+    &lt;ColDescription&gt;Tipo movimento baixa / transf.de aquisição nova no mesmo ano&lt;/ColDescription&gt;
+    &lt;ColLength&gt;3&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;GITTGR&lt;/ColName&gt;
+    &lt;ColDescription&gt;Compactação de tipos de movimento p/quadro do imobilizado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;2&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XABGWG&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: simular baixa de BBV no quadro do imobilizado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XABIMM&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: simular baixa de imob.intangível no quadro do imob.&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XUSBWA&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: chamar um user exit para este tipo de movimento?&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XUMBHI&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: transferir com aceitação do início de depreciação&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XIFREL&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: classificar contabilmente ganho/prejuízo imob.&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XCOOBJ&lt;/ColName&gt;
+    &lt;ColDescription&gt;Relevante orçamento&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XCOPSP&lt;/ColName&gt;
+    &lt;ColDescription&gt;Não (mais) utilizado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XAVERBN&lt;/ColName&gt;
+    &lt;ColDescription&gt;Lançar com código de associação de empresas (líquido)&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XZUGBR&lt;/ColName&gt;
+    &lt;ColDescription&gt;Código: lançar aquisição - bruto (com depreciações)&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XUMJA&lt;/ColName&gt;
+    &lt;ColDescription&gt;Definir ano de conversão no imobilizado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;RSN_CODE&lt;/ColName&gt;
+    &lt;ColDescription&gt;Categoria de movimento do imobilizado&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;TableColumns&gt;
+    &lt;ColName&gt;XOBS&lt;/ColName&gt;
+    &lt;ColDescription&gt;Tipo de movimento é obsoleto&lt;/ColDescription&gt;
+    &lt;ColLength&gt;1&lt;/ColLength&gt;
+    &lt;ColSelected&gt;false&lt;/ColSelected&gt;
+    &lt;ABAPType&gt;c&lt;/ABAPType&gt;
+    &lt;Decimals&gt;0&lt;/Decimals&gt;
+  &lt;/TableColumns&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;AutomaticDateConversion&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;SubstitutionDateValue&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;MaxRowsVariable&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;PackageSizeVariable&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;PrimaryKeyPackaging&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;BackgroundExtraction&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;BufferLocation&lt;/PropName&gt;
+    &lt;PropValue /&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;UseCompression&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+  &lt;XtractProperties&gt;
+    &lt;PropName&gt;UseFieldExits&lt;/PropName&gt;
+    &lt;PropValue xml:space="preserve"&gt; &lt;/PropValue&gt;
+  &lt;/XtractProperties&gt;
+&lt;/StorageTableBase&gt;</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">XtractIS.XtractSourceTable</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Connections[Xtract SAP Connection]"
+                      connectionManagerID="{C61E7FA6-BF35-4FBA-B82F-B14EE5F60600}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SAP]"
+                      description="Xtract SAP Connection"
+                      name="Xtract SAP Connection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput]"
+                      name="XtractOutput">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput].Columns[BWASL]"
+                          dataType="wstr"
+                          description="Tipo de movimento do imobilizado"
+                          externalMetadataColumnId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput].ExternalColumns[BWASL]"
+                          length="3"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput].Columns[BWASL]"
+                          name="BWASL" />
+                        <outputColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput].Columns[BWAGRP]"
+                          dataType="wstr"
+                          description="Grupo de tipos de movimento"
+                          externalMetadataColumnId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput].ExternalColumns[BWAGRP]"
+                          length="2"
+                          lineageId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput].Columns[BWAGRP]"
+                          name="BWAGRP" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput].ExternalColumns[BWASL]"
+                          dataType="wstr"
+                          description="Tipo de movimento do imobilizado"
+                          length="3"
+                          name="BWASL" />
+                        <externalMetadataColumn
+                          refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput].ExternalColumns[BWAGRP]"
+                          dataType="wstr"
+                          description="Grupo de tipos de movimento"
+                          length="2"
+                          name="BWAGRP" />
+                      </externalMetadataColumns>
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Data Conversion Output]"
+                  endId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort.Inputs[Sort Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Data Conversion Output1]"
+                  endId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1.Inputs[Sort Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Data Conversion Output2]"
+                  endId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3.Inputs[Sort Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Merge Join Output]"
+                  endId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Inputs[Sort Input]"
+                  name="Merge Join Output"
+                  startId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Outputs[Merge Join Output]" />
+                <path
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Merge Join Output1]"
+                  endId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado.Inputs[OLE DB Destination Input]"
+                  name="Merge Join Output"
+                  startId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Outputs[Merge Join Output]" />
+                <path
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Sort Output]"
+                  endId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Inputs[Merge Join Left Input]"
+                  name="Sort Output"
+                  startId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Sort Output1]"
+                  endId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join.Inputs[Merge Join Right Input]"
+                  name="Sort Output"
+                  startId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Sort Output2]"
+                  endId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Inputs[Merge Join Left Input]"
+                  name="Sort Output"
+                  startId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Sort Output3]"
+                  endId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1.Inputs[Merge Join Right Input]"
+                  name="Sort Output"
+                  startId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[XtractOutput]"
+                  endId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion.Inputs[Data Conversion Input]"
+                  name="XtractOutput"
+                  startId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado.Outputs[XtractOutput]" />
+                <path
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[XtractOutput1]"
+                  endId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1.Inputs[Data Conversion Input]"
+                  name="XtractOutput"
+                  startId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos.Outputs[XtractOutput]" />
+                <path
+                  refId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[XtractOutput2]"
+                  endId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2.Inputs[Data Conversion Input]"
+                  name="XtractOutput"
+                  startId="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado.Outputs[XtractOutput]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Extração de tipos de movimentos de imobilizado\Limpeza da tabela de tipos de movimentos de imobilizado"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="TRUNCATE TABLE e_atribuicao_contas"
+          DTS:DTSID="{26ED5050-7B55-41C3-A602-135A79669A1D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Limpeza da tabela de tipos de movimentos de imobilizado"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="DECLARE @sql varchar(100)&#xA;SET @sql = 'TRUNCATE TABLE ' + ?&#xA;EXEC (@sql)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Extração de tipos de movimentos de imobilizado.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{E8CAA7F6-D0A0-4635-98F1-991B4B5BCCA2}"
+          DTS:From="Package\Extração de tipos de movimentos de imobilizado\Limpeza da tabela de tipos de movimentos de imobilizado"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{9183A7E3-9617-43D9-A5ED-10A2670A1269}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{69781AAA-6E12-49EC-8BCA-86D5ED5550F1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;&#x9;    numero_registos_inseridos = ?,&#xA;&#x9;&#x9;data_fim = CURRENT_TIMESTAMP,&#xA;&#x9;&#x9;duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;&#x9;&#x9;sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6766C816-DAB5-44D6-99DA-40AC602D045C}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{1B9971D8-D896-4D30-9D21-78A677801B25}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{8CE74383-56EF-4B91-A8B3-238E5A02A5BE}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B50A68E8-5F04-431F-8F37-35A0371AF8C3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F25ECE3D-4D51-4F7F-9A41-5CECC5A099C0}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6E505F5E-CC27-42C2-894C-B0CAF123F0AF}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3C7B1FFB-933F-449D-B7BE-023614EA667A}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{5AE25BDD-7E4E-4626-A407-9151747468B6}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{ED483247-213E-443C-865A-5D22385A9CF2}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6CFD5E5E-A2B3-4E47-ABE8-604EA76E4D03}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Extração de tipos de movimentos de imobilizado" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{5208196B-1234-4DE3-8713-37BC95BDCD17}"
+      DTS:From="Package\Extração de tipos de movimentos de imobilizado"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{371F199D-C503-4716-9066-CF9F6F0E280D}"
+      DTS:EventID="509082520"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{550FE1A0-FA00-4359-950A-042AEE1A4F60}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Envia Email"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{FB73538A-72D7-4FAA-A341-ED3BB34CB12F}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Envia Email"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[$Project::remetente_email]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Ocorreu um erro no componente " + @[System::SourceName] + ", do processo " + @[System::PackageName] + ": " + "\n\r" +@[System::ErrorDescription]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">@[$Project::assunto_email_erros]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[$Project::destinatario_email_erros]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{4BDEEFBB-B2CB-478F-B881-07EAF97F22F6}"
+              SendMailTask:From="dwbi@eda.pt"
+              SendMailTask:To="pedro.soares@novabase.pt"
+              SendMailTask:Subject="Erro em processo de integração de dados"
+              SendMailTask:MessageSource="Ocorreu um erro no componente , do processo E_TIPO_MOVIMENTO_IMOBILIZADO: &#xA;&#xA;" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3E7E0A92-FC4F-422F-8D22-B63B8BCCD87F}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insere registo de erro"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{794BA778-2C33-4A48-9EE1-3781430DD008}"
+              SQLTask:SqlStatementSource="INSERT INTO log_erros (processo, componente, mensagem,codigo_execucao,data)&#xA;  VALUES (?,?,?,?,current_timestamp)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{3688B863-F0E6-4FE7-AEEB-915EBC65C301}"
+          DTS:From="Package.EventHandlers[OnError]\Insere registo de erro"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Envia Email" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="310,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado"
+          TopLeft="33,141" />
+        <NodeLayout
+          Size="351,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Limpeza da tabela de tipos de movimentos de imobilizado"
+          TopLeft="18,37" />
+        <EdgeLayout
+          Id="Package\Extração de tipos de movimentos de imobilizado.PrecedenceConstraints[Constraint 2]"
+          TopLeft="190.75,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="388,258"
+          Size="388,301"
+          Id="Package\Extração de tipos de movimentos de imobilizado"
+          TopLeft="434,84" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="5.5,83" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="14.5,5" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint 4]"
+          TopLeft="110,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="254,142"
+          Size="254,185"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="888,143" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="3,160" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="6,84" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="10,6" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="105,48">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 2]"
+          TopLeft="104.75,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250,257"
+          Size="250,300"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="116,79" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="366,231.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68,0"
+              Start="0,0"
+              End="60.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="60.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="822,235">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,0"
+              Start="0,0"
+              End="58.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package.EventHandlers[OnError]\Envia Email"
+          TopLeft="29.5,107.5" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package.EventHandlers[OnError]\Insere registo de erro"
+          TopLeft="5.50000000000001,5.5" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="96,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort"
+          TopLeft="378,213" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join"
+          TopLeft="518,341" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 2"
+          TopLeft="872,174" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 2"
+          TopLeft="714,344" />
+        <NodeLayout
+          Size="328,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Tipos de Movimento da Contabilidade de Imobilizado"
+          TopLeft="219,40" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Descrições de Tipos de Movimentos"
+          TopLeft="591,42" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion 1"
+          TopLeft="577,131" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Merge Join 1"
+          TopLeft="883,341" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 1"
+          TopLeft="610,206" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Sort 3"
+          TopLeft="897,246" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado"
+          TopLeft="843,432" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Grupos de Tipos de Imobilizado"
+          TopLeft="843,100" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\Data Conversion"
+          TopLeft="354,133" />
+        <EdgeLayout
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[XtractOutput2]"
+          TopLeft="955.75,142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[XtractOutput1]"
+          TopLeft="714.5,84">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-55,47"
+              Start="0,0"
+              End="-55,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="-4,23.5" />
+                  <mssgle:LineSegment
+                    End="-51,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-51,23.5"
+                    Point2="-55,23.5"
+                    Point3="-55,27.5" />
+                  <mssgle:LineSegment
+                    End="-55,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[XtractOutput]"
+          TopLeft="383,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49,51"
+              Start="0,0"
+              End="49,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="4,25.5" />
+                  <mssgle:LineSegment
+                    End="45,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45,25.5"
+                    Point2="49,25.5"
+                    Point3="49,29.5" />
+                  <mssgle:LineSegment
+                    End="49,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Sort Output3]"
+          TopLeft="951.5,288">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Sort Output2]"
+          TopLeft="821,363.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62,0"
+              Start="0,0"
+              End="54.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="54.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Sort Output1]"
+          TopLeft="663.5,248">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-60.1666666666666,93"
+              Start="0,0"
+              End="-60.1666666666666,85.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.1215805471125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.1215805471125"
+                    Point2="0,55.1215805471125"
+                    Point3="-4,55.1215805471125" />
+                  <mssgle:LineSegment
+                    End="-56.1666666666666,55.1215805471125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-56.1666666666666,55.1215805471125"
+                    Point2="-60.1666666666666,55.1215805471125"
+                    Point3="-60.1666666666666,59.1215805471125" />
+                  <mssgle:LineSegment
+                    End="-60.1666666666666,85.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Sort Output]"
+          TopLeft="427,255">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="135.666666666667,86"
+              Start="0,0"
+              End="135.666666666667,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.9726443768997" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.9726443768997"
+                    Point2="0,50.9726443768997"
+                    Point3="4,50.9726443768997" />
+                  <mssgle:LineSegment
+                    End="131.666666666667,50.9726443768997" />
+                  <mssgle:CubicBezierSegment
+                    Point1="131.666666666667,50.9726443768997"
+                    Point2="135.666666666667,50.9726443768997"
+                    Point3="135.666666666667,54.9726443768997" />
+                  <mssgle:LineSegment
+                    End="135.666666666667,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Merge Join Output1]"
+          TopLeft="954,383">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Merge Join Output]"
+          TopLeft="648,363.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,0"
+              Start="0,0"
+              End="58.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Data Conversion Output2]"
+          TopLeft="952.5,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Data Conversion Output1]"
+          TopLeft="661.5,173">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado.Paths[Data Conversion Output]"
+          TopLeft="429.5,175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extração de tipos de movimentos de imobilizado\Extração de Tipos de Movimentos de Imobilizado\e_tipo_movimento_imobilizado">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

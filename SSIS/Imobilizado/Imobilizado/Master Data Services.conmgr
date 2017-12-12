@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Master Data Services"
+  DTS:DTSID="{24EECBBF-8EF1-4AAB-8A87-789849462946}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=10.13.50.67\DWBIDEV;User ID=nb14865;Initial Catalog=MDS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="BxHeESDljw=="
+        p4:IV="2GeSGmww5SE=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">/3J006k4uvIxe1bncaUL6pauxwrKKocIhGc2BZezapTDdV+cTughrhJS5e0AEk8P2nGOjQ7Iveuj/TiAZHhxwkPt516wfaYjphhHGrZKtrNyiNyDJ1HpjmGdmrwoFLG8pXWlGc+HKBYQUu8qq6yku6N9VutxHF7Y</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

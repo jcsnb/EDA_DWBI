@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "DWBI", "DWBI\DWBI.rptproj", "{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Desenvolvimento|Default = Desenvolvimento|Default
+		PowerBI|Default = PowerBI|Default
+		Qualidade|Default = Qualidade|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.Debug|Default.ActiveCfg = Debug
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.Debug|Default.Build.0 = Debug
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.Debug|Default.Deploy.0 = Debug
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.DebugLocal|Default.Build.0 = DebugLocal
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.Desenvolvimento|Default.ActiveCfg = Desenvolvimento
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.Desenvolvimento|Default.Build.0 = Desenvolvimento
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.Desenvolvimento|Default.Deploy.0 = Desenvolvimento
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.PowerBI|Default.ActiveCfg = PowerBI
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.PowerBI|Default.Build.0 = PowerBI
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.PowerBI|Default.Deploy.0 = PowerBI
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.Qualidade|Default.ActiveCfg = Qualidade
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.Qualidade|Default.Build.0 = Qualidade
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.Qualidade|Default.Deploy.0 = Qualidade
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.Release|Default.ActiveCfg = Release
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.Release|Default.Build.0 = Release
+		{98A8E5C7-8AA8-4EEF-9342-F860A48D9D8A}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://nbtfs.novabase.pt/tfs/244244%20-%20gte%20bs%20perf%20mng
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DWBI\\DWBI.rptproj
+		SccProjectName1 = DWBI
+		SccLocalPath1 = DWBI
+	EndGlobalSection
+EndGlobal

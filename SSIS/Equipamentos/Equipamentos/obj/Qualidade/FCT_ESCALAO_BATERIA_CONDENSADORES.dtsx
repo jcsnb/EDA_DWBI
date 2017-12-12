@@ -1,0 +1,2292 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/12/2017 3:37:46 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DCDWBIQDDW00"
+  DTS:CreatorName="GRUPOEDA\ExtPwDBi03"
+  DTS:DTSID="{98917AAA-8AA4-4A1F-9A92-FCDCECA178A1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="2070"
+  DTS:ObjectName="FCT_ESCALAO_BATERIA_CONDENSADORES"
+  DTS:PackageType="5"
+  DTS:VersionBuild="114"
+  DTS:VersionGUID="{7DD17BFE-32D0-4F1F-BDC5-002F77713E60}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2C8823AB-7B61-4E7F-A23F-F79C3F5CC289}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="chave_auditoria">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{98D458C9-31AE-48A6-9B9C-F05DCBA23D15}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::data_carregamento]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="data_carregamento">
+      <DTS:VariableValue
+        DTS:DataType="3">20171031</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{072D0638-8BAF-41F6-B9D3-0C1EB96C4245}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_atualizados">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C0A5844B-5327-4BB5-A793-F95F59F08C3A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_final">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{41462C9D-FEB8-40B0-BF83-DDBF364500FD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inicial">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A166515E-C391-4714-93CA-DD7AA44F0673}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="numero_registos_inseridos">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{556D9AE3-BA4E-4A67-B3FC-5A0695DA91B0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="origem">
+      <DTS:VariableValue
+        DTS:DataType="8">SIT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ECDBAEB0-D0DB-47DA-8FFE-5C686D0B0AF1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="tabela">
+      <DTS:VariableValue
+        DTS:DataType="8">fct_escalao_bateria_condensadores</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carregamento da factual Escalão Bateria Condensadores"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{858C54C9-0B96-4EC1-B060-BA40FC83475C}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carregamento da factual Escalão Bateria Condensadores">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Carregamento da factual Escalão Bateria Condensadores\Apagar registos com a mesma data de carregamento"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{76c352d8-d574-47c8-a6fd-b9698fcede4b}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Apagar registos com a mesma data de carregamento"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource="DELETE &#xA;  FROM [dbo].[fct_escalao_bateria_condensadores]&#xA;  WHERE [sk_tempo] = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::data_carregamento"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{30D7A77E-D2DC-47B4-A9A3-86E5536B1DA1}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Carregamento de novos elementos na Factual"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Conta registos inseridos novos"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Conta registos inseridos novos">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::numero_registos_inseridos</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Conta registos inseridos novos.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Conta registos inseridos novos.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Conta registos inseridos novos.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Data_carregamento"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Outputs[Derived Column Output].Columns[sk_tempo]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Outputs[Derived Column Output].Columns[sk_tempo]"
+                          name="sk_tempo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::data_carregamento]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::data_carregamento]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="dim_escalao_bateria_condensadores"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[v_t_dim_painel]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [sk_escalao_bateria_condensadores]
+      ,[sit_id]
+      ,[codigo_eda]
+      ,[codigo_freguesia]
+      ,[data_inicio]
+      ,[data_fim]
+      ,[atual]
+      ,[sk_auditoria]
+  FROM [dbo].[dim_escalao_bateria_condensadores]
+  WHERE CAST(FORMAT([data_inicio],'yyyyMMdd') AS INT) &lt; ? AND CAST(FORMAT([data_fim],'yyyyMMdd') AS INT) &gt; ?</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"Parameter0:Input",{98D458C9-31AE-48A6-9B9C-F05DCBA23D15};"Parameter1:Input",{98D458C9-31AE-48A6-9B9C-F05DCBA23D15};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Connections[OleDbConnection]"
+                      connectionManagerID="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[sit_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[sit_id]"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[sit_id]"
+                          name="sit_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[codigo_eda]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[codigo_eda]"
+                          length="50"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[codigo_eda]"
+                          name="codigo_eda"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[codigo_freguesia]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[codigo_freguesia]"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[codigo_freguesia]"
+                          name="codigo_freguesia"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[data_inicio]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[data_inicio]"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[data_inicio]"
+                          name="data_inicio"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[data_fim]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[data_fim]"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[data_fim]"
+                          name="data_fim"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[atual]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[atual]"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[atual]"
+                          name="atual"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[sk_auditoria]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[sk_auditoria]"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[sk_auditoria]"
+                          name="sk_auditoria"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[sk_escalao_bateria_condensadores]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[sk_escalao_bateria_condensadores]"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[sk_escalao_bateria_condensadores]"
+                          name="sk_escalao_bateria_condensadores"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[sit_id]"
+                          dataType="i4"
+                          name="sit_id" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[codigo_eda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="codigo_eda" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[codigo_freguesia]"
+                          dataType="i4"
+                          name="codigo_freguesia" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[data_inicio]"
+                          dataType="dbDate"
+                          name="data_inicio" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[data_fim]"
+                          dataType="dbDate"
+                          name="data_fim" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[atual]"
+                          dataType="bool"
+                          name="atual" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[sk_auditoria]"
+                          dataType="i4"
+                          name="sk_auditoria" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].ExternalColumns[sk_escalao_bateria_condensadores]"
+                          dataType="i4"
+                          name="sk_escalao_bateria_condensadores" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[sk_escalao_bateria_condensadores]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[sk_escalao_bateria_condensadores]"
+                          name="sk_escalao_bateria_condensadores" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[sit_id]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[sit_id]"
+                          name="sit_id" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[codigo_eda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[codigo_eda]"
+                          name="codigo_eda" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[codigo_freguesia]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[codigo_freguesia]"
+                          name="codigo_freguesia" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[data_inicio]"
+                          dataType="dbDate"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[data_inicio]"
+                          name="data_inicio" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[data_fim]"
+                          dataType="dbDate"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[data_fim]"
+                          name="data_fim" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[atual]"
+                          dataType="bool"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[atual]"
+                          name="atual" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[sk_auditoria]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[sk_auditoria]"
+                          name="sk_auditoria" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="equipamento com geografia desconhecida"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Outputs[Derived Column Output].Columns[sk_geografia]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Outputs[Derived Column Output].Columns[sk_geografia]"
+                          name="sk_geografia"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">1</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">1</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="fct_escalao_bateria_condensadores"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[fct_escalao_bateria_condensadores]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Connections[OleDbConnection]"
+                      connectionManagerID="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].Columns[sk_auditoria]"
+                          cachedDataType="i4"
+                          cachedName="sk_auditoria"
+                          externalMetadataColumnId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].ExternalColumns[sk_auditoria]"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_auditoria]" />
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].Columns[sk_geografia]"
+                          cachedDataType="i4"
+                          cachedName="sk_geografia"
+                          externalMetadataColumnId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].ExternalColumns[sk_geografia]"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_geografia]" />
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].Columns[sk_equipamento]"
+                          cachedDataType="i4"
+                          cachedName="sk_equipamento"
+                          externalMetadataColumnId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].ExternalColumns[sk_equipamento]"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Match Output].Columns[sk_equipamento]" />
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].Columns[sk_escalao_bateria_condensadores]"
+                          cachedDataType="i4"
+                          cachedName="sk_escalao_bateria_condensadores"
+                          externalMetadataColumnId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].ExternalColumns[sk_escalao_bateria_condensadores]"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_escalao_bateria_condensadores]" />
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].Columns[sk_tempo]"
+                          cachedDataType="i4"
+                          cachedName="sk_tempo"
+                          externalMetadataColumnId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].ExternalColumns[sk_tempo]"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_tempo]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].ExternalColumns[sk_tempo]"
+                          dataType="i4"
+                          name="sk_tempo" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].ExternalColumns[sk_geografia]"
+                          dataType="i4"
+                          name="sk_geografia" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].ExternalColumns[sk_equipamento]"
+                          dataType="i4"
+                          name="sk_equipamento" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].ExternalColumns[sk_auditoria]"
+                          dataType="i4"
+                          name="sk_auditoria" />
+                        <externalMetadataColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input].ExternalColumns[sk_escalao_bateria_condensadores]"
+                          dataType="i4"
+                          name="sk_escalao_bateria_condensadores" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  name="Juntar Registos"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 1]"
+                      name="Union All Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 1].Columns[sit_id]"
+                          cachedDataType="i4"
+                          cachedName="sit_id"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[sit_id]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sit_id]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 1].Columns[codigo_eda]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="codigo_eda"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[codigo_eda]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[codigo_eda]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 1].Columns[codigo_freguesia]"
+                          cachedDataType="i4"
+                          cachedName="codigo_freguesia"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[codigo_freguesia]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[codigo_freguesia]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 1].Columns[data_inicio]"
+                          cachedDataType="dbDate"
+                          cachedName="data_inicio"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[data_inicio]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[data_inicio]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 1].Columns[data_fim]"
+                          cachedDataType="dbDate"
+                          cachedName="data_fim"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[data_fim]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[data_fim]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 1].Columns[atual]"
+                          cachedDataType="bool"
+                          cachedName="atual"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[atual]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[atual]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 1].Columns[sk_auditoria]"
+                          cachedDataType="i4"
+                          cachedName="sk_auditoria"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[sk_auditoria]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_auditoria]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 1].Columns[sk_escalao_bateria_condensadores]"
+                          cachedDataType="i4"
+                          cachedName="sk_escalao_bateria_condensadores"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[sk_escalao_bateria_condensadores]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_escalao_bateria_condensadores]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 1].Columns[sk_geografia]"
+                          cachedDataType="i4"
+                          cachedName="sk_geografia"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Match Output].Columns[sk_geografia]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_geografia]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 1].Columns[sk_tempo]"
+                          cachedDataType="i4"
+                          cachedName="sk_tempo"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Outputs[Derived Column Output].Columns[sk_tempo]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_tempo]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 2].Columns[sit_id]"
+                          cachedDataType="i4"
+                          cachedName="sit_id"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[sit_id]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sit_id]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 2].Columns[codigo_eda]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="codigo_eda"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[codigo_eda]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[codigo_eda]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 2].Columns[codigo_freguesia]"
+                          cachedDataType="i4"
+                          cachedName="codigo_freguesia"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[codigo_freguesia]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[codigo_freguesia]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 2].Columns[data_inicio]"
+                          cachedDataType="dbDate"
+                          cachedName="data_inicio"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[data_inicio]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[data_inicio]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 2].Columns[data_fim]"
+                          cachedDataType="dbDate"
+                          cachedName="data_fim"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[data_fim]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[data_fim]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 2].Columns[atual]"
+                          cachedDataType="bool"
+                          cachedName="atual"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[atual]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[atual]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 2].Columns[sk_auditoria]"
+                          cachedDataType="i4"
+                          cachedName="sk_auditoria"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[sk_auditoria]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_auditoria]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 2].Columns[sk_escalao_bateria_condensadores]"
+                          cachedDataType="i4"
+                          cachedName="sk_escalao_bateria_condensadores"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[sk_escalao_bateria_condensadores]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_escalao_bateria_condensadores]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 2].Columns[sk_geografia]"
+                          cachedDataType="i4"
+                          cachedName="sk_geografia"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Outputs[Derived Column Output].Columns[sk_geografia]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_geografia]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 2].Columns[sk_tempo]"
+                          cachedDataType="i4"
+                          cachedName="sk_tempo"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Outputs[Derived Column Output].Columns[sk_tempo]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_tempo]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 3]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sit_id]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sit_id]"
+                          name="sit_id" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[codigo_eda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[codigo_eda]"
+                          name="codigo_eda" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[codigo_freguesia]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[codigo_freguesia]"
+                          name="codigo_freguesia" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[data_inicio]"
+                          dataType="dbDate"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[data_inicio]"
+                          name="data_inicio" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[data_fim]"
+                          dataType="dbDate"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[data_fim]"
+                          name="data_fim" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[atual]"
+                          dataType="bool"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[atual]"
+                          name="atual" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_auditoria]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_auditoria]"
+                          name="sk_auditoria" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_escalao_bateria_condensadores]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_escalao_bateria_condensadores]"
+                          name="sk_escalao_bateria_condensadores" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_geografia]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_geografia]"
+                          name="sk_geografia" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_tempo]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[sk_tempo]"
+                          name="sk_tempo" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="sk_equipamento"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+FROM [dbo].[dim_equipamento]
+WHERE Atual = 1</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT *
+FROM [dbo].[dim_equipamento]
+WHERE Atual = 1) [refTable]
+where [refTable].[codigo_eda] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="sk_equipamento" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sk_equipamento_pai" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sit_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sit_id_pai" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="codigo_eda" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="tipo_equipamento" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="descricao_equipamento" dataType="DT_STR" length="150" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="codigo_freguesia" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="data_inicio" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="data_fim" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="atual" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="sk_auditoria" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[codigo_eda]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Connections[OleDbConnection]"
+                      connectionManagerID="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Inputs[Lookup Input].Columns[codigo_eda]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="codigo_eda"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1].Columns[codigo_eda]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">codigo_eda</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Match Output].Columns[sk_equipamento]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Match Output].Columns[sk_equipamento]"
+                          name="sk_equipamento"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">sk_equipamento</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="sk_geografia"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[dim_geografia]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[dim_geografia]) [refTable]
+where [refTable].[codigo_freguesia] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="sk_geografia" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="codigo_freguesia" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="descricao_freguesia" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="area_freguesia" dataType="DT_NUMERIC" length="0" precision="38" scale="7" codePage="0"/&gt;&lt;referenceColumn name="codigo_concelho" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="descricao_concelho" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="codigo_ilha" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="descricao_ilha" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="sk_auditoria" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[codigo_freguesia]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Connections[OleDbConnection]"
+                      connectionManagerID="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Data Warehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Inputs[Lookup Input].Columns[codigo_freguesia]"
+                          cachedDataType="i4"
+                          cachedName="codigo_freguesia"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output].Columns[codigo_freguesia]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">codigo_freguesia</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Match Output].Columns[sk_geografia]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Match Output].Columns[sk_geografia]"
+                          name="sk_geografia"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">sk_geografia</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Derived Column Output]"
+                  endId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 2]"
+                  name="Derived Column Output"
+                  startId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Derived Column Output1]"
+                  endId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Lookup Match Output]"
+                  endId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Lookup Match Output1]"
+                  endId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Conta registos inseridos novos.Inputs[Row Count Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Lookup No Match Output]"
+                  endId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida.Inputs[Derived Column Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[OLE DB Source Output]"
+                  endId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Row Count Output 1]"
+                  endId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Conta registos inseridos novos.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Union All Output 1]"
+                  endId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento.Inputs[Lookup Input]"
+                  name="Union All Output 1"
+                  startId="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos.Outputs[Union All Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carregamento da factual Escalão Bateria Condensadores.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{10E210E3-79CD-4E13-9C03-E3AACED55989}"
+          DTS:From="Package\Carregamento da factual Escalão Bateria Condensadores\Apagar registos com a mesma data de carregamento"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fim do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{30CFB61B-796C-401A-8C28-36120466B6C1}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fim do processo de auditoria">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1BBCD65B-F004-4F39-B5C6-086C749210E4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_final = ?,&#xA;     numero_registos_inseridos = ?,&#xA;  data_fim = CURRENT_TIMESTAMP,&#xA;  duracao = CAST(DATEADD(SECOND,DATEDIFF(second,data_inicio, CURRENT_TIMESTAMP),'2017-01-01 00:00:00.000') AS TIME),&#xA;  sucesso = 1&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::numero_registos_final"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E1F31FF5-F904-4C9A-A65A-5B4FF381FFA3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_final&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_final"
+                SQLTask:DtsVariableName="User::numero_registos_final" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{BEF2C23F-F591-4B05-B22E-1C4F41F20066}"
+          DTS:From="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Fim do processo de auditoria\Atualiza registo de auditoria" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Início do processo de auditoria"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3ACF8876-ED3E-4894-95E7-7497F2294860}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Início do processo de auditoria">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{98694549-553C-46CB-8212-C33AA2E8D499}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Atualiza Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource=" UPDATE dim_auditoria&#xA;    SET numero_registos_inicial = ?&#xA;  WHERE sk_auditoria = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::numero_registos_inicial"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::chave_auditoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9BD2C278-6AD1-492B-A3BA-5CE666FA0CB1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conta Nº Registos Inicial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{C8792051-F092-44BF-81D6-E208CD5ADB72}"
+              SQLTask:SqlStatementSource="SELECT SUM (row_count) AS numero_registos_inicial&#xA;  FROM sys.dm_db_partition_stats&#xA; WHERE object_id=OBJECT_ID(?)   &#xA;   AND (index_id=0 OR index_id=1)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="numero_registos_inicial"
+                SQLTask:DtsVariableName="User::numero_registos_inicial" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2343B415-00D2-47E6-A6A5-F54E917D7ACA}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Cria registo de auditoria"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4449CC6C-025B-4EFF-B446-F17F7430C4CD}"
+              SQLTask:SqlStatementSource="INSERT INTO dim_auditoria (processo,origem,tabela,data_inicio,codigo_execucao,utilizador)&#xA;     VALUES (?,?,?,current_timestamp,?,?)&#xA;&#xA;SELECT sk_auditoria&#xA;  FROM dim_auditoria&#xA; WHERE codigo_execucao = ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="sk_auditoria"
+                SQLTask:DtsVariableName="User::chave_auditoria" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::origem"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::tabela"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::UserName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{1A0492AB-8F78-4C6D-A57E-63743EBCB8F2}"
+          DTS:From="Package\Início do processo de auditoria\Cria registo de auditoria"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Início do processo de auditoria\Conta Nº Registos Inicial" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{1957991B-5A1B-4144-AF8B-D8D877C2AF59}"
+          DTS:From="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{622B3DAC-4DCD-4B60-9333-39923F74FF11}"
+      DTS:From="Package\Início do processo de auditoria"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carregamento da factual Escalão Bateria Condensadores" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{3843ACAF-8D1A-4EED-8DBE-61E012941919}"
+      DTS:From="Package\Carregamento da factual Escalão Bateria Condensadores"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Fim do processo de auditoria" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="329,42"
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Apagar registos com a mesma data de carregamento"
+          TopLeft="27,53" />
+        <NodeLayout
+          Size="295,42"
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual"
+          TopLeft="46,137" />
+        <EdgeLayout
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores.PrecedenceConstraints[Constraint]"
+          TopLeft="192.5,95">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="399,279"
+          Size="399,322"
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores"
+          TopLeft="436.964285714286,40.0714285714286" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Fim do processo de auditoria\Atualiza registo de auditoria"
+          TopLeft="31.4285714285716,131.571428571428" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Fim do processo de auditoria\Conta Nº Registos Final"
+          TopLeft="47.1428571428572,31.5714285714286" />
+        <EdgeLayout
+          Id="Package\Fim do processo de auditoria.PrecedenceConstraints[Constraint]"
+          TopLeft="139.285714285714,73.5714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.9999999999994"
+              Start="0,0"
+              End="0,50.4999999999994">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.4999999999994" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="271,229"
+          Size="271,272"
+          Id="Package\Fim do processo de auditoria"
+          TopLeft="903.964285714286,79.0357142857143" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Início do processo de auditoria\Atualiza Nº Registos Inicial"
+          TopLeft="40,181" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Início do processo de auditoria\Conta Nº Registos Inicial"
+          TopLeft="43,110" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Início do processo de auditoria\Cria registo de auditoria"
+          TopLeft="54,26" />
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint]"
+          TopLeft="150,68">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,42"
+              Start="0,0"
+              End="-9,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="-4,21" />
+                  <mssgle:LineSegment
+                    End="-5,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,21"
+                    Point2="-9,21"
+                    Point3="-9,25" />
+                  <mssgle:LineSegment
+                    End="-9,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Início do processo de auditoria.PrecedenceConstraints[Constraint 1]"
+          TopLeft="141.75,152">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="306,278"
+          Size="306,321"
+          Id="Package\Início do processo de auditoria"
+          TopLeft="69.1428571428571,43.6785714285714" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="375.142857142857,202.625">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.8214285714289,0"
+              Start="0,0"
+              End="54.3214285714289,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="54.3214285714289,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="835.964285714286,201.071428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68,13.9642857142857"
+              Start="0,0"
+              End="60.5,13.9642857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="30,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30,0"
+                    Point2="34,0"
+                    Point3="34,4" />
+                  <mssgle:LineSegment
+                    End="34,9.96428571428569" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34,9.96428571428569"
+                    Point2="34,13.9642857142857"
+                    Point3="38,13.9642857142857" />
+                  <mssgle:LineSegment
+                    End="60.5,13.9642857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="251,42"
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores"
+          TopLeft="283,2" />
+        <NodeLayout
+          Size="246,42"
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores"
+          TopLeft="222,657" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento"
+          TopLeft="281,479" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Data_carregamento"
+          TopLeft="279,85" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Juntar Registos"
+          TopLeft="281,385" />
+        <NodeLayout
+          Size="277,42"
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\equipamento com geografia desconhecida"
+          TopLeft="506,341" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\Conta registos inseridos novos"
+          TopLeft="219,573" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia"
+          TopLeft="297,240" />
+        <EdgeLayout
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Union All Output 1]"
+          TopLeft="357.75,427">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Row Count Output 1]"
+          TopLeft="330,615">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15,42"
+              Start="0,0"
+              End="15,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="4,21" />
+                  <mssgle:LineSegment
+                    End="11,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11,21"
+                    Point2="15,21"
+                    Point3="15,25" />
+                  <mssgle:LineSegment
+                    End="15,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[OLE DB Source Output]"
+          TopLeft="408.5,44">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-43.5,41"
+              Start="0,0"
+              End="-43.5,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="-4,20.5" />
+                  <mssgle:LineSegment
+                    End="-39.5,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.5,20.5"
+                    Point2="-43.5,20.5"
+                    Point3="-43.5,24.5" />
+                  <mssgle:LineSegment
+                    End="-43.5,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Lookup No Match Output]"
+          TopLeft="388.333333333333,282">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="256.166666666667,59"
+              Start="0,0"
+              End="256.166666666667,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.0028449502134" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.0028449502134"
+                    Point2="0,24.0028449502134"
+                    Point3="4,24.0028449502134" />
+                  <mssgle:LineSegment
+                    End="252.166666666667,24.0028449502134" />
+                  <mssgle:CubicBezierSegment
+                    Point1="252.166666666667,24.0028449502134"
+                    Point2="256.166666666667,24.0028449502134"
+                    Point3="256.166666666667,28.0028449502134" />
+                  <mssgle:LineSegment
+                    End="256.166666666667,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="72.2769466145834,29.0028449502134,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Lookup Match Output1]"
+          TopLeft="359,521">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29,52"
+              Start="0,0"
+              End="-29,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="-4,26" />
+                  <mssgle:LineSegment
+                    End="-25,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25,26"
+                    Point2="-29,26"
+                    Point3="-29,30" />
+                  <mssgle:LineSegment
+                    End="-29,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-62.69138671875,31,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Lookup Match Output]"
+          TopLeft="344.666666666667,282">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.8333333333333,103"
+              Start="0,0"
+              End="11.8333333333333,95.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.9032716927454" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.9032716927454"
+                    Point2="0,41.9032716927454"
+                    Point3="4,41.9032716927454" />
+                  <mssgle:LineSegment
+                    End="7.83333333333331,41.9032716927454" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.83333333333331,41.9032716927454"
+                    Point2="11.8333333333333,41.9032716927454"
+                    Point3="11.8333333333333,45.9032716927454" />
+                  <mssgle:LineSegment
+                    End="11.8333333333333,95.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-42.2747200520833,46.9032716927454,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Derived Column Output1]"
+          TopLeft="365.75,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,113"
+              Start="0,0"
+              End="0,105.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,105.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual.Paths[Derived Column Output]"
+          TopLeft="506,362">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-74,44"
+              Start="0,0"
+              End="-66.5,44">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-33,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-33,0"
+                    Point2="-37,0"
+                    Point3="-37,4" />
+                  <mssgle:LineSegment
+                    End="-37,40" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-37,40"
+                    Point2="-37,44"
+                    Point3="-41,44" />
+                  <mssgle:LineSegment
+                    End="-66.5,44" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\dim_escalao_bateria_condensadores">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\fct_escalao_bateria_condensadores">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_equipamento">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carregamento da factual Escalão Bateria Condensadores\Carregamento de novos elementos na Factual\sk_geografia">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dim_geografia]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
