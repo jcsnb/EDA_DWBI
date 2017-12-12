@@ -23,9 +23,9 @@ Global
 		SccNumberOfProjects = 2
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://nbtfs.novabase.pt/tfs/244244%20-%20gte%20bs%20perf%20mng
-		SccProjectUniqueName0 = DWBI\\DWBI.dtproj
-		SccProjectName0 = DWBI
-		SccLocalPath0 = DWBI
-		SccLocalPath1 = .
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DWBI\\DWBI.dtproj
+		SccProjectName1 = DWBI
+		SccLocalPath1 = DWBI
 	EndGlobalSection
 EndGlobal
